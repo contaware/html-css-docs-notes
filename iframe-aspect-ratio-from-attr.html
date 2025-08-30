@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iframe-aspect-ratio-from-attr</title>
+</head>
+<style>
+.container {
+    width: 800px;
+    max-width: 100%;
+    background: pink;
+    margin: auto;
+}
+iframe[width][height] {
+    aspect-ratio: attr(width) / attr(height);
+}
+iframe {
+    width: 100%;
+    height: auto;
+}
+</style>
+<body>
+    <div class="container">
+        <h1>Not yet supported... (in 2023)</h1>
+        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/C0DPdy98e4c?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+</body>
+</html>

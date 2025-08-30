@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Prevent IE from entering compatibility mode -->
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>confirm replacement</title>
+<style>
+.overlay {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0,0,0,0.85);
+	z-index: 10000;
+	display: none;
+}
+.popup {
+	position: absolute;
+	top: 15%;
+	left: 0;
+	right: 0;
+	width: 80%;
+	max-width: 500px;
+	margin: 0 auto;
+	padding: 15px;
+	border: 1px solid rgb(1,82,73);
+	border-radius: 10px;
+	color: rgb(1,82,73);
+	background: white;
+	box-shadow: 5px 5px 5px #000;
+	z-index: 10001;
+	font-weight: 700;
+	text-align: center;
+}
+.dialog-btn {
+	background-color: #44B78B;
+	color: white;
+	font-weight: 700;
+	border: 1px solid #44B78B;
+	border-radius: 10px;
+	height: 40px;
+	width: 30%;
+	min-width: 80px;
+	margin: 10px;
+}
+.dialog-btn:hover {
+	background-color: #015249;
+	cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<div>
+    <p>Confirmation dialog replacement for the javascript confirm() method.</p>
+</div>
+
+<button id="btn-show-dialog">Show Dialog</button>
+<div class="overlay" id="dialog-container">
+  <div class="popup">
+    <p>This will permanently delete all the selected files. Continue ?</p>
+    <div>
+      <button class="dialog-btn" id="confirm">Ok</button>
+	  <button class="dialog-btn" id="cancel">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+document.getElementById('btn-show-dialog').addEventListener('click', function() {
+	document.getElementById('dialog-container').style.display = 'block';
+}, false);
+document.getElementById('confirm').addEventListener('click', function() {
+	document.getElementById('dialog-container').style.display = 'none';
+	alert('Confirm');
+}, false);
+document.getElementById('cancel').addEventListener('click', function() {
+    document.getElementById('dialog-container').style.display = 'none';
+	alert('Cancel');
+}, false);
+</script>
+
+</body>
+</html>

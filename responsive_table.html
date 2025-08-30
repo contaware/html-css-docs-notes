@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>CSS Responsive Table</title>
+<style type="text/css">
+@import 'http://fonts.googleapis.com/css?family=Montserrat:300,400,700';
+body {
+	font-family: Montserrat, sans-serif;
+	font-size: 14px;
+	color: #444;
+	background: #fff;
+}
+table {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+tr:nth-of-type(odd) {
+	background: #eee;
+}
+table tr {
+	padding: 5px;
+}
+table th {
+	background: #3498db;
+  color: white;
+	font-weight: bold;
+}
+table th, table td {
+	border: 1px solid #ddd;
+	padding: 10px;
+	text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+  }
+  table thead {
+    display: none;
+  }
+  table tr {
+    margin-bottom: 14px;
+    display: block;
+    border-bottom: 2px solid #ddd;
+  }
+  table td {
+    display: block;
+    text-align: right;
+    font-size: 13px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px dotted #ccc;
+  }
+  table td:last-child {
+    border-bottom: 0;
+  }
+  table td:before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+  }
+}  
+</style>
+</head>
+<body>
+<h3>Responsive Table</h3>
+<table class="responsive">
+  <thead>
+    <tr>
+      <th>Payment</th>
+      <th>Issue Date</th>
+      <th>Amount</th>
+      <th>Period</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="Payment">Payment #1</td>
+      <td data-label="Issue Date">01/02/2015</td>
+      <td data-label="Amount">$2,311</td>
+      <td data-label="Period">01/01/2015 - 01/31/2015</td>
+    </tr>
+    <tr>
+      <td data-label="Payment">Payment #2</td>
+      <td data-label="Issue Date">01/03/2015</td>
+      <td data-label="Amount">$3,211</td>
+      <td data-label="Period">01/02/2015 - 28/02/2015</td>
+    </tr>
+	<tr>
+      <td data-label="Payment">Payment #3</td>
+      <td data-label="Issue Date">01/04/2015</td>
+      <td data-label="Amount">$3,241</td>
+      <td data-label="Period">01/03/2015 - 31/03/2015</td>
+    </tr>
+	<tr>
+      <td data-label="Payment">Payment #4</td>
+      <td data-label="Issue Date">01/05/2015</td>
+      <td data-label="Amount">$4,219</td>
+      <td data-label="Period">01/04/2015 - 30/04/2015</td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>

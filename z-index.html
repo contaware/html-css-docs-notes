@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>z-index</title>
+<style>
+* { box-sizing: border-box; border: 0; margin: 0; padding: 0; }
+.pink, .orange, .blue, .green {  position: absolute; }
+.pink { left: 10px; top: 10px; width: 60px; height: 60px; background-color: pink; }
+.orange { z-index: 100; left: 10px; top: 10px; width: 30px; height: 30px; background-color: orange; }
+.blue { opacity: 0.99; left: 40px; top: 40px; width: 60px; height: 60px; background-color: blue; }
+.green { z-index: 3; left: 50px; top: 50px; width: 60px; height: 60px; background-color: green; }
+</style>
+</head>
+<body>
+<div class="pink">
+	<div class="orange">
+	</div>
+</div>
+<div class="blue">
+</div>
+<div class="green">
+</div>
+<pre style="position: absolute; top: 130px;">
+1. When the z-index and position properties aren't involved, the rules 
+are pretty simple: basically, the stacking order is the same as the 
+order of appearance in the HTML. 
+
+2. CSS positioned elements (and their children) are displayed in front 
+of any non-positioned elements. 
+
+3. z-index only works on positioned elements. If you try to set a 
+z-index on an element with no position specified, it will do nothing. 
+z-index values create stacking contexts with a single HTML element as 
+root element. When a new stacking context is formed on an element, that 
+stacking context confines all of its child elements to a particular 
+place in the stacking order.
+
+4. CSS opacity also create stacking contexts. In addition to opacity, 
+several newer CSS properties also create stacking contexts. These 
+include: transforms, filters, css-regions, paged media, and possibly 
+others. 
+
+Here are the basic rules to determine stacking order within a single 
+stacking context (from back to front): 
+
+- The stacking context's root element
+- Positioned elements (and their children) with negative z-index values 
+- Non-positioned elements
+- Positioned elements (and their children) with a z-index value of auto 
+  (auto sets the stacking level to 0 and does not establish a new stacking context)
+- Positioned elements (and their children) with positive z-index values 
+
+Note: it becomes possible for an element to appear behind its own parent. 
+      This will only work if the element's parent is in the same stacking 
+      context and is not the root element of that stacking context. 
+</pre>
+</body>
+</html>

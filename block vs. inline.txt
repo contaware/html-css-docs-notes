@@ -1,0 +1,40 @@
+Block level elements
+--------------------
+
+Block level elements are elements of the source document that are 
+formatted visually as blocks. In other words, block level elements are 
+normally displayed as blocks with line breaks before and afterwards: 
+- div, p, h1-h6, hr
+- ol, ul, dl
+- li, dt, dd
+- pre, address
+- header, nav, footer, main, section, article, aside 
+- blockquote
+- form, fieldset
+- table
+
+
+Inline elements
+---------------
+
+Inline elements are elements of the source document that do not form new 
+blocks of content; the content is distributed in lines. So, inline 
+content is displayed with no line breaks before or afterwards: 
+- span, a, br
+- b, i, em, strong, code, sub, sup
+- label
+
+If you try to add dimensions to an inline element, some properties will 
+be applied, some properties will be partially applied and others will 
+not be applied at all: 
+1. The above mentioned inline elements do not have width and height
+   (the height of the box is usually given by the line-height property). 
+2. While padding / margin / border can be applied to all sides of an inline 
+   element, only left and right padding / margin will have an effect on 
+   surrounding content. When the inline element is split across more than 
+   one line, the horizontal padding / margin / border are only applied to 
+   the start of the first line and the end of the last line. 
+
+The following inline elements have width and height:
+- button, input, select, textarea
+- img, video, iframe (replaced elements)

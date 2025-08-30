@@ -1,0 +1,1128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            margin-top: 40px; /* This margin just makes the text easier to read. You can remove it if you want since it can mess with your other styles. */
+        }
+        body::before {
+            content: "XS";
+            color: red;
+            font-size: 2rem;
+            font-weight: bold;
+            position: fixed;
+            top: 0;
+            right: 0;
+        }
+        @media (min-width: 576px) {
+            body::before {
+                content: "SM";
+            }
+        }
+        @media (min-width: 768px) {
+            body::before {
+                content: "MD";
+            }
+        }
+        @media (min-width: 992px) {
+            body::before {
+                content: "LG";
+            }
+        }
+        @media (min-width: 1200px) {
+            body::before {
+                content: "XL";
+            }
+        }
+        @media (min-width: 1400px) {
+            body::before {
+                content: "XXL";
+            }
+        }
+    </style>
+  </head>
+  <body>
+    <div id="text-heading" class="display-1">Text heading</div>
+    <h1>This is h1 tag (can also use class h1)</h1>
+    <h2>This is h2 tag (can also use class h2)</h2>
+    <h3>This is h3 tag (can also use class h3)</h3>
+    <h4>This is h4 tag (can also use class h4)</h4>
+    <h5>This is h5 tag (can also use class h5)</h5>
+    <h6>This is h6 tag (can also use class h6)</h6>
+    <div class="display-1">display-1</div>
+    <div class="display-2">display-2</div>
+    <div class="display-3">display-3</div>
+    <div class="display-4">display-4</div>
+    <div class="display-5">display-5</div>
+    <div class="display-6">display-6</div>
+    <br>
+
+    <div id="text-alignment" class="display-1">Text alignment</div>
+    <p class="text-center">text-center</p>
+    <p class="text-end">text-end</p>
+    <p class="text-start">text-start</p>
+    <p class="text-lg-start text-md-center text-end">text-lg-start text-md-center text-end</p>
+    <br>
+
+    <div id="text-wrap-truncate-word-break-line-height" class="display-1">Text wrap/truncate, word break &amp; line height</div>
+    <p>Note: the following classes require display: inline-block or display: block.</p>
+    <h4>By default the text does not overflow its parent</h4>
+    <p class="text-bg-primary" style="width: 8rem;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <h4>With text-nowrap the text overflows its parent</h4>
+    <p class="text-nowrap text-bg-warning" style="width: 8rem;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <h4>With text-truncate a long text is truncated with an ellipsis</h4>
+    <p class="text-truncate text-bg-primary" style="width: 8rem;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <h4>By default a long word does not break</h4>
+    <p class="text-bg-warning" style="width: 8rem;">mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm</p>
+    <h4>With text-break a long word breaks</h4>
+    <p class="text-break text-bg-primary" style="width: 8rem;">mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm</p>
+    <h4>Line heights</h4>
+    <p class="lh-1" style="width: 8rem;">lh-1 (lorem ipsum dolor sit amet consectetur)</p>
+    <p class="lh-sm" style="width: 8rem;">lh-sm (lorem ipsum dolor sit amet consectetur)</p>
+    <p class="lh-base" style="width: 8rem;">lh-base (lorem ipsum dolor sit amet consectetur)</p>
+    <p style="width: 8rem;">default (usually it's the same as lh-base)</p>
+    <p class="lh-lg" style="width: 8rem;">lh-lg (lorem ipsum dolor sit amet consectetur)</p>
+    <br>
+
+    <div id="text-typography" class="display-1">Typography</div>
+    <p class="text-decoration-underline">text-decoration-underline</p>
+    <p><u>text in &lt;u&gt;</u></p>
+    <p class="text-decoration-line-through">text-decoration-line-through</p>
+    <p><del>text in &lt;del&gt;</del></p>
+    <p class="fst-italic">fst-italic</p>
+    <p><em>text in &lt;em&gt;</em></p>
+    <p class="font-monospace">font-monospace</p>
+    <p><code>text in &lt;code&gt;</code></p>
+    <pre>Line1 in &lt;pre&gt;
+Line2 in &lt;pre&gt;</pre>
+    <p class="fw-bold">fw-bold</p>
+    <p><strong>text in &lt;strong&gt;</strong></p>
+    <p class="fw-light">fw-light</p>
+    <p class="fst-normal">fst-normal</p>
+    <p class="lead">lead</p>
+    <p class="mark">mark</p>
+    <p><mark>text in &lt;mark&gt;</mark></p>
+    <p class="small">small</p>
+    <p><small>text in &lt;small&gt;</small></p>
+    <p>this is<sub>text in &lt;sub&gt;</sub></p>
+    <p>this is<sup>text in &lt;sup&gt;</sup></p>
+    <p><span class="text-lowercase">LowerCased</span> with text-lowercase</p>
+    <p><span class="text-uppercase">UpperCased</span> with text-uppercase</p>
+    <p><span class="text-capitalize">capiTaliZed</span> with text-capitalize</p>
+    <blockquote class="blockquote">
+        <p>Give me the liberty to know, to utter, and to argue freely according to conscience, above all liberties (blockquote).</p>
+        <footer class="blockquote-footer">John Milton <cite title="Source Title">Areopagitica</cite> (blockquote-footer)</footer>
+    </blockquote>
+    <br>
+
+    <div id="text-link-color" class="display-1">Text &amp; link color</div>
+    <p class="text-primary">text-primary</p>
+    <p class="text-secondary">text-secondary</p>
+    <p class="text-success">text-success</p>
+    <p class="text-danger">text-danger</p>
+    <p class="text-warning">text-warning</p>
+    <p class="text-info">text-info</p>
+    <p class="text-light bg-dark">text-light</p>
+    <p class="text-dark">text-dark</p>
+    <p class="text-muted">text-muted</p>
+    <p>
+        <a href="#" class="link-danger">link-danger (with text-danger the hover color is missing)</a>
+    </p>
+    <br>
+
+    <div id="background-color" class="display-1">Background color</div>
+    <p class="text-white bg-primary">bg-primary</p>
+    <p class="text-light bg-secondary">bg-secondary</p>
+    <p class="text-white bg-success">bg-success</p>
+    <p class="text-white bg-danger">bg-danger</p>
+    <p class="text-white bg-warning">bg-warning</p>
+    <p class="text-white bg-info">bg-info</p>
+    <p class="text-dark bg-light">bg-light</p>
+    <p class="text-white bg-dark">bg-dark</p>
+    <p class="text-white bg-primary bg-gradient">bg-primary<br>bg-gradient</p>
+    <p class="text-bg-dark">text-bg-dark (auto text color for given bg)</p>
+    <p><mark class="bg-transparent">&lt;mark&gt; with bg-transparent</mark></p>
+    <p class="text-white bg-primary bg-opacity-25">bg-opacity-25</p>
+    <br>
+
+    <div id="border-shadow-opacity" class="display-1">Border, shadow &amp; opacity</div>
+    <div class="m-3 p-3 border">border</div>
+    <div class="m-3 p-3 border border-primary">border-primary</div>
+    <div class="m-3 p-3 border-top border-bottom border-start border-end">border-top border-bottom border-start border-end</div>
+    <div class="m-3 p-3 border-start border-3 border-primary">border-start</div>
+    <div class="m-3 p-3 border border-4">border-4</div>
+    <div class="m-3 p-3 rounded-5 border">rounded-5</div>
+    <div class="m-3 p-3 rounded-start border">rounded-start</div>
+    <div class="m-3 p-3 rounded-5 bg-primary text-light">rounded-5</div>
+    <div class="m-3 p-3 rounded-pill bg-primary text-light">rounded-pill</div>
+    <div class="m-3 p-3 rounded-circle bg-primary text-light">rounded-circle (border-radius: 50%)</div>
+    <div class="m-3 p-3 shadow-sm">shadow-sm</div>
+    <div class="m-3 p-3 shadow">shadow</div>
+    <div class="m-3 p-3 shadow-lg">shadow-lg</div>
+    <div class="m-3 p-3 opacity-25">opacity-25</div>
+    <br>
+
+    <div id="button" class="display-1">Button</div>
+    <button type="button" class="btn btn-primary">btn</button>
+    <a href="#" class="btn btn-primary">btn in &lt;a&gt;</a>
+    <button type="button" class="btn btn-lg btn-primary">btn-lg</button>
+    <button type="button" class="btn btn-sm btn-secondary">btn-sm</button>
+    <button type="button" class="btn btn-outline-dark">btn-outline-dark</button>
+    <button type="button" class="btn btn-primary" disabled>disabled</button>
+    <button type="button" class="btn btn-outline-primary" data-bs-toggle="button">data-bs-toggle</button>
+    <p></p>
+    <br>
+
+    <div id="button-group" class="display-1">Button group</div>
+    <div class="btn-group">
+        <a href="#" class="btn btn-primary">Button 1</a>
+        <a href="#" class="btn btn-primary">Button 2</a>
+        <a href="#" class="btn btn-primary">Button 3</a>
+    </div>
+    <p></p>
+    <br>
+
+    <div id="badge-position" class="display-1">Badge</div>
+    <p>
+        The utility classes position-relative, position-absolute, translate-middle are also shown.
+        The position is set in percent (0, 50, 100) with top, start, bottom, end.
+    </p>
+    <p>Text and a <span class="badge bg-primary">badge bg-primary</span></p>
+    <button type="button" class="btn btn-primary mx-3">
+        Notifications <span class="badge bg-secondary">4</span>
+    </button>
+    <button type="button" class="btn btn-primary mx-3 position-relative">
+        Inbox
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">99+</span>
+    </button>
+    <button type="button" class="btn btn-primary mx-3 position-relative">
+        Profile
+        <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle"></span>
+    </button>
+    <p></p>
+    <br>
+
+    <div id="form" class="display-1">Form</div>
+    <div class="container">
+        <form>
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" class="form-control" aria-describedby="emailHelp" required>
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+
+            <div class="form-floating">
+                <input type="text" id="fullname" class="form-control" placeholder="Place your Name here">
+                <label for="fullname" class="form-label">Name</label>
+            </div>
+
+            <label for="money" class="form-label">Input group</label>
+            <div class="input-group">
+                <div class="input-group-text">$</div>
+                <input type="number" id="money" class="form-control">
+                <button class="btn btn-primary">+</button>
+            </div>
+
+            <input type="color" id="color" class="form-control form-control-color">
+            
+            <input type="range" id="range" class="form-range">
+            
+            <select class="form-select">
+                <option>One</option>
+                <option>Two</option>
+            </select>
+            
+            <div class="form-check">
+                <input type="checkbox" id="checkbox" class="form-check-input">
+                <label for="checkbox" class="form-check-label">Checkbox</label>
+            </div>
+            
+            <div class="form-check form-switch">
+                <input type="checkbox" id="switch" class="form-check-input">
+                <label for="switch" class="form-check-label">Switch</label>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <br>
+
+    <div id="description-list" class="display-1">Description list</div>
+    <div class="container">
+        <dl class="row">
+            <dt class="col-sm-3">Bootstrap</dt>
+            <dd class="col-sm-9">A CSS framework you can use in Joomla.</dd>
+          
+            <dt class="col-sm-3">Using paragraphs as definitions</dt>
+            <dd class="col-sm-9">
+              <p>First paragraph, describing the element.</p>
+            <p>Second paragraph, provides additional information. Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde,
+                quasi. Accusantium mollitia exercitationem voluptatum maiores, debitis consectetur, corrupti eos repudiandae natus
+                ipsa deleniti earum excepturi saepe necessitatibus.</p>
+            </dd>
+          </dl>
+    </div>
+    <br>
+
+    <div id="container-table" class="display-1">Container (table also shown)</div>
+    <div class="table-responsive">
+    <table class="table table-light table-striped table-hover table-bordered">
+    <thead>
+    <tr><th>Size</th><th>Breakpoint</th><th>Maximum width</th></tr>
+    </thead>
+    <tbody class="table-group-divider">
+    <tr><td>Small</td><td>sm ≥576px</td><td>max-width: 540px</td></tr>
+    <tr><td>Medium</td><td>md ≥768px</td><td>max-width: 720px</td></tr>
+    <tr><td>Large</td><td>lg ≥992px</td><td>max-width: 960px</td></tr>
+    <tr><td>Extra large</td><td>xl ≥1200px</td><td>max-width: 1140px</td></tr>
+    <tr><td>Extra extra large</td><td>xxl ≥1400px</td><td>max-width: 1320px</td></tr>
+    </tbody>
+    </table>
+    </div>
+    <div class="container-sm bg-primary text-light">container-sm: 100% until small breakpoint (same as container)</div>
+    <div class="container-md bg-secondary text-light">container-md: 100% until medium breakpoint</div>
+    <div class="container-lg bg-success text-light">container-lg: 100% until large breakpoint</div>
+    <div class="container-xl bg-danger text-light">container-xl: 100% until extra large breakpoint</div>
+    <div class="container-xxl bg-warning">container-xxl: 100% until extra extra large breakpoint</div>
+    <div class="container-fluid bg-info text-light">container-fluid: 100% always</div>
+    <br>
+
+    <div id="columns" class="display-1">Columns</div>
+    <p>Bootstrap 5 internally uses css flexbox and its grid system is based on 12 columns.</p>
+
+    <h4>no breakpoint, always 3 equal cols</h4>
+    <p>
+        To target all viewport sizes, since bootstrap 4 we use col-* instead of col-xs-*
+        (flex-nowrap is provided to avoid wrapping the flex items because of the long text).
+    </p>
+    <div class="container text-light">
+        <div class="row flex-nowrap">
+            <div class="col"><div class="bg-primary">col (mmmmmmm)</div></div>
+            <div class="col"><div class="bg-secondary">col (mmmmmmm)</div></div>
+            <div class="col"><div class="bg-success">col (mmmmmmm)</div></div>
+        </div>
+    </div>
+    <br>
+
+    <h4>sm breakpoint (=above sm make 3 equal cols)</h4>
+    <div class="container text-center text-light">
+        <div class="row">
+            <div class="col-sm"><div class="bg-primary">col-sm</div></div>
+            <div class="col-sm"><div class="bg-secondary">col-sm</div></div>
+            <div class="col-sm"><div class="bg-success">col-sm</div></div>
+        </div>
+    </div>
+    <br>
+
+    <h4>given width</h4>
+    <p>
+        For the columns 1 and 3 which have no size specified (class col), bootstrap
+        fills up evenly the remaining space, even if it does not fit an entire column!
+    </p>
+    <div class="container text-center text-light">
+        <div class="row">
+            <div class="col"><div class="bg-primary">1</div></div>
+            <div class="col-11"><div class="bg-secondary">col-11</div></div>
+            <div class="col"><div class="bg-success">3</div></div>
+        </div>
+    </div>
+    <br>
+
+    <h4>auto width</h4>
+    <p>Auto sizes the column to fit its content.</p>
+    <div class="container text-center text-light">
+        <div class="row">
+            <div class="col-2"><div class="bg-primary">col-2</div></div>
+            <div class="col-auto"><div class="bg-secondary">col-auto (mmmmmmmmmm)</div></div>
+            <div class="col"><div class="bg-success">col (the remaining)</div></div>
+        </div>
+    </div>
+    <br>
+
+    <h4>sm breakpoint and given width</h4>
+    <div class="container text-center text-light">
+        <div class="row">
+            <div class="col-sm-3"><div class="bg-primary">col-sm-3</div></div>
+            <div class="col-sm-3"><div class="bg-secondary">col-sm-3</div></div>
+            <div class="col-sm-3"><div class="bg-success">col-sm-3</div></div>
+        </div>
+    </div>
+    <br>
+
+    <h4>multiple breakpoints with given width</h4>
+    <p>All columns have the classes col-xl-2 col-lg-4 col-md-6 col-sm-12</p>
+    <div class="container text-center text-light">
+        <div class="row">
+            <div class="col-xl-2 col-lg-4 col-md-6 col-sm-12">
+                <div class="bg-primary">1</div>
+            </div>
+            <div class="col-xl-2 col-lg-4 col-md-6 col-sm-12">
+                <div class="bg-secondary">2</div>
+            </div>
+            <div class="col-xl-2 col-lg-4 col-md-6 col-sm-12">
+                <div class="bg-success">3</div>
+            </div>
+            <div class="col-xl-2 col-lg-4 col-md-6 col-sm-12">
+                <div class="bg-danger">4</div>
+            </div>
+            <div class="col-xl-2 col-lg-4 col-md-6 col-sm-12">
+                <div class="bg-warning">5</div>
+            </div>
+            <div class="col-xl-2 col-lg-4 col-md-6 col-sm-12">
+                <div class="bg-info">6</div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <h4>justify-content-start</h4>
+    <div class="container text-center text-light">
+        <div class="row justify-content-start">
+            <div class="col-2">
+                <div class="bg-primary">1</div>
+            </div>
+            <div class="col-2">
+                <div class="bg-secondary">2</div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <h4>justify-content-end</h4>
+    <div class="container text-center text-light">
+        <div class="row justify-content-end">
+            <div class="col-2">
+                <div class="bg-primary">1</div>
+            </div>
+            <div class="col-2">
+                <div class="bg-secondary">2</div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <h4>justify-content-center</h4>
+    <div class="container text-center text-light">
+        <div class="row justify-content-center">
+            <div class="col-2">
+                <div class="bg-primary">1</div>
+            </div>
+            <div class="col-2">
+                <div class="bg-secondary">2</div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <h4>justify-content-between</h4>
+    <div class="container text-center text-light">
+        <div class="row justify-content-between">
+            <div class="col-2">
+                <div class="bg-primary">1</div>
+            </div>
+            <div class="col-2">
+                <div class="bg-secondary">2</div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <h4>justify-content-around</h4>
+    <div class="container text-center text-light">
+        <div class="row justify-content-around">
+            <div class="col-2">
+                <div class="bg-primary">1</div>
+            </div>
+            <div class="col-2">
+                <div class="bg-secondary">2</div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <h4>justify-content-evenly</h4>
+    <div class="container text-center text-light">
+        <div class="row justify-content-evenly">
+            <div class="col-2">
+                <div class="bg-primary">1</div>
+            </div>
+            <div class="col-2">
+                <div class="bg-secondary">2</div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <h4>order</h4>
+    <p>Values between 0-5.</p>
+    <div class="container text-center text-light">
+        <div class="row">
+            <div class="col-2 order-md-5">
+                <div class="bg-primary">order-md-5 (1)</div>
+            </div>
+            <div class="col-2 order-md-4">
+                <div class="bg-secondary">order-md-4 (2)</div>
+            </div>
+            <div class="col-2 order-md-3">
+                <div class="bg-success">order-md-3 (3)</div>
+            </div>
+            <div class="col-2 order-md-2">
+                <div class="bg-danger">order-md-2 (4)</div>
+            </div>
+            <div class="col-2 order-md-1">
+                <div class="bg-warning">order-md-1 (5)</div>
+            </div>
+            <div class="col-2 order-md-0">
+                <div class="bg-info">order-md-0 (6)</div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <h4>offset</h4>
+    <p>Increase the left margin of a column by * columns.</p>
+    <div class="container text-center text-light">
+        <div class="row">
+            <div class="col-3">
+                <div class="bg-primary">col-3</div>
+            </div>
+            <div class="col-3">
+                <div class="bg-secondary">col-3</div>
+            </div>
+            <div class="col-3">
+                <div class="bg-success">col-3</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3 offset-3">
+                <div class="bg-primary">offset-3 col-3</div>
+            </div>
+            <div class="col-3">
+                <div class="bg-secondary">col-3</div>
+            </div>
+            <div class="col-3">
+                <div class="bg-success">col-3</div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <div id="columns-row" class="display-1">Columns per row</div>
+    <br>
+
+    <h4>two columns per row</h4>
+    <div class="container text-center text-light">
+        <div class="row row-cols-2">
+            <div class="col">
+                <div class="bg-primary">1</div>
+            </div>
+            <div class="col">
+                <div class="bg-secondary">2</div>
+            </div>
+            <div class="col">
+                <div class="bg-success">3</div>
+            </div>
+            <div class="col">
+                <div class="bg-info">4</div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <h4>auto columns per row</h4>
+    <div class="container text-center text-light">
+        <div class="row row-cols-auto">
+            <div class="col">
+                <div class="bg-primary">Long Column 1</div>
+            </div>
+            <div class="col">
+                <div class="bg-secondary">Long Column 2</div>
+            </div>
+            <div class="col">
+                <div class="bg-success">Long Column 3</div>
+            </div>
+            <div class="col">
+                <div class="bg-info">Long Column 4</div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <h4>xs: 1x col, sm: 2x col, md: 4x col</h4>
+    <div class="container text-center text-light">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+            <div class="col">
+                <div class="bg-primary">1</div>
+            </div>
+            <div class="col">
+                <div class="bg-secondary">2</div>
+            </div>
+            <div class="col">
+                <div class="bg-success">3</div>
+            </div>
+            <div class="col">
+                <div class="bg-info">4</div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <div id="margin-padding" class="display-1">Margin and Padding</div>
+    <p>Assign responsive-friendly margin or padding values to an element with values between 0-5.</p>
+
+    <h4>default</h4>
+    <div class="container text-center border text-light">
+        <div class="row">
+            <div class="col-sm border">
+                <div class="bg-primary">1</div>
+            </div>
+            <div class="col-sm border">
+                <div class="bg-secondary">2</div>
+            </div>
+            <div class="col-sm border">
+                <div class="bg-success">3</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm border">
+                <div class="bg-info">4</div>
+            </div>
+            <div class="col-sm border">
+                <div class="bg-warning">5</div>
+            </div>
+            <div class="col-sm border">
+                <div class="bg-danger">6</div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <h4>reset (p-0 on container and g-0 on rows)</h4>
+    <div class="container text-center border p-0 text-light">
+        <div class="row g-0">
+            <div class="col-sm border">
+                <div class="bg-primary">1</div>
+            </div>
+            <div class="col-sm border">
+                <div class="bg-secondary">2</div>
+            </div>
+            <div class="col-sm border">
+                <div class="bg-success">3</div>
+            </div>
+        </div>
+        <div class="row g-0">
+            <div class="col-sm border">
+                <div class="bg-info">4</div>
+            </div>
+            <div class="col-sm border">
+                <div class="bg-warning">5</div>
+            </div>
+            <div class="col-sm border">
+                <div class="bg-danger">6</div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <h4>p-3 on columns</h4>
+    <div class="container text-center border p-0 text-light">
+        <div class="row g-0">
+            <div class="p-3 col-sm border">
+                <div class="bg-primary">1</div>
+            </div>
+            <div class="p-3 col-sm border">
+                <div class="bg-secondary">2</div>
+            </div>
+            <div class="p-3 col-sm border">
+                <div class="bg-success">3</div>
+            </div>
+        </div>
+        <div class="row g-0">
+            <div class="p-3 col-sm border">
+                <div class="bg-info">4</div>
+            </div>
+            <div class="p-3 col-sm border">
+                <div class="bg-warning">5</div>
+            </div>
+            <div class="p-3 col-sm border">
+                <div class="bg-danger">6</div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <h4>m-3 on rows</h4>
+    <div class="container text-center border p-0 text-light">
+        <div class="row g-0 m-3">
+            <div class="col-sm border">
+                <div class="bg-primary">1</div>
+            </div>
+            <div class="col-sm border">
+                <div class="bg-secondary">2</div>
+            </div>
+            <div class="col-sm border">
+                <div class="bg-success">3</div>
+            </div>
+        </div>
+        <div class="row g-0 m-3">
+            <div class="col-sm border">
+                <div class="bg-info">4</div>
+            </div>
+            <div class="col-sm border">
+                <div class="bg-warning">5</div>
+            </div>
+            <div class="col-sm border">
+                <div class="bg-danger">6</div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <h4>px-3 my-2</h4>
+    <div class="container text-center border p-0 text-light">
+        <div class="row g-0">
+            <div class="col-sm px-3 my-2 border">
+                <div class="bg-primary">1</div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <h4>mt-1 mb-2 ms-3 me-5</h4>
+    <div class="container text-center border p-0 text-light">
+        <div class="row g-0">
+            <div class="col-sm mt-1 mb-2 ms-3 me-5 border">
+                <div class="bg-primary">1</div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <div id="gutter-gap" class="display-1">Gutter and Gap</div>
+    <p>
+        Gutters (values between 0-5) specifically adjust the margins and padding on the bootstrap grid row and col
+        which effects the spacing between columns inside the row. Left and right paddings
+        are set on each column, and negative margins are used to offset that at the start and 
+        end of each row.
+    </p>
+    <ul>
+        <li>gx-* classes can be used to control the horizontal gutter widths.</li>
+        <li>gy-* classes can be used to control the vertical gutter widths within a row when columns wrap to new lines.</li>
+        <li>g-* classes to control both.</li>
+    </ul>
+
+    <h4>default</h4>
+    <p>
+        Bootstrap containers and columns have default left and right paddings
+        of 12px, while the rows have default left and right margins of -12px:
+    </p>
+    <div class="container text-center border text-light">
+        <div class="row">
+            <div class="col-sm border">
+                <div class="bg-primary">1</div>
+            </div>
+            <div class="col-sm border">
+                <div class="bg-secondary">2</div>
+            </div>
+            <div class="col-sm border">
+                <div class="bg-success">3</div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <h4>g-0</h4>
+    <p>That resets both row margin and column padding (container still has the padding):</p>
+    <div class="container text-center border text-light">
+        <div class="row g-0">
+            <div class="col-sm border">
+                <div class="bg-primary">1</div>
+            </div>
+            <div class="col-sm border">
+                <div class="bg-secondary">2</div>
+            </div>
+            <div class="col-sm border">
+                <div class="bg-success">3</div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <h4>g-4 on the two rows</h4>
+    <p>
+        In addition to the horizontal spacing, it also sets a negative top
+        margin for the two rows and positive top margins for all columns.
+        Note that when stacking, there is only a vertical space between
+        the columns of the same row:
+    </p>
+    <div class="container text-center border text-light">
+        <div class="row g-4">
+            <div class="col-sm border">
+                <div class="bg-primary">1</div>
+            </div>
+            <div class="col-sm border">
+                <div class="bg-secondary">2</div>
+            </div>
+            <div class="col-sm border">
+                <div class="bg-success">3</div>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-sm border">
+                <div class="bg-primary">A</div>
+            </div>
+            <div class="col-sm border">
+                <div class="bg-secondary">B</div>
+            </div>
+            <div class="col-sm border">
+                <div class="bg-success">C</div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <h4>gap-* instead of gutter</h4>
+    <p>
+        As flexbox now supports css gap instead of the bootstrap gutter we can use the bootstrap
+        gap class (values between 0-5). Gap controls the space between items and it applies 
+        that spacing only between items, not on the outer edges. Use row-gap or column-gap to
+        target only one direction:
+    </p>
+    <div class="container text-center border text-light">
+        <div class="row g-0 gap-4">
+            <div class="col-sm border">
+                <div class="bg-primary">1</div>
+            </div>
+            <div class="col-sm border">
+                <div class="bg-secondary">2</div>
+            </div>
+            <div class="col-sm border">
+                <div class="bg-success">3</div>
+            </div>
+        </div>
+        <div class="row g-0 gap-4">
+            <div class="col-sm border">
+                <div class="bg-primary">A</div>
+            </div>
+            <div class="col-sm border">
+                <div class="bg-secondary">B</div>
+            </div>
+            <div class="col-sm border">
+                <div class="bg-success">C</div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <div id="image-display" class="display-1">Image and display utility</div>
+
+    <h4>img-fluid and img-thumbnail</h4>
+    <div class="container mt-3">
+        <div class="row">
+          <div class="col-4">
+            <img src="https://picsum.photos/id/13/640/200" alt="">
+          </div>
+          <div class="col-8">
+            <div class="text-bg-primary" style="height: 100px">
+              <p>with no class the image overflows!</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <img src="https://picsum.photos/id/13/640/200" class="img-fluid" alt="">
+          </div>
+          <div class="col-8">
+            <div class="text-bg-primary" style="height: 100px">
+              <p>img-fluid: max-width: 100%; height: auto;</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <img src="https://picsum.photos/id/13/640/200" class="img-thumbnail" alt="">
+          </div>
+          <div class="col-8">
+            <div class="text-bg-primary" style="height: 100px">
+              <p>img-thumbnail: behaves like img-fluid but also adds a rounded border.</p>
+            </div>
+          </div>
+        </div>
+    </div>
+    <br>
+
+    <h4>float-*-start, float-*-end and float-*-none</h4>
+    <div class="container text-bg-primary clearfix">
+        <img src="https://picsum.photos/id/13/640/200" class="img-fluid float-start" alt="">
+        <p>
+            The image is floated to the start with the float-start class. Applying the 
+            clearfix class to the container will size its height to the floated image height.
+        </p>
+    </div>
+    <br>
+    <div class="container text-bg-primary" style="display: flow-root">
+        <img src="https://picsum.photos/id/13/640/200" class="img-fluid float-start" alt="">
+        <p>
+            The image is floated to the start with the float-start class. Setting the
+            container's style attribute to display: flow-root will also size its height to 
+            the floated image height.
+        </p>
+    </div>
+    <br>
+
+    <h4>object-fit</h4>
+    <div class="container">
+        <p>object-fit-*-contain</p>
+        <img class="object-fit-contain text-bg-primary" style="width: 400px; height: 180px" src="https://picsum.photos/id/20/280/280" alt="">
+        <p></p>
+        <p>object-fit-*-fill</p>
+        <img class="object-fit-fill" style="width: 400px; height: 180px" src="https://picsum.photos/id/20/280/280" alt="">
+        <p></p>
+        <p>object-fit-*-cover</p>
+        <img class="object-fit-cover" style="width: 400px; height: 180px" src="https://picsum.photos/id/20/280/280" alt="">
+    </div>
+    <br>
+
+    <h4>background-size</h4>
+    <div class="container">
+        <p>There are no utility classes for background-size, use css style.</p>
+        <p>background-size: contain</p>
+        <div class="text-bg-primary" style="width: 400px; height: 180px; background-image: url(https://picsum.photos/id/20/280/280); background-position: center; background-size: contain; background-repeat: no-repeat;"></div>
+        <p></p>
+        <p>background-size: 100% 100% (like object-fit-fill)</p>
+        <div style="width: 400px; height: 180px; background-image: url(https://picsum.photos/id/20/280/280); background-position: center; background-size: 100% 100%;"></div>
+        <p></p>
+        <p>background-size: cover</p>
+        <div style="width: 400px; height: 180px; background-image: url(https://picsum.photos/id/20/280/280); background-position: center; background-size: cover;"></div>
+    </div>
+    <br>
+
+    <h4>d-*-block and d-*-none</h4>
+    <section id="intro">
+        <div class="container-lg">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-xxl-4 col-md-5 text-center text-md-start">
+                    <h1>
+                        <div class="display-2">Title</div>
+                        <div class="display-5 text-muted">Your Coding Skills</div>
+                    </h1>
+                    <p class="lead my-4 text-muted">Under md viewport the image gets hidden!</p>
+                    <a href="#great" class="btn btn-secondary btn-lg">Great!</a>
+                </div>
+                <div class="col-xxl-4 col-md-5 text-center d-none d-md-block">
+                    <img class="img-fluid" src="https://picsum.photos/300/160" alt="picsum">
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
+
+    <h4>figure</h4>
+    <div class="container">
+        <figure class="figure">
+            <img src="https://picsum.photos/540/200" class="figure-img img-fluid rounded" alt="...">
+            <figcaption class="figure-caption">&lt;figcaption&gt; with figure-caption class (to align at the end, add the text-end class).</figcaption>
+        </figure>
+    </div>
+    <br>
+
+    <div id="card" class="display-1">Card</div>
+    <div class="container">
+        <p>
+            Cards assume no specific width to start, so they'll be 100% wide unless otherwise stated. 
+            By default align-items is stretch, when the images have no width set, they fully stretch 
+            inside the card and maintain the aspect ratio.
+        </p>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 justify-content-center">
+        <div class="col">
+            <div class="card border-danger mx-auto h-100" style="width: 300px">
+                <div class="card-header bg-transparent">bg-transparent</div>
+                <img class="card-image-top" src="https://picsum.photos/id/20/300/100" alt="">
+                <div class="card-body text-center">
+                    <h4 class="card-title">card-title</h4>
+                    <span class="card-subtitle lead">card-subtitle lead</span>
+                    <p class="card-text">On card set style="width: 300px" or w-* class for fixed width and h-100 class for equal hight.</p>
+                    <a href="#" class="card-link">card-link</a>
+                </div>
+                <div class="card-footer"><a href="#" class="btn btn-primary btn-sm">Click1</a> <a href="#" class="btn btn-secondary btn-sm">Click2</a></div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card text-bg-primary border-dark mx-auto h-100" style="width: 300px">
+                <div class="card-header border-light">Header</div>
+                <div class="card-body text-center">
+                    <h4 class="card-title">Title</h4>
+                    <span class="card-subtitle lead">Subtitle</span>
+                    <p class="card-text">Lorem ipsum!</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">An item</li>
+                    <li class="list-group-item">A second item</li>
+                    <li class="list-group-item">A third item</li>
+                </ul>
+                <img class="card-image-bottom" src="https://picsum.photos/300/100" alt="">
+                <div class="card-footer">Footer <a href="#" class="btn btn-warning">Click</a></div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card mx-auto text-light overflow-hidden h-100" style="width: 300px">
+                <img class="card-image" src="https://picsum.photos/id/26/300/348" alt="">
+                <div class="card-img-overlay text-center">
+                    <h4 class="card-title">Title</h4>
+                    <span class="card-subtitle lead">Subtitle</span>
+                    <p class="card-text">div.card-img-overlay is absolute positioned with top=bottom=left=right=0.</p>
+                    <p class="card-text text-bg-warning">Add the overflow-hidden class to the card to have rounded corners!</p>
+                    <p class="card-text text-bg-danger">The image height is too small: aaaaaaaaaaaaaaaaaaaaaaaaaaa bbbbbbbbbbbbbbbbbbbbbbb ccccccccccccccccccccccccccccc ddddddddddddddddddddddd eeeeeeeeeeeeeeeeeeeeeeeee</p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <section id="pricing" class="bg-light">
+        <div class="container-lg">
+          <div class="text-center">
+            <h2>Pricing Plans</h2>
+            <p class="lead text-muted">Choose a pricing plan to suit you.</p>
+          </div>
+          <div class="row my-5 g-0 align-items-center justify-content-center">
+            <div class="col-8 col-lg-4 col-xl-3">
+              <div class="card border-0">
+                <div class="card-body text-center py-4">
+                  <h4 class="card-title">Starter Edition</h4>
+                  <p class="lead card-subtitle">eBook download only</p>
+                  <p class="display-5 my-4 text-primary fw-bold">$12.99</p>
+                  <p class="card-text mx-5 text-muted d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, vitae magni! Repellat commodi a fuga corporis saepe dolorum.</p>
+                  <a href="#" class="btn btn-outline-primary btn-lg mt-3">
+                    Buy Now
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-9 col-lg-4">
+              <div class="card border-primary border-2">
+                <div class="card-header text-center text-primary">Most Popular</div>
+                <div class="card-body text-center py-5">
+                  <h4 class="card-title">Complete Edition</h4>
+                  <p class="lead card-subtitle">eBook download &amp; all updates</p>
+                  <p class="display-4 my-4 text-primary fw-bold">$18.99</p>
+                  <p class="card-text mx-5 text-muted d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, vitae magni! Repellat commodi a fuga corporis saepe dolorum.</p>
+                  <a href="#" class="btn btn-outline-primary btn-lg mt-3">
+                    Buy Now
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-8 col-lg-4 col-xl-3">
+              <div class="card border-0">
+                <div class="card-body text-center py-4">
+                  <h4 class="card-title">Ultimate Edition</h4>
+                  <p class="lead card-subtitle">download, updates &amp; extras</p>
+                  <p class="display-5 my-4 text-primary fw-bold">$24.99</p>
+                  <p class="card-text mx-5 text-muted d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, vitae magni! Repellat commodi a fuga corporis saepe dolorum.</p>
+                  <a href="#" class="btn btn-outline-primary btn-lg mt-3">
+                    Buy Now
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <br>
+
+    <div id="carousel" class="display-1">Carousel</div>
+    <div id="carouselExampleControls" class="carousel slide carousel-fade" data-bs-interval="2000" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <!-- The attribute active sets the beginning image -->
+            <div class="carousel-item active"><img src="https://picsum.photos/id/0/320/160" alt="pict1" class="d-block w-100"></div>
+            <div class="carousel-item"><img src="https://picsum.photos/id/10/320/160" alt="pict2" class="d-block w-100"></div>
+            <div class="carousel-item"><img src="https://picsum.photos/id/20/320/160" alt="pict3" class="d-block w-100"></div>
+        </div>
+        <button type="button" class="carousel-control-prev" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span> 
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button type="button" class="carousel-control-next" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span> 
+        </button>
+    </div>
+    <br>
+
+    <div id="alert" class="display-1">Alert</div>
+    <div class="container">
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <h1>Alert</h1>
+        <strong>Hi user!</strong> You should check in on some of those fields below.
+        <a href="#" class="alert-link">Go here to find out more</a>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+    </div>
+    </div>
+    <br>
+
+    <div id="modal" class="display-1">Modal</div>
+    <div class="container">
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mymodal">Open</button>
+        <div class="modal fade" id="mymodal">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title">Header</h1>
+                        <button class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime autem nisi, eius, est assumenda expedita tenetur doloribus molestias quis harum deserunt eveniet excepturi nemo suscipit, quo debitis ducimus iste voluptatem repellendus ea nostrum impedit. Veniam quaerat, ea, dolorum alias ex iusto corporis aut doloribus animi consequuntur libero facilis ullam molestias adipisci? Rerum labore animi eum vel enim odio provident iusto dolore quaerat blanditiis in sed doloremque, inventore sunt natus, vitae mollitia repudiandae unde. Assumenda eos, autem fuga veritatis hic iste vel cum pariatur nesciunt? Eum sit atque, voluptates quidem ipsam nostrum incidunt et, at fuga necessitatibus nemo, pariatur accusamus! Provident commodi eum distinctio, optio odio assumenda animi velit quibusdam, hic ducimus beatae soluta nam quis veritatis neque pariatur autem possimus sit, sed consequuntur libero quo fugiat! Accusamus error sint nostrum, aliquid, molestiae voluptas obcaecati voluptatibus nulla magni harum repudiandae rem? Maxime optio accusamus quibusdam quia, error commodi dolores nesciunt porro aliquam molestiae ad quaerat iure qui dolor placeat voluptas minus amet ducimus vitae. Ipsam error ipsum quas ex facere molestias voluptates odit, omnis delectus vel! Corrupti culpa numquam praesentium expedita consectetur atque sint cumque non quo dicta voluptatibus exercitationem, nulla voluptas totam amet perferendis voluptates odio voluptate repellat deserunt quos tempora minima consequatur. Temporibus dolor natus, autem, totam officiis inventore iste quod doloribus culpa esse aliquam quam fugit exercitationem praesentium sit. Distinctio, nostrum repudiandae veniam iure ex quas nisi odit quidem nihil, culpa ipsam? Expedita, dicta. Accusantium nulla eum voluptatem iste, cumque illum quasi ratione ipsum tempore, aspernatur adipisci, itaque debitis a non sint blanditiis quaerat dolorem. Dolorem consequuntur neque eligendi minima ex odit ipsa deleniti recusandae obcaecati voluptate dolore quia rerum eum ab nostrum corporis, laudantium hic necessitatibus dolor tempora commodi doloribus iure modi. Nihil ad repellendus tenetur rerum natus, nemo odio quo, similique enim fugit officia deserunt velit aut quisquam commodi cupiditate numquam corrupti voluptatem, obcaecati eos facere ea cumque! Animi, dolorem. Fugiat quos obcaecati ipsam, nobis voluptate harum hic quis eum consequatur odit nemo sed sapiente? Voluptatem voluptas eum soluta, deserunt veritatis, sapiente assumenda culpa earum nesciunt a sit doloremque ratione, voluptates fugit dolores? Id deleniti quaerat unde optio temporibus porro, nemo eveniet dolorem nulla sit laboriosam harum molestias veniam? Asperiores eos possimus est error maiores quo, repudiandae dignissimos provident velit iste similique officia quis unde nihil laboriosam, dolore dicta odio facere minus dolorum exercitationem harum natus animi. Aut deleniti, cum, minima consequatur vel illo aspernatur optio obcaecati corporis deserunt facere nisi natus porro asperiores, ipsam reprehenderit omnis? Provident pariatur architecto hic rem. At animi, quod necessitatibus magnam dolore doloremque repellat rem alias. Totam eaque illum quam officia voluptatem vitae eveniet impedit, ut, minima veritatis animi iste similique deleniti dolores nobis voluptate excepturi vel repudiandae corporis pariatur aliquam neque quidem. Voluptate quisquam rem illum optio eum, illo natus possimus tempore quam non dolorum nihil ab sed accusamus qui odit repellat mollitia eaque quasi ullam, fuga soluta a! Similique exercitationem, reprehenderit vero expedita quam, beatae qui porro magni reiciendis, placeat et facilis iure repellendus laboriosam cum! Incidunt, error?</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <div id="collapse" class="display-1">Collapse</div>
+    <div class="container">
+        <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#mycollapse">Toggle button</button>
+        <a class="btn btn-primary" data-bs-toggle="collapse" href="#mycollapse">Toogle href</a>
+        <div class="collapse" id="mycollapse">
+            <div class="card card-body">
+                Note: add the show class to div#mycollapse to have it expanded by default.
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <div id="navbar" class="display-1">Navbar</div>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container">
+            <a href="#" class="navbar-brand">Brand</a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#mynav"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="mynav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Store</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate, tempora reiciendis voluptate nisi ab provident rem ea molestiae suscipit officia non consequatur.
+    </div>
+    <br>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+    <div id="bootstrap-version" class="display-1">Bootstrap Version</div>
+    <script>
+        let bootstrapVersion = bootstrap.Tooltip.VERSION;
+        document.write('<p>' + bootstrapVersion + '</p>');
+    </script>
+  </body>
+</html>

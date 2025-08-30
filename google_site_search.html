@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>Google Site Search</title>
+<style>
+/*
+Google Custom Search Engine returns also adds:
+https://programmablesearchengine.google.com/about/
+
+Better solution with hidden site query:
+*/
+</style>
+</head>
+<body>
+
+<h1>Form POST</h1>
+<form action="https://www.google.com/search" target="_blank">
+	<input name="q" type="text" maxlength="200" placeholder="Search">
+	<input name="q" type="hidden" value="site:contaware.com">
+	<input name="submit" type="submit" value="Search">
+</form>
+
+<h1>Form GET (better to use this)</h1>
+<form method="get" action="https://www.google.com/search" target="_blank">
+  <input type="hidden" name="sitesearch" value="contaware.com">
+  <input type="text" name="q" maxlength="200" placeholder="Search">
+  <input type="submit" value="Search">
+</form>
+
+</body>
+</html>

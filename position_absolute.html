@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Prevent IE from entering compatibility mode -->
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>position absolute</title>
+</head>
+
+<body>
+
+<ul>
+<li>Absolutely positioned elements are removed entirely from the document flow.</li>
+<li>For absolutely positioned elements the containing block is the nearest relative, absolute or fixed positioned ancestor.</li>
+<li>Fixed positioning is really just a specialized form of absolute positioning; elements with fixed positioning are fixed relative to the viewport/browser window rather than the containing element.</li>
+<li>For a relatively positioned element the top, right, bottom and left properties specify the relative distance to shift the generated box. It's not meaningful to specify both top and bottom or left and right for the same element (one of the values will be ignored).</li>
+<li>For absolute positioning the top, right, bottom and left properties can all be used at the same time. They specify the distance from each edge of the positioned element to the corresponding edge of the containing block.</li>
+<li>The default value for the top, right, bottom and left properties is auto, which means the absolutely positioned box will appear exactly where it would have if it wasn't positioned.</li>
+</ul>
+<div style="position: relative; width: 80%; margin: 0 auto; color: #eaeaea; border: 1px solid black;">
+    <p>1. Lorem ipsum dolor sit amet. Aliquam erat volutpat. Maecenas non tortor nulla, non malesuada velit.</p>
+	<div style="width: 80%; margin: 0 auto; color: #ff0000; border: 1px solid #ff0000;">
+		<p>width: 80%; margin: 0 auto;</p>
+	</div>
+	<p>2. Lorem ipsum dolor sit amet. Aliquam erat volutpat. Maecenas non tortor nulla, non malesuada velit.</p>
+    <p>3. Aliquam erat volutpat. Maecenas non tortor nulla, non malesuada velit. Nullam felis tellus, tristique nec egestas in, luctus sed diam. Suspendisse potenti.</p>
+</div>
+
+<br>
+
+<div style="position: relative; width: 80%; margin: 0 auto; color: #eaeaea; border: 1px solid black;">
+    <p>1. Lorem ipsum dolor sit amet. Aliquam erat volutpat. Maecenas non tortor nulla, non malesuada velit.</p>
+	<div style="position: absolute; width: 80%; margin: 0 auto; color: #ff0000; border: 1px solid #ff0000;">
+		<p>position: absolute; width: 80%; margin: 0 auto; /* top,... are auto, they correspond to this box corners, thus margin: 0 auto; is not effective */</p>
+	</div>
+	<p>2. Lorem ipsum dolor sit amet. Aliquam erat volutpat. Maecenas non tortor nulla, non malesuada velit.</p>
+    <p>3. Aliquam erat volutpat. Maecenas non tortor nulla, non malesuada velit. Nullam felis tellus, tristique nec egestas in, luctus sed diam. Suspendisse potenti.</p>
+</div>
+
+<br>
+
+<div style="position: relative; width: 80%; margin: 0 auto; color: #eaeaea; border: 1px solid black;">
+    <p>1. Lorem ipsum dolor sit amet. Aliquam erat volutpat. Maecenas non tortor nulla, non malesuada velit.</p>
+	<div style="position: absolute; left: 0; right: 0; width: 80%; margin: 0 auto; color: #ff0000; border: 1px solid #ff0000;">
+		<p>position: absolute; left: 0; right: 0; width: 80%; margin: 0 auto;</p>
+	</div>
+	<p>2. Lorem ipsum dolor sit amet. Aliquam erat volutpat. Maecenas non tortor nulla, non malesuada velit.</p>
+    <p>3. Aliquam erat volutpat. Maecenas non tortor nulla, non malesuada velit. Nullam felis tellus, tristique nec egestas in, luctus sed diam. Suspendisse potenti.</p>
+</div>
+
+</body>
+
+</html>

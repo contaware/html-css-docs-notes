@@ -1,0 +1,9 @@
+Proper ways for empty link
+--------------------------
+
+href="javascript:void(0);" -> does not seem to have any problems
+href="javascript:;"        -> does not seem to have any problems
+href="#"                   -> reloads the page
+href=""                    -> reloads the page
+href                       -> reloads the page
+leave href out             -> no hint in status bar, cursor is not pointer (style with cursor: pointer)

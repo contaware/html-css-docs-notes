@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>Header Logo</title>
+<style>
+* { box-sizing: border-box; border: 0; margin: 0; padding: 0; }
+h1 { color: gray; font-size: 34px; }
+p, span { color: white; font-size: 16px; }
+</style>
+</head>
+<body>
+
+<h1>Raster graphics behaviour</h1>
+
+<div style="background: silver;">
+<p>Only max-width set so that the image can overflow its container</p>
+<div style="display: flex; align-items: center; background: red; margin: 0 auto; width: 40%; height: 100px;"><img style="max-width: 100%;" src="logo.png" alt="Joomla"></div>
+<br>
+<p>Now the height has been set, but when narrowing the browser window the aspect ratio is NOT kept</p>
+<div style="display: flex; align-items: center; background: yellow; margin: 0 auto; width: 40%; height: 100px;"><img style="max-width: 100%; height: 80px;" src="logo.png" alt="Joomla"></div>
+<br>
+<p>Corrected adding object-fit: contain</p>
+<div style="display: flex; align-items: center; background: green; margin: 0 auto; width: 40%; height: 100px;"><img style="max-width: 100%; height: 80px; object-fit: contain;" src="logo.png" alt="Joomla"></div>
+<br>
+</div>
+
+<br>
+<br>
+<h1>.svg behave differently from raster graphics (usually preserveAspectRatio is not set inside .svg files)</h1>
+
+<div style="background: silver;">
+<p>Only max-width set so that the image can overflow its container (not in Chrome and Safari)</p>
+<div style="display: flex; align-items: center; background: red; margin: 0 auto; width: 40%; height: 100px;"><img style="max-width: 100%;" src="logo.svg" alt="Joomla"></div>
+<br>
+<p>Now the height has been set, when narrowing the browser window the aspect ratio is kept</p>
+<div style="display: flex; align-items: center; background: yellow; margin: 0 auto; width: 40%; height: 100px;"><img style="max-width: 100%; height: 80px;" src="logo.svg" alt="Joomla"></div>
+<br>
+<p>It doesn't harm to add object-fit: contain</p>
+<div style="display: flex; align-items: center; background: green; margin: 0 auto; width: 40%; height: 100px;"><img style="max-width: 100%; height: 80px; object-fit: contain;" src="logo.svg" alt="Joomla"></div>
+<br>
+</div>
+
+<br>
+<br>
+<h1>.svg behave like raster graphics if setting preserveAspectRatio to none inside .svg files</h1>
+
+<div style="background: silver;">
+<p>Only max-width set so that the image can overflow its container (not in Chrome and Safari)</p>
+<div style="display: flex; align-items: center; background: red; margin: 0 auto; width: 40%; height: 100px;"><img style="max-width: 100%;" src="logo-preserveAspectRatio-none.svg" alt="Joomla"></div>
+<br>
+<p>Now the height has been set, but when narrowing the browser window the aspect ratio is NOT kept</p>
+<div style="display: flex; align-items: center; background: yellow; margin: 0 auto; width: 40%; height: 100px;"><img style="max-width: 100%; height: 80px;" src="logo-preserveAspectRatio-none.svg" alt="Joomla"></div>
+<br>
+<p>Corrected adding object-fit: contain</p>
+<div style="display: flex; align-items: center; background: green; margin: 0 auto; width: 40%; height: 100px;"><img style="max-width: 100%; height: 80px; object-fit: contain;" src="logo-preserveAspectRatio-none.svg" alt="Joomla"></div>
+<br>
+</div>
+
+</body>
+</html>

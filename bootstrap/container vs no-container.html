@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Container vs no container</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  </head>
+<body>
+  <h2>Container vs no container</h2>
+  <p>The bootstrap container has left and right paddings of 12px which compensate
+    with the row's left and right margins of -12px. The columns have left and 
+    right paddings of 12px which permit nesting rows in it.
+  </p>
+  <div class="container-fluid border text-light">
+      <div class="row">
+          <div class="col">
+            <div class="row">
+              <div class="col"><div class="bg-primary">Sub1</div></div>
+              <div class="col"><div class="bg-secondary">Sub1</div></div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="bg-success">Column 2</div>
+          </div>
+          <div class="col">
+            <div class="bg-danger">Column 3</div>
+          </div>
+      </div>
+  </div>
+  <br>
+  
+  <p>If a none-bootstrap container is used, then the row is dragged out of the
+    viewport with its negative margins. This will have no real effect on the 
+    left side but will cause a scroll on the right side. You can avoid
+    showing the scrollbar by providing the overflow-hidden class to the
+    none-bootstrap container.
+  </p>
+  <div class="border text-light" style="width: 100%;">
+    <div class="row">
+        <div class="col"><div class="bg-primary">Column 1</div></div>
+        <div class="col"><div class="bg-secondary">Column 2</div></div>
+        <div class="col"><div class="bg-success">Column 3</div></div>
+    </div>
+  </div>
+  <br>
+
+  <!-- always place this before the body closing tag -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+
+</html>

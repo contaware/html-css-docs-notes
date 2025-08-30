@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>vertical-align</title>
+</head>
+<body>
+
+<p>The reason vertical-align: middle isn't doing what is desired is because most people do not understand what it's supposed to do.</p>
+
+<h1>vertical-align for inline elements</h1>
+<p>Inline elements can be vertically aligned with respect to the text line they are in (not the whole parent container height). vertical-align: middle must be set for the inline element, unlike for tables where it is specified for the parent:</p>
+<p style="width: 200px; height: 60px; line-height: 60px; text-align: center; border: 1px solid black;"><span style="vertical-align: middle;">SINGLE LINE ONLY</span></p>
+
+<h1>vertical-align in tables</h1>
+<p>When used in table cells, vertical-align does what most people expect it to do, it vertically aligns its content:</p>
+<table>
+<tr>
+<td style="border: 1px solid black;">bla bla...<br>bli bli...<br>blu blu...</td>
+<td style="border: 1px solid black; text-align: center; vertical-align: middle">MULTI<br>LINE</td>
+<td style="border: 1px solid black;">bla bla...<br>bli bli...<br>blu blu...</td>
+</tr>
+</table>
+<p>It's possible to use just a div with display: table-cell and no table/table-row elements (anonymous ones will be inserted for you):</p>
+<div style="border: 1px solid black; width: 200px; height: 60px; display: table-cell; text-align: center; vertical-align: middle">MULTI<br>LINE</div>
+
+<h1>Through flexbox</h1>
+<div style="border: 1px solid black; width: 200px; height: 60px; text-align: center; display: flex; justify-content: center; align-items: center;"><span>MULTI<br>LINE</span></div>
+<div style="border: 1px solid black; width: 200px; height: 60px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+<div style="border: 1px solid red;">BOX1</div>
+<div style="border: 1px solid green;">BOX2</div>
+</div>
+
+</body>
+</html>

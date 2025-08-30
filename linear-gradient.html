@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>linear-gradient</title>
+</head>
+<style>
+    .box1 {
+        height: 100px;
+        color: white;
+        background: linear-gradient(red, yellow);
+    }
+    .box2 {
+        height: 100px;
+        color: black;
+        background: linear-gradient(0deg, red, yellow);
+    }
+    .box3 {
+        height: 100px;
+        color: white;
+        background: linear-gradient(90deg, rgba(0,0,0,1.0), rgba(0,255,255,0.1));
+    }
+    .box4 {
+        height: 100px;
+        color: white;
+        background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    }
+    .box5 {
+        height: 100px;
+        border: 1px solid black;
+        color: white;
+        background: linear-gradient(to right, red 33.3%, green 33.3%, green 66.6%, blue 66.6%);
+    }
+</style>
+<body>
+    <h2>Linear gradient top to bottom (default)</h2>
+    <div class="box1">linear-gradient(red, yellow)</div>
+    <br>
+    <br>
+    <h2>Linear gradient with 0deg is bottom to top</h2>
+    <div class="box2">linear-gradient(0deg, red, yellow)</div>
+    <br>
+    <br>
+    <h2>Linear gradient with transparency</h2>
+    <div class="box3">linear-gradient(90deg, rgba(0,0,0,1.0), rgba(0,255,255,0.1))</div>
+    <br>
+    <br>
+    <h2>Linear gradient with multi-stops</h2>
+    <div class="box4">linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet)</div>
+    <br>
+    <br>
+    <h2>Linear gradient with double-stops</h2>
+    <div class="box5">linear-gradient(to right, red 33.3%, green 33.3%, green 66.6%, blue 66.6%)</div>
+    <br>
+    <br>
+</body>
+</html>

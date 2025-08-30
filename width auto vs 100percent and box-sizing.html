@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>width: auto vs width: 100%</title>
+<style>
+*, *:before, *:after {
+	box-sizing: inherit; /* by default box-sizing is not inherited */
+}
+.container {
+	width: 600px;
+	height: 300px;
+	margin: 40px;
+	padding: 40px;
+	border: 10px solid #999;
+	border-width: 0 10px;
+	background: #eee;
+}
+.child-1 {
+	width: auto;
+	margin: 0 50px;
+	padding: 0 50px;
+	border: 10px solid #999;
+	border-width: 0 10px;
+	background: #fee;
+}
+.child-2 {
+	width: 100%;
+	margin: 0 50px;
+	padding: 0 50px;
+	border: 10px solid #999;
+	border-width: 0 10px;
+	background: #efe;
+}
+.child-3 {
+	width: auto;
+	margin: 0 20%;
+	padding: 0 10%;
+	border: 10px solid #999;
+	border-width: 0 10px;
+	background: #eef;
+}
+</style>
+</head>
+<body>
+	<h1>width: auto vs width: 100%</h1>
+	
+	<div>
+		<h2>box-sizing: content-box</h2>
+		<div class="container">
+			<p>I'm the containing block.</p>
+			<div class="child-1">
+				<p>I'm the first child element. My width is <code>auto</code>.</p>
+			</div>
+			<div class="child-2">
+				<p>I'm the second child element. My width is <code>100%</code> of my parent's containing width.</p>
+			</div>
+			
+			<div class="child-3">
+				<p>I'm the third child element. My 20% margin and 10% padding are relative to my parent's containing width (not height).</p>
+			</div>
+		</div>
+	</div>
+	
+	<div style="box-sizing: border-box;">
+		<h2>box-sizing: border-box</h2>
+		<div class="container">
+			<p>I'm the containing block.</p>
+			<div class="child-1">
+				<p>I'm the first child element. My width is <code>auto</code>.</p>
+			</div>
+			<div class="child-2">
+				<p>I'm the second child element. My width is <code>100%</code> of my parent's containing width.</p>
+			</div>
+			
+			<div class="child-3">
+				<p>I'm the third child element. My 20% margin and 10% padding are relative to my parent's containing width (not height).</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

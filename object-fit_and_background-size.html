@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>object-fit vs background-size</title>
+</head>
+<body>
+<h1>Original image</h1>
+<img src="https://picsum.photos/id/20/280/280" alt="An awesome picture">
+
+<hr>
+
+<h1>object-fit</h1>
+<p>
+The object-fit property specifies how the contents of a replaced element should be fitted to the box established by its 
+used height and width. A normal image stretches to its width and height, that's object-fit: fill. With object-fit: contain or 
+object-fit: cover it's possible to change how the image is rendered inside it's width x height box.
+</p>
+<h3>object-fit: contain</h3>
+<img style="width: 400px; height: 180px; object-fit: contain; border: 1px solid #808080;" src="https://picsum.photos/id/20/280/280" alt="An awesome picture">
+<h3>object-fit: fill</h3>
+<img style="width: 400px; height: 180px; object-fit: fill;" src="https://picsum.photos/id/20/280/280" alt="An awesome picture">
+<h3>object-fit: cover</h3>
+<img style="width: 400px; height: 180px; object-fit: cover;" src="https://picsum.photos/id/20/280/280" alt="An awesome picture">
+<p>
+Hint: object-position can be used to position it, by default the images are positioned in the center of their content box 
+(object-position: 50% 50%).
+</p>
+
+<hr>
+
+<h1>background-size</h1>
+<h3>background-size: contain</h3>
+<div style="width: 400px; height: 180px; background-image: url(https://picsum.photos/id/20/280/280); background-position: center; background-size: contain; background-repeat: no-repeat; border: 1px solid #808080;"></div>
+<h3>background-size: 100% 100% (like object-fit: fill)</h3>
+<div style="width: 400px; height: 180px; background-image: url(https://picsum.photos/id/20/280/280); background-position: center; background-size: 100% 100%;"></div>
+<h3>background-size: cover</h3>
+<div style="width: 400px; height: 180px; background-image: url(https://picsum.photos/id/20/280/280); background-position: center; background-size: cover;"></div>
+<p>
+Note: an unwanted side-effect of using a div element with background-size is that if the user tries to print your page, a lot of
+times the image won't be printed as it will be deemed a background by the browser and ignored.
+</p>
+</body>
+</html>

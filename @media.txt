@@ -1,0 +1,24 @@
+@media (min-width: 767px) and (max-width: 979px) {
+    div.header {
+        background-color: #ff0000;
+    }
+}
+@media (767px <= width <= 979px) { /* new syntax equivalent to the above */
+    div.header {
+        background-color: #ff0000;
+    }
+}
+@media (979px >= width >= 767px) { /* alternative new syntax equivalent to the above */
+    div.header {
+        background-color: #ff0000;
+    }
+}
+@media (max-width: 767px) {
+    div.header {
+        background-color: #0000ff;
+    }
+}
+
+1. min- and max- prefixes mean "minimum inclusive" and "maximum inclusive"
+2. if two or more media match then they are applied in the order they are written
+   (in the example above in case of 767px width the resulting background color is blue)
