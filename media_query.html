@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Query and Fractional Pixels</title>
+    <style>
+        body {
+            margin: 0;
+            text-align: center;
+            font-family: sans-serif;
+            font-size: 18px;
+        }
+        /*
+            The older syntax with min- and max- prefixes 
+            mean "minimum inclusive" and "maximum inclusive".
+            That syntax suffers from the fractional width problem 
+            of high DPI screens which internally can compute a width 
+            of 199.5px for example.
+        */
+        @media (max-width: 199px) {
+            .hide-small {
+                display: none;
+            }
+        }
+        @media (min-width: 200px) and (max-width: 599px) {
+            .hide-medium {
+                display: none;
+            }
+        }
+        @media (min-width: 600px) {
+            .hide-large {
+                display: none;
+            }
+        }
+        /*
+            The problem is solved by using ranges with:
+            <= on one side of a breakpoint and < on the other side.
+        */
+        @media (width < 200px) {
+            .hide-small-ok {
+                display: none;
+            }
+        }
+        @media (200px <= width < 600px) {
+            .hide-medium-ok {
+                display: none;
+            }
+        }
+        @media (600px <= width) {
+            .hide-large-ok {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="display-viewport"></div>
+
+    <h1>Check 199px and 599px width on High DPI</h1>
+    <div class="hide-medium hide-large">
+    <p>Small</p>
+    </div>
+    <div class="hide-small hide-large">
+    <p>Medium</p>
+    </div>
+    <div class="hide-small hide-medium">
+    <p>Large</p>
+    </div>
+    
+    <h1>Fixed</h1>
+    <div class="hide-medium-ok hide-large-ok">
+    <p>Small</p>
+    </div>
+    <div class="hide-small-ok hide-large-ok">
+    <p>Medium</p>
+    </div>
+    <div class="hide-small-ok hide-medium-ok">
+    <p>Large</p>
+    </div>
+
+    <h1>Lorem Ipsum</h1>
+    <p>Where does it come from? Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+
+    <script type="text/javascript">
+        setInterval(function() {
+            var msg = "viewport width: " + window.innerWidth + "px (exposed as integer, internally it's a float)";
+            document.getElementById("display-viewport").innerHTML = msg;
+        }, 100);
+    </script>
+</body>
+</html>
