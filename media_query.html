@@ -11,6 +11,9 @@
             font-family: sans-serif;
             font-size: 18px;
         }
+        .desc {
+            text-align: left;
+        }
         /*
             The older syntax with min- and max- prefixes 
             mean "minimum inclusive" and "maximum inclusive".
@@ -82,15 +85,19 @@
     </div>
     <br>
 
-    <h2>Mobile browsers</h2>
-    <p>
+    <h2 class="desc">Mobile browsers</h2>
+    <p class="desc">
         On mobile, the width media query is equal to <code>document.documentElement.clientWidth</code>.
     </p>
-    <h2>Desktop browsers</h2>
-    <p>
-        On desktop, <code>document.documentElement.clientWidth</code> returns the page width excluding the vertical scrollbar width, while <code>window.innerWidth</code> includes the vertical scrollbar width. <code>window.visualViewport.width</code> measures the same as <code>document.documentElement.clientWidth</code>, just with subpixel precision. For most desktop browsers the width media query corresponds to <code>window.innerWidth</code>, except the WebKit-based browsers for which the width media query corresponds to <code>document.documentElement.clientWidth</code>.
+    <h2 class="desc">Desktop browsers</h2>
+    <p class="desc">
+        <ul class="desc">
+        <li>On desktop, <code>document.documentElement.clientWidth</code> returns the page width excluding the vertical scrollbar width, while <code>window.innerWidth</code> includes the vertical scrollbar width.</li>
+        <li><code>window.visualViewport.width</code> measures the same as <code>document.documentElement.clientWidth</code>, just with subpixel precision.</li>
+        <li>For most desktop browsers the width media query corresponds to <code>window.innerWidth</code>, except the WebKit-based browsers for which the width media query corresponds to <code>document.documentElement.clientWidth</code>.</li>
+        </ul>
     </p>
-    <p>
+    <p class="desc">
         <a href="https://www.quirksmode.org/css/tests/mediaqueries/width.html" target="_blank">https://www.quirksmode.org/css/tests/mediaqueries/width.html</a><br>
         <a href="https://bugs.webkit.org/show_bug.cgi?id=52653" target="_blank">https://bugs.webkit.org/show_bug.cgi?id=52653</a><br>
         <a href="https://github.com/tailwindlabs/tailwindcss/discussions/1521" target="_blank">https://github.com/tailwindlabs/tailwindcss/discussions/1521</a><br>
