@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>repeat(auto-fill)</title>
+<style>
+#container-auto-fill-minmax {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+	gap: 1rem;
+}
+</style>
+</head>
+<body>
+
+<ul>
+    <li><code>auto-fill</code> will place as many columns as possible in a row.</li>
+    <li>With <code>auto-fill</code> empty columns can occupy space in the row like their non-empty neighbors.</li>
+    <li>When resizing it jumps because empty columns are added/removed.</li>
+</ul>
+
+<div id="container-auto-fill-minmax">
+	<div style="background: pink;">DIV1</div>
+	<div style="background: green;">DIV2</div>
+	<div style="background: red;">DIV3</div>
+	<div style="background: aqua;">DIV4</div>
+	<div style="background: pink;">DIV5</div>
+	<div style="background: green;">DIV6</div>
+    <div style="background: red;">DIV7</div>
+	<div style="background: aqua;">DIV8</div>
+    <div style="background: pink;">DIV9</div>
+	<div style="background: green;">DIV10</div>
+	<div style="background: red;">DIV11</div>
+	<div style="background: aqua;">DIV12</div>
+</div>
+
+</body>
+</html>

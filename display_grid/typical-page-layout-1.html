@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>Typical page layout 1</title>
+<style>
+#container-grid {
+	width: 100%;
+	background: yellow;
+    display: grid; /* or inline-grid to display it inline */
+	/* - gaps only apply between columns/rows, not on the outer edges.
+       - old syntax: grid-row-gap, grid-column-gap and grid-gap */
+    gap: 15px 25px; /* shorthand for: row-gap column-gap */
+	grid-template-columns: 0.5fr 1fr;
+	grid-template-rows: 80px 200px 80px;
+}
+header {
+	grid-column: 1 / 3;
+    grid-row: 1 / 2;
+	background: orange;
+}
+aside {
+    grid-area: 2 / 1 / 3 / 2;
+	background: lightgreen;
+}
+main {
+	grid-column-start: 2;
+    grid-column-end: 3;
+	grid-row-start: 2;
+    grid-row-end: 3;
+	background: pink;
+}
+footer {
+	grid-column: 1 / 3;
+	grid-row: 3 / 4;
+	background: aqua;
+}
+</style>
+</head>
+<body>
+
+<ul>
+    <li>Grids are for two dimensions (columns and rows).</li>
+    <li><code>grid-template-columns</code> and <code>grid-template-rows</code> define the width of the columns and the height of the rows.</li>
+    <li>The grid lines are the separation lines between the columns and the rows (also called grid tracks), numbering starts at 1.</li>
+    <li><code>grid-column-start</code>, <code>grid-column-end</code>, <code>grid-row-start</code> and <code>grid-row-end</code> refer to grid lines and define the grid item's location within the grid.</li>
+    <li><code>grid-column</code> is a shorthand for <code>grid-column-start / grid-column-end</code> and <code>grid-row</code> is a shorthand for <code>grid-row-start / grid-row-end</code>.</li>
+    <li><code>grid-area</code> is a shorthand for <code>grid-row-start / grid-column-start / grid-row-end / grid-column-end</code>.</li>
+</ul>
+
+<div id="container-grid">
+	<header>header<br>grid-column: 1 / 3<br>grid-row: 1 / 2</header>
+	<aside>aside 0.5fr<br>grid-area: 2 / 1 / 3 / 2</aside>
+	<main>main 1fr<br>grid-column-start: 2<br>grid-column-end: 3<br>grid-row-start: 2<br>grid-row-end: 3</main>
+	<footer>footer<br>grid-column: 1 / 3<br>grid-row: 3 / 4</footer>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>Fractional</title>
+<style>
+#container-fractional {
+	width: 100%;
+	background: yellow;
+	display: grid;
+	gap: 20px;
+	grid-template-columns: 300px 10% 1fr 1fr;
+}
+</style>
+</head>
+<body>
+
+<ul>
+    <li>The <code>fr</code> values will be divided between the space that's left after what's taken by <code>px</code>, <code>%</code> and gaps.</li>
+</ul>
+
+<div id="container-fractional">
+	<div style="background: pink;">300px</div>
+	<div style="background: lightgreen;">10%</div>
+	<div style="background: red;">1fr</div>
+	<div style="background: aqua;">1fr</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>Alignment</title>
+<style>
+.container {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(3, 150px);
+    grid-template-rows: repeat(3, 40px);
+	gap: 1rem;
+}
+</style>
+</head>
+<body>
+
+<ul>
+    <li><code>justify-self</code> aligns a grid item inside a cell along the row axis (align all at container level with <code>justify-items</code>).</li>
+    <li><code>align-self</code> aligns a grid item inside a cell along the column axis (align all at container level with <code>align-items</code>).</li>
+    <li><code>place-self</code> sets both <code>align-self</code> and <code>justify-self</code> in a single declaration and <code>place-items</code> sets both <code>align-items</code> and <code>justify-items</code> in a single declaration.</li>
+</ul>
+
+<div class="container">
+	<div style="background: pink;">stretch<br>(default)</div>
+	<div style="background: green;">stretch<br>(default)</div>
+	<div style="background: red;">stretch<br>(default)</div>
+    <div style="background: pink; justify-self: start;">start</div>
+	<div style="background: green; justify-self: end;">end</div>
+	<div style="background: red; justify-self: center;">center</div>
+    <div style="background: pink; align-self: start;">start</div>
+	<div style="background: green; align-self: end;">end</div>
+	<div style="background: red; align-self: center;">center</div>
+</div>
+
+<hr>
+
+<ul>
+    <li><code>justify-content</code> aligns the entire grid along the row axis.</li>
+    <li><code>align-content</code> aligns the entire grid along the column axis.</li>
+    <li><code>place-content</code> sets both <code>align-content</code> and <code>justify-content</code> in a single declaration.</li>
+</ul>
+
+<!-- Possible values: start (default)
+                      end
+                      center
+                      stretch
+                      space-around
+                      space-between
+                      space-evenly -->
+<div class="container" style="height: 220px; justify-content: space-between; align-content: space-between;">
+	<div style="background: pink;">&nbsp;</div>
+	<div style="background: green;">&nbsp;</div>
+	<div style="background: red;">&nbsp;</div>
+    <div style="background: pink;">&nbsp;</div>
+	<div style="background: green;">&nbsp;</div>
+	<div style="background: red;">&nbsp;</div>
+    <div style="background: pink;">&nbsp;</div>
+	<div style="background: green;">&nbsp;</div>
+	<div style="background: red;">&nbsp;</div>
+</div>
+
+</body>
+</html>
