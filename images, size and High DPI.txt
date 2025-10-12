@@ -1,10 +1,11 @@
 The <img>'s width and height attributes
 ---------------------------------------
 
-Those attributes are overridden by any css styling information, even for 
-selectors with very low specificity. Setting the width and height 
-attributes is still a good idea, as they are fallback sizing and sizing 
-information as the page is loading.
+Those attributes are the weakest kind of styling, they are overridden 
+by any css styling information, even for selectors with very low 
+specificity. Setting the width and height attributes is still a good 
+idea, as they are fallback sizing and sizing information as the page is 
+loading.
 
 
 Images for High DPI displays
