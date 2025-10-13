@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>Auto min size of flex items</title>
+</head>
+<body>
+<h2>Automatic minimum size of flex items</h2>
+<p>A flex item cannot be smaller than the size of its content along the main axis.</p>
+<ul>
+	<li>For flex-direction: row, a flex item has min-width: auto applied when overflow-x is visible. For overflow-x: hidden &rarr; min-width: 0</li>
+	<li>For flex-direction: column, a flex item has min-height: auto applied when overflow-y is visible. For overflow-y: hidden &rarr; min-height: 0</li>
+</ul>
+<h3>&lt;img&gt; style min-width: 0</h3>
+<div style="display: flex;">
+	<img style="max-width: 100%; height: auto; min-width: 0;" src="https://picsum.photos/500/300" alt="">
+	<img style="max-width: 100%; height: auto; min-width: 0;" src="https://picsum.photos/400/300" alt="">
+	<img style="max-width: 100%; height: auto; min-width: 0;" src="https://picsum.photos/300/300" alt="">
+</div>
+<h3>&lt;img&gt; style overflow-x: hidden</h3>
+<div style="display: flex;">
+	<img style="max-width: 100%; height: auto; overflow-x: hidden;" src="https://picsum.photos/500/300" alt="">
+	<img style="max-width: 100%; height: auto; overflow-x: hidden;" src="https://picsum.photos/400/300" alt="">
+	<img style="max-width: 100%; height: auto; overflow-x: hidden;" src="https://picsum.photos/300/300" alt="">
+</div>
+<h3>&lt;img&gt; no style</h3>
+<div style="display: flex;">
+	<img style="max-width: 100%; height: auto;" src="https://picsum.photos/500/300" alt="">
+	<img style="max-width: 100%; height: auto;" src="https://picsum.photos/400/300" alt="">
+	<img style="max-width: 100%; height: auto;" src="https://picsum.photos/300/300" alt="">
+</div>
+<h3>With flex-direction: column an image behaves like having width: 100%</h3>
+<p>By default align-items is stretch, the image has no width set, so it fully stretches to its container and maintains the aspect ratio.</p>
+<div style="display: flex; flex-direction: column;">
+	<div style="background: orange;">HEADER</div>
+	<img src="https://picsum.photos/500/300" alt="">
+	<div style="background: yellow;">FOOTER</div>
+</div>
+</body>
+</html>
