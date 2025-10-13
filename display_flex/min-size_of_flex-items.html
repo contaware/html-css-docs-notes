@@ -3,14 +3,14 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width">
-<title>Auto min size of flex items</title>
+<title>Min size of flex items</title>
 </head>
 <body>
 <h2>Automatic minimum size of flex items</h2>
 <p>A flex item cannot be smaller than the size of its content along the main axis.</p>
 <ul>
-	<li>For flex-direction: row, a flex item has min-width: auto applied when overflow-x is visible. For overflow-x: hidden &rarr; min-width: 0</li>
-	<li>For flex-direction: column, a flex item has min-height: auto applied when overflow-y is visible. For overflow-y: hidden &rarr; min-height: 0</li>
+	<li>For <code>flex-direction: row</code>, a flex item has <code>min-width: auto</code> applied when <code>overflow-x</code> is visible. <br>With <code>overflow-x: hidden</code> &rarr; <code>min-width: 0</code></li>
+	<li>For <code>flex-direction: column</code>, a flex item has <code>min-height: auto</code> applied when <code>overflow-y</code> is visible. <br>With <code>overflow-y: hidden</code> &rarr; <code>min-height: 0</code></li>
 </ul>
 <h3>&lt;img&gt; style min-width: 0</h3>
 <div style="display: flex;">
