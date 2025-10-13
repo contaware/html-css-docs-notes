@@ -40,7 +40,10 @@
 <body>
 
 <h2>Flexbox alignment</h2>
-<p>Container sets <code>justify-content: space-evenly</code>. Item 2 has <code>align-self: start</code> which overrides the container's <code>align-items: center</code>.</p>
+<ul>
+    <li>Container has <code>justify-content: space-evenly</code> set.</li>
+    <li>Item 2 has <code>align-self: start</code> set, that overrides the container's <code>align-items: center</code>.</li>
+</ul>
 <div class="container-flex">
     <div class="one">1</div>
     <div class="two" style="align-self: start;">2</div>
@@ -52,11 +55,16 @@
 <hr>
 
 <h2>Flexbox flex</h2>
-<p>Item 2 has <code>flex-grow: 1</code> and <code>flex-shrink: 0</code>. The default for <code>flex-grow</code> is <code>0</code> (no grow), positive values mean grow in the available space with that proportion. The default for <code>flex-shrink</code> is <code>1</code> (shrink), positive values mean shrink to fit with that proportion.</p>
+<ul>
+    <li>Item 2 has <code>flex-grow: 1</code> and <code>flex-shrink: 1</code> set.</li>
+    <li>Item 3 has <code>flex-grow: 2</code> and <code>flex-shrink: 2</code> set.</li>
+    <li>The default for <code>flex-grow</code> is <code>0</code> (no grow), positive values mean grow in the available space with that proportion.</li>
+    <li>The default for <code>flex-shrink</code> is <code>1</code> (shrink), positive values mean shrink to fit with that proportion.</li>
+</ul>
 <div class="container-flex">
     <div class="one">1</div>
-    <div class="two" style="flex-grow: 1; flex-shrink: 0;">2</div>
-    <div class="three">3</div>
+    <div class="two" style="flex-grow: 1; flex-shrink: 1;">2</div>
+    <div class="three" style="flex-grow: 2; flex-shrink: 2;">3</div>
     <div class="four">4</div>
     <div class="five">5</div>
 </div>
@@ -64,7 +72,7 @@
 <hr>
 
 <h2>Flexbox items order</h2>
-<p>Each element has by default a <code>order</code> value of <code>0</code>, if we set <code>-1</code> we will end up first and with <code>1</code> last.</p>
+<p>Each element has by default an <code>order</code> value of <code>0</code>, if we set <code>-1</code> we will end up first and with <code>1</code> last.</p>
 <div class="container-flex">
     <div class="one" style="order: 1;">1</div>
     <div class="two">2</div>
@@ -76,7 +84,7 @@
 <hr>
 
 <h2>Auto margins for a flex item</h2>
-<p>Item 4 has <code>margin-left: auto</code>, that will automatically extend its specified margin to occupy the extra space in the flex container.</p>
+<p>Item 4 has <code>margin-left: auto</code> set, that will automatically extend its specified margin to occupy the extra space in the flex container.</p>
 <div class="container-flex">
     <div class="one">1</div>
     <div class="two">2</div>
