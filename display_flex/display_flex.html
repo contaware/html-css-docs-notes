@@ -18,9 +18,9 @@
     display: flex; /* flex or inline-flex which makes this flex container display inline */
     flex-direction: row; /* default is row, can also be row-reverse|column|column-reverse */
     flex-wrap: nowrap; /* default is nowrap, can also be wrap|wrap-reverse */
-    justify-content: space-evenly; /* default is flex-start, can also be center|flex-end|space-between|space-around|space-evenly */
-    align-items: center; /* like justify-content but for the other axis, default is stretch, can also be flex-start|flex-end|center */
-    align-content: stretch; /* like justify-content but for the other axis when wrapping, default is normal, can also be flex-start|center|flex-end|stretch|space-between|space-around|space-evenly */
+    justify-content: space-evenly; /* default is start, can also be center|end|space-between|space-around|space-evenly */
+    align-items: center; /* like justify-content but for the other axis, default is stretch, can also be start|end|center */
+    align-content: stretch; /* like justify-content but for the other axis when wrapping, default is normal, can also be start|center|end|stretch|space-between|space-around|space-evenly */
     gap: 0; /* row-gap column-gap, applies only between items, not between item and container edges */
 }
 
@@ -40,10 +40,10 @@
 <body>
 
 <h2>Flexbox alignment</h2>
-<p>Container sets <code>justify-content: space-evenly</code>. Item 2 has <code>align-self: flex-start</code> which overrides the container's <code>align-items: center</code>.</p>
+<p>Container sets <code>justify-content: space-evenly</code>. Item 2 has <code>align-self: start</code> which overrides the container's <code>align-items: center</code>.</p>
 <div class="container-flex">
     <div class="one">1</div>
-    <div class="two" style="align-self: flex-start;">2</div>
+    <div class="two" style="align-self: start;">2</div>
     <div class="three">3</div>
     <div class="four">4</div>
     <div class="five">5</div>
@@ -101,7 +101,7 @@
 
 <h2>Breaking to a new row</h2>
 <p>When flex wrap is enabled, we can force a line break by inserting an item with <code>flex-basis: 100%</code> and <code>height: 0</code>.</p>
-<div class="container-flex" style="flex-wrap: wrap; align-content: flex-start;">
+<div class="container-flex" style="flex-wrap: wrap; align-content: start;">
     <div class="one">1</div>
     <div class="two">2</div>
     <div class="three">3</div>
