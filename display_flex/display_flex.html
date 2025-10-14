@@ -12,7 +12,9 @@
     
     display: flex; /* or inline-flex to display this container inline */
 
-    /* Default is row, can be:
+    /* Defines the main axis, that's the direction in which the flex items
+       are placed in the flex container.
+       Default is row, can be:
        row|row-reverse|column|column-reverse */
     flex-direction: row;
 
@@ -22,17 +24,19 @@
     
     /* flex-flow is a shorthand for flex-direction flex-wrap */
     
-    /* Default is start, can be:
+    /* It aligns the items along the main axis.
+       Default is start, can be:
        start|center|end|space-between|space-around|space-evenly */
     justify-content: space-evenly;
 
-    /* Like justify-content but for the other axis, 
-       default is stretch, can be:
+    /* Like justify-content but for the other axis (the cross axis).
+       Default is stretch, can be:
        start|center|end|stretch|baseline */
     align-items: center;
 
-    /* Like justify-content but for the other axis when wrapping, 
-       default is normal, can be:
+    /* It manages the space between the lines when items wrap,
+       it has no effect when items are in a single line. 
+       Default is normal, can be:
        start|center|end|stretch|normal|space-between|space-around|space-evenly */
     align-content: stretch;
 
