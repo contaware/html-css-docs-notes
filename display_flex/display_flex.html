@@ -38,7 +38,7 @@
        it has no effect when items are in a single line. 
        Default is normal, can be:
        start|center|end|stretch|normal|space-between|space-around|space-evenly */
-    align-content: stretch;
+    align-content: space-between;
 
     /* Applies only between items, not between item and container edges */
     gap: 0; /* shorthand for: row-gap column-gap */
@@ -118,10 +118,23 @@
 <hr>
 
 <h2>Enable flex wrap</h2>
-<p>Add <code>flex-wrap: wrap</code> to container.</p>
+<ul>
+    <li>Add <code>flex-wrap: wrap</code> to container.</li>
+    <li><code>align-content</code> sets the spacing of the lines that are created when the items wrap.</li>
+    <li><code>align-items</code> sets the items' alignment in relation to the line they currently belong to.</li>
+</ul>
+<div class="container-flex" style="height: 150px; flex-wrap: wrap;">
+    <div class="one" style="height: 25px;">1</div>
+    <div class="two" style="height: 30px;">2</div>
+    <div class="three">3</div>
+    <div class="four">4</div>
+    <div class="five" style="height: 35px;">5</div>
+</div>
+
+<p>Next watch items 1 and 2, flexing happens per line.</p>
 <div class="container-flex" style="flex-wrap: wrap;">
-    <div class="one">1</div>
-    <div class="two">2</div>
+    <div class="one" style="flex-grow: 1;">1</div>
+    <div class="two" style="flex-grow: 2;">2</div>
     <div class="three">3</div>
     <div class="four">4</div>
     <div class="five">5</div>
