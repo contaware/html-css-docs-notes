@@ -94,7 +94,7 @@
 <hr>
 
 <h2>Flexbox items order</h2>
-<p>Each element has by default an <code>order</code> value of <code>0</code>, if we set <code>-1</code> we will end up first and with <code>1</code> last.</p>
+<p>Items with the same <code>order</code> value belong to the same ordering group. The default <code>order</code> value is <code>0</code>. Items are placed in visual order according to their <code>order</code> value, lowest values first. If more than one item has the same <code>order</code> value, then within that group the items are laid out as per html order.</p>
 <div class="container-flex">
     <div class="one" style="order: 1;">1</div>
     <div class="two">2</div>
