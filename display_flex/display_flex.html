@@ -6,7 +6,6 @@
 <title>Flexbox</title>
 <style>
 .container-flex {
-    width: 100%;
     height: 120px;
     background: yellow;
     
@@ -45,12 +44,7 @@
 }
 
 .one, .two, .three, .four, .five {
-    /* flex-basis will set the initial size of the element, 
-       its final size will be based on available space, 
-       flex-grow and flex-shrink. Default is auto. */
     flex-basis: 100px;
-
-    /* flex is a shorthand for: flex-grow flex-shrink flex-basis */
 }
 
 .child {
@@ -61,7 +55,7 @@
 </head>
 <body>
 
-<p style="text-align: center; color: white; background: darkorange; padding: 20px; border: 2px solid black;">The flexible box layout is a one-dimensional model which determines the available space left and grows/shrinks/distributes the items in that space.</p>
+<p style="text-align: center; color: white; background: darkorange; padding: 20px; border: 2px solid black;">The flexible box layout is a one-dimensional model which determines the free space and grows/shrinks/distributes the items in that space.<br>Free space = Flex container size - Total flex-basis size of all flex items<br>(free space can be positive or negative)</p>
 
 <h2>Flexbox alignment</h2>
 <ul>
@@ -80,11 +74,13 @@
 
 <h2>Flexbox flex</h2>
 <ul>
-    <li>Item 2 has <code>flex-grow: 1</code> and <code>flex-shrink: 1</code> set.</li>
-    <li>Item 3 has <code>flex-grow: 2</code> and <code>flex-shrink: 2</code> set.</li>
-    <li>The default for <code>flex-grow</code> is <code>0</code> (no grow), positive values mean grow in the available space with that proportion.</li>
-    <li>The default for <code>flex-shrink</code> is <code>1</code> (shrink), positive values mean shrink to fit with that proportion.</li>
+    <li><code>flex-basis</code> specifies the initial size of the flex items before the free space is distributed according to the flex factors. <code>flex-basis: 100px</code> overrides the item's <code>width/height</code> property. <code>flex-basis: content</code> means the content size, item's <code>width/height</code> propriety is ignored. Default for <code>flex-basis</code> is <code>auto</code> which means the item's <code>width/height</code> property if defined, otherwise the content size.</li>
+    <li>An item's <code>min-width/min-height</code> or a <code>max-width/max-height</code> will always limit the flexing.</li>
+    <li>Default for <code>flex-grow</code> is <code>0</code> (no grow), positive values mean grow in the available positive free space with the given proportion.</li>
+    <li>Default for <code>flex-shrink</code> is <code>1</code> (shrink), positive values mean reduce the negative free space with the given proportion.</li>
+    <li>Shorthand <code>flex: flex-grow flex-shrink flex-basis;</code></li>
 </ul>
+<p>In this example item 2 grows and shrinks with a factor of 1 and item 3 with a factor of 2.</p>
 <div class="container-flex">
     <div class="child one">1</div>
     <div class="child two" style="flex-grow: 1; flex-shrink: 1;">2</div>
