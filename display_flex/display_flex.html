@@ -43,13 +43,10 @@
     gap: 0; /* shorthand for: row-gap column-gap */
 }
 
-.one, .two, .three, .four, .five {
-    flex-basis: 100px;
-}
-
 .child {
     background: orange;
     border: 1px solid black;
+    flex-basis: 100px;
 }
 </style>
 </head>
@@ -63,11 +60,11 @@
     <li>Item 2 has <code>align-self: start</code> set, that overrides the container's <code>align-items: center</code>.</li>
 </ul>
 <div class="container-flex">
-    <div class="child one">1</div>
-    <div class="child two" style="align-self: start;">2</div>
-    <div class="child three">3</div>
-    <div class="child four">4</div>
-    <div class="child five">5</div>
+    <div class="child">1</div>
+    <div class="child" style="align-self: start;">2</div>
+    <div class="child">3</div>
+    <div class="child">4</div>
+    <div class="child">5</div>
 </div>
 
 <hr>
@@ -82,11 +79,11 @@
 </ul>
 <p>In this example item 2 grows and shrinks with a factor of 1 and item 3 with a factor of 2.</p>
 <div class="container-flex">
-    <div class="child one">1</div>
-    <div class="child two" style="flex-grow: 1; flex-shrink: 1;">2</div>
-    <div class="child three" style="flex-grow: 2; flex-shrink: 2;">3</div>
-    <div class="child four">4</div>
-    <div class="child five">5</div>
+    <div class="child">1</div>
+    <div class="child" style="flex-grow: 1; flex-shrink: 1;">2</div>
+    <div class="child" style="flex-grow: 2; flex-shrink: 2;">3</div>
+    <div class="child">4</div>
+    <div class="child">5</div>
 </div>
 
 <hr>
@@ -94,11 +91,11 @@
 <h2>Flexbox items order</h2>
 <p>Items with the same <code>order</code> value belong to the same ordering group. The default <code>order</code> value is <code>0</code>. Items are placed in visual order according to their <code>order</code> value, lowest values first. If more than one item has the same <code>order</code> value, then within that group the items are laid out as per html order.</p>
 <div class="container-flex">
-    <div class="child one" style="order: 1;">1</div>
-    <div class="child two">2</div>
-    <div class="child three">3</div>
-    <div class="child four">4</div>
-    <div class="child five" style="order: -1;">5</div>
+    <div class="child" style="order: 1;">1</div>
+    <div class="child">2</div>
+    <div class="child">3</div>
+    <div class="child">4</div>
+    <div class="child" style="order: -1;">5</div>
 </div>
 
 <hr>
@@ -106,11 +103,11 @@
 <h2>Auto margins for flex items</h2>
 <p>Item 4 has <code>margin-left: auto</code> set, that will automatically extend its specified margin to occupy the extra space in the flex container.</p>
 <div class="container-flex">
-    <div class="child one">1</div>
-    <div class="child two">2</div>
-    <div class="child three">3</div>
-    <div class="child four" style="margin-left: auto;">4</div>
-    <div class="child five">5</div>
+    <div class="child">1</div>
+    <div class="child">2</div>
+    <div class="child">3</div>
+    <div class="child" style="margin-left: auto;">4</div>
+    <div class="child">5</div>
 </div>
 
 <hr>
@@ -122,19 +119,19 @@
     <li><code>align-items</code> sets the items' alignment in relation to the line they currently belong to.</li>
 </ul>
 <div class="container-flex" style="height: 150px; flex-wrap: wrap;">
-    <div class="child one" style="height: 25px;">1</div>
-    <div class="child two" style="height: 30px;">2</div>
-    <div class="child three">3</div>
-    <div class="child four">4</div>
-    <div class="child five" style="height: 35px;">5</div>
+    <div class="child" style="height: 25px;">1</div>
+    <div class="child" style="height: 30px;">2</div>
+    <div class="child">3</div>
+    <div class="child">4</div>
+    <div class="child" style="height: 35px;">5</div>
 </div>
 <p>Next observe items 1 and 2, the flexing happens per line.</p>
 <div class="container-flex" style="flex-wrap: wrap;">
-    <div class="child one" style="flex-grow: 1;">1</div>
-    <div class="child two" style="flex-grow: 2;">2</div>
-    <div class="child three">3</div>
-    <div class="child four">4</div>
-    <div class="child five">5</div>
+    <div class="child" style="flex-grow: 1;">1</div>
+    <div class="child" style="flex-grow: 2;">2</div>
+    <div class="child">3</div>
+    <div class="child">4</div>
+    <div class="child">5</div>
 </div>
 
 <hr>
@@ -142,12 +139,12 @@
 <h2>Breaking to a new line</h2>
 <p>When flex wrap is enabled, we can force a line break by inserting an item with <code>flex-basis: 100%</code> and <code>height: 0</code>.</p>
 <div class="container-flex" style="flex-wrap: wrap; align-content: start;">
-    <div class="child one">1</div>
-    <div class="child two">2</div>
-    <div class="child three">3</div>
+    <div class="child">1</div>
+    <div class="child">2</div>
+    <div class="child">3</div>
     <div style="flex-basis: 100%; height: 0;"></div>
-    <div class="child four">4</div>
-    <div class="child five">5</div>
+    <div class="child">4</div>
+    <div class="child">5</div>
 </div>
 
 <hr>
@@ -155,15 +152,15 @@
 <h2>DIV only vs Flexbox</h2>
 <p>DIV children having <code>width: fit-content</code> and <code>margin: 0 auto</code>.</p>
 <div style="background: yellow">
-    <div class="child" style="width: fit-content; margin: 0 auto;">Hi I'm the first child</div>
-    <div class="child" style="width: fit-content; margin: 0 auto;">Second one</div>
-    <div class="child" style="width: fit-content; margin: 0 auto;">Last but not least</div>
+    <div style="width: fit-content; margin: 0 auto; background: orange; border: 1px solid black;">Hi I'm the first child</div>
+    <div style="width: fit-content; margin: 0 auto; background: orange; border: 1px solid black;">Second one</div>
+    <div style="width: fit-content; margin: 0 auto; background: orange; border: 1px solid black;">Last but not least</div>
 </div>
 <p>Flexbox with <code>flex-direction: column</code> and <code>align-items: center</code>.</p>
 <div style="display: flex; flex-direction: column; align-items: center; background: yellow">
-    <div class="child">Hi I'm the first child</div>
-    <div class="child">Second one</div>
-    <div class="child">Last but not least</div>
+    <div style="background: orange; border: 1px solid black;">Hi I'm the first child</div>
+    <div style="background: orange; border: 1px solid black;">Second one</div>
+    <div style="background: orange; border: 1px solid black;">Last but not least</div>
 </div>
 
 </body>
