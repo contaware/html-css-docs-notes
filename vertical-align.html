@@ -7,30 +7,31 @@
 </head>
 <body>
 
-<p>The reason vertical-align: middle isn't doing what is desired is because most people do not understand what it's supposed to do.</p>
+<p>The reason <code>vertical-align</code> isn't doing what is desired is because most people do not understand what it's supposed to do. Probably you want to check flexbox to easily align elements vertically</p>
 
-<h1>vertical-align for inline elements</h1>
-<p>Inline elements can be vertically aligned with respect to the text line they are in (not the whole parent container height). vertical-align: middle must be set for the inline element, unlike for tables where it is specified for the parent:</p>
-<p style="width: 200px; height: 60px; line-height: 60px; text-align: center; border: 1px solid black;"><span style="vertical-align: middle;">SINGLE LINE ONLY</span></p>
+<h2>vertical-align for inline elements</h2>
+<p>Inline elements can be vertically aligned with respect to the text line they are in (not the whole parent container height). <code>vertical-align</code> must be set for the inline element, unlike for tables where it is specified for the parent:</p>
+<p style="min-height: 100px; border: 1px solid black;">
+    <span style="font-size: 50px; vertical-align: middle;">BIG</span>
+    <span style="vertical-align: middle;">(watch the alignment when the line wraps) Middle</span>
+    <img style="vertical-align: middle;" src="assets/star.png" alt="star">
+    <span style="vertical-align: bottom;">Bottom</span>
+    <img style="vertical-align: bottom;" src="assets/star.png" alt="star">
+    <span style="vertical-align: top;">Top</span>
+    <img style="vertical-align: top;" src="assets/star.png" alt="star">
+</p>
 
-<h1>vertical-align in tables</h1>
-<p>When used in table cells, vertical-align does what most people expect it to do, it vertically aligns its content:</p>
+<h2>vertical-align in tables</h2>
+<p>When used in table cells, <code>vertical-align</code> does what most people expect it to do, it vertically aligns its content:</p>
 <table>
-<tr>
-<td style="border: 1px solid black;">bla bla...<br>bli bli...<br>blu blu...</td>
-<td style="border: 1px solid black; text-align: center; vertical-align: middle">MULTI<br>LINE</td>
-<td style="border: 1px solid black;">bla bla...<br>bli bli...<br>blu blu...</td>
+<tr style="height: 80px;">
+<td style="width: 100px; border: 1px solid black; text-align: center; vertical-align: bottom">FIRST<br>CELL</td>
+<td style="width: 100px; border: 1px solid black; text-align: center; vertical-align: middle">SECOND<br>CELL</td>
+<td style="width: 100px; border: 1px solid black; text-align: center; vertical-align: top">LAST<br>CELL</td>
 </tr>
 </table>
-<p>It's possible to use just a div with display: table-cell and no table/table-row elements (anonymous ones will be inserted for you):</p>
-<div style="border: 1px solid black; width: 200px; height: 60px; display: table-cell; text-align: center; vertical-align: middle">MULTI<br>LINE</div>
-
-<h1>Through flexbox</h1>
-<div style="border: 1px solid black; width: 200px; height: 60px; text-align: center; display: flex; justify-content: center; align-items: center;"><span>MULTI<br>LINE</span></div>
-<div style="border: 1px solid black; width: 200px; height: 60px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-<div style="border: 1px solid red;">BOX1</div>
-<div style="border: 1px solid green;">BOX2</div>
-</div>
+<p>It's possible to use just a <code>div</code> with <code>display: table-cell</code> and no table/table-row elements (anonymous ones will be inserted for you):</p>
+<div style="width: 100px; height: 80px; border: 1px solid black; display: table-cell; text-align: center; vertical-align: middle">CENTER<br>ME</div>
 
 </body>
 </html>
