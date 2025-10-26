@@ -23,10 +23,6 @@ object-fit: cover it's possible to change how the image is rendered inside it's 
 <img style="width: 400px; height: 180px; object-fit: fill;" src="https://picsum.photos/id/20/280/280" alt="An awesome picture">
 <h3>object-fit: cover</h3>
 <img style="width: 400px; height: 180px; object-fit: cover;" src="https://picsum.photos/id/20/280/280" alt="An awesome picture">
-<p>
-Hint: object-position can be used to position it, by default the images are positioned in the center of their content box 
-(object-position: 50% 50%).
-</p>
 
 <hr>
 
@@ -38,8 +34,21 @@ Hint: object-position can be used to position it, by default the images are posi
 <h3>background-size: cover</h3>
 <div style="width: 400px; height: 180px; background-image: url(https://picsum.photos/id/20/280/280); background-position: center; background-size: cover;"></div>
 <p>
-Note: an unwanted side-effect of using a div element with background-size is that if the user tries to print your page, a lot of
-times the image won't be printed as it will be deemed a background by the browser and ignored.
+Note: an unwanted side-effect of using a div element with background-size is that if the user tries to print your page, a lot of times the image won't be printed as it will be deemed a background by the browser and ignored.
 </p>
+
+<hr>
+
+<h1>object-position and background-position</h1>
+<p>They both are used to position the image inside the content box. The defaults are <code>object-position: center</code> and <code>background-position left top</code>.</p>
+<p>If one value is provided the second value defaults to <code>center</code>.</p>
+<p>If two values are provided:</p>
+<ul>
+    <li>The first value can be <code>left</code>, <code>center</code>, <code>right</code> or it can be the distance from the content box left edge.</li>
+    <li>The second value can be <code>top</code>, <code>center</code>, <code>bottom</code> or it can be the distance from the content box top edge.</li>
+    <li>If the first value is in percentage, it means that a vertical line X% from the left of the image coincides with a vertical line X% from the left of the content box</li>
+    <li>If the second value is in percentage, it means that a horizontal line Y% from the top of the image coincides to a horizontal line Y% from the top of the content box.</li>
+</ul>    
+<p>If four values are provided, then the first and the third values do name the edges from which to calculate the distances.</p>
 </body>
 </html>
