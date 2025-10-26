@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>img</title>
+</head>
+<body>
+    <h2>The &lt;img&gt;'s width and height attributes</h2>
+    <p>Those attributes are the weakest kind of styling, they are overridden by any css styling information, even for selectors with very low specificity. Setting the <code>width</code> and <code>height</code> attributes is still a good idea, as they are fallback sizing and sizing information as the page is loading.</p>
+
+    <h2>Is height: auto necessary for a responsive image?</h2>
+    <p>On an image without a height dimension explicitly set anywhere, the default for <code>height</code> is <code>auto</code>. To have a responsive image providing <code>max-width: 100%; height: auto</code> is good practice because the second css property overwrites a possibly set height attribute:</p>
+    <img style="max-width: 40%; height: auto;" src="../assets/35x45mm.jpg" alt="35x45mm" width="826" height="1062">
+
+    <h2>Images for High DPI displays</h2>
+    <ol>
+        <li>
+            First possibility is to use the <code>srcset</code> attribute:<br>
+            <code>&lt;img src="images/image-1x.jpg" srcset="images/image-1x.jpg 1x,images/image-4x.jpg 4x" alt="image" width="100" height="220"&gt;</code>
+        </li>
+        <li>
+            A more common solution is to just use bigger images; in the following example the 35x45mm.jpg image has a size of 826 x 1062, so that on a 96 DPI screen the browser would scale it down quite a bit, while on high DPI displays it would be scaled less:
+            <img style="vertical-align: top;" src="../assets/35x45mm.jpg" alt="35x45mm" width="50">
+        </li>
+    </ol>
+
+    <h2>Round Corners</h2>
+    <p>For square images it's easy, just provide <code>border-radius: 50%</code>. While for rectangular images we make them square with <code>aspect-ratio: 1</code> and <code>object-fit: cover</code>:</p>
+    <img style="border-radius: 50%; max-width: 40%;" src="../assets/square.jpg" alt="square">
+    <img style="border-radius: 50%; object-fit: cover; object-position: center top; aspect-ratio: 1; max-width: 40%;" src="../assets/35x45mm.jpg" alt="35x45mm">
+</body>
+</html>
