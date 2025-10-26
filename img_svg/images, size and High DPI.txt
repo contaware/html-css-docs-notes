@@ -1,3 +1,16 @@
+Is height: auto necessary for a responsive image?
+-------------------------------------------------
+
+On an image without a height dimension explicitly set anywhere, 
+the default for height is auto. To have a responsive image 
+providing height: auto is good practice because it overwrites 
+a possibly set height attribute. So always use:
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
 The <img>'s width and height attributes
 ---------------------------------------
 
