@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fit-content, max-content and min-content</title>
+</head>
+<body>
+    <p>The <code>min-content</code> property refers to the smallest measure that would fit around its content if all soft wrap opportunities within the box were taken:</p>
+    <h4 style="width: min-content; border: 1px dashed violet;">This is a great opportunity for our business</h4>
+
+    <p>The <code>max-content</code> property refers to the narrowest measure a box could take while fitting around its content if no soft wrap opportunities within the element were taken:</p>
+    <h4 style="width: max-content; border: 1px dashed violet;">This is a great opportunity for our business</h4>
+
+    <p>The <code>fit-content</code> property uses the available space but never less than <code>min-content</code> and never more than <code>max-content</code>:</p>
+    <h4 style="width: fit-content; border: 1px dashed violet;">This is a great opportunity for our business</h4>
+</body>
+</html>
