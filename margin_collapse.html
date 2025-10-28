@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Margin Collapse</title>
+    <style>
+    p.margin-small {
+        margin: 8px 0;
+        background: lightgreen;
+        opacity: 0.7;
+    }
+    p.margin-big {
+        margin: 24px 0;
+        background: lightblue;
+        opacity: 0.7;
+    }
+    p.margin-neg {
+        margin: -4px 0;
+        background: lightsalmon;
+        opacity: 0.7;
+    }
+    div.container {
+        display: inline-block;
+        vertical-align: top;
+        width: fit-content; 
+        border: 1px dashed violet;
+    }
+    div.stripes {
+        background: repeating-linear-gradient(
+        -55deg,
+        #BBB,
+        #BBB 10px,
+        #FFF 10px,
+        #FFF 20px
+        );
+    }
+</style>
+</head>
+<body>
+    <p style="padding: 16px; background: orange; color: white; font-size: 20px; text-align: center;">Vertical margins change when they touch.<br>Horizontal margins never change.<br>Note: a zero size margin can also touch another margin.</p>
+
+    <p>Remember that margins are meant to increase the distance between siblings, not to increase the gap between a child and its parent's bounding box; that's what padding is for.</p>
+
+    <h2>Vertical margins calculation</h2>
+    
+    <ol>
+        <li>If both are positive they collapse to the biggest.</li>
+        <li>Negative and positive margins sum up.</li>
+        <li>If both are negative they collapse to the most negative.</li>
+    </ol>
+    <div class="container">
+        <p class="margin-small">margin: 8px 0</p>
+        <p class="margin-big">margin: 24px 0</p>
+    </div>
+    <div class="container">
+        <p class="margin-neg">margin: -4px 0</p>
+        <p class="margin-big">margin: 24px 0</p>
+    </div>
+    <div class="container">
+        <p class="margin-neg">margin: -4px 0</p>
+        <p class="margin-neg">margin: -4px 0</p>
+    </div>
+
+    <h2>Nested elements with touching vertical margins</h2>
+
+    <p>When vertical margins touch between nested elements, a margins calculation happens between them and the resulting margin is applied to the parent:</p>
+    <div class="container">
+        <div class="stripes" style="margin-top: 10px;">
+            <p class="margin-big">margin: 24px 0</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="stripes" style="margin-top: 30px;">
+            <p class="margin-big">margin: 24px 0</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="stripes">
+            <p class="margin-big">margin: 24px 0</p>
+        </div>
+    </div>
+
+    <p>After the resulting margins have been applied to the parents, the margins calculation can now happen between the adjacent siblings:</p>
+    <div class="container">
+        <p class="margin-small">margin: 8px 0</p>
+        <div class="stripes">
+            <p class="margin-big">margin: 24px 0</p>
+        </div>
+    </div>
+
+    <p>A padding, but also a border, can prevent the vertical margins from touching:</p>
+    <div class="container">
+        <div class="stripes" style="padding-top: 1px;">
+            <p class="margin-big">margin: 24px 0</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="stripes" style="border-top: 1px solid black;">
+            <p class="margin-big">margin: 24px 0</p>
+        </div>
+    </div>
+    <div class="container">
+        <p class="margin-small">margin: 8px 0</p>
+        <div class="stripes" style="border-top: 1px solid black;">
+            <p class="margin-big">margin: 24px 0</p>
+        </div>
+    </div>
+</body>
+</html>
