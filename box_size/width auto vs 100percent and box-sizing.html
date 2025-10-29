@@ -1,83 +1,100 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width">
-<title>width: auto vs width: 100%</title>
-<style>
-*, *:before, *:after {
-	box-sizing: inherit; /* by default box-sizing is not inherited */
-}
-.container {
-	width: 600px;
-	height: 300px;
-	margin: 40px;
-	padding: 40px;
-	border: 10px solid #999;
-	border-width: 0 10px;
-	background: #eee;
-}
-.child-1 {
-	width: auto;
-	margin: 0 50px;
-	padding: 0 50px;
-	border: 10px solid #999;
-	border-width: 0 10px;
-	background: #fee;
-}
-.child-2 {
-	width: 100%;
-	margin: 0 50px;
-	padding: 0 50px;
-	border: 10px solid #999;
-	border-width: 0 10px;
-	background: #efe;
-}
-.child-3 {
-	width: auto;
-	margin: 0 20%;
-	padding: 0 10%;
-	border: 10px solid #999;
-	border-width: 0 10px;
-	background: #eef;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>width: auto, width: 100% and box-sizing</title>
+    <style>
+        .container {
+            box-sizing: content-box;
+            max-width: 300px;
+            padding: 10px;
+            margin: 10px;
+            background: lightblue;
+            border: 10px solid black;
+        }
+        .content-box-child-100 {
+            box-sizing: content-box;
+            width: 100%;
+            background: lightsalmon;
+        }
+        .content-box-child-auto {
+            box-sizing: content-box;
+            width: auto; 
+            background: lightsalmon;
+        }
+        .border-box-child-100 {
+            box-sizing: border-box;
+            width: 100%; 
+            background: lightsalmon;
+        }
+    </style>
 </head>
 <body>
-	<h1>width: auto vs width: 100%</h1>
-	
-	<div>
-		<h2>box-sizing: content-box</h2>
-		<div class="container">
-			<p>I'm the containing block.</p>
-			<div class="child-1">
-				<p>I'm the first child element. My width is <code>auto</code>.</p>
-			</div>
-			<div class="child-2">
-				<p>I'm the second child element. My width is <code>100%</code> of my parent's containing width.</p>
-			</div>
-			
-			<div class="child-3">
-				<p>I'm the third child element. My 20% margin and 10% padding are relative to my parent's containing width (not height).</p>
-			</div>
-		</div>
-	</div>
-	
-	<div style="box-sizing: border-box;">
-		<h2>box-sizing: border-box</h2>
-		<div class="container">
-			<p>I'm the containing block.</p>
-			<div class="child-1">
-				<p>I'm the first child element. My width is <code>auto</code>.</p>
-			</div>
-			<div class="child-2">
-				<p>I'm the second child element. My width is <code>100%</code> of my parent's containing width.</p>
-			</div>
-			
-			<div class="child-3">
-				<p>I'm the third child element. My 20% margin and 10% padding are relative to my parent's containing width (not height).</p>
-			</div>
-		</div>
-	</div>
+    <p>The <code>width</code> property with percent is calculated in two steps:</p>
+    <ol>
+        <li>The width is read from the element's containing box, which usually is the parent box. But what width is read? If the element has a <code>position: static</code> (the default) or a <code>position: relative</code>, then the read width is the <strong>content-box</strong> of the containing box, but if the element has a <code>position: absolute</code>, then the read width will be the <strong>padding-box</strong> of the containing box. Note: the margin and padding of an element in percentage are also based on this same read width (never the height).</li>
+        <li>Now the above read width is applied to the element according to the element's set <code>box-sizing</code>.</li>
+    </ol>
+
+    <p>Note: by default <code>box-sizing</code> is not inherited.</p>
+    
+    <div class="container">
+        <div class="content-box-child-100">
+            box-sizing: content-box;<br>
+            width: 100%;
+        </div>
+        <br>
+        <div class="content-box-child-100" style="padding: 10px;">
+            box-sizing: content-box;<br>
+            width: 100%;<br>
+            padding: 10px;
+        </div>
+        <br>
+        <div class="content-box-child-100" style="border: 10px solid yellow;">
+            box-sizing: content-box;<br>
+            width: 100%;<br>
+            border-width: 10px;
+        </div>
+        <br>
+        <div class="content-box-child-100" style="padding: 10px; border: 10px solid yellow;">
+            box-sizing: content-box;<br>
+            width: 100%;<br>
+            padding: 10px;<br>
+            border-width: 10px;
+        </div>
+        <br>
+        <div class="content-box-child-auto" style="padding: 10px; border: 10px solid yellow;">
+            <em>Solution 1</em><br>
+            box-sizing: content-box;<br>
+            <strong>width: auto;</strong><br>
+            padding: 10px;<br>
+            border-width: 10px;
+        </div>
+        <br>
+        <div class="border-box-child-100" style="padding: 10px; border: 10px solid yellow;">
+            <em>Solution 2</em><br>
+            <strong>box-sizing: border-box;</strong><br>
+            width: 100%;<br>
+            padding: 10px;<br>
+            border-width: 10px;
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="border-box-child-100" style="padding: 25%;">
+            <div style="display: flex; border: 1px solid black;">
+                <div>padding: 25%</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="position: relative; height: 100px;">
+        <div class="content-box-child-100" style="position: absolute;">
+            box-sizing: content-box;<br><br>
+            /* 100% of parent's padding-box */<br>
+            width: 100%;
+        </div>
+    </div>
 </body>
 </html>
