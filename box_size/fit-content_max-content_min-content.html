@@ -6,13 +6,21 @@
     <title>fit-content, max-content and min-content</title>
 </head>
 <body>
-    <p>The <code>min-content</code> property refers to the smallest measure that would fit around its content if all soft wrap opportunities within the box were taken:</p>
-    <h4 style="width: min-content; border: 1px dashed violet;">This is a great opportunity for our business</h4>
+    <ul>
+    <li>The <code>min-content</code> property refers to the smallest measure that would fit around its content if all soft wrap opportunities within the box were taken:
+    <h4 style="width: min-content; border: 1px dashed violet;">This is a great opportunity for our business</h4></li>
 
-    <p>The <code>max-content</code> property refers to the narrowest measure a box could take while fitting around its content if no soft wrap opportunities within the element were taken:</p>
-    <h4 style="width: max-content; border: 1px dashed violet;">This is a great opportunity for our business</h4>
+    <li>The <code>max-content</code> property refers to the narrowest measure a box could take while fitting around its content if no soft wrap opportunities within the element were taken:
+    <h4 style="width: max-content; border: 1px dashed violet;">This is a great opportunity for our business</h4></li>
 
-    <p>The <code>fit-content</code> property uses the available space but never less than <code>min-content</code> and never more than <code>max-content</code>:</p>
-    <h4 style="width: fit-content; border: 1px dashed violet;">This is a great opportunity for our business</h4>
+    <li>The <code>fit-content</code> property uses the available space but never less than <code>min-content</code> and never more than <code>max-content</code>. Essentially, it makes <code>width</code> behave like <code>height</code>:
+    <h4 style="width: fit-content; border: 1px dashed violet;">This is a great opportunity for our business</h4></li>
+
+    <li>Center a block element:
+    <h4 style="width: fit-content; margin-left: auto; margin-right: auto; border: 1px dashed violet;">This is a great opportunity for our business</h4></li>
+
+    <li>Look at the cross centered in the page, it's one of the few cases for which <code>height: fit-content</code> differs from <code>height: auto</code>.
+    <div style="position: fixed; left: 0; right: 0; top: 0; bottom: 0; width: fit-content; height: fit-content; margin: auto; background: lightgoldenrodyellow; opacity: 0.25;">&cross;</div></li>
+    </ul>
 </body>
 </html>
