@@ -1,29 +1,33 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Float</title>
-<style>
-body,div,span,ul,ol,dl,li,dt,dd,h1,h2,h3,h4,h5,h6,form,fieldset,label,input,textarea,p,th,td {margin:0;padding:0;}
-.container {
-	font-size: 0.9rem;
-	border: 1px solid #008000;
-	width: 600px;
-	background-color: #eeeeee;
-	padding: 10px;
-}
-.clearfix:after {
-	content: "";
-	display: block;
-	clear: both;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float</title>
+    <style>
+        body,div,span,ul,ol,dl,li,dt,dd,h1,h2,h3,h4,h5,h6,form,fieldset,label,input,textarea,p,th,td {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            font-size: 0.9rem;
+            border: 1px solid #008000;
+            width: 600px;
+            background-color: #eeeeee;
+            padding: 10px;
+        }
+        .clearfix:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+    </style>
 </head>
 <body>
 <p>1. Float moves a block to the left or the right. Successive blocks will flow their content between the left and right floats:</p>
 <div class="container">
-	<div style="width: 100px; height: 100px; float: left; border: 1px solid red;">Bli bli...</div>
-	<div style="width: 100px; height: 50px; float: right; border: 1px solid green;">Bla bla...</div>
+	<div style="width: 100px; height: 100px; float: left; border: 1px solid red;">float: left</div>
+	<div style="width: 100px; height: 50px; float: right; border: 1px solid green;">float: right</div>
 	<div style="width: 300px; height: 250px; border: 1px solid orange;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac...</div>
 </div>
 
@@ -33,8 +37,8 @@ body,div,span,ul,ol,dl,li,dt,dd,h1,h2,h3,h4,h5,h6,form,fieldset,label,input,text
 
 <p>2. The height of the parent element only spans non-floated elements:</p>
 <div class="container">
-	<div style="width: 100px; height: 100px; float: left; border: 1px solid red;">Bli bli...</div>
-	<div style="width: 100px; height: 50px; float: right; border: 1px solid green;">Bla bla...</div>
+	<div style="width: 100px; height: 100px; float: left; border: 1px solid red;">float: left</div>
+	<div style="width: 100px; height: 50px; float: right; border: 1px solid green;">float: right</div>
 	<div style="width: 300px; height: 80px; border: 1px solid orange;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum.</div>
 </div>
 
@@ -42,11 +46,11 @@ body,div,span,ul,ol,dl,li,dt,dd,h1,h2,h3,h4,h5,h6,form,fieldset,label,input,text
 <hr>
 <br>
 
-<p>3. An element that has the clear property set on it will not move up adjacent to the float, but will move itself down past the float:</p>
+<p>3. An element that has the <code>clear</code> property set on it will not move up adjacent to the float, but will move itself down past the left and/or right floats:</p>
 <div class="container">
-	<div style="width: 100px; height: 100px; float: left; border: 1px solid red;">Bli bli...</div>
-	<div style="width: 100px; height: 50px; float: right; border: 1px solid green;">Bla bla...</div>
-	<div style="width: 300px; height: 200px; clear: right; border: 1px solid orange;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac...</div>
+	<div style="width: 100px; height: 100px; float: left; border: 1px solid red;">float: left</div>
+	<div style="width: 100px; height: 50px; float: right; border: 1px solid green;">float: right</div>
+	<div style="width: 300px; height: 200px; clear: right; border: 1px solid orange;">clear: right<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac...</div>
 </div>
 
 <br>
@@ -55,9 +59,9 @@ body,div,span,ul,ol,dl,li,dt,dd,h1,h2,h3,h4,h5,h6,form,fieldset,label,input,text
 
 <p>4. If a parent element contained nothing but floated elements, the height of it would literally collapse:</p>
 <div class="container">
-	<div style="width: 100px; height: 100px; float: left; border: 1px solid red;">Bli bli...</div>
-	<div style="width: 100px; height: 50px; float: right; border: 1px solid green;">Bla bla...</div>
-	<div style="width: 300px; height: 200px; float: left; border: 1px solid orange;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac...</div>
+	<div style="width: 100px; height: 100px; float: left; border: 1px solid red;">float: left</div>
+	<div style="width: 100px; height: 50px; float: right; border: 1px solid green;">float: right</div>
+	<div style="width: 300px; height: 200px; float: left; border: 1px solid orange;">float: left<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac...</div>
 </div>
 
 <div style="clear: both;"></div>
@@ -67,9 +71,9 @@ body,div,span,ul,ol,dl,li,dt,dd,h1,h2,h3,h4,h5,h6,form,fieldset,label,input,text
 
 <p>5. Same problem as point 4.:</p>
 <div class="container">
-	<div style="width: 100px; height: 100px; float: left; border: 1px solid red;">Bli bli...</div>
-	<div style="width: 100px; height: 50px; float: right; border: 1px solid green;">Bla bla...</div>
-	<div style="width: 300px; height: 200px; clear: both; float: left; border: 1px solid orange;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac...</div>
+	<div style="width: 100px; height: 100px; float: left; border: 1px solid red;">float: left</div>
+	<div style="width: 100px; height: 50px; float: right; border: 1px solid green;">float: right</div>
+	<div style="width: 300px; height: 200px; clear: both; float: left; border: 1px solid orange;">clear: both<br>float: left<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac...</div>
 </div>
 
 <div style="clear: both;"></div>
@@ -79,9 +83,9 @@ body,div,span,ul,ol,dl,li,dt,dd,h1,h2,h3,h4,h5,h6,form,fieldset,label,input,text
 
 <p>6. Fix collapsing of the container box by clearing the float after the last floated element in the container but before the closing of the container:</p>
 <div class="container">
-	<div style="width: 100px; height: 100px; float: left; border: 1px solid red;">Bli bli...</div>
-	<div style="width: 100px; height: 50px; float: right; border: 1px solid green;">Bla bla...</div>
-	<div style="width: 300px; height: 200px; float: left; border: 1px solid orange;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac...</div>
+	<div style="width: 100px; height: 100px; float: left; border: 1px solid red;">float: left</div>
+	<div style="width: 100px; height: 50px; float: right; border: 1px solid green;">float: right</div>
+	<div style="width: 300px; height: 200px; float: left; border: 1px solid orange;">float: left<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac...</div>
 	<div style="clear: both;"></div>
 </div>
 
@@ -89,22 +93,22 @@ body,div,span,ul,ol,dl,li,dt,dd,h1,h2,h3,h4,h5,h6,form,fieldset,label,input,text
 <hr>
 <br>
 
-<p>7. Applying the clearfix class to the container is the same as point 6.:</p>
+<p>7. Applying the <code>clearfix</code> class to the container is the same as point 6.:</p>
 <div class="container clearfix">
-	<div style="width: 100px; height: 100px; float: left; border: 1px solid red;">Bli bli...</div>
-	<div style="width: 100px; height: 50px; float: right; border: 1px solid green;">Bla bla...</div>
-	<div style="width: 300px; height: 200px; float: left; border: 1px solid orange;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac...</div>
+	<div style="width: 100px; height: 100px; float: left; border: 1px solid red;">float: left</div>
+	<div style="width: 100px; height: 50px; float: right; border: 1px solid green;">float: right</div>
+	<div style="width: 300px; height: 200px; float: left; border: 1px solid orange;">float: left<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac...</div>
 </div>
 
 <br>
 <hr>
 <br>
 
-<p>8. Fix collapsing of the container with display: flow-root:</p>
+<p>8. Add the <code>display: flow-root</code> property to the container to prevent it from collapsing:</p>
 <div class="container" style="display: flow-root">
-	<div style="width: 100px; height: 100px; float: left; border: 1px solid red;">Bli bli...</div>
-	<div style="width: 100px; height: 50px; float: right; border: 1px solid green;">Bla bla...</div>
-	<div style="width: 300px; height: 200px; float: left; border: 1px solid orange;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac...</div>
+	<div style="width: 100px; height: 100px; float: left; border: 1px solid red;">float: left</div>
+	<div style="width: 100px; height: 50px; float: right; border: 1px solid green;">float: right</div>
+	<div style="width: 300px; height: 200px; float: left; border: 1px solid orange;">float: left<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac...</div>
 </div>
 
 <br>
