@@ -9,7 +9,7 @@
     <ul>
         <li>The default for <code>height</code> is <code>auto</code>, which means that a element sets its height so that it can contain the children.</li>
         <li>As a parent wants to be the smallest height required to contain its children, to avoid a circular paradox, we have to give the parent a fixed height when the children use percentage heights.</li>
-        <li>The <code>&lt;html&gt;</code> tag has no parent, and if we set <code>height: 100%</code> for it, the viewport height is used.<br>The following works well: <code>html, body { height: 100%; }</code>.</li>
+        <li>The <code>&lt;html&gt;</code> tag has no parent, and if we set <code>height: 100%</code> for it, the viewport height is used. The following works well:<br><code>html {height: 100%}</code> with <code>body {min-height: 100%}</code></li>
         <li>The <code>height</code> property with percent is calculated in two steps:
         <ol>
             <li>The height is read from the element's containing block, which usually is the parent element. But what height is read? If the element has a <code>position: static</code> (the default) or a <code>position: relative</code>, then the height is read from the <strong>content-box</strong> of the containing block, but if the element has a <code>position: absolute</code>, then the height will be read from the <strong>padding-box</strong> of the containing block.</li>
