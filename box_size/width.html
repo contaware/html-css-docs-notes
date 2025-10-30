@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>width: auto, width: 100% and box-sizing</title>
+    <title>width</title>
     <style>
         .container {
             box-sizing: content-box;
@@ -31,14 +31,17 @@
     </style>
 </head>
 <body>
-    <p>The <code>width</code> property with percent is calculated in two steps:</p>
-    <ol>
-        <li>The width is read from the element's containing box, which usually is the parent box. But what width is read? If the element has a <code>position: static</code> (the default) or a <code>position: relative</code>, then the read width is the <strong>content-box</strong> of the containing box, but if the element has a <code>position: absolute</code>, then the read width will be the <strong>padding-box</strong> of the containing box. Note: the margin and padding of an element in percentage are also based on this same read width (never the height).</li>
-        <li>Now the above read width is applied to the element according to the element's set <code>box-sizing</code>.</li>
-    </ol>
+    <ul>
+        <li>The default for <code>width</code> is <code>auto</code> which grows as much as it can, but it takes padding, margin and border into account.</li>
+        <li>By default <code>box-sizing</code> is not inherited.</li>
+        <li>The <code>width</code> property with percent is calculated in two steps:
+        <ol>
+            <li>The width is read from the element's containing block, which usually is the parent element. But what width is read? If the element has a <code>position: static</code> (the default) or a <code>position: relative</code>, then the width is read from the <strong>content-box</strong> of the containing block, but if the element has a <code>position: absolute</code>, then the width will be read from the <strong>padding-box</strong> of the containing block. Note: the margin and padding of an element in percentage are also based on this same read width, even for <code>padding-top</code>, <code>padding-bottom</code>, <code>margin-top</code> and <code>margin-bottom</code>.</li>
+            <li>Now the above read width is applied to the element according to the element's set <code>box-sizing</code>.</li>
+        </ol>
+        </li>
+    </ul>
 
-    <p>Note: by default <code>box-sizing</code> is not inherited.</p>
-    
     <div class="container">
         <div class="content-box-child-100">
             box-sizing: content-box;<br>
