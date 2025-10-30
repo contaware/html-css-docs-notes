@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>box-shadow</title>
+    <style>
+        .box1 {
+            box-shadow: 11px 10px 5px 0px rgba(0,255,0,0.75);
+            border: 1px solid green;
+        }
+        .box2 {
+            box-shadow: 11px 10px 5px 0px rgba(0,0,255,0.75);
+            border: 1px solid black;
+        }
+        .box3 {
+            box-shadow: 0 0 7px 1px rgba(255,0,0,0.75);
+            border: 1px solid black;
+        }
+        .boximg {
+            width: 180px;
+            height: 180px;
+        }
+        .shadowimg {
+            box-shadow: 0px 1px 2px 0px rgba(0,255,255,0.7),
+                        1px 2px 4px 0px rgba(0,255,255,0.7),
+                        2px 4px 8px 0px rgba(0,255,255,0.7),
+                        2px 4px 16px 0px rgba(0,255,255,0.7);
+        }
+    </style>
+</head>
+<body>
+    <h1>box-shadow: [x-offset] [y-offset] [blur] [spread] [color]</h1>
+    <h2>Box shadow on &lt;span&gt;</h2>
+    <span class="box1">This is box1</span>
+    <br>
+    <br>
+    <h2>Box shadow on &lt;div&gt;</h2>
+    <div class="box2">This is box2</div>
+    <br>
+    <br>
+    <h2>Box shadow on &lt;div&gt; no offsets</h2>
+    <div class="box3">This is box3</div>
+    <br>
+    <br>
+    <h2>Box shadow on &lt;img&gt; inside a &lt;div&gt;</h2>
+    <div class="boximg"><img class="shadowimg" src="https://picsum.photos/id/20/180/180" alt="An awesome picture"></div>
+    <br>
+    <br>
+    <h2>Box shadow on &lt;img&gt; inside a &lt;div&gt; with overflow: hidden &rarr; not shown!</h2>
+    <div style="overflow: hidden" class="boximg"><img class="shadowimg" src="https://picsum.photos/id/20/180/180" alt="An awesome picture"></div>
+</body>
+</html>
