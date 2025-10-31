@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors</title>
+    <style>
+        /* Universal selector */
+        * {}
+
+        /* Tag selector */
+        div {}
+
+        /* Class selector */
+        .item {}
+
+        /* Classes selector (must have both classes) */
+        .first.item {}
+
+        /* ID selector */
+        #myid {}
+
+        /* Attribute selector */
+        [myattr] {}
+        [type="text"] {}
+        [type^="te"] {}  /* begging of value is "te" */
+        [type$="xt"] {}  /* end of value is "xt" */
+        [type*="ex"] {}  /* substring of value is "ex" */
+
+        /* Multiple items selector 
+           Note: there is also :where() which is functionally identical to 
+                 :is() but with a zero specificity compared to :is() which 
+                 has the specificity of its most specific argument. */
+        span, #myid, .item {}
+        li:is(.first, .last) {}     /* same as: li.first, li.last {} */
+        .myclass :is(strong, em) {} /* same as: .myclass strong, .myclass em {} */
+
+        /* Child selector */
+        ul > li {}
+
+        /* Descendant selector */        
+        ul strong {}
+
+        /* Next-sibling selector, selects the p directly after a div 
+           (the two elements share the same parent) */      
+        div + p {}
+
+        /* Subsequent-sibling selector, selects the span that at some 
+           point comes after a div (the two elements share the same parent) */        
+        div ~ span {}
+
+        /* Pseudo-classes selectors which select an entire element */
+        li:first-child {}  /* matches if <li> is the first child */
+        li:nth-child(2) {} /* matches if <li> is the second child */
+        li:last-child {}   /* matches if <li> is the last child */
+
+        /* Pseudo-classes selectors which select a specific state of an element */
+        li:hover {}
+        input[type="text"]:focus {}
+        input[type="checkbox"]:checked {}
+
+        /* The :not() pseudo-class 
+           It represents elements that do not match the selectors 
+           in the comma-separated list. */     
+        li:not(.first, .last) {}
+        li:not(.first):not(.last) {} /* equivalent to the above */
+
+        /* The :has() pseudo-class
+           If you want to select the first element instead of the last one, 
+           write down the selector line meant for the last element, 
+           and move everything after the first element into a :has(). 
+           For example ul > li becomes ul:has(> li) */
+        ul:has(li) {}      /* select <ul> which has <li> as a descendant */
+        ul:has(> li) {}    /* select <ul> which has <li> as a direct child */
+        div:has(+ p) {}    /* select <div> which has <p> as a next-sibling */
+        div:has(~ span) {} /* select <div> which has <span> as a subsequent-sibling */
+
+        /* Pseudo-element selectors
+           - Use two colons to distinguish pseudo-elements from 
+             pseudo-classes, one colon is the old syntax. 
+           - Pseudo-elements are only allowed at the end of a selector line.
+        */
+        
+        /* Pseudo-elements which let you style a specific part of the selected 
+           element. The following ones work only on block elements. */
+        p.myclass::first-letter {font-size: 200%}
+        p.myclass::first-line {color: red}
+
+        /* Pseudo-elements created as first/last children of the selected element
+           - Can add content only to tags that have a content, 
+             and the content property must always be provided.
+           - Concatenate attr() with text by separating with spaces.
+        */
+        div#myid:hover::before {content: 'This is ' attr(myattr) '! '}
+        p.myclass::after {
+            content: '';
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <p>In CSS classes and IDs can contain only the characters [a-zA-Z0-9] plus the hyphen (-) and the underscore (_); they cannot start with a digit, two hyphens, or a hyphen followed by a digit.</p>
+
+    <div id="myid" myattr="great">This is a div.</div>
+    <p class="myclass">This is a paragraph, <strong>color</strong> changes back to the default when wrapping.</p>
+    <span>This is a span.</span>
+    <br>
+    <input type="text">
+    <input type="checkbox">
+    <ul>
+        <li class="first item"><strong>Item 1</strong></li>
+        <li class="item">Item 2</li>
+        <li class="item">Item 3</li>
+        <li class="last item">Item 4</li>
+    </ul>
+    <p class="myclass">Our last <em>element</em>.</p>
+</body>
+</html>
