@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS variables (or custom properties)</title>
+    <style>
+        :root {
+            /* A common practice is to define CSS variables in the :root,
+               so that they can be referenced globally. */
+            --div-background-color: lightsalmon;
+            --text-color: black;
+        }
+        body {
+            /* Provide a fallback value if variable is not set. */
+            background-color: var(--background-color, pink);
+        }
+        .child {
+            /* A CSS variable defined using two dashes always 
+               inherits the value of its parent. */
+            background-color: var(--div-background-color);
+            color: var(--text-color);
+            margin: 10px;
+        }
+        .one {
+            /* Overwrite the value set in :root, from now on, and in all
+               descendants, --div-background-color will have this value. */
+            --div-background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="one">
+        <div class="child">1.1</div>
+        <div class="child">1.2</div>
+        <div class="child">1.3</div>
+    </div>
+    <div class="two">
+        <div class="child">2.1</div>
+        <div class="child">2.2</div>
+    </div>
+    <br>
+    <button id="dark-theme-btn">Dark Theme</button>
+    <button id="light-theme-btn">Light Theme</button>
+    <button id="remove-theme-btn">Remove Theme</button>
+    <button id="console-log-btn">console.log()</button>
+    <script>
+        /* document.documentElement points to the html element which is 
+           also the :root pseudo-class */
+        const rootElement = document.documentElement;
+        const divOne = document.querySelector('.one');
+
+        document.getElementById('dark-theme-btn').addEventListener('click', () => {
+            rootElement.style.setProperty('--background-color', 'black');
+        })
+        
+        document.getElementById('light-theme-btn').addEventListener('click', () => {
+            rootElement.style.setProperty('--background-color', 'white');
+        })
+        
+        document.getElementById('remove-theme-btn').addEventListener('click', () => {
+            rootElement.style.removeProperty('--background-color');
+        })
+
+        document.getElementById('console-log-btn').addEventListener('click', () => {
+            const bkgAtRoot = window.getComputedStyle(rootElement).getPropertyValue('--background-color');
+            console.log('--background-color @ :root is:     ' + bkgAtRoot);
+            const divBkgAtRoot = window.getComputedStyle(rootElement).getPropertyValue('--div-background-color');
+            console.log('--div-background-color @ :root is: ' + divBkgAtRoot);
+            const divBkgAtOne = window.getComputedStyle(divOne).getPropertyValue('--div-background-color');
+            console.log('--div-background-color @ .one is:  ' + divBkgAtOne);
+        })
+    </script>
+</body>
+</html>
