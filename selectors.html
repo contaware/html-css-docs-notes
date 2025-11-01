@@ -50,6 +50,11 @@
            but the two elements must share the same parent. */
         div ~ span {} /* selects <span> coming after <div> */
 
+        /* The :root pseudo-class represents an element that is the root 
+           of the document. In HTML, this is always the html element.
+           One technical difference between them is that :root, being a 
+           pseudo-class, has a greater specificity than html. */
+
         /* Pseudo-class selectors which select an entire element */
         li:first-child {}   /* matches if <li> is the first child */
         li:nth-child(2) {}  /* matches if <li> is the second child */
