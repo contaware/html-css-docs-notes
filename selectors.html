@@ -31,9 +31,10 @@
            Note: there is also :where() which is functionally identical to 
                  :is() but with a zero specificity compared to :is() which 
                  has the specificity of its most specific argument. */
-        span, #myid, .item {}
-        li:is(.first, .last) {}     /* same as: li.first, li.last {} */
-        .myclass :is(strong, em) {} /* same as: .myclass strong, .myclass em {} */
+        li.first, li.last {}
+        li:is(.first, .last) {}   /* the same as above */
+        .mycls strong, .mycls em {}
+        .mycls :is(strong, em) {} /* the same as above */
 
         /* Child selector */
         ul > li {}
@@ -41,39 +42,44 @@
         /* Descendant selector */        
         ul strong {}
 
-        /* Next-sibling selector, selects the p directly after a div 
-           (the two elements share the same parent) */      
-        div + p {}
+        /* Next-sibling selector, the two elements must be next to 
+           each other, and they must share the same parent. */  
+        div + p {} /* selects <p> directly after <div> */
 
-        /* Subsequent-sibling selector, selects the span that at some 
-           point comes after a div (the two elements share the same parent) */        
-        div ~ span {}
+        /* Subsequent-sibling selector, some elements can be in between, 
+           but the two elements must share the same parent. */
+        div ~ span {} /* selects <span> coming after <div> */
 
-        /* Pseudo-classes selectors which select an entire element */
-        li:first-child {}  /* matches if <li> is the first child */
-        li:nth-child(2) {} /* matches if <li> is the second child */
-        li:last-child {}   /* matches if <li> is the last child */
+        /* Pseudo-class selectors which select an entire element */
+        li:first-child {}   /* matches if <li> is the first child */
+        li:nth-child(2) {}  /* matches if <li> is the second child */
+        li:nth-child(2n) {} /* matches if <li> is an even child */
+        li:last-child {}    /* matches if <li> is the last child */  
 
-        /* Pseudo-classes selectors which select a specific state of an element */
+        /* Pseudo-class selectors which select a state of an element */
         li:hover {}
-        input[type="text"]:focus {}
-        input[type="checkbox"]:checked {}
+        input[type="text"]:focus {outline: 2px dashed orange}
+        input[type="checkbox"]:checked {box-shadow: 0px 0px 5px 2px green}
+        input[type="email"]:valid {outline: 2px solid green}
+        input[type="email"]:invalid {outline: 2px dashed red}
+        input[type="number"]:in-range {color: white; background: green}
+        div:empty {outline: 2px solid deeppink; height: 1em}
 
-        /* The :not() pseudo-class 
+        /* The :not() pseudo-class selector
            It represents elements that do not match the selectors 
            in the comma-separated list. */     
         li:not(.first, .last) {}
         li:not(.first):not(.last) {} /* equivalent to the above */
 
-        /* The :has() pseudo-class
+        /* The :has() pseudo-class selector
            If you want to select the first element instead of the last one, 
            write down the selector line meant for the last element, 
            and move everything after the first element into a :has(). 
            For example ul > li becomes ul:has(> li) */
-        ul:has(li) {}      /* select <ul> which has <li> as a descendant */
-        ul:has(> li) {}    /* select <ul> which has <li> as a direct child */
-        div:has(+ p) {}    /* select <div> which has <p> as a next-sibling */
-        div:has(~ span) {} /* select <div> which has <span> as a subsequent-sibling */
+        ul:has(li) {}      /* select <ul> which has <li> as descendant */
+        ul:has(> li) {}    /* select <ul> which has <li> as direct child */
+        div:has(+ p) {}    /* select <div> which has <p> as next-sibling */
+        div:has(~ span) {} /* select <div> which has <span> as sibling */
 
         /* Pseudo-element selectors
            - Use two colons to distinguish pseudo-elements from 
@@ -81,18 +87,21 @@
            - Pseudo-elements are only allowed at the end of a selector line.
         */
         
-        /* Pseudo-elements which let you style a specific part of the selected 
-           element. The following ones work only on block elements. */
-        p.myclass::first-letter {font-size: 200%}
-        p.myclass::first-line {color: red}
+        /* Pseudo-element selectors which let you style a specific part of 
+           the selected element. */
+        p.mycls::first-letter {font-size: 200%} /* only for block elements */
+        p.mycls::first-line {color: red}      /* only for block elements */
 
-        /* Pseudo-elements created as first/last children of the selected element
-           - Can add content only to tags that have a content, 
-             and the content property must always be provided.
-           - Concatenate attr() with text by separating with spaces.
+        /* Pseudo-element selectors created as first/last children of the 
+           selected element.
+           - Can add content only to tags that have a content.
+           - The content property must always be provided.
         */
-        div#myid:hover::before {content: 'This is ' attr(myattr) '! '}
-        p.myclass::after {
+        div#myid:hover::before {
+            /* Concatenate attr() with text by separating with spaces */
+            content: 'This is ' attr(myattr) '! '
+        }
+        p.mycls::after {
             content: '';
             display: inline-block;
             width: 12px;
@@ -102,20 +111,22 @@
     </style>
 </head>
 <body>
-    <p>In CSS classes and IDs can contain only the characters [a-zA-Z0-9] plus the hyphen (-) and the underscore (_); they cannot start with a digit, two hyphens, or a hyphen followed by a digit.</p>
+    <p style="padding: 16px; background: orange; color: white; font-size: 20px; text-align: center;">In CSS, classes and IDs can contain only the characters [a-zA-Z0-9] plus the hyphen (-) and the underscore (_); they cannot start with a digit, two hyphens, or a hyphen followed by a digit.</p>
 
     <div id="myid" myattr="great">This is a div.</div>
-    <p class="myclass">This is a paragraph, <strong>color</strong> changes back to the default when wrapping.</p>
-    <span>This is a span.</span>
-    <br>
-    <input type="text">
-    <input type="checkbox">
+    <p class="mycls">This is a paragraph, <strong>color</strong> changes back to the default when wrapping.</p>
+    <span>This is a span.</span><br>
+    <input type="text" placeholder="Focus for outline"><br>
+    <input type="checkbox" id="check"><label for="check">Check for box shadow</label><br>
+    <input type="email" placeholder="Enter a valid email" required><br>
+    <input type="number" min="1" max="5" value="1">
     <ul>
         <li class="first item"><strong>Item 1</strong></li>
         <li class="item">Item 2</li>
         <li class="item">Item 3</li>
         <li class="last item">Item 4</li>
     </ul>
-    <p class="myclass">Our last <em>element</em>.</p>
+    <p class="mycls">Next follows an <em>empty</em> &lt;div&gt;:</p>
+    <div></div>
 </body>
 </html>
