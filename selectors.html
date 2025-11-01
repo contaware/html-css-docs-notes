@@ -32,9 +32,9 @@
                  :is() but with a zero specificity compared to :is() which 
                  has the specificity of its most specific argument. */
         li.first, li.last {}
-        li:is(.first, .last) {}   /* the same as above */
+        li:is(.first, .last) {}   /* equivalent to the above */
         .mycls strong, .mycls em {}
-        .mycls :is(strong, em) {} /* the same as above */
+        .mycls :is(strong, em) {} /* equivalent to the above */
 
         /* Child selector */
         ul > li {}
