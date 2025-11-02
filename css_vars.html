@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS variables (or custom properties)</title>
+    <title>CSS variables</title>
     <style>
         :root {
             /* A common practice is to define CSS variables in the :root,
@@ -30,7 +30,13 @@
 </head>
 <body>
     <h1>Basics</h1>
-    <p>A CSS variable (or CSS custom property) begins with two dashes and is followed by a case-sensitive property name. A custom property is referenced with the <code>var()</code> function. Please read the comments under the <code>&lt;style&gt;</code> tag to understand the following example.</p>
+    
+    <p>A CSS variable (or CSS custom property) begins with two dashes and is followed by a case-sensitive name. A custom property is referenced with the <strong><code>var()</code></strong> function which has an optional second parameter holding a fallback value used when the custom property is not set. A HTML child element inherits the CSS variables from its parent.</p>
+    
+    <p>The <strong><code>calc()</code></strong> function is often used in combination with CSS variables, it supports the <code>+ - * /</code> operators, just remember to <strong>surround the operators by spaces</strong>. The operands of <strong><code>+</code></strong> and <strong><code>-</code></strong> can have different units, for the <strong><code>*</code></strong> operator only one operand can contain a unit and the <strong><code>/</code></strong> operator allows units for both operands, provided they are of the same data type.</p>
+
+    <p>Go to the HTML code and read the comments under the <code>&lt;style&gt;</code> tag to understand the following example:</p>
+    
     <div class="one">
         <div class="child">1.1</div>
         <div class="child">1.2</div>
@@ -45,6 +51,7 @@
     <button id="light-theme-btn">Light Theme</button>
     <button id="remove-theme-btn">Var Defaults</button>
     <button id="console-log-btn">console.log()</button>
+    
     <script>
         /* document.documentElement points to the html element which is 
            also the :root pseudo-class */
@@ -82,10 +89,10 @@
     </script>
 
     <h1>Advanced</h1>
-    <p>When the above example has been understood, go through this list of advanced rules.</p>
+    
     <ol>
         <li>
-            <p>Custom properties are evaluated one hierarchy level at the time, from <code>:root</code> down to the current element with increasing priority. The custom property assignments, at a given hierarchy level, happen all in parallel. The custom properties placed last, win, and the custom properties in tags win over all the others (yes, custom property assignments and use can happen in HTML style attributes). The following is perfectly valid and will set <code>--result</code> to <code>6px</code>:</p>
+            <p>Custom properties are evaluated one hierarchy level at the time, from <code>:root</code> down to the current element with increasing priority. At a given hierarchy level, the custom property assignments placed last, win, and those in tags win over all the others (yes, custom property assignments and use can happen in HTML style attributes). A custom property before being used in a <code>var()</code> function has already resolved to the highest priority value, for example the following is perfectly valid and will set <code>--result</code> to <code>6px</code>:</p>
             <pre>
 --p: 1px;
 --result: calc(var(--p) + 1px);
@@ -94,7 +101,7 @@
         </li>
         
         <li>
-            <p>The <code>var()</code> function can be used in place of any part of a property value. But the <code>var()</code> function cannot be used as property name or selector.</p>
+            <p>The <code>var()</code> function can be used in place of any part of a property value. But the <code>var()</code> function cannot be used as property name or selector. There are some particularities to be aware of:</p>
             <pre>
 --gap: 5;
 --top-bottom: 5px; 
@@ -112,7 +119,7 @@ margin-top: calc(var(--gap) * 1px);
         </li>
         
         <li>
-            <p>When exiting a hierarchy level all the custom property values with a <code>var()</code> have been evaluated. Thus the custom properties are passed down to the next hierarchy level without any <code>var()</code> functions in their values. Note that a <code>calc()</code> function in a custom property value is not evaluated when exiting a hierarchy level; it only gets evaluated when the custom property is assigned to a normal property.</p>
+            <p>When exiting a hierarchy level all the custom property values containing a <code>var()</code> function have been evaluated. Thus the custom properties are passed down to the next hierarchy level without any <code>var()</code> functions in their values. Note that a <code>calc()</code> function in a custom property value is not evaluated when exiting a hierarchy level; it only gets evaluated when the custom property is assigned to a normal property.</p>
         </li>
         
         <li>
