@@ -9,27 +9,28 @@
             /* A common practice is to define CSS variables in the :root,
                so that they can be referenced globally. */
             --div-background-color: lightsalmon;
-            --text-color: black;
         }
         body {
-            /* Provide a fallback value if variable is not set. */
+            /* The second parameter is the fallback value in case that the 
+               variable is not set. */
+            color: var(--text-color, darkslateblue);
             background-color: var(--background-color, pink);
-        }
-        .child {
-            /* A CSS variable defined using two dashes always 
-               inherits the value of its parent. */
-            background-color: var(--div-background-color);
-            color: var(--text-color);
-            margin: 10px;
         }
         .one {
             /* Overwrite the value set in :root, from now on, and in all
                descendants, --div-background-color will have this value. */
             --div-background-color: lightblue;
         }
+        .child {
+            /* A CSS variable inherits the value of its parent. */
+            background-color: var(--div-background-color);
+            margin: 10px;
+        }
     </style>
 </head>
 <body>
+    <h1>Basics</h1>
+    <p>A CSS variable (or CSS custom property) begins with two dashes and is followed by a case-sensitive property name. A custom property is referenced with the <code>var()</code> function. Please read the comments under the <code>&lt;style&gt;</code> tag to understand the following example.</p>
     <div class="one">
         <div class="child">1.1</div>
         <div class="child">1.2</div>
@@ -42,7 +43,7 @@
     <br>
     <button id="dark-theme-btn">Dark Theme</button>
     <button id="light-theme-btn">Light Theme</button>
-    <button id="remove-theme-btn">Remove Theme</button>
+    <button id="remove-theme-btn">Var Defaults</button>
     <button id="console-log-btn">console.log()</button>
     <script>
         /* document.documentElement points to the html element which is 
@@ -51,25 +52,84 @@
         const divOne = document.querySelector('.one');
 
         document.getElementById('dark-theme-btn').addEventListener('click', () => {
+            rootElement.style.setProperty('--text-color', 'white');
             rootElement.style.setProperty('--background-color', 'black');
         })
         
         document.getElementById('light-theme-btn').addEventListener('click', () => {
+            rootElement.style.setProperty('--text-color', 'black');
             rootElement.style.setProperty('--background-color', 'white');
         })
         
         document.getElementById('remove-theme-btn').addEventListener('click', () => {
+            rootElement.style.removeProperty('--text-color');
             rootElement.style.removeProperty('--background-color');
         })
 
         document.getElementById('console-log-btn').addEventListener('click', () => {
+            const txtAtRoot = window.getComputedStyle(rootElement).getPropertyValue('--text-color');
+            console.log('--text-color @ :root is:           ' + txtAtRoot);
+
             const bkgAtRoot = window.getComputedStyle(rootElement).getPropertyValue('--background-color');
             console.log('--background-color @ :root is:     ' + bkgAtRoot);
+
             const divBkgAtRoot = window.getComputedStyle(rootElement).getPropertyValue('--div-background-color');
             console.log('--div-background-color @ :root is: ' + divBkgAtRoot);
+
             const divBkgAtOne = window.getComputedStyle(divOne).getPropertyValue('--div-background-color');
             console.log('--div-background-color @ .one is:  ' + divBkgAtOne);
         })
     </script>
+
+    <h1>Advanced</h1>
+    <p>When the above example has been understood, go through this list of advanced rules.</p>
+    <ol>
+        <li>
+            <p>Custom properties are evaluated one hierarchy level at the time, from <code>:root</code> down to the current element with increasing priority. The custom property assignments, at a given hierarchy level, happen all in parallel. The custom properties placed last, win, and the custom properties in tags win over all the others (yes, custom property assignments and use can happen in HTML style attributes). The following is perfectly valid and will set <code>--result</code> to <code>6px</code>:</p>
+            <pre>
+--p: 1px;
+--result: calc(var(--p) + 1px);
+--p: 5px;
+            </pre>
+        </li>
+        
+        <li>
+            <p>The <code>var()</code> function can be used in place of any part of a property value. But the <code>var()</code> function cannot be used as property name or selector.</p>
+            <pre>
+--gap: 5;
+--top-bottom: 5px; 
+--left-right: 10px;
+
+/* Correct */
+margin: var(--top-bottom) var(--left-right);
+
+/* Wrong */
+margin-top: var(--gap)px;
+
+/* Correct */
+margin-top: calc(var(--gap) * 1px);
+            </pre>
+        </li>
+        
+        <li>
+            <p>When exiting a hierarchy level all the custom property values with a <code>var()</code> have been evaluated. Thus the custom properties are passed down to the next hierarchy level without any <code>var()</code> functions in their values. Note that a <code>calc()</code> function in a custom property value is not evaluated when exiting a hierarchy level; it only gets evaluated when the custom property is assigned to a normal property.</p>
+        </li>
+        
+        <li>
+            <p>If there is a <a href="https://www.w3.org/TR/css-variables-1/#cycles" target="_blank">cycle</a> in the dependency graph of the custom properties, all the custom properties in the cycle get an invalid value assigned. A custom property referring to itself creates a cyclic dependency and thus is <strong>invalid</strong>:</p>
+            <pre>
+--p: 5px;
+--p: calc(var(--p) + 1px);
+            </pre>
+            <p>A variables swap creates a cyclic dependency and thus is <strong>invalid</strong>:</p>
+            <pre>
+--x: 5px;
+--y: 10px;
+--temp: var(--y);
+--y: var(--x);
+--x: var(--temp);
+            </pre>
+        </li>
+    </ol>
 </body>
 </html>
