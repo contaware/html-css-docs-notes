@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rem vs em vs %</title>
+    <style>
+        .one-rem {font-size: 1rem;}
+        .one-em {font-size: 1em;}
+        .one-hundred-percent {font-size: 100%;}
+        .two-rem {font-size: 2rem;}
+        .two-em {font-size: 2em;}
+        .two-hundred-percent {font-size: 200%;}
+    </style>
+</head>
+<body>
+    <h1><code>rem</code> vs <code>em</code> vs <code>%</code></h1>
+
+    <p>
+        <code>em</code> is relative to the parent <code>font-size</code>, while <code>rem</code> (root em) is relative to the root <code>font-size</code> which is the font size of the <code>html</code> element (equivalent to the <code>:root</code> pseudo-class). 
+    </p>
+
+    <p>
+        If there is no explicit <code>font-size</code> value set on the root element, it inherits its value from the Browser settings, and usually that's <code>16px</code>. An absolute <code>font-size</code> value on the root element overwrites the Browser settings, not always a good idea. On the other hand, it's possible to set a <code>rem</code> <code>font-size</code> for the root element, it will be relative to the Browser settings.
+    </p>
+
+    <p>
+        When percentages are employed with <code>font-size</code>, it's the same as using <code>em</code>. But that holds only for <code>font-size</code>, for example using percentages on a <code>width</code>, means relative to the parent <code>width</code>, while <code>em</code> on a <code>width</code>, means relative to the parent <code>font-size</code>.
+    </p>
+
+    <hr>
+    
+    <div class="one-rem">1rem</div>
+    <div class="one-em">1em</div>
+    <div class="one-hundred-percent">100%</div>
+    <div class="two-rem">2rem</div>
+    <div class="two-em">2em</div>
+    <div class="two-hundred-percent">200%</div>
+    
+    <hr>
+    
+    <div style="outline: 2px dashed pink; font-size: 32px;">
+        <div class="one-rem">1rem</div>
+        <div class="one-em">1em</div>
+        <div class="one-hundred-percent">100%</div>
+        <div class="two-rem">2rem</div>
+        <div class="two-em">2em</div>
+        <div class="two-hundred-percent">200%</div>
+    </div>
+    
+    <hr>
+    
+    <div style="outline: 2px dashed pink; font-size: 32px;">
+        <div style="outline: 1px solid grey; width: 50%;">width: 50%</div>
+        <div style="outline: 1px solid grey; width: 0.5em; text-wrap: nowrap;">width: 0.5em</div>
+    </div>
+</body>
+</html>
