@@ -3,57 +3,99 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width">
-<title>Typical page layout 1</title>
+<title>CSS grid intro</title>
 <style>
 #container-grid {
-	width: 100%;
 	background: yellow;
+    
     display: grid; /* or inline-grid to display it inline */
-	/* - gaps only apply between columns/rows, not on the outer edges.
+
+    /* Naming the grid lines in grid-template-columns or 
+       grid-template-rows is optional, note how we can also 
+       define multiple grid line names. */
+	grid-template-columns: [vert-line1 vert-line-start] 200px [vert-line2] 300px [vert-line3 vert-line-end];
+	grid-template-rows: 100px 200px 80px;
+
+    /* - gaps only apply between columns/rows, not on the outer edges.
        - old syntax: grid-row-gap, grid-column-gap and grid-gap */
     gap: 15px 25px; /* shorthand for: row-gap column-gap */
-	grid-template-columns: 0.5fr 1fr;
-	grid-template-rows: 80px 200px 80px;
 }
 header {
+    background: orange;
+
+    /* Can also use the names defined in grid-template-columns:
+       grid-column: vert-line-start / vert-line-end
+       or
+       grid-column: vert-line1 / vert-line3 */
 	grid-column: 1 / 3;
+    
+    /* Could also use names here like for the grid-column. */
     grid-row: 1 / 2;
-	background: orange;
 }
 aside {
+    background: lightgreen;
     grid-area: 2 / 1 / 3 / 2;
-	background: lightgreen;
 }
 main {
+    background: pink;
 	grid-column-start: 2;
     grid-column-end: 3;
 	grid-row-start: 2;
     grid-row-end: 3;
-	background: pink;
 }
 footer {
+    background: aqua;
 	grid-column: 1 / 3;
 	grid-row: 3 / 4;
-	background: aqua;
 }
 </style>
 </head>
 <body>
 
+<h2>Grid concepts</h2>
 <ul>
     <li>Grids are for two dimensions (columns and rows).</li>
-    <li><code>grid-template-columns</code> and <code>grid-template-rows</code> define the width of the columns and the height of the rows.</li>
-    <li>The grid lines are the separation lines between the columns and the rows (also called grid tracks), numbering starts at 1.</li>
+    <li>Grid container: the element on which <code>display: grid</code> is applied, it's the parent of all grid items.</li>
+    <li>Grid items: the elements that are children of the grid container.</li>
+    <li>Grid lines: dividing lines that make up the structure of the grid, they are numbered starting from 1.</li>
+    <li>Grid tracks: the grid columns and the grid rows, they are between two adjacent grid lines.</li>
+    <li>Grid cells: the intersection between a grid column and a grid row.</li>
+    <li>Grid areas: total space surrounded by four grid lines.</li>
+    <li>Grid gaps/gutters: specify the size of the grid lines, outer edges are excluded.</li>
+</ul>
+<img style="width: 100%;" src="grid-concepts.svg" alt="grid concepts">
+
+<h2>Grid layout</h2>
+<ul>
+    <li><code>grid-template-columns</code> and <code>grid-template-rows</code> define the width of the columns and the height of the rows. We can name the grid lines here and use them when mapping the items into the grid layout.</li>
     <li><code>grid-column-start</code>, <code>grid-column-end</code>, <code>grid-row-start</code> and <code>grid-row-end</code> refer to grid lines and define the grid item's location within the grid.</li>
     <li><code>grid-column</code> is a shorthand for <code>grid-column-start / grid-column-end</code> and <code>grid-row</code> is a shorthand for <code>grid-row-start / grid-row-end</code>.</li>
     <li><code>grid-area</code> is a shorthand for <code>grid-row-start / grid-column-start / grid-row-end / grid-column-end</code>.</li>
 </ul>
 
 <div id="container-grid">
-	<header>header<br>grid-column: 1 / 3<br>grid-row: 1 / 2</header>
-	<aside>aside 0.5fr<br>grid-area: 2 / 1 / 3 / 2</aside>
-	<main>main 1fr<br>grid-column-start: 2<br>grid-column-end: 3<br>grid-row-start: 2<br>grid-row-end: 3</main>
-	<footer>footer<br>grid-column: 1 / 3<br>grid-row: 3 / 4</footer>
+	<header><strong>header</strong><br>
+        <code>grid-column: 1 / 3</code><br>
+        <em>or with the names we defined:</em><br>
+        <code>grid-column: vert-line1 / vert-line3</code><br>
+        <code>grid-row: 1 / 2</code>
+    </header>
+	<aside>
+        <strong>aside 200px</strong><br>
+        <code>grid-area: 2 / 1 / 3 / 2</code>
+    </aside>
+	<main>
+        <strong>main 300px</strong><br>
+        <code>grid-column-start: 2</code><br>
+        <code>grid-column-end: 3</code><br>
+        <code>grid-row-start: 2</code><br>
+        <code>grid-row-end: 3</code>
+    </main>
+	<footer>
+        <strong>footer</strong><br>
+        <code>grid-column: 1 / 3</code><br>
+        <code>grid-row: 3 / 4</code>
+    </footer>
 </div>
 
 </body>
