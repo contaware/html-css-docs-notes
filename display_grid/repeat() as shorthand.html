@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>repeat() as shorthand</title>
+<style>
+#container-repeat {
+	display: grid;
+    /* Shorthand for: 
+       grid-template-columns: 100px 100px 100px 100px;
+    */
+	grid-template-columns: repeat(4, 100px);
+	gap: 1rem;
+}
+#container-repeat-multi {
+	display: grid;
+    /* Shorthand for: 
+       grid-template-columns: 50px 150px 50px 150px;
+    */
+	grid-template-columns: repeat(2, 50px 150px);
+	gap: 1rem;
+}
+</style>
+</head>
+<body>
+
+<h2>The repeat() function as shorthand</h2>
+
+<p><code>repeat(4, 100px)</code> with a count as the first parameter and a size as the second parameter:</p>
+<div id="container-repeat">
+	<div style="background: pink;">100px</div>
+	<div style="background: green;">100px</div>
+	<div style="background: red;">100px</div>
+	<div style="background: aqua;">100px</div>
+</div>
+
+<p><code>repeat(2, 50px 150px)</code> with a count as the first parameter and multiple sizes as the second parameter:</p>
+<div id="container-repeat-multi">
+	<div style="background: pink;">50px</div>
+	<div style="background: green;">150px</div>
+	<div style="background: red;">50px</div>
+	<div style="background: aqua;">150px</div>
+</div>
+
+</body>
+</html>
