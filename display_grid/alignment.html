@@ -6,6 +6,7 @@
 <title>Alignment</title>
 <style>
 .container {
+    background: yellow;
 	display: grid;
 	grid-template-columns: repeat(3, 150px);
     grid-template-rows: repeat(3, 40px);
@@ -15,6 +16,7 @@
 </head>
 <body>
 
+<h2>Align grid items</h2>
 <ul>
     <li><code>justify-self</code> aligns a grid item inside a cell along the row axis (align all at container level with <code>justify-items</code>).</li>
     <li><code>align-self</code> aligns a grid item inside a cell along the column axis (align all at container level with <code>align-items</code>).</li>
@@ -22,32 +24,33 @@
 </ul>
 
 <div class="container">
-	<div style="background: pink;">stretch<br>(default)</div>
-	<div style="background: green;">stretch<br>(default)</div>
-	<div style="background: red;">stretch<br>(default)</div>
-    <div style="background: pink; justify-self: start;">start</div>
-	<div style="background: green; justify-self: end;">end</div>
-	<div style="background: red; justify-self: center;">center</div>
-    <div style="background: pink; align-self: start;">start</div>
-	<div style="background: green; align-self: end;">end</div>
-	<div style="background: red; align-self: center;">center</div>
+	<div style="background: pink;">stretch (default)</div>
+	<div style="background: green;">stretch (default)</div>
+	<div style="background: red;">stretch (default)</div>
+    <div style="background: pink; justify-self: start;">justify-self: start</div>
+	<div style="background: green; justify-self: end;">justify-self: end</div>
+	<div style="background: red; justify-self: center;">justify-self: center</div>
+    <div style="background: pink; align-self: start;">align-self: start</div>
+	<div style="background: green; align-self: end;">align-self: end</div>
+	<div style="background: red; align-self: center;">align-self: center</div>
 </div>
 
 <hr>
 
+<h2>Align rows and columns in grid container</h2>
 <ul>
     <li><code>justify-content</code> aligns the entire grid along the row axis.</li>
     <li><code>align-content</code> aligns the entire grid along the column axis.</li>
+    <li>Can use:    <code>start</code> (default), 
+                    <code>end</code>, 
+                    <code>center</code>, 
+                    <code>stretch</code>, 
+                    <code>space-around</code>, 
+                    <code>space-between</code>, 
+                    <code>space-evenly</code>.</li>
     <li><code>place-content</code> sets both <code>align-content</code> and <code>justify-content</code> in a single declaration.</li>
 </ul>
 
-<!-- Possible values: start (default)
-                      end
-                      center
-                      stretch
-                      space-around
-                      space-between
-                      space-evenly -->
 <div class="container" style="height: 220px; justify-content: space-between; align-content: space-between;">
 	<div style="background: pink;">&nbsp;</div>
 	<div style="background: green;">&nbsp;</div>
