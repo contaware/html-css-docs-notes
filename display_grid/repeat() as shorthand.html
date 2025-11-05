@@ -21,6 +21,14 @@
 	grid-template-columns: repeat(2, 50px 150px);
 	gap: 1rem;
 }
+#container-repeat-mix {
+	display: grid;
+    /* Shorthand for: 
+       grid-template-columns: 150px 50px 50px 150px;
+    */
+	grid-template-columns: 150px repeat(2, 50px) 150px;
+	gap: 1rem;
+}
 </style>
 </head>
 <body>
@@ -30,7 +38,7 @@
 <p><code>repeat(4, 100px)</code> with a count as the first parameter and a size as the second parameter:</p>
 <div id="container-repeat">
 	<div style="background: pink;">100px</div>
-	<div style="background: green;">100px</div>
+	<div style="background: lightgreen;">100px</div>
 	<div style="background: red;">100px</div>
 	<div style="background: aqua;">100px</div>
 </div>
@@ -38,7 +46,15 @@
 <p><code>repeat(2, 50px 150px)</code> with a count as the first parameter and multiple sizes as the second parameter:</p>
 <div id="container-repeat-multi">
 	<div style="background: pink;">50px</div>
-	<div style="background: green;">150px</div>
+	<div style="background: lightgreen;">150px</div>
+	<div style="background: red;">50px</div>
+	<div style="background: aqua;">150px</div>
+</div>
+
+<p>Can mix <code>repeat()</code> with values outside of it:</p>
+<div id="container-repeat-mix">
+	<div style="background: pink;">150px</div>
+	<div style="background: lightgreen;">50px</div>
 	<div style="background: red;">50px</div>
 	<div style="background: aqua;">150px</div>
 </div>
