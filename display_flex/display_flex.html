@@ -11,9 +11,8 @@
     
     display: flex; /* or inline-flex to display this container inline */
 
-    /* Defines the main axis, that's the direction in which the flex items 
-       are placed in the flex container. The other axis, which is 
-       perpendicular to the main axis, is called the cross axis.
+    /* Define the main axis in which the flex items are placed 
+       in the flex container.
        Default is row, can be:
        row|row-reverse|column|column-reverse */
     flex-direction: row;
@@ -24,23 +23,23 @@
     
     /* flex-flow is a shorthand for flex-direction flex-wrap */
     
-    /* It aligns the items along the main axis.
+    /* Align the items along the main axis.
        Default is start, can be:
        start|center|end|space-between|space-around|space-evenly */
     justify-content: space-evenly;
 
-    /* Like justify-content but for the other axis (the cross axis).
+    /* Align the items along the cross axis.
        Default is stretch, can be:
        start|center|end|stretch|baseline */
     align-items: center;
 
-    /* It manages the space between the lines when items wrap,
+    /* Manage the space between the lines when items wrap,
        it has no effect when items are in a single line. 
        Default is normal, can be:
        start|center|end|stretch|normal|space-between|space-around|space-evenly */
     align-content: space-between;
 
-    /* Applies only between items, not between item and container edges */
+    /* Apply a space between items, not between item and container edges. */
     gap: 0; /* shorthand for: row-gap column-gap */
 }
 .item {
@@ -48,18 +47,47 @@
     border: 1px solid black;
     flex-basis: 100px;
 }
+.nowrap {
+    white-space: nowrap;
+}
 </style>
 </head>
 <body>
 
-<p style="text-align: center; color: white; background: darkorange; padding: 20px; border: 2px solid black;">The flexible box layout is a one-dimensional model which determines the free space and grows/shrinks/distributes the items in that space.<br>Free space = Flex container size - Total flex-basis size of all flex items<br>(free space can be positive or negative)</p>
+<h2>Flexbox concepts</h2>
+<ul>
+    <li>The flexible box layout is a one-dimensional model which determines the <strong>Free space</strong> and <em>grows/shrinks/distributes</em> the flex items in that space.</li>
+    <li><span class="nowrap"><strong>Free space</strong> = </span>
+        <span class="nowrap">Flex container size - </span>
+        <span class="nowrap">Total flex-basis size of all flex items - </span>
+        <span class="nowrap">Total gaps</span></li>
+    <li>The <strong>Free space</strong> can be positive or negative.</li>
+    <li>The main axis is the direction in which the flex items are placed in the flex container. The other axis, which is perpendicular to the main axis, is called the cross axis. The main axis is set by <code>flex-direction</code> which defaults to <code>row</code>, the other value is <code>column</code>.</li>
+</ul>
 
-<p>Note: an absolutely-positioned flex item does not participate in flex layout.</p>
+<h2>Flexbox flex</h2>
+<ul>
+    <li><code>flex-basis</code> specifies the <strong>initial size</strong> of the flex items <strong>before the free space is distributed</strong> according to the flex factors. Default for <code>flex-basis</code> is <code>auto</code> which means that the item's <code>width/height</code> property is used if it is set, otherwise the content size is taken. Setting <code>flex-basis</code> to <code>content</code> means that only the content size is employed, the item's <code>width/height</code> propriety is ignored.</li>
+    <li>A <code>flex-basis</code> set to a <code>px</code> or a <code>%</code> value, overrides the item's <code>width/height</code> property. The percentage is relative to the size of the flex container. If an item has borders or a padding, its <code>box-sizing</code> property should be set to <code>border-box</code>. This will prevent overflowing the flex container.</li>
+    <li>Default for <code>flex-grow</code> is <code>0</code> (no grow), positive values mean grow in the available positive free space with the given proportion.</li>
+    <li>Default for <code>flex-shrink</code> is <code>1</code> (shrink), positive values mean reduce the negative free space with the given proportion.</li>
+    <li>An item's <code>min-width/min-height</code> or a <code>max-width/max-height</code> will always limit the flexing.</li>
+    <li>The <code>gap</code> property explicitly controls the space between flex items. It applies that spacing only between items not on the outer edges.</li>
+    <li>Shorthand <code>flex: flex-grow flex-shrink flex-basis;</code></li>
+</ul>
+<p>In this example, <em>item 2</em> grows and shrinks with a factor of 1, while <em>item 3</em> with a factor of 2. Additionally, <code>column-gap: 10px</code> is applied.</p>
+<div class="container-flex" style="column-gap: 10px;">
+    <div class="item">1</div>
+    <div class="item" style="flex-grow: 1; flex-shrink: 1;">2</div>
+    <div class="item" style="flex-grow: 2; flex-shrink: 2;">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+</div>
 
 <h2>Flexbox alignment</h2>
 <ul>
     <li>Container has <code>justify-content: space-evenly</code> set.</li>
-    <li>Item 2 has <code>align-self: start</code> set, that overrides the container's <code>align-items: center</code>.</li>
+    <li><em>Item 2</em> has <code>align-self: start</code> set, that overrides the container's <code>align-items: center</code>.</li>
 </ul>
 <div class="container-flex">
     <div class="item">1</div>
@@ -68,27 +96,6 @@
     <div class="item">4</div>
     <div class="item">5</div>
 </div>
-
-<hr>
-
-<h2>Flexbox flex</h2>
-<ul>
-    <li><code>flex-basis</code> specifies the initial size of the flex items before the free space is distributed according to the flex factors. <code>flex-basis: 100px</code> overrides the item's <code>width/height</code> property. <code>flex-basis: content</code> means the content size, item's <code>width/height</code> propriety is ignored. Default for <code>flex-basis</code> is <code>auto</code> which means the item's <code>width/height</code> property if defined, otherwise the content size.</li>
-    <li>An item's <code>min-width/min-height</code> or a <code>max-width/max-height</code> will always limit the flexing.</li>
-    <li>Default for <code>flex-grow</code> is <code>0</code> (no grow), positive values mean grow in the available positive free space with the given proportion.</li>
-    <li>Default for <code>flex-shrink</code> is <code>1</code> (shrink), positive values mean reduce the negative free space with the given proportion.</li>
-    <li>Shorthand <code>flex: flex-grow flex-shrink flex-basis;</code></li>
-</ul>
-<p>In this example item 2 grows and shrinks with a factor of 1 and item 3 with a factor of 2.</p>
-<div class="container-flex">
-    <div class="item">1</div>
-    <div class="item" style="flex-grow: 1; flex-shrink: 1;">2</div>
-    <div class="item" style="flex-grow: 2; flex-shrink: 2;">3</div>
-    <div class="item">4</div>
-    <div class="item">5</div>
-</div>
-
-<hr>
 
 <h2>Flexbox items order</h2>
 <p>Items with the same <code>order</code> value belong to the same ordering group. The default <code>order</code> value is <code>0</code>. Items are placed in visual order according to their <code>order</code> value, lowest values first. If more than one item has the same <code>order</code> value, then within that group the items are laid out as per html order.</p>
@@ -100,10 +107,8 @@
     <div class="item" style="order: -1;">5</div>
 </div>
 
-<hr>
-
 <h2>Auto margins for flex items</h2>
-<p>Item 4 has <code>margin-left: auto</code> set, that will automatically extend its specified margin to occupy the extra space in the flex container.</p>
+<p><em>Item 4</em> has <code>margin-left: auto</code> set, that will automatically extend its specified margin to occupy the extra space in the flex container.</p>
 <div class="container-flex">
     <div class="item">1</div>
     <div class="item">2</div>
@@ -111,8 +116,6 @@
     <div class="item" style="margin-left: auto;">4</div>
     <div class="item">5</div>
 </div>
-
-<hr>
 
 <h2>Enable flex wrap</h2>
 <ul>
@@ -127,7 +130,7 @@
     <div class="item">4</div>
     <div class="item" style="height: 35px;">5</div>
 </div>
-<p>Next observe items 1 and 2, the flexing happens per line.</p>
+<p>Next observe <em>item 1</em> and <em>item 2</em>, the flexing happens per line.</p>
 <div class="container-flex" style="flex-wrap: wrap;">
     <div class="item" style="flex-grow: 1;">1</div>
     <div class="item" style="flex-grow: 2;">2</div>
@@ -135,8 +138,6 @@
     <div class="item">4</div>
     <div class="item">5</div>
 </div>
-
-<hr>
 
 <h2>Breaking to a new line</h2>
 <p>When flex wrap is enabled, we can force a line break by inserting an item with <code>flex-basis: 100%</code> and <code>height: 0</code>.</p>
@@ -148,8 +149,6 @@
     <div class="item">4</div>
     <div class="item">5</div>
 </div>
-
-<hr>
 
 <h2>DIV only vs Flexbox</h2>
 <p>DIV children having <code>width: fit-content</code> and <code>margin: 0 auto</code>.</p>
