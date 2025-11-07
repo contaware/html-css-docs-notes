@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Margin Collapse</title>
+    <title>Margin collapse</title>
     <style>
     p.margin-small {
         margin: 8px 0;
@@ -38,9 +38,13 @@
 </style>
 </head>
 <body>
-    <p style="padding: 16px; background: orange; color: white; font-size: 20px; text-align: center;">Vertical margins change when they touch.<br>Horizontal margins never change.<br>Note: a zero size margin can also touch another margin.</p>
-
-    <p>Remember that margins are meant to increase the distance between siblings, not to increase the gap between a child and its parent's bounding box; that's what padding is for.</p>
+    <h2>Margin concepts</h2>
+    
+    <ul>
+        <li>Margins are meant to increase the distance between siblings, not to increase the gap between a child and its parent's bounding box; that's what padding is for.</li>
+        <li>Horizontal margins <strong>never change</strong>.</li>
+        <li>Vertical margins change when they <strong>touch</strong>. A zero size margin can also touch another margin.</li>
+    </ul>
 
     <h2>Vertical margins calculation</h2>
     
