@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS variables</title>
     <style>
+        /* For "CSS variables basics" section */
         :root {
             /* A common practice is to define CSS variables in the :root,
                so that they can be referenced globally. */
@@ -14,7 +15,7 @@
             /* The second parameter is the fallback value in case that the 
                variable is not set. */
             color: var(--text-color, darkslateblue);
-            background-color: var(--background-color, pink);
+            background-color: var(--background-color, whitesmoke);
         }
         .one {
             /* Overwrite the value set in :root, from now on, and in all
@@ -26,12 +27,35 @@
             background-color: var(--div-background-color);
             margin: 10px;
         }
+
+        /* For last point of "Advanced topics" section */
+        div#grandparent {
+            width: fit-content;
+            --c: orange;
+        }
+        div#parent {
+            --c: lightgreen;
+            --txt: var(--c);
+        }
+        div#child {
+            --c: aqua;
+        }
+        div.all {
+            font-size: 1.5rem;
+            text-shadow:	-0.03rem 0 black,
+                            0 0.03rem black,
+                            0.03rem 0 black,
+                            0 -0.03rem black;
+            padding-left: 20px;
+            color: var(--txt, pink);
+            background-color: var(--c, grey);
+        }
     </style>
 </head>
 <body>
-    <h1>Basics</h1>
+    <h2>CSS variables basics</h2>
     
-    <p>A CSS variable (or CSS custom property) begins with two dashes and is followed by a case-sensitive name. A custom property is referenced with the <strong><code>var()</code></strong> function which has an optional second parameter holding a fallback value used when the custom property is not set. A HTML child element inherits the CSS variables from its parent.</p>
+    <p>A CSS variable (also called CSS custom property) begins with two dashes and is followed by a case-sensitive name. A custom property is referenced with the <strong><code>var()</code></strong> function which has an optional second parameter holding a fallback value used when the custom property is not set. A HTML child element inherits the CSS variables from its parent.</p>
     
     <p>The <strong><code>calc()</code></strong> function is often used in combination with CSS variables, it supports the <code>+ - * /</code> operators, just remember to <strong>surround the operators by spaces</strong>. The operands of <strong><code>+</code></strong> and <strong><code>-</code></strong> can have different units, for the <strong><code>*</code></strong> operator only one operand can contain a unit and the <strong><code>/</code></strong> operator allows units for both operands, provided they are of the same data type.</p>
 
@@ -88,14 +112,14 @@
         })
     </script>
 
-    <h1>Advanced</h1>
+    <h2>Advanced topics</h2>
     
     <ol>
         <li>
-            <p>Custom properties are evaluated one hierarchy level at the time, from <code>:root</code> down to the current element with increasing priority. At a given hierarchy level, the custom property assignments placed last, win, and those in tags win over all the others (yes, custom property assignments and use can happen in HTML style attributes). A custom property before being used in a <code>var()</code> function has already resolved to the highest priority value, for example the following is perfectly valid and will set <code>--result</code> to <code>6px</code>:</p>
+            <p>Within a hierarchy level, the custom property assignments placed last, win, and those in tags win over all the others (yes, custom property assignments and use can happen in HTML style attributes). A custom property before being used in a <code>var()</code> function has already resolved to the highest priority value, for example the following is perfectly valid and will set the <code>padding</code> to <code>8px</code>:</p>
             <pre>
---p: 1px;
---result: calc(var(--p) + 1px);
+--p: 10px;
+padding: calc(var(--p) + 3px);
 --p: 5px;
             </pre>
         </li>
@@ -119,10 +143,6 @@ margin-top: calc(var(--gap) * 1px);
         </li>
         
         <li>
-            <p>When exiting a hierarchy level all the custom property values containing a <code>var()</code> function have been evaluated. Thus the custom properties are passed down to the next hierarchy level without any <code>var()</code> functions in their values. Note that a <code>calc()</code> function in a custom property value is not evaluated when exiting a hierarchy level; it only gets evaluated when the custom property is assigned to a normal property.</p>
-        </li>
-        
-        <li>
             <p>If there is a <a href="https://www.w3.org/TR/css-variables-1/#cycles" target="_blank">cycle</a> in the dependency graph of the custom properties, all the custom properties in the cycle get an invalid value assigned. A custom property referring to itself creates a cyclic dependency and thus is <strong>invalid</strong>:</p>
             <pre>
 --p: 5px;
@@ -136,6 +156,20 @@ margin-top: calc(var(--gap) * 1px);
 --y: var(--x);
 --x: var(--temp);
             </pre>
+        </li>
+
+        <li>
+            <p>When exiting a hierarchy level all the custom property values containing a <code>var()</code> function have been evaluated. Thus the custom properties are passed down to the next hierarchy level without any <code>var()</code> functions in their values:</p>
+            <div id="grandparent" class="all">
+                id="grandparent"
+                <div id="parent" class="all">
+                    id="parent"
+                    <div id="child" class="all">
+                        id="child"
+                    </div>
+                </div>
+            </div>
+            <p>Note that a <code>calc()</code> function in a custom property value is not evaluated when exiting a hierarchy level; it only gets evaluated when the custom property is assigned to a normal property.</p>
         </li>
     </ol>
 </body>
