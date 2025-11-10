@@ -56,8 +56,6 @@
     <h2>CSS variables basics</h2>
     
     <p>A CSS variable (also called CSS custom property) begins with two dashes and is followed by a case-sensitive name. A custom property is referenced with the <strong><code>var()</code></strong> function which has an optional second parameter holding a fallback value used when the custom property is not set. A HTML child element inherits the CSS variables from its parent.</p>
-    
-    <p>The <strong><code>calc()</code></strong> function is often used in combination with CSS variables, it supports the <code>+ - * /</code> operators, just remember to <strong>surround the operators by spaces</strong>. The operands of <strong><code>+</code></strong> and <strong><code>-</code></strong> can have different units, for the <strong><code>*</code></strong> operator only one operand can contain a unit and the <strong><code>/</code></strong> operator allows units for both operands, provided they are of the same data type.</p>
 
     <p>Go to the HTML code and read the comments under the <code>&lt;style&gt;</code> tag to understand the following example:</p>
     
@@ -111,6 +109,20 @@
             console.log('--div-background-color @ .one is:  ' + divBkgAtOne);
         })
     </script>
+
+    <h2>calc() and if()</h2>
+
+    <p>The <strong><code>calc()</code></strong> function is often used in combination with CSS variables, it supports the <code>+ - * /</code> operators, just remember to <strong>surround the operators by spaces</strong>. The operands of <strong><code>+</code></strong> and <strong><code>-</code></strong> can have different units, for the <strong><code>*</code></strong> operator only one operand can contain a unit and the <strong><code>/</code></strong> operator allows units for both operands, provided they are of the same data type.</p>
+    <p>Before the introduction of the <code>if()</code> function conditional styling was performed through <code>calc()</code>:</p>
+<pre>
+--is-big: 1; /* set to 1 or 0 */
+padding: calc(25px * var(--is-big) + 10px * (1 - var(--is-big)));
+</pre>
+    <p>With the <code>if()</code> function it's done like:</p>
+<pre>
+--is-big: 1; /* set to 1 or something else */
+padding: if(style(--is-big: 1): 25px; else: 10px);
+</pre>
 
     <h2>Advanced topics</h2>
     
