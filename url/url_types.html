@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL types</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>URL types</h1>
+
+    <h2>Absolute</h2>
+    <a href="https://www.example.com/" target="_blank">https://www.example.com/</a>
+    <br>
+    <a href="http://www.example.com/" target="_blank">http://www.example.com/</a>
+
+    <h2>Relative to scheme used by current page</h2>
+    <a href="//www.example.com/" target="_blank">//www.example.com/</a>
+    <p>If the browser is viewing this page with <code>https://</code>, then it will request the above link with <code>https://</code>, otherwise it will request it with <code>http://</code> (or if you are viewing this page locally with <code>file://</code>, it will use that scheme).</p>
+    <p>Warning: it's now <a href="https://www.paulirish.com/2010/the-protocol-relative-url/" target="_blank">discouraged</a> to use them.</p>
+
+    <h2>Relative to current page location</h2>
+    <p>Note: these are the only relative URL types which work also with the local <code>file://</code> protocol.</p>
+    <h4>Same directory</h4>
+    <a href="empty_links.html" target="_blank">empty_links.html</a>
+    <br>equivalent to:<br>
+    <a href="./empty_links.html" target="_blank">./empty_links.html</a>   
+    <h4>Parent directory</h4>
+    <a href="../box-shadow.html" target="_blank">../box-shadow.html</a>
+    <br>
+    <a href="../box_size/height.html" target="_blank">../box_size/height.html</a>
+    <h4>Subdirectory</h4>
+    <a href="css/style.css" target="_blank">css/style.css</a>
+
+    <h2>Relative to document root</h2>
+    <a href="/selectors.html" target="_blank">/selectors.html</a>
+
+    <h2>URLs in css are relative to the css file location</h2>
+    <div id="star">Super Star</div>
+    <p>See the <a href="css/style.css" target="_blank">css/style.css</a> file.</p>
+</body>
+</html>
