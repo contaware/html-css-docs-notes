@@ -270,20 +270,23 @@ Line2 in &lt;pre&gt;</pre>
     <tr><th>Size</th><th>Breakpoint</th><th>Maximum width</th></tr>
     </thead>
     <tbody class="table-group-divider">
-    <tr><td>Small</td><td>sm ≥576px</td><td>max-width: 540px</td></tr>
-    <tr><td>Medium</td><td>md ≥768px</td><td>max-width: 720px</td></tr>
-    <tr><td>Large</td><td>lg ≥992px</td><td>max-width: 960px</td></tr>
-    <tr><td>Extra large</td><td>xl ≥1200px</td><td>max-width: 1140px</td></tr>
-    <tr><td>Extra extra large</td><td>xxl ≥1400px</td><td>max-width: 1320px</td></tr>
+    <tr><td>Small (sm)</td><td>width ≥576px</td><td>max-width: 540px</td></tr>
+    <tr><td>Medium (md)</td><td>width ≥768px</td><td>max-width: 720px</td></tr>
+    <tr><td>Large (lg)</td><td>width ≥992px</td><td>max-width: 960px</td></tr>
+    <tr><td>Extra large (xl)</td><td>width ≥1200px</td><td>max-width: 1140px</td></tr>
+    <tr><td>Extra extra large (xxl)</td><td>width ≥1400px</td><td>max-width: 1320px</td></tr>
     </tbody>
     </table>
     </div>
-    <div class="container-sm bg-primary text-light">container-sm: 100% until small breakpoint (same as container)</div>
-    <div class="container-md bg-secondary text-light">container-md: 100% until medium breakpoint</div>
-    <div class="container-lg bg-success text-light">container-lg: 100% until large breakpoint</div>
-    <div class="container-xl bg-danger text-light">container-xl: 100% until extra large breakpoint</div>
-    <div class="container-xxl bg-warning">container-xxl: 100% until extra extra large breakpoint</div>
+    <div class="container-sm bg-primary text-light">container or container-sm: 100% until sm breakpoint</div>
+    <div class="container-md bg-secondary text-light">container-md: 100% until md breakpoint</div>
+    <div class="container-lg bg-success text-light">container-lg: 100% until lg breakpoint</div>
+    <div class="container-xl bg-danger text-light">container-xl: 100% until xl breakpoint</div>
+    <div class="container-xxl bg-warning">container-xxl: 100% until xxl breakpoint</div>
     <div class="container-fluid bg-info text-light">container-fluid: 100% always</div>
+    <p>The width of a container is 100% until it reaches its breakpoint. Above this point, 
+        the max-width is set according to the current width; note that this results in 
+        jumps at each breakpoint.</p>
     <br>
 
     <div id="columns" class="display-1">Columns</div>
