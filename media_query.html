@@ -21,16 +21,19 @@
             of high DPI screens which internally can compute a width 
             of 199.5px for example.
         */
+        /* Same as: width <= 199px */
         @media (max-width: 199px) {
             .hide-small {
                 display: none;
             }
         }
+        /* Same as: 200px <= width <= 599px */
         @media (min-width: 200px) and (max-width: 599px) {
             .hide-medium {
                 display: none;
             }
         }
+        /* Same as: 600px <= width */
         @media (min-width: 600px) {
             .hide-large {
                 display: none;
