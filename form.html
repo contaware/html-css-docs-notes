@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        datalist {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            writing-mode: vertical-lr;
+            width: 200px;
+        }
+        datalist > option {
+            padding: 0;
+        }
+        input[type="range"] {
+            width: 200px;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        - Through the action attribute we specify the URL that processes 
+          the form submission.
+        - The default method is get, it can be changed to method="post".
+        - The enctype attribute can be used only if method="post":
+          1. enctype="application/x-www-form-urlencoded" is the default.
+          2. enctype="multipart/form-data" necessary to upload files.
+          3. enctype="text/plain" to debug.
+    -->
+    <form action="form.html" method="get">
+        <!-- 
+            - The for attribute associates the label with the id of a form control. 
+              Clicking the label will focus on the associated form control. 
+              Here we intentionally distinguish the name value from the id value, 
+              but for the following examples they are set to the same.
+            - The required attribute indicates that the user must specify a value.
+        -->
+        <label for="name-id">Name</label>
+        <input type="text" name="name" id="name-id" required>
+        <br>
+
+        <!-- The pattern attribute specifies a regex that the value should match. -->
+        <label for="letters">Three letters</label>
+        <input type="text" name="letters" id="letters" pattern="[A-Za-z]{3}">
+        <br>
+
+        <!-- 
+            - To clear the search a small cross appears after typing.
+            - The placeholder attribute defines the text to display when the 
+              control has no value.
+        -->
+        <label for="search">Search</label>
+        <input type="search" name="search" id="search" placeholder="Enter your search">
+        <br>
+
+        <!-- The title attribute specifies a hint for the user. -->
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" title="Super secret">
+        <br>
+
+        <!-- The browser will ensure a valid e-mail address is entered. -->
+        <label for="email">E-Mail</label>
+        <input type="email" name="email" id="email">
+        <br>
+
+        <!-- The browser will ensure an url with scheme is provided. -->
+        <label for="url">Url</label>
+        <input type="url" name="url" id="url">
+        <br>
+
+        <!--
+            - The number must be in increments of the given step which can
+              also be a floating-point value.
+            - The number can be any floating-point value if step="any".
+        -->
+        <label for="number">Number</label>
+        <input type="number" 
+            name="number" 
+            id="number"
+            min="3" 
+            max="9"
+            step="3"
+            value="3">
+        <br>
+
+        <!--
+            - The range attribute has also a step attribute which behaves 
+              like the step attribute of the number input type.
+            - The datalist with the options shows ticks at the given values.
+              To correctly display the labels we need some css (see above).
+        -->
+        <label for="range">Range</label>
+        <div style="display: inline-block; vertical-align: middle;">
+        <input type="range" name="range" id="range" min="0" max="100" list="ticks">
+        <datalist id="ticks">
+            <option value="0" label="0"></option>
+            <option value="25" label="25"></option>
+            <option value="50" label="50"></option>
+            <option value="75" label="75"></option>
+            <option value="100" label="100"></option>
+        </datalist>
+        </div>
+        <br>
+
+        <!--
+            - The input value is not validated because formats vary so much 
+              around the world. 
+            - On mobile browsers the numeric phone keyboard is shown. 
+        -->
+        <label for="tel">Tel</label>
+        <input type="tel" name="tel" id="tel">
+        <br>
+
+        <!--
+            - The date values are normalized to: YYYY-MM-DD
+            - The time values are normalized to 24h: hh:mm or hh:mm:ss
+            - The month values are normalized to: YYYY-MM
+            - The week values are normalized to: YYYY-W01..52/53
+            - The datetime-local values are normalized to: YYYY-MM-DDThh:mm
+              The datetime-local input type doesn't provide a way to set 
+              the time zone. This was available in the datetime input 
+              type which has been deprecated.
+        -->
+        <label for="date">Date</label>
+        <input type="date" name="date" id="date" min="2012-01-01">
+        <br>
+        <label for="time">Time</label>
+        <input type="time" name="time" id="time" min="09:00" max="18:00" value="12:00">
+        <br>
+        <label for="month">Month</label>
+        <input type="month" name="month" id="month" value="2026-01">
+        <br>
+        <label for="week">Week</label>
+        <input type="week" name="week" id="week" value="2026-W01">
+        <br>
+        <label for="datetime">Date and Time</label>
+        <input type="datetime-local" name="datetime" id="datetime" value="2012-01-01T11:12">
+        <br>
+
+        <!--
+            - The color format is #rrggbb    
+            - The default value is #000000
+        -->
+        <label for="color">Color</label>
+        <input type="color" name="color" id="color" value="#ff0000">
+        <br>
+
+        <!-- 
+            - If the checkbox is unchecked, name=value is not submitted.  
+            - If the value attribute is not provided, it defaults to on.
+            - Use the checked attribute to check it by default.
+            - The switch attribute displays the control as a on/off switch.
+        -->
+        <input type="checkbox" name="subscribe" id="subscribe" value="yes">
+        <label for="subscribe">Subscribe?</label>
+        <input type="checkbox" name="switch" id="switch" checked switch>
+        <label for="switch">Switch?</label>
+        <br>
+
+        <!-- 
+            - A fieldset defines a group of controls within a form.
+            - A radio group is defined by giving each of the radio buttons 
+              in the group the same name.
+            - No data is submitted if nothing is selected, so usually you 
+              want to have one control with the checked attribute.
+        -->
+        <fieldset>
+            <legend>Fieldset Legend</legend>
+            <input type="radio" name="choice" id="one" value="one" checked>
+            <label for="one">One</label>
+            <input type="radio" name="choice" id="two" value="two">
+            <label for="two">Two</label>
+        </fieldset>
+
+        <!--
+            - If no value attribute is included for <option>, the value 
+              defaults to the text contained inside the element.
+            - You can include the selected attribute on an <option> element 
+              to make it selected by default. If no selected attribute is 
+              specified, the first <option> will be selected by default.
+            - <select> supports the multiple attribute which will send the
+              data like: name=val1&name=val2
+              Note: in PHP to get an array, append square brackets to the 
+                    <select> name like name="country[]" 
+            - <select> supports the size attribute to specify the number 
+              of options to show at once. 
+            - An <option> with the disabled attribute cannot be selected.
+            - <optgroup> and <hr> are to visually group the options.
+        -->
+        <label for="country">Choose a country</label>
+        <select name="country" id="country">
+            <option value="">--Please choose an option--</option>
+            <hr>
+            <optgroup label="Group 1">
+                <option value="china">China</option>
+                <option value="india">India</option>
+            </optgroup>
+            <hr>
+            <optgroup label="Group 2">
+                <option value="usa">United States</option>
+                <option value="indonesia">Indonesia</option>
+                <option value="brazil">Brazil</option>
+            </optgroup>
+        </select>
+        <br>
+
+        <!-- The initial content of a <textarea> is specified between 
+             its opening and closing tags, not as a value attribute. -->
+        <label for="story">Tell us your story</label>
+        <br>
+        <textarea 
+            name="story" 
+            id="story" 
+            minlength="5" 
+            maxlength="20" 
+            rows="5" 
+            cols="40">Default text</textarea>
+        <br>
+
+        <!--
+            - The accept attribute takes a comma-separated list of allowed file 
+              extensions or MIME types.
+            - The multiple attribute allows selecting more than one file.
+            - The file content is submitted only if the form has set method="post" 
+              and enctype="multipart/form-data". If that's not the case, then only 
+              the file name is sent.
+        -->
+        <label for="file">Choose file to upload</label>
+        <input type="file" name="file" id="file" accept=".txt,.md" multiple>
+        <br>
+
+        <!-- <input> elements of type hidden are used to include data that 
+             cannot be seen or modified by users when a form is submitted. -->
+        <input type="hidden" name="hidden" value="hidden value">
+
+        <!--
+            - Buttons created with <button> do work just like buttons created with 
+              <input>, but they have a content. And since the value attribute of 
+              <button> is not used to display the button text, it can be chosen freely.
+            - The default type for <button> is submit.
+            - If you provide a name attribute to a control that has the submit type, 
+              then the value is submitted when pressing it.
+        -->
+        <input type="submit" name="submit1" value="Submit">
+        <button type="submit" name="submit2" value="ok"><strong>Submit</strong></button>
+        <button type="reset">Reset</button>
+    </form>
+</body>
+</html>
