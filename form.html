@@ -33,10 +33,10 @@
     -->
     <form action="form.html" method="get">
         <!-- 
-            - The for attribute associates the label with the id of a form control. 
-              Clicking the label will focus on the associated form control. 
-              Here we intentionally distinguish the name value from the id value, 
-              but for the following examples they are set to the same.
+            - The for attribute associates the <label> with a form control 
+              through the id. Clicking a <label> will focus on the associated 
+              form control. In this first example, we distinguish name from id, 
+              but for the next examples, we set them to the same value.
             - The required attribute indicates that the user must specify a value.
         -->
         <label for="name-id">Name</label>
@@ -49,12 +49,12 @@
         <br>
 
         <!-- 
-            - To clear the search a small cross appears after typing.
+            - After typing, a small cross appears to clear the search box.
             - The placeholder attribute defines the text to display when the 
               control has no value.
         -->
         <label for="search">Search</label>
-        <input type="search" name="search" id="search" placeholder="Enter your search">
+        <input type="search" name="search" id="search" placeholder="Enter search">
         <br>
 
         <!-- The title attribute specifies a hint for the user. -->
@@ -73,9 +73,10 @@
         <br>
 
         <!--
-            - The number must be in increments of the given step which can
-              also be a floating-point value.
-            - The number can be any floating-point value if step="any".
+            - The entered number must be in increments of the given step. 
+              The step may also be a floating-point number.
+            - The entered number can be any floating-point number if 
+              step="any".
         -->
         <label for="number">Number</label>
         <input type="number" 
@@ -88,10 +89,10 @@
         <br>
 
         <!--
-            - The range attribute has also a step attribute which behaves 
+            - The range input type has also a step attribute which behaves 
               like the step attribute of the number input type.
-            - The datalist with the options shows ticks at the given values.
-              To correctly display the labels we need some css (see above).
+            - A <datalist> with options shows ticks at the given values.
+              To correctly display the labels we need some css (see at the top).
         -->
         <label for="range">Range</label>
         <div style="display: inline-block; vertical-align: middle;">
@@ -152,7 +153,7 @@
         <!-- 
             - If the checkbox is unchecked, name=value is not submitted.  
             - If the value attribute is not provided, it defaults to on.
-            - Use the checked attribute to check it by default.
+            - Use the checked attribute to set the check mark by default.
             - The switch attribute displays the control as a on/off switch.
         -->
         <input type="checkbox" name="subscribe" id="subscribe" value="yes">
@@ -165,7 +166,7 @@
             - A fieldset defines a group of controls within a form.
             - A radio group is defined by giving each of the radio buttons 
               in the group the same name.
-            - No data is submitted if nothing is selected, so usually you 
+            - If nothing is selected, no data is submitted, so you usually 
               want to have one control with the checked attribute.
         -->
         <fieldset>
@@ -177,17 +178,17 @@
         </fieldset>
 
         <!--
-            - If no value attribute is included for <option>, the value 
-              defaults to the text contained inside the element.
-            - You can include the selected attribute on an <option> element 
-              to make it selected by default. If no selected attribute is 
-              specified, the first <option> will be selected by default.
-            - <select> supports the multiple attribute which will send the
+            - If an <option> element does not have a value attribute, the 
+              value defaults to the text contained inside the element.
+            - Use the selected attribute on an <option> element to select 
+              it by default. If no selected attribute is specified, the 
+              first <option> element will be selected by default.
+            - <select> supports the multiple attribute which sends the 
               data like: name=val1&name=val2
               Note: in PHP to get an array, append square brackets to the 
-                    <select> name like name="country[]" 
+                    name like name="country[]"
             - <select> supports the size attribute to specify the number 
-              of options to show at once. 
+              of options to show at once.
             - An <option> with the disabled attribute cannot be selected.
             - <optgroup> and <hr> are to visually group the options.
         -->
@@ -222,12 +223,12 @@
         <br>
 
         <!--
-            - The accept attribute takes a comma-separated list of allowed file 
-              extensions or MIME types.
+            - The accept attribute takes a comma-separated list of allowed 
+              file extensions or MIME types.
             - The multiple attribute allows selecting more than one file.
-            - The file content is submitted only if the form has set method="post" 
-              and enctype="multipart/form-data". If that's not the case, then only 
-              the file name is sent.
+            - The file content is submitted only if the form has set 
+              method="post" and enctype="multipart/form-data". If that's 
+              not the case, then only the file name is sent.
         -->
         <label for="file">Choose file to upload</label>
         <input type="file" name="file" id="file" accept=".txt,.md" multiple>
@@ -238,15 +239,16 @@
         <input type="hidden" name="hidden" value="hidden value">
 
         <!--
-            - Buttons created with <button> do work just like buttons created with 
-              <input>, but they have a content. And since the value attribute of 
-              <button> is not used to display the button text, it can be chosen freely.
+            - Buttons created with <button> do work just like buttons created 
+              with <input>, but <button> allows content between its opening and 
+              closing tags. And since the value attribute of <button> is not 
+              used to display the button text, it can be chosen freely.
             - The default type for <button> is submit.
-            - If you provide a name attribute to a control that has the submit type, 
-              then the value is submitted when pressing it.
+            - If you give a name to a submit-type control, the name=value pair 
+              is submitted when the control is pressed.
         -->
         <input type="submit" name="submit1" value="Submit">
-        <button type="submit" name="submit2" value="ok"><strong>Submit</strong></button>
+        <button type="submit" name="submit2" value="ok"><em>Submit</em></button>
         <button type="reset">Reset</button>
     </form>
 </body>
