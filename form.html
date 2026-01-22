@@ -23,41 +23,41 @@
 </head>
 <body>
     <!--
-        - Through the action attribute we specify the URL that processes 
+        - Through the action-attribute we specify the URL that processes 
           the form submission.
-        - The default method is get, it can be changed to method="post".
-        - The enctype attribute can be used only if method="post":
+        - The default method is "get", it can be changed to "post".
+        - The enctype-attribute can be used only if method="post":
           1. enctype="application/x-www-form-urlencoded" is the default.
-          2. enctype="multipart/form-data" necessary to upload files.
+          2. enctype="multipart/form-data" is necessary to upload files.
           3. enctype="text/plain" to debug.
     -->
     <form action="form.html" method="get">
         <!-- 
-            - The for attribute associates the <label> with a form control 
+            - The for-attribute associates the <label> with a form control 
               through the id. Clicking a <label> will focus on the associated 
               form control. In this first example, we distinguish name from id, 
               but for the next examples, we set them to the same value.
-            - The required attribute indicates that the user must specify a value.
+            - The required-attribute indicates that the user must specify a value.
         -->
         <label for="name-id">Name</label>
         <input type="text" name="name" id="name-id" required>
         <br>
 
-        <!-- The pattern attribute specifies a regex that the value should match. -->
+        <!-- The pattern-attribute specifies a regex that the value should match. -->
         <label for="letters">Three letters</label>
         <input type="text" name="letters" id="letters" pattern="[A-Za-z]{3}">
         <br>
 
         <!-- 
             - After typing, a small cross appears to clear the search box.
-            - The placeholder attribute defines the text to display when the 
+            - The placeholder-attribute defines the text to display when the 
               control has no value.
         -->
         <label for="search">Search</label>
         <input type="search" name="search" id="search" placeholder="Enter search">
         <br>
 
-        <!-- The title attribute specifies a hint for the user. -->
+        <!-- The title-attribute specifies a hint for the user. -->
         <label for="password">Password</label>
         <input type="password" name="password" id="password" title="Super secret">
         <br>
@@ -89,8 +89,8 @@
         <br>
 
         <!--
-            - The range input type has also a step attribute which behaves 
-              like the step attribute of the number input type.
+            - The range input type has also a step-attribute which behaves 
+              like the step-attribute of the number input type.
             - A <datalist> with options shows ticks at the given values.
               To correctly display the labels we need some css (see at the top).
         -->
@@ -152,9 +152,9 @@
 
         <!-- 
             - If the checkbox is unchecked, name=value is not submitted.  
-            - If the value attribute is not provided, it defaults to on.
-            - Use the checked attribute to set the check mark by default.
-            - The switch attribute displays the control as a on/off switch.
+            - If the value-attribute is not provided, it defaults to on.
+            - Use the checked-attribute to set the check mark by default.
+            - The switch-attribute displays the control as a on/off switch.
         -->
         <input type="checkbox" name="subscribe" id="subscribe" value="yes">
         <label for="subscribe">Subscribe?</label>
@@ -167,7 +167,7 @@
             - A radio group is defined by giving each of the radio buttons 
               in the group the same name.
             - If nothing is selected, no data is submitted, so you usually 
-              want to have one control with the checked attribute.
+              want to have one control with the checked-attribute.
         -->
         <fieldset>
             <legend>Fieldset Legend</legend>
@@ -178,18 +178,18 @@
         </fieldset>
 
         <!--
-            - If an <option> element does not have a value attribute, the 
+            - If an <option> element does not have a value-attribute, the 
               value defaults to the text contained inside the element.
-            - Use the selected attribute on an <option> element to select 
-              it by default. If no selected attribute is specified, the 
+            - Use the selected-attribute on an <option> element to select 
+              it by default. If no selected-attribute is specified, the 
               first <option> element will be selected by default.
-            - <select> supports the multiple attribute which sends the 
+            - <select> supports the multiple-attribute which sends the 
               data like: name=val1&name=val2
               Note: in PHP to get an array, append square brackets to the 
                     name like name="country[]"
-            - <select> supports the size attribute to specify the number 
+            - <select> supports the size-attribute to specify the number 
               of options to show at once.
-            - An <option> with the disabled attribute cannot be selected.
+            - An <option> with the disabled-attribute cannot be selected.
             - <optgroup> and <hr> are to visually group the options.
         -->
         <label for="country">Choose a country</label>
@@ -210,7 +210,7 @@
         <br>
 
         <!-- The initial content of a <textarea> is specified between 
-             its opening and closing tags, not as a value attribute. -->
+             its opening and closing tags, not as a value-attribute. -->
         <label for="story">Tell us your story</label>
         <br>
         <textarea 
@@ -223,9 +223,9 @@
         <br>
 
         <!--
-            - The accept attribute takes a comma-separated list of allowed 
+            - The accept-attribute takes a comma-separated list of allowed 
               file extensions or MIME types.
-            - The multiple attribute allows selecting more than one file.
+            - The multiple-attribute allows selecting more than one file.
             - The file content is submitted only if the form has set 
               method="post" and enctype="multipart/form-data". If that's 
               not the case, then only the file name is sent.
@@ -241,7 +241,7 @@
         <!--
             - Buttons created with <button> do work just like buttons created 
               with <input>, but <button> allows content between its opening and 
-              closing tags. And since the value attribute of <button> is not 
+              closing tags. And since the value-attribute of <button> is not 
               used to display the button text, it can be chosen freely.
             - The default type for <button> is submit.
             - If you give a name to a submit-type control, the name=value pair 
