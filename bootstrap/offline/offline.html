@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Icons</title>
+        <!--
+            1. Download bootstrap-X.Y.Z-dist.zip and unzip into your project directory:
+            https://github.com/twbs/bootstrap/releases
+
+            2. Download bootstrap-icons-X.Y.Z.zip and unzip into your project directory:
+            https://github.com/twbs/icons/releases
+            
+            3. Adapt the following two links to the directories created while unzipping.
+        -->
+        <link href="bootstrap-dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+        <link href="bootstrap-icons/bootstrap-icons.min.css" rel="stylesheet">
+        <style>
+            
+        </style>
+    </head>
+    <body>
+
+        <!-- Adapt the following link to the directory created while unzipping,
+             and always place this before the body closing tag -->
+        <script src="bootstrap-dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+        <!-- Test icons and show bootstrap version -->
+        <div class="display-1"><i class="bi bi-bootstrap"></i> Bootstrap
+        <script>
+            let bootstrapVersion = bootstrap.Tooltip.VERSION;
+            document.write(bootstrapVersion);
+        </script>
+        </div>
+    </body>
+</html>
