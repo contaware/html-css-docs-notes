@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iframe-aspect-ratio-from-attr</title>
+    <style>
+        .container {
+            width: 800px;
+            max-width: 100%;
+            background: pink;
+            margin: auto;
+        }
+        iframe[width][height] {
+            aspect-ratio: attr(width) / attr(height);
+        }
+        iframe {
+            width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
-<style>
-.container {
-    width: 800px;
-    max-width: 100%;
-    background: pink;
-    margin: auto;
-}
-iframe[width][height] {
-    aspect-ratio: attr(width) / attr(height);
-}
-iframe {
-    width: 100%;
-    height: auto;
-}
-</style>
 <body>
     <div class="container">
         <h1>Not yet supported... (in 2023)</h1>

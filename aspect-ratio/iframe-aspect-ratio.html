@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iframe-aspect-ratio</title>
+    <style>
+        .container {
+            width: 800px;
+            max-width: 100%;
+            background: pink;
+            margin: auto;
+        }
+        iframe {
+            aspect-ratio: 16 / 9;
+            width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
-<style>
-.container {
-    width: 800px;
-    max-width: 100%;
-    background: pink;
-    margin: auto;
-}
-iframe {
-    aspect-ratio: 16 / 9;
-    width: 100%;
-    height: auto;
-}
-</style>
 <body>
     <div class="container">
         <h1>Video 16/9</h1>
