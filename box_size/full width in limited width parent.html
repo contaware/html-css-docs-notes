@@ -1,54 +1,91 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width">
-<title>Full width in limited width parent</title>
-<style>
-body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-}
-.container {
-  max-width: 500px;
-  color: white;
-  background-color: red;
-  padding: 20px;
-  margin: 0 auto;
-}
-.full-width {
-  margin-left: calc(50% - 50vw) !important;
-  margin-right: calc(50% - 50vw) !important;
-  /*width: auto !important;*/               /* to overwrite a set width */
-  /*padding: 2rem var(--page-margin);*/     /* if not an image but some text then use this */
-  /*background: var(--lighter);*/           /* another background */
-}
-</style>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Full width in limited width parent</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 500px;
+            color: white;
+            background-color: red;
+            padding: 20px;
+            margin: 0 auto;
+        }
+        .full-width {
+            margin-left: calc(50% - 50vw) !important;
+            margin-right: calc(50% - 50vw) !important;
+            /*width: auto !important;*/               /* to overwrite a set width */
+            /*padding: 2rem var(--page-margin);*/     /* if not an image but some text then use this */
+            /*background: var(--lighter);*/           /* another background */
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <p>
-      The following is for when you want a full-width content in a site which does not span 
-      the full-width.
-    </p>
-    <p>
-      vw measures also the vertical scrollbar, so that the full-width content
-      will always overflow a few pixels. That's the reason why body has overflow-x: hidden.
-      Those missing pixels are usually not a problem for images, while for content, it's important
-      to have a left and a right padding.
-    </p>
-    <p>
-      For a cleaner solution, we must wait until the browser makers realize that the scrollbars
-      should not take space, just pop-up when the user wants to scroll. Some few browsers used to 
-      support overflow: overlay, unfortunately that's now deprecated in favor of scrollbar-gutter: stable
-      which reserves scrollbar space when the scrollbar is not shown. But as we do not know the size of
-      the scrollbars for all browsers, scrollbar-gutter: stable is not helping.
-    </p>
-    <figure class="full-width">
-	    <img style="width: 100%; height: auto; object-fit: cover;" src="https://picsum.photos/id/20/1024/300" alt="An awesome picture">
-    </figure>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis nobis, nesciunt velit pariatur consequatur animi quibusdam recusandae quos illo, eius non excepturi ullam. Enim vero a, blanditiis odio quia quibusdam iste? Quas non atque magni nihil harum quidem consectetur quia veniam aspernatur corporis saepe voluptas, eaque, dignissimos, doloremque ipsa consequatur tenetur ex nobis doloribus esse temporibus sapiente ad! Fugit aperiam reprehenderit architecto eius accusamus, expedita commodi laborum in? Modi laboriosam aut iusto nesciunt, eveniet deleniti nobis, porro quis rerum, saepe mollitia ipsam libero beatae enim aliquid et cupiditate distinctio quibusdam maiores ipsum quod dolore voluptatem laborum. Quisquam doloribus aperiam, odio sapiente eaque fugiat laborum. Amet animi odit itaque sapiente aliquid corrupti blanditiis harum obcaecati, deleniti natus consequatur repellendus exercitationem, ullam dolorum neque? Perspiciatis reiciendis autem ratione eligendi vel voluptate neque in laudantium consectetur alias suscipit libero qui voluptatum ducimus exercitationem impedit corporis earum possimus, veritatis a expedita blanditiis. Veritatis exercitationem culpa aperiam quas a doloribus magni alias qui odit sunt repellendus necessitatibus corporis est commodi totam eum impedit nostrum eligendi modi, error quis perspiciatis laudantium. Tenetur hic dolor animi, saepe blanditiis consequuntur atque quaerat ratione nostrum error? Ut officiis enim eligendi labore nobis dicta ducimus quidem, obcaecati, et eveniet neque.</p>
-  </div>
+    <div class="container">
+        <p>
+            The following is for when you want a full-width content in a 
+            site which does not span the full-width.
+        </p>
+        <p>
+            vw measures also the vertical scrollbar, so that the 
+            full-width content will always overflow a few pixels. That's 
+            the reason why body has <code>overflow-x: hidden</code>. 
+            Those missing pixels are usually not a problem for images, 
+            while for content, it's important to have a left and a right 
+            padding.
+        </p>
+        <p>
+            For a cleaner solution, we must wait until all browser 
+            makers realize that the scrollbars should not take space, 
+            just pop-up when the user wants to scroll. Some few browsers 
+            used to support <code>overflow: overlay</code>, 
+            unfortunately that's now deprecated in favor of 
+            <code>scrollbar-gutter: stable</code> which reserves 
+            scrollbar space when the scrollbar is not shown. But as we 
+            do not know the size of the scrollbars for all browsers, 
+            <code>scrollbar-gutter: stable</code> is not helping.
+        </p>
+        <figure class="full-width">
+            <img style="width: 100%; height: auto; object-fit: cover;" 
+                src="https://picsum.photos/id/20/1024/300" 
+                alt="An awesome picture">
+        </figure>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Reiciendis nobis, nesciunt velit pariatur consequatur animi 
+            quibusdam recusandae quos illo, eius non excepturi ullam. 
+            Enim vero a, blanditiis odio quia quibusdam iste? Quas non 
+            atque magni nihil harum quidem consectetur quia veniam 
+            aspernatur corporis saepe voluptas, eaque, dignissimos, 
+            doloremque ipsa consequatur tenetur ex nobis doloribus esse 
+            temporibus sapiente ad! Fugit aperiam reprehenderit 
+            architecto eius accusamus, expedita commodi laborum in? 
+            Modi laboriosam aut iusto nesciunt, eveniet deleniti nobis, 
+            porro quis rerum, saepe mollitia ipsam libero beatae enim 
+            aliquid et cupiditate distinctio quibusdam maiores ipsum 
+            quod dolore voluptatem laborum. Quisquam doloribus aperiam, 
+            odio sapiente eaque fugiat laborum. Amet animi odit itaque 
+            sapiente aliquid corrupti blanditiis harum obcaecati, 
+            deleniti natus consequatur repellendus exercitationem, 
+            ullam dolorum neque? Perspiciatis reiciendis autem ratione 
+            eligendi vel voluptate neque in laudantium consectetur 
+            alias suscipit libero qui voluptatum ducimus exercitationem 
+            impedit corporis earum possimus, veritatis a expedita 
+            blanditiis. Veritatis exercitationem culpa aperiam quas a 
+            doloribus magni alias qui odit sunt repellendus 
+            necessitatibus corporis est commodi totam eum impedit 
+            nostrum eligendi modi, error quis perspiciatis laudantium. 
+            Tenetur hic dolor animi, saepe blanditiis consequuntur 
+            atque quaerat ratione nostrum error? Ut officiis enim 
+            eligendi labore nobis dicta ducimus quidem, obcaecati, et 
+            eveniet neque.
+        </p>
+    </div>
 </body>
 </html>
