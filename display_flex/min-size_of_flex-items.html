@@ -1,54 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width">
-<title>Min size of flex items</title>
-<style>
-.container-flex {
-    background: yellow;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    gap: 0;
-}
-.child {
-    background: orange;
-    border: 1px solid black;
-}
-</style>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Min size of flex items</title>
+    <style>
+        .container-flex {
+            background: yellow;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            gap: 0;
+        }
+        .child {
+            background: orange;
+            border: 1px solid black;
+        }
+    </style>
 </head>
 <body>
 
-<h2>Flex items' automatic minimum size</h2>
+    <h2>Flex items' automatic minimum size</h2>
 
-<p>For flexbox items, the <code>auto</code> keyword is the initial value of <code>min-width</code>.</p>
+    <p>For flexbox items, the <code>auto</code> keyword is the initial value of <code>min-width</code>.</p>
 
-<p>With <code>overflow-x: visible</code> (default) the automatic minimum width computes to the content-based minimum width:</p>
-<div class="container-flex" style="height: 30px;">
-    <div class="child">1.HiFirstChildHiSecondOneHiThirdOne</div>
-</div>
-<div class="container-flex" style="height: 80px;">
-    <img class="child" style="height: auto;" src="../assets/contaware.png" width="260" height="43" alt="contaware.com">
-</div>
+    <p>With <code>overflow-x: visible</code> (default) the automatic minimum width computes to the content-based minimum width:</p>
+    <div class="container-flex" style="height: 30px;">
+        <div class="child">1.HiFirstChildHiSecondOneHiThirdOne</div>
+    </div>
+    <div class="container-flex" style="height: 80px;">
+        <img class="child" style="height: auto;" src="../assets/contaware.png" width="260" height="43" alt="contaware.com">
+    </div>
 
-<p>With <code>overflow-x: hidden</code> the automatic minimum width computes to zero:</p>
-<div class="container-flex" style="height: 30px;">
-    <div class="child" style="overflow-x: hidden;">2.HiFirstChildHiSecondOneHiThirdOne</div>
-</div>
-<div class="container-flex" style="height: 80px;">
-    <img class="child" style="overflow-x: hidden; height: auto;" src="../assets/contaware.png" width="260" height="43" alt="contaware.com">
-</div>
+    <p>With <code>overflow-x: hidden</code> the automatic minimum width computes to zero:</p>
+    <div class="container-flex" style="height: 30px;">
+        <div class="child" style="overflow-x: hidden;">2.HiFirstChildHiSecondOneHiThirdOne</div>
+    </div>
+    <div class="container-flex" style="height: 80px;">
+        <img class="child" style="overflow-x: hidden; height: auto;" src="../assets/contaware.png" width="260" height="43" alt="contaware.com">
+    </div>
 
-<p>With <code>min-width: 0</code> the minimum width is explicitly set to zero:</p>
-<div class="container-flex" style="height: 30px;">
-    <div class="child" style="min-width: 0;">3.HiFirstChildHiSecondOneHiThirdOne</div>
-</div>
-<div class="container-flex" style="height: 80px;">
-    <img class="child" style="min-width: 0; height: auto;" src="../assets/contaware.png" width="260" height="43" alt="contaware.com">
-</div>
+    <p>With <code>min-width: 0</code> the minimum width is explicitly set to zero:</p>
+    <div class="container-flex" style="height: 30px;">
+        <div class="child" style="min-width: 0;">3.HiFirstChildHiSecondOneHiThirdOne</div>
+    </div>
+    <div class="container-flex" style="height: 80px;">
+        <img class="child" style="min-width: 0; height: auto;" src="../assets/contaware.png" width="260" height="43" alt="contaware.com">
+    </div>
 
-<p>Note: the same holds for <code>min-height</code> and <code>overflow-y</code>.</p>
+    <p>Note: the same holds for <code>min-height</code> and <code>overflow-y</code>.</p>
 
 </body>
 </html>
