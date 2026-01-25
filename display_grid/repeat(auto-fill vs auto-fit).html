@@ -1,85 +1,85 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width">
-<title>repeat(auto-fill vs auto-fit)</title>
-<style>
-#container-auto-fill {
-	display: grid;
-	grid-template-columns: repeat(auto-fill, 50px);
-}
-#container-auto-fit {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, 50px);
-}
-#container-auto-fill-minmax {
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
-}
-#container-auto-fit-minmax {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
-}
-</style>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repeat(auto-fill vs auto-fit)</title>
+    <style>
+        #container-auto-fill {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, 50px);
+        }
+        #container-auto-fit {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, 50px);
+        }
+        #container-auto-fill-minmax {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+        }
+        #container-auto-fit-minmax {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+        }
+    </style>
 </head>
 <body>
 
-<h2>The repeat() function with auto-fill/fit and fixed size</h2>
-<p>In this case using <code>auto-fill</code> or <code>auto-fit</code> gives the same result:</p>
-<div id="container-auto-fill">
-	<div style="background: pink;">DIV1</div>
-	<div style="background: lightgreen;">DIV2</div>
-	<div style="background: orange;">DIV3</div>
-	<div style="background: aqua;">DIV4</div>
-	<div style="background: pink;">DIV5</div>
-	<div style="background: lightgreen;">DIV6</div>
-    <div style="background: orange;">DIV7</div>
-	<div style="background: aqua;">DIV8</div>
-</div>
-<div id="container-auto-fit">
-	<div style="background: pink;">DIV1</div>
-	<div style="background: lightgreen;">DIV2</div>
-	<div style="background: orange;">DIV3</div>
-	<div style="background: aqua;">DIV4</div>
-	<div style="background: pink;">DIV5</div>
-	<div style="background: lightgreen;">DIV6</div>
-    <div style="background: orange;">DIV7</div>
-	<div style="background: aqua;">DIV8</div>
-</div>
+    <h2>The repeat() function with auto-fill/fit and fixed size</h2>
+    <p>In this case using <code>auto-fill</code> or <code>auto-fit</code> gives the same result:</p>
+    <div id="container-auto-fill">
+        <div style="background: pink;">DIV1</div>
+        <div style="background: lightgreen;">DIV2</div>
+        <div style="background: orange;">DIV3</div>
+        <div style="background: aqua;">DIV4</div>
+        <div style="background: pink;">DIV5</div>
+        <div style="background: lightgreen;">DIV6</div>
+        <div style="background: orange;">DIV7</div>
+        <div style="background: aqua;">DIV8</div>
+    </div>
+    <div id="container-auto-fit">
+        <div style="background: pink;">DIV1</div>
+        <div style="background: lightgreen;">DIV2</div>
+        <div style="background: orange;">DIV3</div>
+        <div style="background: aqua;">DIV4</div>
+        <div style="background: pink;">DIV5</div>
+        <div style="background: lightgreen;">DIV6</div>
+        <div style="background: orange;">DIV7</div>
+        <div style="background: aqua;">DIV8</div>
+    </div>
 
-<h2>The repeat() function with auto-fill and minmax()</h2>
-<ul>
-    <li><code>auto-fill</code> will place as many columns as possible in a row.</li>
-    <li>With <code>auto-fill</code> empty columns can occupy space in the row like their non-empty neighbors.</li>
-    <li>When resizing it jumps because empty columns are added/removed.</li>
-</ul>
-<div id="container-auto-fill-minmax">
-	<div style="background: pink;">DIV1</div>
-	<div style="background: lightgreen;">DIV2</div>
-	<div style="background: orange;">DIV3</div>
-	<div style="background: aqua;">DIV4</div>
-	<div style="background: pink;">DIV5</div>
-	<div style="background: lightgreen;">DIV6</div>
-    <div style="background: orange;">DIV7</div>
-	<div style="background: aqua;">DIV8</div>
-</div>
+    <h2>The repeat() function with auto-fill and minmax()</h2>
+    <ul>
+        <li><code>auto-fill</code> will place as many columns as possible in a row.</li>
+        <li>With <code>auto-fill</code> empty columns can occupy space in the row like their non-empty neighbors.</li>
+        <li>When resizing it jumps because empty columns are added/removed.</li>
+    </ul>
+    <div id="container-auto-fill-minmax">
+        <div style="background: pink;">DIV1</div>
+        <div style="background: lightgreen;">DIV2</div>
+        <div style="background: orange;">DIV3</div>
+        <div style="background: aqua;">DIV4</div>
+        <div style="background: pink;">DIV5</div>
+        <div style="background: lightgreen;">DIV6</div>
+        <div style="background: orange;">DIV7</div>
+        <div style="background: aqua;">DIV8</div>
+    </div>
 
-<h2>The repeat() function with auto-fit and minmax()</h2>
-<ul>
-    <li><code>auto-fit</code> will place as many columns as possible in a row.</li>
-    <li>With <code>auto-fit</code> the content will stretch because the empty columns are collapsing.</li>
-</ul>
-<div id="container-auto-fit-minmax">
-	<div style="background: pink;">DIV1</div>
-	<div style="background: lightgreen;">DIV2</div>
-	<div style="background: orange;">DIV3</div>
-	<div style="background: aqua;">DIV4</div>
-	<div style="background: pink;">DIV5</div>
-	<div style="background: lightgreen;">DIV6</div>
-	<div style="background: orange;">DIV7</div>
-	<div style="background: aqua;">DIV8</div>
-</div>
+    <h2>The repeat() function with auto-fit and minmax()</h2>
+    <ul>
+        <li><code>auto-fit</code> will place as many columns as possible in a row.</li>
+        <li>With <code>auto-fit</code> the content will stretch because the empty columns are collapsing.</li>
+    </ul>
+    <div id="container-auto-fit-minmax">
+        <div style="background: pink;">DIV1</div>
+        <div style="background: lightgreen;">DIV2</div>
+        <div style="background: orange;">DIV3</div>
+        <div style="background: aqua;">DIV4</div>
+        <div style="background: pink;">DIV5</div>
+        <div style="background: lightgreen;">DIV6</div>
+        <div style="background: orange;">DIV7</div>
+        <div style="background: aqua;">DIV8</div>
+    </div>
 
 </body>
 </html>

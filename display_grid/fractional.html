@@ -1,45 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width">
-<title>Fractional units</title>
-<style>
-#container-percentage {
-	background: yellow;
-    outline: 2px dashed violet;
-	display: grid;
-    column-gap: 20px;
-	grid-template-columns: 40% 10% 20% 30%;
-}
-#container-fractional {
-	background: yellow;
-    outline: 2px dashed violet;
-	display: grid;
-	column-gap: 20px;
-	grid-template-columns: 200px 10% 2fr 1fr;
-}
-</style>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Fractional units</title>
+    <style>
+        #container-percentage {
+            background: yellow;
+            outline: 2px dashed violet;
+            display: grid;
+            column-gap: 20px;
+            grid-template-columns: 40% 10% 20% 30%;
+        }
+        #container-fractional {
+            background: yellow;
+            outline: 2px dashed violet;
+            display: grid;
+            column-gap: 20px;
+            grid-template-columns: 200px 10% 2fr 1fr;
+        }
+    </style>
 </head>
 <body>
 
-<h2>Percentage units</h2>
-<p>The <code>%</code> values are calculated based on the size of the grid container. The items will overflow the container, if a gap is set:</p>
-<div id="container-percentage">
-	<div style="background: pink;">40%</div>
-	<div style="background: lightgreen;">10%</div>
-	<div style="background: orange;">20%</div>
-	<div style="background: aqua;">30%</div>
-</div>
+    <h2>Percentage units</h2>
+    <p>The <code>%</code> values are calculated based on the size of the grid container. The items will overflow the container, if a gap is set:</p>
+    <div id="container-percentage">
+        <div style="background: pink;">40%</div>
+        <div style="background: lightgreen;">10%</div>
+        <div style="background: orange;">20%</div>
+        <div style="background: aqua;">30%</div>
+    </div>
 
-<h2>Fractional units</h2>
-<p>The <code>fr</code> values are more comfortable because they will get the space that's left after the <code>px</code>, <code>%</code> values and the gaps have taken their space. This available space is proportionally subdivided between the <code>fr</code> values:</p>
-<div id="container-fractional">
-	<div style="background: pink;">200px</div>
-	<div style="background: lightgreen;">10%</div>
-	<div style="background: orange;">2fr</div>
-	<div style="background: aqua;">1fr</div>
-</div>
+    <h2>Fractional units</h2>
+    <p>The <code>fr</code> values are more comfortable because they will get the space that's left after the <code>px</code>, <code>%</code> values and the gaps have taken their space. This available space is proportionally subdivided between the <code>fr</code> values:</p>
+    <div id="container-fractional">
+        <div style="background: pink;">200px</div>
+        <div style="background: lightgreen;">10%</div>
+        <div style="background: orange;">2fr</div>
+        <div style="background: aqua;">1fr</div>
+    </div>
 
 </body>
 </html>

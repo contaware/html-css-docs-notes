@@ -1,79 +1,79 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width">
-<title>grid-template-areas</title>
-<style>
-#container-grid {
-	background: yellow;
-	display: grid;
-	gap: 25px;
-    /* 
-        The default value for grid-template-columns and 
-        grid-template-rows is none.
-        To make that clear, here we could write:
-        grid-template-columns: none;
-        or
-        grid-template-columns: 1fr;
-    */
-	grid-template-areas: 
-    "tools"
-    "header"
-    "sidebar"
-    "main"
-    "footer";
-}
-@media (width >= 500px) {
-  #container-grid {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-	grid-template-rows: 40px 80px 200px 80px;
-    grid-template-areas: 
-    "tools   tools   tools   tools"
-    "header  header  header  header"
-    "sidebar .       main    main"
-    "footer  footer  footer  footer";
-  }
-}
-.toolbar {
-	grid-area: tools;
-	background: lightgrey;
-}
-header {
-	grid-area: header;
-	background: orange;
-}
-aside {
-	grid-area: sidebar;
-	background: lightgreen;
-}
-main {
-	grid-area: main;
-	background: pink;
-}
-footer {
-	grid-area: footer;
-	background: aqua;
-}
-</style>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>grid-template-areas</title>
+    <style>
+        #container-grid {
+            background: yellow;
+            display: grid;
+            gap: 25px;
+            /* 
+                The default value for grid-template-columns and 
+                grid-template-rows is none.
+                To make that clear, here we could write:
+                grid-template-columns: none;
+                or
+                grid-template-columns: 1fr;
+            */
+            grid-template-areas: 
+            "tools"
+            "header"
+            "sidebar"
+            "main"
+            "footer";
+        }
+        @media (width >= 500px) {
+        #container-grid {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 40px 80px 200px 80px;
+            grid-template-areas: 
+            "tools   tools   tools   tools"
+            "header  header  header  header"
+            "sidebar .       main    main"
+            "footer  footer  footer  footer";
+        }
+        }
+        .toolbar {
+            grid-area: tools;
+            background: lightgrey;
+        }
+        header {
+            grid-area: header;
+            background: orange;
+        }
+        aside {
+            grid-area: sidebar;
+            background: lightgreen;
+        }
+        main {
+            grid-area: main;
+            background: pink;
+        }
+        footer {
+            grid-area: footer;
+            background: aqua;
+        }
+    </style>
 </head>
 <body>
 
-<h2>Define and use grid areas</h2>
-<ul>
-    <li><code>grid-template-areas</code> defines a grid template by referencing the names of the grid areas which are specified with the <code>grid-area</code> property.</li>
-    <li>Repeating the name of a grid area causes the content to span those cells.</li>
-    <li>A period signifies an empty cell.</li>
-    <li>We set the mobile breakpoint @500px.</li>
-</ul>
+    <h2>Define and use grid areas</h2>
+    <ul>
+        <li><code>grid-template-areas</code> defines a grid template by referencing the names of the grid areas which are specified with the <code>grid-area</code> property.</li>
+        <li>Repeating the name of a grid area causes the content to span those cells.</li>
+        <li>A period signifies an empty cell.</li>
+        <li>We set the mobile breakpoint @500px.</li>
+    </ul>
 
-<div id="container-grid">
-	<div class="toolbar">toolbar<br>grid-area: tools</div>
-    <header>header<br>grid-area: header</header>
-	<aside>aside<br>grid-area: sidebar</aside>
-	<main>main<br>grid-area: main</main>
-	<footer>footer<br>grid-area: footer</footer>
-</div>
+    <div id="container-grid">
+        <div class="toolbar">toolbar<br>grid-area: tools</div>
+        <header>header<br>grid-area: header</header>
+        <aside>aside<br>grid-area: sidebar</aside>
+        <main>main<br>grid-area: main</main>
+        <footer>footer<br>grid-area: footer</footer>
+    </div>
 
 </body>
 </html>
