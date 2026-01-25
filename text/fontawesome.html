@@ -5,21 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fontawesome</title>
     <!--
+        Since v6, Font Awesome stopped delivering the files via the 
+        official Font Awesome CDN. There are unofficial CDNs, but 
+        we prefer the following official offline installation.
+
         1. Download "Free For Web" and unzip:
-        https://fontawesome.com/v6/download
-        2. Grab the css folder (only fontawesome.css, brands.css, solid.css are necessary).
-        3. Grab the webfonts folder (only fa-solid-900.* and fa-brands-400.* are necessary).
-        4. Link to the css files like shown below.
-        5. Search:
+           https://fontawesome.com/v6/download
+        2. From the css directory only fontawesome.css, brands.css 
+           and solid.css are necessary.
+        3. From the webfonts directory only fa-solid-900.* and 
+           fa-brands-400.* are necessary.
+        4. Link to the css files like shown next:
+    -->
+    <link href="fontawesome-free/css/fontawesome.css" rel="stylesheet">
+    <link href="fontawesome-free/css/brands.css" rel="stylesheet">
+    <link href="fontawesome-free/css/solid.css" rel="stylesheet">
+</head>
+<body>
+    <!--
+        Search the icons through:
         https://fontawesome.com/v6/search
         https://www.weber.edu/uistyleguide/fa-icons.html
         https://ogb.stanford.edu/docs/font-awesome/
     -->
-    <link href="fontawesome-files/css/fontawesome.css" rel="stylesheet">
-    <link href="fontawesome-files/css/brands.css" rel="stylesheet">
-    <link href="fontawesome-files/css/solid.css" rel="stylesheet">
-</head>
-<body>
     <h2>Size</h2>
     <i class="fa-solid fa-home fa-2xs"></i>
     <i class="fa-solid fa-home fa-xs"></i>
