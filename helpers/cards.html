@@ -1,317 +1,317 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width">
-<title>cards</title>
-<link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
-<style>
-*, *:before, *:after {
-	box-sizing: inherit; /* by default box-sizing is not inherited */
-}
-html {
-	box-sizing: border-box;
-}
-body {
-	color: #666666;
-	background: #e7e7e7;
-	font-family: 'Roboto','Helvetica Neue', Helvetica, Arial, sans-serif;
-	margin: 0;
-	padding: 0;
-}
-h3 {
-	color: #444444;
-}
-	
-/*	
-	Auto stack
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>cards</title>
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+    <style>
+        *, *:before, *:after {
+            box-sizing: inherit; /* by default box-sizing is not inherited */
+        }
+        html {
+            box-sizing: border-box;
+        }
+        body {
+            color: #666666;
+            background: #e7e7e7;
+            font-family: 'Roboto','Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h3 {
+            color: #444444;
+        }
+            
+        /*	
+            Auto stack
 
-	--card-count: 3;
-	--card-width: 20rem;
-	--card-column-gap: 1.5rem;
-	--card-row-gap: 3rem;
-	
-	ATTENTION: when setting --card-column-gap to zero always provide a unit
-	           otherwise the --stack-breakpoint calculation doesn't work! 
-*/
-.cards-auto-stack {
-	display: grid;
-	grid-column-gap: var(--card-column-gap, 1.5rem);
-	grid-row-gap: var(--card-row-gap, 3rem);
-	
-	/* It will stack when the size of the grid container is less than this */
-	--stack-breakpoint: calc(var(--card-count, 3) * var(--card-width, 20rem) + (var(--card-count, 3) - 1) * var(--card-column-gap, 1.5rem));
-	grid-template-columns: repeat(auto-fit, minmax(min((var(--stack-breakpoint) - 100%) * 9999, 100%), 1fr));
-}
-.cards-auto-stack .card {
-	justify-self: center; /* remove that if no width set for .card */
-}
-
-
-/*	
-	Auto wrap
-
-	--card-width: 20rem;
-	--card-margin: 1.5rem;
-	
-*/
-.cards-auto-wrap {
-	display: flex;
-	flex-wrap: wrap;
-	padding: 0;
-	justify-content: space-around;
-}
-.cards-auto-wrap .card {
-	margin: var(--card-margin, 1.5rem);
-}
+            --card-count: 3;
+            --card-width: 20rem;
+            --card-column-gap: 1.5rem;
+            --card-row-gap: 3rem;
+            
+            ATTENTION: when setting --card-column-gap to zero always provide a unit
+                    otherwise the --stack-breakpoint calculation doesn't work! 
+        */
+        .cards-auto-stack {
+            display: grid;
+            grid-column-gap: var(--card-column-gap, 1.5rem);
+            grid-row-gap: var(--card-row-gap, 3rem);
+            
+            /* It will stack when the size of the grid container is less than this */
+            --stack-breakpoint: calc(var(--card-count, 3) * var(--card-width, 20rem) + (var(--card-count, 3) - 1) * var(--card-column-gap, 1.5rem));
+            grid-template-columns: repeat(auto-fit, minmax(min((var(--stack-breakpoint) - 100%) * 9999, 100%), 1fr));
+        }
+        .cards-auto-stack .card {
+            justify-self: center; /* remove that if no width set for .card */
+        }
 
 
-/*
-	Card
-									
-	--card-background: none;
-	--card-border: none;
-	--card-radius: 0;
-	--card-shadow: none;
-	
-*/
-.card {
-	width: var(--card-width, 20rem);
-	background: var(--card-background, #ffffff);
-	border: var(--card-border, 1px solid #d7dbdd);
-	border-radius: var(--card-radius, 8px);
-	box-shadow: var(--card-shadow, 0 4px 8px 0 rgba(0,0,0,0.2));
-	
-	max-width: 100%; /* for small devices when only a card is shown */
-	overflow: hidden; /* necessary to show the round corners */
-	
-	display: flex;
-	flex-direction: column; /* card-header and card-content flex in column direction */
-}
+        /*	
+            Auto wrap
+
+            --card-width: 20rem;
+            --card-margin: 1.5rem;
+            
+        */
+        .cards-auto-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0;
+            justify-content: space-around;
+        }
+        .cards-auto-wrap .card {
+            margin: var(--card-margin, 1.5rem);
+        }
 
 
-/*
-	Card header
-	
-	--card-header-margin: 0;
-	--card-header-padding: 0;
-	--card-header-background: none;
-	--card-header-justify: flex-start|center|flex-end|space-between|space-around|space-evenly;
-	
-*/
-.card-header {
-	margin: var(--card-header-margin, 0);
-	padding: var(--card-header-padding, 0);
-	background: var(--card-header-background, none);
-	
-	display: flex;
-	justify-content: var(--card-header-justify, space-around);
-	align-items: center;
-}
+        /*
+            Card
+                                            
+            --card-background: none;
+            --card-border: none;
+            --card-radius: 0;
+            --card-shadow: none;
+            
+        */
+        .card {
+            width: var(--card-width, 20rem);
+            background: var(--card-background, #ffffff);
+            border: var(--card-border, 1px solid #d7dbdd);
+            border-radius: var(--card-radius, 8px);
+            box-shadow: var(--card-shadow, 0 4px 8px 0 rgba(0,0,0,0.2));
+            
+            max-width: 100%; /* for small devices when only a card is shown */
+            overflow: hidden; /* necessary to show the round corners */
+            
+            display: flex;
+            flex-direction: column; /* card-header and card-content flex in column direction */
+        }
 
 
-/*
-	Card header image
-	
-	--card-image-width: auto|100%|30%;
-	--card-image-padding: 0;
-	--card-image-border: none;
-	--card-image-radius: 0;
-	--card-image-shadow: none;
-	
-*/
-.card-header > img {
-	width: var(--card-image-width, 100%);
-	height: auto;
-	padding: var(--card-image-padding, 0);
-	border: var(--card-image-border, none);
-	border-radius: var(--card-image-radius, 0);
-	box-shadow: var(--card-image-shadow, none);
-}
+        /*
+            Card header
+            
+            --card-header-margin: 0;
+            --card-header-padding: 0;
+            --card-header-background: none;
+            --card-header-justify: flex-start|center|flex-end|space-between|space-around|space-evenly;
+            
+        */
+        .card-header {
+            margin: var(--card-header-margin, 0);
+            padding: var(--card-header-padding, 0);
+            background: var(--card-header-background, none);
+            
+            display: flex;
+            justify-content: var(--card-header-justify, space-around);
+            align-items: center;
+        }
 
 
-/*
-	Card content
-	
-	--card-content-text-align: inherit|left|center|justify|right;
-	--card-content-text-indent: 1rem;
-	--card-content-text-grow: 1|0;
-	
-*/
-.card-content {
-	position: relative; /* for absolute positioned child elements */
-	text-align: var(--card-content-text-align, inherit);
-	flex-grow: 1; /* expand the content block to bottom card edge */
-	
-	display: flex;
-	flex-direction: column; /* flex content in column direction */
-}
-.card-content > * {
-	margin: 0.5rem var(--card-content-text-indent, 1rem);
-}
-.card-content > h3 {
-	margin: 0.75rem var(--card-content-text-indent, 1rem);
-}
-.card-content > ol, .card-content > ul {
-    margin: 0.5rem var(--card-content-text-indent, 1rem);
-	padding: 0 var(--card-content-text-indent, 1rem);
-}
-.card-content > p {
-	flex-grow: var(--card-content-text-grow, 1); /* make the paragraph flexible within the content block? */
-}
+        /*
+            Card header image
+            
+            --card-image-width: auto|100%|30%;
+            --card-image-padding: 0;
+            --card-image-border: none;
+            --card-image-radius: 0;
+            --card-image-shadow: none;
+            
+        */
+        .card-header > img {
+            width: var(--card-image-width, 100%);
+            height: auto;
+            padding: var(--card-image-padding, 0);
+            border: var(--card-image-border, none);
+            border-radius: var(--card-image-radius, 0);
+            box-shadow: var(--card-image-shadow, none);
+        }
 
 
-/*
-	Card content button (span or anchor)
-	
-	--card-button-margin: 0;
-	--card-button-color: white;
-	--card-button-background: black;
-	--card-button-border-top: none;
-	--card-button-border-right: none;
-	--card-button-border-bottom: none;
-	--card-button-border-left: none;
-	--card-button-radius: 0;
-	--card-button-shadow: none;
-*/
-.card-content > .card-button {
-	margin: var(--card-button-margin, 0);
-	color: var(--card-button-color, #57727c);
-	background: var(--card-button-background, #eef3f5);
-	border-top: var(--card-button-border-top, none);
-	border-right: var(--card-button-border-right, none);
-	border-bottom: var(--card-button-border-bottom, none);
-	border-left: var(--card-button-border-left, none);
-	border-radius: var(--card-button-radius, 0);
-	box-shadow: var(--card-button-shadow, none);
-	
-	padding: 1rem 0.75rem;
-	text-align: center;
-	text-decoration: none;
-}
+        /*
+            Card content
+            
+            --card-content-text-align: inherit|left|center|justify|right;
+            --card-content-text-indent: 1rem;
+            --card-content-text-grow: 1|0;
+            
+        */
+        .card-content {
+            position: relative; /* for absolute positioned child elements */
+            text-align: var(--card-content-text-align, inherit);
+            flex-grow: 1; /* expand the content block to bottom card edge */
+            
+            display: flex;
+            flex-direction: column; /* flex content in column direction */
+        }
+        .card-content > * {
+            margin: 0.5rem var(--card-content-text-indent, 1rem);
+        }
+        .card-content > h3 {
+            margin: 0.75rem var(--card-content-text-indent, 1rem);
+        }
+        .card-content > ol, .card-content > ul {
+            margin: 0.5rem var(--card-content-text-indent, 1rem);
+            padding: 0 var(--card-content-text-indent, 1rem);
+        }
+        .card-content > p {
+            flex-grow: var(--card-content-text-grow, 1); /* make the paragraph flexible within the content block? */
+        }
 
 
-/*
-	Card content button halfway (span or anchor)
-	
-	--card-button-width: 4rem;
-	--card-button-height: 4rem;
-	--card-button-left: auto;
-	--card-button-right: 6%;
-	--card-button-color: white;
-	--card-button-background: black;
-	--card-button-border-top: none;
-	--card-button-border-right: none;
-	--card-button-border-bottom: none;
-	--card-button-border-left: none;
-	--card-button-radius: 0;
-	--card-button-shadow: none;
-*/	
-.card-content > .card-button-halfway {
-	color: var(--card-button-color, #ffffff);
-	background: var(--card-button-background, #7b5a9e);
-	border-top: var(--card-button-border-top, none);
-	border-right: var(--card-button-border-right, none);
-	border-bottom: var(--card-button-border-bottom, none);
-	border-left: var(--card-button-border-left, none);
-	border-radius: var(--card-button-radius, 50%);
-	box-shadow: var(--card-button-shadow, none);
-	
-	position: absolute;
-	margin: 0;
-	width: var(--card-button-width, 4rem);
-	height: var(--card-button-height, 4rem);
-	top: calc(var(--card-button-height, 4rem) / -2);
-	left: var(--card-button-left, calc(50% - var(--card-button-width, 4rem) / 2)); /* by default center */
-	right: var(--card-button-right, auto);
-	text-decoration: none;
-	
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
-</style>
+        /*
+            Card content button (span or anchor)
+            
+            --card-button-margin: 0;
+            --card-button-color: white;
+            --card-button-background: black;
+            --card-button-border-top: none;
+            --card-button-border-right: none;
+            --card-button-border-bottom: none;
+            --card-button-border-left: none;
+            --card-button-radius: 0;
+            --card-button-shadow: none;
+        */
+        .card-content > .card-button {
+            margin: var(--card-button-margin, 0);
+            color: var(--card-button-color, #57727c);
+            background: var(--card-button-background, #eef3f5);
+            border-top: var(--card-button-border-top, none);
+            border-right: var(--card-button-border-right, none);
+            border-bottom: var(--card-button-border-bottom, none);
+            border-left: var(--card-button-border-left, none);
+            border-radius: var(--card-button-radius, 0);
+            box-shadow: var(--card-button-shadow, none);
+            
+            padding: 1rem 0.75rem;
+            text-align: center;
+            text-decoration: none;
+        }
+
+
+        /*
+            Card content button halfway (span or anchor)
+            
+            --card-button-width: 4rem;
+            --card-button-height: 4rem;
+            --card-button-left: auto;
+            --card-button-right: 6%;
+            --card-button-color: white;
+            --card-button-background: black;
+            --card-button-border-top: none;
+            --card-button-border-right: none;
+            --card-button-border-bottom: none;
+            --card-button-border-left: none;
+            --card-button-radius: 0;
+            --card-button-shadow: none;
+        */	
+        .card-content > .card-button-halfway {
+            color: var(--card-button-color, #ffffff);
+            background: var(--card-button-background, #7b5a9e);
+            border-top: var(--card-button-border-top, none);
+            border-right: var(--card-button-border-right, none);
+            border-bottom: var(--card-button-border-bottom, none);
+            border-left: var(--card-button-border-left, none);
+            border-radius: var(--card-button-radius, 50%);
+            box-shadow: var(--card-button-shadow, none);
+            
+            position: absolute;
+            margin: 0;
+            width: var(--card-button-width, 4rem);
+            height: var(--card-button-height, 4rem);
+            top: calc(var(--card-button-height, 4rem) / -2);
+            left: var(--card-button-left, calc(50% - var(--card-button-width, 4rem) / 2)); /* by default center */
+            right: var(--card-button-right, auto);
+            text-decoration: none;
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
 </head>
 <body>
 
-<h1>3 &rarr; 1</h1>
+    <h1>3 &rarr; 1</h1>
 
-<div class="cards-auto-stack">
-	<div class="card">
-		<div class="card-header" style="--card-header-padding: 1rem; --card-header-background: #231E39; --card-image-border: 3px solid white;">
-			<img src="https://picsum.photos/180/105">
-		</div>
-		<div class="card-content">
-			<h3>First</h3>
-			<p>I'm a card and I'm first.</p>
-			<ol><li>One</li><li>Two</li></ol>
-			<span class="card-button" style="--card-button-border-top: var(--card-border, 1px solid #d7dbdd);">No Click</span>
-		</div>
-	</div>
-	<div class="card">
-		<div class="card-header" style="--card-header-padding: 1rem; --card-header-background: #231E39;">
-			<i class="material-icons-outlined" style="font-size: 8rem; color: #ffffff; cursor: default;">face</i>
-		</div>
-		<div class="card-content">
-			<h3>Second</h3>
-			<p>I'm a card</p>
-			<p>I'm some extra content put here to make life more difficult, because I can.</p>
-			<a href="#" class="card-button" style="--card-button-margin: 0 1rem 1rem 1rem; --card-button-color: #ffffff; --card-button-background: #7b5a9e; --card-button-radius: 8px;">Button</a>
-		</div>
-	</div>
-	<div class="card">
-		<div class="card-header">
-			<img src="https://picsum.photos/180">
-			<img src="https://picsum.photos/180">
-		</div>
-		<div class="card-content">
-			<h3>Third</h3>
-			<p>Dreamcatcher PBR iPhone seitan viral, DIY Truffaut biodiesel slow-carb. Health goth twee migas, messenger bag irony tilde chillwave cold-pressed listicle bespoke Schlitz readymade. Super long line is this. See how it grows and if it wraps at some point!</p>
-			<a href="#" class="card-button" style="--card-button-border-top: var(--card-border, 1px solid #d7dbdd);">Costs $5</a>
-		</div>
-	</div>
-</div>
+    <div class="cards-auto-stack">
+        <div class="card">
+            <div class="card-header" style="--card-header-padding: 1rem; --card-header-background: #231E39; --card-image-border: 3px solid white;">
+                <img src="https://picsum.photos/180/105">
+            </div>
+            <div class="card-content">
+                <h3>First</h3>
+                <p>I'm a card and I'm first.</p>
+                <ol><li>One</li><li>Two</li></ol>
+                <span class="card-button" style="--card-button-border-top: var(--card-border, 1px solid #d7dbdd);">No Click</span>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" style="--card-header-padding: 1rem; --card-header-background: #231E39;">
+                <i class="material-icons-outlined" style="font-size: 8rem; color: #ffffff; cursor: default;">face</i>
+            </div>
+            <div class="card-content">
+                <h3>Second</h3>
+                <p>I'm a card</p>
+                <p>I'm some extra content put here to make life more difficult, because I can.</p>
+                <a href="#" class="card-button" style="--card-button-margin: 0 1rem 1rem 1rem; --card-button-color: #ffffff; --card-button-background: #7b5a9e; --card-button-radius: 8px;">Button</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <img src="https://picsum.photos/180">
+                <img src="https://picsum.photos/180">
+            </div>
+            <div class="card-content">
+                <h3>Third</h3>
+                <p>Dreamcatcher PBR iPhone seitan viral, DIY Truffaut biodiesel slow-carb. Health goth twee migas, messenger bag irony tilde chillwave cold-pressed listicle bespoke Schlitz readymade. Super long line is this. See how it grows and if it wraps at some point!</p>
+                <a href="#" class="card-button" style="--card-button-border-top: var(--card-border, 1px solid #d7dbdd);">Costs $5</a>
+            </div>
+        </div>
+    </div>
 
-<hr>
+    <hr>
 
-<h1>3 &rarr; 2 &rarr; 1</h1>
+    <h1>3 &rarr; 2 &rarr; 1</h1>
 
-<div class="cards-auto-wrap">
-	<div class="card">
-		<div class="card-header">
-			<img src="https://picsum.photos/180/140">
-		</div>
-		<div class="card-content">
-			<h3>Fourth</h3>
-			<p>I'm a card and I'm first.</p>
-			<a href="#" class="card-button-halfway" style="--card-button-border-top: 3px solid #ffffff; --card-button-border-right: 3px solid #ffffff; --card-button-border-bottom: 3px solid #ffffff; --card-button-border-left: 3px solid #ffffff; --card-button-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">Hi!<br>bel</a>
-		</div>
-	</div>
-	<div class="card">
-		<div class="card-header" style="--card-header-padding: 1.5rem; --card-header-background: #231E39; --card-image-width: 60%; --card-image-padding: 0.4rem; --card-image-border: 1px solid #ffffff; --card-image-radius: 50%;">
-			<img src="https://picsum.photos/180">
-		</div>
-		<div class="card-content" style="--card-content-text-align: center; --card-content-text-indent: 2.5rem;">
-			<h3>Fifth</h3>
-			<p>I'm a card</p>
-			<p>I'm some extra content put here to make life more difficult, because I can.</p>
-			<a href="#" class="card-button" style="--card-button-border-top: var(--card-border, 1px solid #d7dbdd);">Costs $30</a>
-		</div>
-	</div>
-	<div class="card" style="--card-background: none; --card-border: none; --card-radius: 0; --card-shadow: none;">
-		<div class="card-header" style="--card-header-margin: 1rem 1rem 0 1rem; --card-image-width: 30%; --card-image-border: 1px solid #d7dbdd; --card-image-radius: 8px; --card-image-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
-			<img src="https://picsum.photos/180">
-			<img src="https://picsum.photos/180">
-			<img src="https://picsum.photos/180">
-		</div>
-		<div class="card-content" style="--card-content-text-align: center; --card-content-text-grow: 0;">
-			<h3>Sixth</h3>
-			<p>Dreamcatcher PBR iPhone seitan viral, DIY Truffaut biodiesel slow-carb. Health goth twee migas, messenger bag irony tilde chillwave cold-pressed listicle bespoke Schlitz readymade. Super long line is this. See how it grows and if it wraps at some point!</p>
-			<a href="#" style="color: #0067b8;"><span style="vertical-align: middle; display: inline-block; line-height: 2rem; font-size: 1.2rem;">LEARN MORE&nbsp;</span><i class="material-icons" style="vertical-align: middle; line-height: 2rem; font-size: 1.8rem;">navigate_next</i></a>
-		</div>
-	</div>
-</div>
+    <div class="cards-auto-wrap">
+        <div class="card">
+            <div class="card-header">
+                <img src="https://picsum.photos/180/140">
+            </div>
+            <div class="card-content">
+                <h3>Fourth</h3>
+                <p>I'm a card and I'm first.</p>
+                <a href="#" class="card-button-halfway" style="--card-button-border-top: 3px solid #ffffff; --card-button-border-right: 3px solid #ffffff; --card-button-border-bottom: 3px solid #ffffff; --card-button-border-left: 3px solid #ffffff; --card-button-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">Hi!<br>bel</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" style="--card-header-padding: 1.5rem; --card-header-background: #231E39; --card-image-width: 60%; --card-image-padding: 0.4rem; --card-image-border: 1px solid #ffffff; --card-image-radius: 50%;">
+                <img src="https://picsum.photos/180">
+            </div>
+            <div class="card-content" style="--card-content-text-align: center; --card-content-text-indent: 2.5rem;">
+                <h3>Fifth</h3>
+                <p>I'm a card</p>
+                <p>I'm some extra content put here to make life more difficult, because I can.</p>
+                <a href="#" class="card-button" style="--card-button-border-top: var(--card-border, 1px solid #d7dbdd);">Costs $30</a>
+            </div>
+        </div>
+        <div class="card" style="--card-background: none; --card-border: none; --card-radius: 0; --card-shadow: none;">
+            <div class="card-header" style="--card-header-margin: 1rem 1rem 0 1rem; --card-image-width: 30%; --card-image-border: 1px solid #d7dbdd; --card-image-radius: 8px; --card-image-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
+                <img src="https://picsum.photos/180">
+                <img src="https://picsum.photos/180">
+                <img src="https://picsum.photos/180">
+            </div>
+            <div class="card-content" style="--card-content-text-align: center; --card-content-text-grow: 0;">
+                <h3>Sixth</h3>
+                <p>Dreamcatcher PBR iPhone seitan viral, DIY Truffaut biodiesel slow-carb. Health goth twee migas, messenger bag irony tilde chillwave cold-pressed listicle bespoke Schlitz readymade. Super long line is this. See how it grows and if it wraps at some point!</p>
+                <a href="#" style="color: #0067b8;"><span style="vertical-align: middle; display: inline-block; line-height: 2rem; font-size: 1.2rem;">LEARN MORE&nbsp;</span><i class="material-icons" style="vertical-align: middle; line-height: 2rem; font-size: 1.8rem;">navigate_next</i></a>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>

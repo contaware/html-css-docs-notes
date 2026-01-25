@@ -1,158 +1,147 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Popups</title>
-<style type="text/css" media="all">
-
-/* needed for IE to make :active state work first time */
-a, a:visited {color:#000;} 
-
-a.popuppoint {
-	color: #402640;
-	background-color: #fff;
-	text-decoration: none;	
-}
-
-a:hover.popuppoint {
-	color: #402640;
-	background-color: #fff;
-	text-decoration: none;	
-}
-.popup
-{
-   position:absolute;
-   left: 150px;
-	top: -50px;
-   width:132px;
-   border-style:solid;
-   border-width:4;
-   border-color:blue;
-   background-color:yellow;
-   padding:5px;
-   color:red;
-   font-family:Arial;
-   font-weight:bold;
-   font-size:10pt;
-   z-index:2;
-   visibility:hidden;
-}
-
-div#link {
-	position: relative;
-	width: 166px;
-	height: 100px;
-	font: 16px Verdana, sans-serif;
-	z-index: 100;
-}
-div#link a, div#link a:visited {
-	display: block;
-	border-width: 0; 
-	text-decoration: none;
-	color: #FFC;
-	background: #444;
-	border-right: 5px solid #505050;
-}
-div#link a:hover {
-	color: #411;
-	background: #AAA;
-}   
-div#link a span {
-	display: none;
-}
-div#link a:hover span {
-	display: block;
-	position:absolute;
-	left: 150px;
-	top: 6px;
-	width:132px;
-	border-style:solid;
-	border-width:4;
-	border-color:blue;
-	background-color:yellow;
-	padding:5px;
-	color:red;
-	font-family:Arial;
-	font-weight:bold;
-	font-size:10pt;
-	z-index:100;
-}
-
-div#image {
-	position: relative;
-	font: 16px Verdana, sans-serif;
-}
-div#image a span {
-	visibility:hidden;
-	display: block;
-	position: absolute;
-	left: 150px;
-	top: 6px;
-	width: 260px;
-	height: 262px;
-}
-div#image a:hover {
-	border:1px solid #c00;
-	z-index: 100;
-}
-div#image a:hover span  {
-	visibility:visible;
-	z-index: 100;
-}
-div#image a:hover span img {
-	position:relative;
-	z-index: 100;
-}
-div#image a:active, div#image a:focus {
-	border:1px solid #c00;
-	z-index: 10;
-}
-div#image a:active span , div#image a:focus span  {
-	visibility:visible;
-	z-index:10;
-}
-div#image a:active span img , div#image a:focus span img {
-	position:relative;
-	z-index:10;
-}
-
-</style>
-<script language="JavaScript">
-function ShowPop(id)
-{
-   document.getElementById(id).style.visibility = "visible";
-}
-function HidePop(id)
-{
-   document.getElementById(id).style.visibility = "hidden";
-}
-</script>
-
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Popups</title>
+    <style type="text/css" media="all">
+        /* needed for IE to make :active state work first time */
+        a, a:visited {
+            color:#000;
+        }
+        a.popuppoint {
+            color: #402640;
+            background-color: #fff;
+            text-decoration: none;	
+        }
+        a:hover.popuppoint {
+            color: #402640;
+            background-color: #fff;
+            text-decoration: none;	
+        }
+        .popup {
+            position:absolute;
+            left: 150px;
+                top: -50px;
+            width:132px;
+            border-style:solid;
+            border-width:4;
+            border-color:blue;
+            background-color:yellow;
+            padding:5px;
+            color:red;
+            font-family:Arial;
+            font-weight:bold;
+            font-size:10pt;
+            z-index:2;
+            visibility:hidden;
+        }
+        div#link {
+            position: relative;
+            width: 166px;
+            height: 100px;
+            font: 16px Verdana, sans-serif;
+            z-index: 100;
+        }
+        div#link a, div#link a:visited {
+            display: block;
+            border-width: 0; 
+            text-decoration: none;
+            color: #FFC;
+            background: #444;
+            border-right: 5px solid #505050;
+        }
+        div#link a:hover {
+            color: #411;
+            background: #AAA;
+        }   
+        div#link a span {
+            display: none;
+        }
+        div#link a:hover span {
+            display: block;
+            position:absolute;
+            left: 150px;
+            top: 6px;
+            width:132px;
+            border-style:solid;
+            border-width:4;
+            border-color:blue;
+            background-color:yellow;
+            padding:5px;
+            color:red;
+            font-family:Arial;
+            font-weight:bold;
+            font-size:10pt;
+            z-index:100;
+        }
+        div#image {
+            position: relative;
+            font: 16px Verdana, sans-serif;
+        }
+        div#image a span {
+            visibility:hidden;
+            display: block;
+            position: absolute;
+            left: 150px;
+            top: 6px;
+            width: 260px;
+            height: 262px;
+        }
+        div#image a:hover {
+            border:1px solid #c00;
+            z-index: 100;
+        }
+        div#image a:hover span  {
+            visibility:visible;
+            z-index: 100;
+        }
+        div#image a:hover span img {
+            position:relative;
+            z-index: 100;
+        }
+        div#image a:active, div#image a:focus {
+            border:1px solid #c00;
+            z-index: 10;
+        }
+        div#image a:active span , div#image a:focus span  {
+            visibility:visible;
+            z-index:10;
+        }
+        div#image a:active span img , div#image a:focus span img {
+            position:relative;
+            z-index:10;
+        }
+    </style>
+    <script language="JavaScript">
+        function ShowPop(id) {
+            document.getElementById(id).style.visibility = "visible";
+        }
+        function HidePop(id) {
+            document.getElementById(id).style.visibility = "hidden";
+        }
+    </script>
 </head>
-
 <body>
-<h1>Popups</h1>
+    <h1>Popups</h1>
 
-<hr>
+    <hr>
 
-<div style="position:relative;">
-<span id="term1" class="popup">
-Javascript: This is the text that will appear inside the first popup window
-</span><a class="popuppoint" href="javascript:void(0);" onmouseover="ShowPop('term1');" onmouseout="HidePop('term1');">Popup Text</a>
-</div>
+    <div style="position: relative;">
+        <span id="term1" class="popup">
+            Javascript: This is the text that will appear inside the first popup window
+        </span><a class="popuppoint" href="javascript:void(0);" onmouseover="ShowPop('term1');" onmouseout="HidePop('term1');">Popup Text</a>
+    </div>
 
-<hr>
+    <hr>
 
-<div id="link">
-<a href="#nogo">Popup Text<span>CSS Only: This is the text that will appear inside the first popup window</span></a>
-</div>
+    <div id="link">
+        <a href="#">Popup Text<span>CSS Only: This is the text that will appear inside the first popup window</span></a>
+    </div>
 
-<hr>
+    <hr>
 
-<div id="image">
-<a href="#nogo">Popup Image<span><img src="https://picsum.photos/120/80"></span></a>
-</div>
-
+    <div id="image">
+        <a href="#">Popup Image<span><img src="https://picsum.photos/120/80"></span></a>
+    </div>
 </body>
-
 </html>
