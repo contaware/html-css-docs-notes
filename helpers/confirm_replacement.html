@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>confirm replacement</title>
+    <title>confirm() replacement</title>
     <style>
         .overlay {
             position: fixed;
@@ -52,23 +52,20 @@
     </style>
 </head>
 <body>
-
-    <div>
-        <p>Confirmation dialog replacement for the javascript confirm() method.</p>
-    </div>
+    <p>Confirmation dialog replacement for the javascript confirm() method:</p>
 
     <button id="btn-show-dialog">Show Dialog</button>
     <div class="overlay" id="dialog-container">
-    <div class="popup">
-        <p>This will permanently delete all the selected files. Continue ?</p>
-        <div>
-        <button class="dialog-btn" id="confirm">Ok</button>
-        <button class="dialog-btn" id="cancel">Cancel</button>
+        <div class="popup">
+            <p>This will permanently delete all the selected files. Continue ?</p>
+            <div>
+                <button class="dialog-btn" id="confirm">Ok</button>
+                <button class="dialog-btn" id="cancel">Cancel</button>
+            </div>
         </div>
     </div>
-    </div>
 
-    <script type="text/javascript">
+    <script>
         document.getElementById('btn-show-dialog').addEventListener('click', function() {
             document.getElementById('dialog-container').style.display = 'block';
         }, false);
@@ -81,6 +78,5 @@
             alert('Cancel');
         }, false);
     </script>
-
 </body>
 </html>
