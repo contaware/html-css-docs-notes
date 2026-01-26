@@ -29,16 +29,16 @@
 
         .flex-auto-stack {
             --margin: 15px;
-            width: calc(var(--width) + 2 * var(--margin));	/* take into account the child margins */
-            margin: calc(var(--margin) * -1);				/* compensate the margins added by the childs */
+            width: calc(var(--width) + 2 * var(--margin));  /* take into account the child margins */
+            margin: calc(var(--margin) * -1);               /* compensate the margins added by the childs */
             background: yellow;
             display: flex;
             flex-wrap: wrap;
-            justify-content: flex-start;	/* default is flex-start */
+            justify-content: flex-start;    /* default is flex-start */
         }
         .flex-auto-stack > * {
-            flex-grow: 1;					/* default is 0 (no grow) */
-            flex-shrink: 1;					/* default is 1 (shrink) */
+            flex-grow: 1;                   /* default is 0 (no grow) */
+            flex-shrink: 1;                 /* default is 1 (shrink) */
             margin: var(--margin);
             padding: 15px;
             
