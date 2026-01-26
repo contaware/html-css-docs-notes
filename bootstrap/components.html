@@ -48,34 +48,34 @@
     <h4>img-fluid and img-thumbnail</h4>
     <div class="container mt-3">
         <div class="row">
-          <div class="col-4">
-            <img src="https://picsum.photos/id/13/640/200" alt="">
-          </div>
-          <div class="col-8">
-            <div class="text-bg-primary" style="height: 100px">
-              <p>with no class the image overflows!</p>
+            <div class="col-4">
+                <img src="https://picsum.photos/id/13/640/200" alt="">
             </div>
-          </div>
+            <div class="col-8">
+                <div class="text-bg-primary" style="height: 100px">
+                    <p>with no class the image overflows!</p>
+                </div>
+            </div>
         </div>
         <div class="row">
-          <div class="col-4">
-            <img src="https://picsum.photos/id/13/640/200" class="img-fluid" alt="">
-          </div>
-          <div class="col-8">
-            <div class="text-bg-primary" style="height: 100px">
-              <p>img-fluid: max-width: 100%; height: auto;</p>
+            <div class="col-4">
+                <img src="https://picsum.photos/id/13/640/200" class="img-fluid" alt="">
             </div>
-          </div>
+            <div class="col-8">
+                <div class="text-bg-primary" style="height: 100px">
+                    <p>img-fluid: max-width: 100%; height: auto;</p>
+                </div>
+            </div>
         </div>
         <div class="row">
-          <div class="col-4">
-            <img src="https://picsum.photos/id/13/640/200" class="img-thumbnail" alt="">
-          </div>
-          <div class="col-8">
-            <div class="text-bg-primary" style="height: 100px">
-              <p>img-thumbnail: behaves like img-fluid but also adds a rounded border.</p>
+            <div class="col-4">
+                <img src="https://picsum.photos/id/13/640/200" class="img-thumbnail" alt="">
             </div>
-          </div>
+            <div class="col-8">
+                <div class="text-bg-primary" style="height: 100px">
+                    <p>img-thumbnail: behaves like img-fluid but also adds a rounded border.</p>
+                </div>
+            </div>
         </div>
     </div>
     <br>
@@ -163,99 +163,93 @@
             inside the card and maintain the aspect ratio.
         </p>
         <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 justify-content-center">
-        <div class="col">
-            <div class="card border-danger mx-auto h-100" style="width: 300px">
-                <div class="card-header bg-transparent">bg-transparent</div>
-                <img class="card-image-top" src="https://picsum.photos/id/20/300/100" alt="">
-                <div class="card-body text-center">
-                    <h4 class="card-title">card-title</h4>
-                    <span class="card-subtitle lead">card-subtitle lead</span>
-                    <p class="card-text">On card set style="width: 300px" or w-* class for fixed width and h-100 class for equal hight.</p>
-                    <a href="#" class="card-link">card-link</a>
-                </div>
-                <div class="card-footer"><a href="#" class="btn btn-primary btn-sm">Click1</a> <a href="#" class="btn btn-secondary btn-sm">Click2</a></div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card text-bg-primary border-dark mx-auto h-100" style="width: 300px">
-                <div class="card-header border-light">Header</div>
-                <div class="card-body text-center">
-                    <h4 class="card-title">Title</h4>
-                    <span class="card-subtitle lead">Subtitle</span>
-                    <p class="card-text">Lorem ipsum!</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">An item</li>
-                    <li class="list-group-item">A second item</li>
-                    <li class="list-group-item">A third item</li>
-                </ul>
-                <img class="card-image-bottom" src="https://picsum.photos/300/100" alt="">
-                <div class="card-footer">Footer <a href="#" class="btn btn-warning">Click</a></div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card mx-auto text-light overflow-hidden h-100" style="width: 300px">
-                <img class="card-image" src="https://picsum.photos/id/26/300/348" alt="">
-                <div class="card-img-overlay text-center">
-                    <h4 class="card-title">Title</h4>
-                    <span class="card-subtitle lead">Subtitle</span>
-                    <p class="card-text">div.card-img-overlay is absolute positioned with top=bottom=left=right=0.</p>
-                    <p class="card-text text-bg-warning">Add the overflow-hidden class to the card to have rounded corners!</p>
-                    <p class="card-text text-bg-danger">The image height is too small: aaaaaaaaaaaaaaaaaaaaaaaaaaa bbbbbbbbbbbbbbbbbbbbbbb ccccccccccccccccccccccccccccc ddddddddddddddddddddddd eeeeeeeeeeeeeeeeeeeeeeeee</p>
+            <div class="col">
+                <div class="card border-danger mx-auto h-100" style="width: 300px">
+                    <div class="card-header bg-transparent">bg-transparent</div>
+                    <img class="card-image-top" src="https://picsum.photos/id/20/300/100" alt="">
+                    <div class="card-body text-center">
+                        <h4 class="card-title">card-title</h4>
+                        <span class="card-subtitle lead">card-subtitle lead</span>
+                        <p class="card-text">On card set style="width: 300px" or w-* class for fixed width and h-100 class for equal hight.</p>
+                        <a href="#" class="card-link">card-link</a>
+                    </div>
+                    <div class="card-footer"><a href="#" class="btn btn-primary btn-sm">Click1</a> <a href="#" class="btn btn-secondary btn-sm">Click2</a></div>
                 </div>
             </div>
-        </div>
+            <div class="col">
+                <div class="card text-bg-primary border-dark mx-auto h-100" style="width: 300px">
+                    <div class="card-header border-light">Header</div>
+                    <div class="card-body text-center">
+                        <h4 class="card-title">Title</h4>
+                        <span class="card-subtitle lead">Subtitle</span>
+                        <p class="card-text">Lorem ipsum!</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">An item</li>
+                        <li class="list-group-item">A second item</li>
+                        <li class="list-group-item">A third item</li>
+                    </ul>
+                    <img class="card-image-bottom" src="https://picsum.photos/300/100" alt="">
+                    <div class="card-footer">Footer <a href="#" class="btn btn-warning">Click</a></div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card mx-auto text-light overflow-hidden h-100" style="width: 300px">
+                    <img class="card-image" src="https://picsum.photos/id/26/300/348" alt="">
+                    <div class="card-img-overlay text-center">
+                        <h4 class="card-title">Title</h4>
+                        <span class="card-subtitle lead">Subtitle</span>
+                        <p class="card-text">div.card-img-overlay is absolute positioned with top=bottom=left=right=0.</p>
+                        <p class="card-text text-bg-warning">Add the overflow-hidden class to the card to have rounded corners!</p>
+                        <p class="card-text text-bg-danger">The image height is too small: aaaaaaaaaaaaaaaaaaaaaaaaaaa bbbbbbbbbbbbbbbbbbbbbbb ccccccccccccccccccccccccccccc ddddddddddddddddddddddd eeeeeeeeeeeeeeeeeeeeeeeee</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
     <section id="pricing" class="bg-light">
         <div class="container-lg">
-          <div class="text-center">
-            <h2>Pricing Plans</h2>
-            <p class="lead text-muted">Choose a pricing plan to suit you.</p>
-          </div>
-          <div class="row my-5 g-0 align-items-center justify-content-center">
-            <div class="col-8 col-lg-4 col-xl-3">
-              <div class="card border-0">
-                <div class="card-body text-center py-4">
-                  <h4 class="card-title">Starter Edition</h4>
-                  <p class="lead card-subtitle">eBook download only</p>
-                  <p class="display-5 my-4 text-primary fw-bold">$12.99</p>
-                  <p class="card-text mx-5 text-muted d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, vitae magni! Repellat commodi a fuga corporis saepe dolorum.</p>
-                  <a href="#" class="btn btn-outline-primary btn-lg mt-3">
-                    Buy Now
-                  </a>
-                </div>
-              </div>
+            <div class="text-center">
+                <h2>Pricing Plans</h2>
+                <p class="lead text-muted">Choose a pricing plan to suit you.</p>
             </div>
-            <div class="col-9 col-lg-4">
-              <div class="card border-primary border-2">
-                <div class="card-header text-center text-primary">Most Popular</div>
-                <div class="card-body text-center py-5">
-                  <h4 class="card-title">Complete Edition</h4>
-                  <p class="lead card-subtitle">eBook download &amp; all updates</p>
-                  <p class="display-4 my-4 text-primary fw-bold">$18.99</p>
-                  <p class="card-text mx-5 text-muted d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, vitae magni! Repellat commodi a fuga corporis saepe dolorum.</p>
-                  <a href="#" class="btn btn-outline-primary btn-lg mt-3">
-                    Buy Now
-                  </a>
+            <div class="row my-5 g-0 align-items-center justify-content-center">
+                <div class="col-8 col-lg-4 col-xl-3">
+                    <div class="card border-0">
+                        <div class="card-body text-center py-4">
+                            <h4 class="card-title">Starter Edition</h4>
+                            <p class="lead card-subtitle">eBook download only</p>
+                            <p class="display-5 my-4 text-primary fw-bold">$12.99</p>
+                            <p class="card-text mx-5 text-muted d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, vitae magni! Repellat commodi a fuga corporis saepe dolorum.</p>
+                            <a href="#" class="btn btn-outline-primary btn-lg mt-3">Buy Now</a>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-8 col-lg-4 col-xl-3">
-              <div class="card border-0">
-                <div class="card-body text-center py-4">
-                  <h4 class="card-title">Ultimate Edition</h4>
-                  <p class="lead card-subtitle">download, updates &amp; extras</p>
-                  <p class="display-5 my-4 text-primary fw-bold">$24.99</p>
-                  <p class="card-text mx-5 text-muted d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, vitae magni! Repellat commodi a fuga corporis saepe dolorum.</p>
-                  <a href="#" class="btn btn-outline-primary btn-lg mt-3">
-                    Buy Now
-                  </a>
+                <div class="col-9 col-lg-4">
+                    <div class="card border-primary border-2">
+                        <div class="card-header text-center text-primary">Most Popular</div>
+                        <div class="card-body text-center py-5">
+                            <h4 class="card-title">Complete Edition</h4>
+                            <p class="lead card-subtitle">eBook download &amp; all updates</p>
+                            <p class="display-4 my-4 text-primary fw-bold">$18.99</p>
+                            <p class="card-text mx-5 text-muted d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, vitae magni! Repellat commodi a fuga corporis saepe dolorum.</p>
+                            <a href="#" class="btn btn-outline-primary btn-lg mt-3">Buy Now</a>
+                        </div>
+                    </div>
                 </div>
-              </div>
+                <div class="col-8 col-lg-4 col-xl-3">
+                    <div class="card border-0">
+                        <div class="card-body text-center py-4">
+                            <h4 class="card-title">Ultimate Edition</h4>
+                            <p class="lead card-subtitle">download, updates &amp; extras</p>
+                            <p class="display-5 my-4 text-primary fw-bold">$24.99</p>
+                            <p class="card-text mx-5 text-muted d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, vitae magni! Repellat commodi a fuga corporis saepe dolorum.</p>
+                            <a href="#" class="btn btn-outline-primary btn-lg mt-3">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
     </section>
     <br>
