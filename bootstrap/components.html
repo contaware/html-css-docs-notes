@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Components</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <style>
+        body::before {
+            content: "xs";
+            color: red;
+            font-size: 2rem;
+            font-weight: bold;
+            position: fixed;
+            top: 14px;
+            right: 17px;
+        }
+        @media (min-width: 576px) {
+            body::before {
+                content: "sm";
+            }
+        }
+        @media (min-width: 768px) {
+            body::before {
+                content: "md";
+            }
+        }
+        @media (min-width: 992px) {
+            body::before {
+                content: "lg";
+            }
+        }
+        @media (min-width: 1200px) {
+            body::before {
+                content: "xl";
+            }
+        }
+        @media (min-width: 1400px) {
+            body::before {
+                content: "xxl";
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="image-display" class="display-1">Image and display utility</div>
+
+    <h4>img-fluid and img-thumbnail</h4>
+    <div class="container mt-3">
+        <div class="row">
+          <div class="col-4">
+            <img src="https://picsum.photos/id/13/640/200" alt="">
+          </div>
+          <div class="col-8">
+            <div class="text-bg-primary" style="height: 100px">
+              <p>with no class the image overflows!</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <img src="https://picsum.photos/id/13/640/200" class="img-fluid" alt="">
+          </div>
+          <div class="col-8">
+            <div class="text-bg-primary" style="height: 100px">
+              <p>img-fluid: max-width: 100%; height: auto;</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <img src="https://picsum.photos/id/13/640/200" class="img-thumbnail" alt="">
+          </div>
+          <div class="col-8">
+            <div class="text-bg-primary" style="height: 100px">
+              <p>img-thumbnail: behaves like img-fluid but also adds a rounded border.</p>
+            </div>
+          </div>
+        </div>
+    </div>
+    <br>
+
+    <h4>float-*-start, float-*-end and float-*-none</h4>
+    <div class="container text-bg-primary clearfix">
+        <img src="https://picsum.photos/id/13/640/200" class="img-fluid float-start" alt="">
+        <p>
+            The image is floated to the start with the float-start class. Applying the 
+            clearfix class to the container will size its height to the floated image height.
+        </p>
+    </div>
+    <br>
+    <div class="container text-bg-primary" style="display: flow-root">
+        <img src="https://picsum.photos/id/13/640/200" class="img-fluid float-start" alt="">
+        <p>
+            The image is floated to the start with the float-start class. Setting the
+            container's style attribute to display: flow-root will also size its height to 
+            the floated image height.
+        </p>
+    </div>
+    <br>
+
+    <h4>object-fit</h4>
+    <div class="container">
+        <p>object-fit-*-contain</p>
+        <img class="object-fit-contain text-bg-primary" style="width: 400px; height: 180px" src="https://picsum.photos/id/20/280/280" alt="">
+        <p></p>
+        <p>object-fit-*-fill</p>
+        <img class="object-fit-fill" style="width: 400px; height: 180px" src="https://picsum.photos/id/20/280/280" alt="">
+        <p></p>
+        <p>object-fit-*-cover</p>
+        <img class="object-fit-cover" style="width: 400px; height: 180px" src="https://picsum.photos/id/20/280/280" alt="">
+    </div>
+    <br>
+
+    <h4>background-size</h4>
+    <div class="container">
+        <p>There are no utility classes for background-size, use css style.</p>
+        <p>background-size: contain</p>
+        <div class="text-bg-primary" style="width: 400px; height: 180px; background-image: url(https://picsum.photos/id/20/280/280); background-position: center; background-size: contain; background-repeat: no-repeat;"></div>
+        <p></p>
+        <p>background-size: 100% 100% (like object-fit-fill)</p>
+        <div style="width: 400px; height: 180px; background-image: url(https://picsum.photos/id/20/280/280); background-position: center; background-size: 100% 100%;"></div>
+        <p></p>
+        <p>background-size: cover</p>
+        <div style="width: 400px; height: 180px; background-image: url(https://picsum.photos/id/20/280/280); background-position: center; background-size: cover;"></div>
+    </div>
+    <br>
+
+    <h4>d-*-block and d-*-none</h4>
+    <section id="intro">
+        <div class="container-lg">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-xxl-4 col-md-5 text-center text-md-start">
+                    <h1>
+                        <div class="display-2">Title</div>
+                        <div class="display-5 text-muted">Your Coding Skills</div>
+                    </h1>
+                    <p class="lead my-4 text-muted">Under md viewport the image gets hidden!</p>
+                    <a href="#great" class="btn btn-secondary btn-lg">Great!</a>
+                </div>
+                <div class="col-xxl-4 col-md-5 text-center d-none d-md-block">
+                    <img class="img-fluid" src="https://picsum.photos/300/160" alt="picsum">
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
+
+    <h4>figure</h4>
+    <div class="container">
+        <figure class="figure">
+            <img src="https://picsum.photos/540/200" class="figure-img img-fluid rounded" alt="...">
+            <figcaption class="figure-caption">&lt;figcaption&gt; with figure-caption class (to align at the end, add the text-end class).</figcaption>
+        </figure>
+    </div>
+    <br>
+
+    <div id="card" class="display-1">Card</div>
+    <div class="container">
+        <p>
+            Cards assume no specific width to start, so they'll be 100% wide unless otherwise stated. 
+            By default align-items is stretch, when the images have no width set, they fully stretch 
+            inside the card and maintain the aspect ratio.
+        </p>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 justify-content-center">
+        <div class="col">
+            <div class="card border-danger mx-auto h-100" style="width: 300px">
+                <div class="card-header bg-transparent">bg-transparent</div>
+                <img class="card-image-top" src="https://picsum.photos/id/20/300/100" alt="">
+                <div class="card-body text-center">
+                    <h4 class="card-title">card-title</h4>
+                    <span class="card-subtitle lead">card-subtitle lead</span>
+                    <p class="card-text">On card set style="width: 300px" or w-* class for fixed width and h-100 class for equal hight.</p>
+                    <a href="#" class="card-link">card-link</a>
+                </div>
+                <div class="card-footer"><a href="#" class="btn btn-primary btn-sm">Click1</a> <a href="#" class="btn btn-secondary btn-sm">Click2</a></div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card text-bg-primary border-dark mx-auto h-100" style="width: 300px">
+                <div class="card-header border-light">Header</div>
+                <div class="card-body text-center">
+                    <h4 class="card-title">Title</h4>
+                    <span class="card-subtitle lead">Subtitle</span>
+                    <p class="card-text">Lorem ipsum!</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">An item</li>
+                    <li class="list-group-item">A second item</li>
+                    <li class="list-group-item">A third item</li>
+                </ul>
+                <img class="card-image-bottom" src="https://picsum.photos/300/100" alt="">
+                <div class="card-footer">Footer <a href="#" class="btn btn-warning">Click</a></div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card mx-auto text-light overflow-hidden h-100" style="width: 300px">
+                <img class="card-image" src="https://picsum.photos/id/26/300/348" alt="">
+                <div class="card-img-overlay text-center">
+                    <h4 class="card-title">Title</h4>
+                    <span class="card-subtitle lead">Subtitle</span>
+                    <p class="card-text">div.card-img-overlay is absolute positioned with top=bottom=left=right=0.</p>
+                    <p class="card-text text-bg-warning">Add the overflow-hidden class to the card to have rounded corners!</p>
+                    <p class="card-text text-bg-danger">The image height is too small: aaaaaaaaaaaaaaaaaaaaaaaaaaa bbbbbbbbbbbbbbbbbbbbbbb ccccccccccccccccccccccccccccc ddddddddddddddddddddddd eeeeeeeeeeeeeeeeeeeeeeeee</p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <section id="pricing" class="bg-light">
+        <div class="container-lg">
+          <div class="text-center">
+            <h2>Pricing Plans</h2>
+            <p class="lead text-muted">Choose a pricing plan to suit you.</p>
+          </div>
+          <div class="row my-5 g-0 align-items-center justify-content-center">
+            <div class="col-8 col-lg-4 col-xl-3">
+              <div class="card border-0">
+                <div class="card-body text-center py-4">
+                  <h4 class="card-title">Starter Edition</h4>
+                  <p class="lead card-subtitle">eBook download only</p>
+                  <p class="display-5 my-4 text-primary fw-bold">$12.99</p>
+                  <p class="card-text mx-5 text-muted d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, vitae magni! Repellat commodi a fuga corporis saepe dolorum.</p>
+                  <a href="#" class="btn btn-outline-primary btn-lg mt-3">
+                    Buy Now
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-9 col-lg-4">
+              <div class="card border-primary border-2">
+                <div class="card-header text-center text-primary">Most Popular</div>
+                <div class="card-body text-center py-5">
+                  <h4 class="card-title">Complete Edition</h4>
+                  <p class="lead card-subtitle">eBook download &amp; all updates</p>
+                  <p class="display-4 my-4 text-primary fw-bold">$18.99</p>
+                  <p class="card-text mx-5 text-muted d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, vitae magni! Repellat commodi a fuga corporis saepe dolorum.</p>
+                  <a href="#" class="btn btn-outline-primary btn-lg mt-3">
+                    Buy Now
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-8 col-lg-4 col-xl-3">
+              <div class="card border-0">
+                <div class="card-body text-center py-4">
+                  <h4 class="card-title">Ultimate Edition</h4>
+                  <p class="lead card-subtitle">download, updates &amp; extras</p>
+                  <p class="display-5 my-4 text-primary fw-bold">$24.99</p>
+                  <p class="card-text mx-5 text-muted d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, vitae magni! Repellat commodi a fuga corporis saepe dolorum.</p>
+                  <a href="#" class="btn btn-outline-primary btn-lg mt-3">
+                    Buy Now
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <br>
+
+    <div id="carousel" class="display-1">Carousel</div>
+    <div id="carouselExampleControls" class="carousel slide carousel-fade" data-bs-interval="2000" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <!-- The attribute active sets the beginning image -->
+            <div class="carousel-item active"><img src="https://picsum.photos/id/0/320/160" alt="pict1" class="d-block w-100"></div>
+            <div class="carousel-item"><img src="https://picsum.photos/id/10/320/160" alt="pict2" class="d-block w-100"></div>
+            <div class="carousel-item"><img src="https://picsum.photos/id/20/320/160" alt="pict3" class="d-block w-100"></div>
+        </div>
+        <button type="button" class="carousel-control-prev" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span> 
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button type="button" class="carousel-control-next" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span> 
+        </button>
+    </div>
+    <br>
+
+    <div id="alert" class="display-1">Alert</div>
+    <div class="container">
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <h1>Alert</h1>
+        <strong>Hi user!</strong> You should check in on some of those fields below.
+        <a href="#" class="alert-link">Go here to find out more</a>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+    </div>
+    </div>
+    <br>
+
+    <div id="modal" class="display-1">Modal</div>
+    <div class="container">
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mymodal">Open</button>
+        <div class="modal fade" id="mymodal">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title">Header</h1>
+                        <button class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime autem nisi, eius, est assumenda expedita tenetur doloribus molestias quis harum deserunt eveniet excepturi nemo suscipit, quo debitis ducimus iste voluptatem repellendus ea nostrum impedit. Veniam quaerat, ea, dolorum alias ex iusto corporis aut doloribus animi consequuntur libero facilis ullam molestias adipisci? Rerum labore animi eum vel enim odio provident iusto dolore quaerat blanditiis in sed doloremque, inventore sunt natus, vitae mollitia repudiandae unde. Assumenda eos, autem fuga veritatis hic iste vel cum pariatur nesciunt? Eum sit atque, voluptates quidem ipsam nostrum incidunt et, at fuga necessitatibus nemo, pariatur accusamus! Provident commodi eum distinctio, optio odio assumenda animi velit quibusdam, hic ducimus beatae soluta nam quis veritatis neque pariatur autem possimus sit, sed consequuntur libero quo fugiat! Accusamus error sint nostrum, aliquid, molestiae voluptas obcaecati voluptatibus nulla magni harum repudiandae rem? Maxime optio accusamus quibusdam quia, error commodi dolores nesciunt porro aliquam molestiae ad quaerat iure qui dolor placeat voluptas minus amet ducimus vitae. Ipsam error ipsum quas ex facere molestias voluptates odit, omnis delectus vel! Corrupti culpa numquam praesentium expedita consectetur atque sint cumque non quo dicta voluptatibus exercitationem, nulla voluptas totam amet perferendis voluptates odio voluptate repellat deserunt quos tempora minima consequatur. Temporibus dolor natus, autem, totam officiis inventore iste quod doloribus culpa esse aliquam quam fugit exercitationem praesentium sit. Distinctio, nostrum repudiandae veniam iure ex quas nisi odit quidem nihil, culpa ipsam? Expedita, dicta. Accusantium nulla eum voluptatem iste, cumque illum quasi ratione ipsum tempore, aspernatur adipisci, itaque debitis a non sint blanditiis quaerat dolorem. Dolorem consequuntur neque eligendi minima ex odit ipsa deleniti recusandae obcaecati voluptate dolore quia rerum eum ab nostrum corporis, laudantium hic necessitatibus dolor tempora commodi doloribus iure modi. Nihil ad repellendus tenetur rerum natus, nemo odio quo, similique enim fugit officia deserunt velit aut quisquam commodi cupiditate numquam corrupti voluptatem, obcaecati eos facere ea cumque! Animi, dolorem. Fugiat quos obcaecati ipsam, nobis voluptate harum hic quis eum consequatur odit nemo sed sapiente? Voluptatem voluptas eum soluta, deserunt veritatis, sapiente assumenda culpa earum nesciunt a sit doloremque ratione, voluptates fugit dolores? Id deleniti quaerat unde optio temporibus porro, nemo eveniet dolorem nulla sit laboriosam harum molestias veniam? Asperiores eos possimus est error maiores quo, repudiandae dignissimos provident velit iste similique officia quis unde nihil laboriosam, dolore dicta odio facere minus dolorum exercitationem harum natus animi. Aut deleniti, cum, minima consequatur vel illo aspernatur optio obcaecati corporis deserunt facere nisi natus porro asperiores, ipsam reprehenderit omnis? Provident pariatur architecto hic rem. At animi, quod necessitatibus magnam dolore doloremque repellat rem alias. Totam eaque illum quam officia voluptatem vitae eveniet impedit, ut, minima veritatis animi iste similique deleniti dolores nobis voluptate excepturi vel repudiandae corporis pariatur aliquam neque quidem. Voluptate quisquam rem illum optio eum, illo natus possimus tempore quam non dolorum nihil ab sed accusamus qui odit repellat mollitia eaque quasi ullam, fuga soluta a! Similique exercitationem, reprehenderit vero expedita quam, beatae qui porro magni reiciendis, placeat et facilis iure repellendus laboriosam cum! Incidunt, error?</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <div id="collapse" class="display-1">Collapse</div>
+    <div class="container">
+        <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#mycollapse">Toggle button</button>
+        <a class="btn btn-primary" data-bs-toggle="collapse" href="#mycollapse">Toggle href</a>
+        <div class="collapse" id="mycollapse">
+            <div class="card card-body">
+                Note: add the show class to div#mycollapse to have it expanded by default.
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <div id="navbar" class="display-1">Navbar</div>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container">
+            <a href="#" class="navbar-brand">Brand</a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#mynav"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="mynav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Store</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate, tempora reiciendis voluptate nisi ab provident rem ea molestiae suscipit officia non consequatur.
+    </div>
+    <br>
+
+    <!-- always place this before the body closing tag -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+</body>
+</html>

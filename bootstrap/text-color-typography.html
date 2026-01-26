@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Text color typography</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <style>
+        body::before {
+            content: "xs";
+            color: red;
+            font-size: 2rem;
+            font-weight: bold;
+            position: fixed;
+            top: 14px;
+            right: 17px;
+        }
+        @media (min-width: 576px) {
+            body::before {
+                content: "sm";
+            }
+        }
+        @media (min-width: 768px) {
+            body::before {
+                content: "md";
+            }
+        }
+        @media (min-width: 992px) {
+            body::before {
+                content: "lg";
+            }
+        }
+        @media (min-width: 1200px) {
+            body::before {
+                content: "xl";
+            }
+        }
+        @media (min-width: 1400px) {
+            body::before {
+                content: "xxl";
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="text-heading" class="display-1">Text heading</div>
+    <h1>This is h1 tag (can also use class h1)</h1>
+    <h2>This is h2 tag (can also use class h2)</h2>
+    <h3>This is h3 tag (can also use class h3)</h3>
+    <h4>This is h4 tag (can also use class h4)</h4>
+    <h5>This is h5 tag (can also use class h5)</h5>
+    <h6>This is h6 tag (can also use class h6)</h6>
+    <div class="display-1">display-1</div>
+    <div class="display-2">display-2</div>
+    <div class="display-3">display-3</div>
+    <div class="display-4">display-4</div>
+    <div class="display-5">display-5</div>
+    <div class="display-6">display-6</div>
+    <br>
+
+    <div id="text-alignment" class="display-1">Text alignment</div>
+    <p class="text-center">text-center</p>
+    <p class="text-end">text-end</p>
+    <p class="text-start">text-start</p>
+    <p class="text-lg-start text-md-center text-end">text-lg-start text-md-center text-end</p>
+    <br>
+
+    <div id="text-wrap-truncate-word-break-line-height" class="display-1">Text wrap/truncate, word break &amp; line height</div>
+    <p>Note: the following classes require display: inline-block or display: block.</p>
+    <h4>By default the text does not overflow its parent</h4>
+    <p class="text-bg-primary" style="width: 8rem;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <h4>With text-nowrap the text overflows its parent</h4>
+    <p class="text-nowrap text-bg-warning" style="width: 8rem;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <h4>With text-truncate a long text is truncated with an ellipsis</h4>
+    <p class="text-truncate text-bg-primary" style="width: 8rem;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <h4>By default a long word does not break</h4>
+    <p class="text-bg-warning" style="width: 8rem;">mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm</p>
+    <h4>With text-break a long word breaks</h4>
+    <p class="text-break text-bg-primary" style="width: 8rem;">mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm</p>
+    <h4>Line heights</h4>
+    <p class="lh-1" style="width: 8rem;">lh-1 (lorem ipsum dolor sit amet consectetur)</p>
+    <p class="lh-sm" style="width: 8rem;">lh-sm (lorem ipsum dolor sit amet consectetur)</p>
+    <p class="lh-base" style="width: 8rem;">lh-base (lorem ipsum dolor sit amet consectetur)</p>
+    <p style="width: 8rem;">default (usually it's the same as lh-base)</p>
+    <p class="lh-lg" style="width: 8rem;">lh-lg (lorem ipsum dolor sit amet consectetur)</p>
+    <br>
+
+    <div id="text-typography" class="display-1">Typography</div>
+    <p class="text-decoration-underline">text-decoration-underline</p>
+    <p><u>text in &lt;u&gt;</u></p>
+    <p class="text-decoration-line-through">text-decoration-line-through</p>
+    <p><del>text in &lt;del&gt;</del></p>
+    <p class="fst-italic">fst-italic</p>
+    <p><em>text in &lt;em&gt;</em></p>
+    <p class="font-monospace">font-monospace</p>
+    <p><code>text in &lt;code&gt;</code></p>
+    <pre>Line1 in &lt;pre&gt;
+Line2 in &lt;pre&gt;</pre>
+    <p class="fw-bold">fw-bold</p>
+    <p><strong>text in &lt;strong&gt;</strong></p>
+    <p class="fw-light">fw-light</p>
+    <p class="fst-normal">fst-normal</p>
+    <p class="lead">lead</p>
+    <p class="mark">mark</p>
+    <p><mark>text in &lt;mark&gt;</mark></p>
+    <p class="small">small</p>
+    <p><small>text in &lt;small&gt;</small></p>
+    <p>this is<sub>text in &lt;sub&gt;</sub></p>
+    <p>this is<sup>text in &lt;sup&gt;</sup></p>
+    <p><span class="text-lowercase">LowerCased</span> with text-lowercase</p>
+    <p><span class="text-uppercase">UpperCased</span> with text-uppercase</p>
+    <p><span class="text-capitalize">capiTaliZed</span> with text-capitalize</p>
+    <blockquote class="blockquote">
+        <p>Give me the liberty to know, to utter, and to argue freely according to conscience, above all liberties (blockquote).</p>
+        <footer class="blockquote-footer">John Milton <cite title="Source Title">Areopagitica</cite> (blockquote-footer)</footer>
+    </blockquote>
+    <br>
+
+    <div id="text-link-color" class="display-1">Text &amp; link color</div>
+    <p class="text-primary">text-primary</p>
+    <p class="text-secondary">text-secondary</p>
+    <p class="text-success">text-success</p>
+    <p class="text-danger">text-danger</p>
+    <p class="text-warning">text-warning</p>
+    <p class="text-info">text-info</p>
+    <p class="text-light bg-dark">text-light</p>
+    <p class="text-dark">text-dark</p>
+    <p class="text-muted">text-muted</p>
+    <p>
+        <a href="#" class="link-danger">link-danger (with text-danger the hover color is missing)</a>
+    </p>
+    <br>
+
+    <div id="background-color" class="display-1">Background color</div>
+    <p class="text-white bg-primary">bg-primary</p>
+    <p class="text-light bg-secondary">bg-secondary</p>
+    <p class="text-white bg-success">bg-success</p>
+    <p class="text-white bg-danger">bg-danger</p>
+    <p class="text-white bg-warning">bg-warning</p>
+    <p class="text-white bg-info">bg-info</p>
+    <p class="text-dark bg-light">bg-light</p>
+    <p class="text-white bg-dark">bg-dark</p>
+    <p class="text-white bg-primary bg-gradient">bg-primary<br>bg-gradient</p>
+    <p class="text-bg-dark">text-bg-dark (auto text color for given bg)</p>
+    <p><mark class="bg-transparent">&lt;mark&gt; with bg-transparent</mark></p>
+    <p class="text-white bg-primary bg-opacity-25">bg-opacity-25</p>
+    <br>
+
+    <div id="border-shadow-opacity" class="display-1">Border, shadow &amp; opacity</div>
+    <div class="m-3 p-3 border">border</div>
+    <div class="m-3 p-3 border border-primary">border-primary</div>
+    <div class="m-3 p-3 border-top border-bottom border-start border-end">border-top border-bottom border-start border-end</div>
+    <div class="m-3 p-3 border-start border-3 border-primary">border-start</div>
+    <div class="m-3 p-3 border border-4">border-4</div>
+    <div class="m-3 p-3 rounded-5 border">rounded-5</div>
+    <div class="m-3 p-3 rounded-start border">rounded-start</div>
+    <div class="m-3 p-3 rounded-5 bg-primary text-light">rounded-5</div>
+    <div class="m-3 p-3 rounded-pill bg-primary text-light">rounded-pill</div>
+    <div class="m-3 p-3 rounded-circle bg-primary text-light">rounded-circle (border-radius: 50%)</div>
+    <div class="m-3 p-3 shadow-sm">shadow-sm</div>
+    <div class="m-3 p-3 shadow">shadow</div>
+    <div class="m-3 p-3 shadow-lg">shadow-lg</div>
+    <div class="m-3 p-3 opacity-25">opacity-25</div>
+    <br>
+
+    <div id="button" class="display-1">Button</div>
+    <button type="button" class="btn btn-primary">btn</button>
+    <a href="#" class="btn btn-primary">btn in &lt;a&gt;</a>
+    <button type="button" class="btn btn-lg btn-primary">btn-lg</button>
+    <button type="button" class="btn btn-sm btn-secondary">btn-sm</button>
+    <button type="button" class="btn btn-outline-dark">btn-outline-dark</button>
+    <button type="button" class="btn btn-primary" disabled>disabled</button>
+    <button type="button" class="btn btn-outline-primary" data-bs-toggle="button">data-bs-toggle</button>
+    <p></p>
+    <br>
+
+    <div id="button-group" class="display-1">Button group</div>
+    <div class="btn-group">
+        <a href="#" class="btn btn-primary">Button 1</a>
+        <a href="#" class="btn btn-primary">Button 2</a>
+        <a href="#" class="btn btn-primary">Button 3</a>
+    </div>
+    <p></p>
+    <br>
+
+    <div id="badge-position" class="display-1">Badge</div>
+    <p>
+        The utility classes position-relative, position-absolute, translate-middle are also shown.
+        The position is set in percent (0, 50, 100) with top, start, bottom, end.
+    </p>
+    <p>Text and a <span class="badge bg-primary">badge bg-primary</span></p>
+    <button type="button" class="btn btn-primary mx-3">
+        Notifications <span class="badge bg-secondary">4</span>
+    </button>
+    <button type="button" class="btn btn-primary mx-3 position-relative">
+        Inbox
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">99+</span>
+    </button>
+    <button type="button" class="btn btn-primary mx-3 position-relative">
+        Profile
+        <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle"></span>
+    </button>
+    <p></p>
+    <br>
+
+    <div id="description-list" class="display-1">Description list</div>
+    <div class="container">
+        <dl class="row">
+            <dt class="col-sm-3">Bootstrap</dt>
+            <dd class="col-sm-9">A CSS framework you can use in Joomla.</dd>
+          
+            <dt class="col-sm-3">Using paragraphs as definitions</dt>
+            <dd class="col-sm-9">
+              <p>First paragraph, describing the element.</p>
+            <p>Second paragraph, provides additional information. Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde,
+                quasi. Accusantium mollitia exercitationem voluptatum maiores, debitis consectetur, corrupti eos repudiandae natus
+                ipsa deleniti earum excepturi saepe necessitatibus.</p>
+            </dd>
+          </dl>
+    </div>
+    <br>
+
+    <!-- always place this before the body closing tag -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+</body>
+</html>
