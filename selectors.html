@@ -116,13 +116,30 @@
     </style>
 </head>
 <body>
-    <h2>Selector concepts</h2>
+    <h2>CSS Syntax</h2>
     <ul>
-        <li>A CSS selector is the first part of a CSS rule, and it is used to target the HTML elements that we want to style.</li>
-        <li>In CSS, classes and IDs can contain only the characters [a-zA-Z0-9] plus the hyphen (-) and the underscore (_); they cannot start with a digit, two hyphens, or a hyphen followed by a digit.</li>
+        <li>A CSS rule consists of a selector and a block of declarations:<br><code>selector {property1: value1; property2: value2;}</code><br>
+        The CSS selector is used to target the HTML elements that we want to style. The last declaration of a block doesn't need to be terminated by a semicolon.</li>
+        <li>For a CSS inline style which is a CSS rule written in the <code>style</code> attribute of a HTML tag, the selector part is not present and the curly braces around the declaration block are omitted.</li>
+        <li>In CSS, classes and IDs can contain only the characters [a-zA-Z0-9_-]. They cannot start with a digit, with <code>--</code>, or with a <code>-</code> followed by a digit.</li>
     </ul>
 
-    <h2>Play with the selectors under <code>&lt;style&gt;</code></h2>
+    <h2>Precedence</h2>
+    <ul>
+        <li><strong>Overriding</strong> means that a given CSS declaration wins over another one.</li>
+        <li>A point system is used to determine the precedence of a CSS declaration. Each CSS declaration gets points assigned in different categories, those are ordered from <strong>strongest</strong> to <strong>weakest</strong>:
+        <ol>
+            <li>If a CSS declaration has <code>!important</code> appended to its value, give a point to this category.</li>
+            <li>If a CSS declaration is written in the <code>style</code> attribute of a HTML tag, give a point to this category.</li>
+            <li>For each ID in the CSS selector, add a point to this category.</li>
+            <li>For each class/pseudo-class/attribute-selector in the CSS selector, add a point to this category.</li>
+            <li>For each element/pseudo-element in the CSS selector, add a point to this category.</li>
+        </ol>
+        A comparison of two CSS declarations starts from the strongest category, if the points match, the next category is checked and so on. As soon as one of the two CSS declarations has more points in a category, it wins.<br>Note: the term <em>selector specificity</em> refers to the last three categories mentioned above.</li>
+        <li>If there is no winner from the above comparison, then the CSS declaration declared last wins. From that, it's clear that the order of <code>&lt;style&gt;..&lt;/style&gt;</code> and <code>&lt;link&gt;</code> in an HTML document matters.</li>
+    </ul>
+
+    <h2>Example for the selectors found in <code>&lt;style&gt;</code> tag</h2>
     <div id="myid" myattr="great">This is a div.</div>
     <p class="mycls">This is a paragraph, <strong>color</strong> changes back to the default when wrapping.</p>
     <span>This is a span.</span><br>
