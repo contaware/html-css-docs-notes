@@ -9,9 +9,9 @@
 <body>
     <h2>Container vs no container</h2>
     <p>
-        The bootstrap container has left and right paddings of 12px which compensate
-        with the row's left and right margins of -12px. The columns have left and 
-        right paddings of 12px which permit nesting rows in it.
+        The bootstrap containers have left and right paddings of 12px which 
+        compensate with the row's left and right margins of -12px. The columns 
+        have left and right paddings of 12px which permit nesting rows in it:
     </p>
     <div class="container-fluid border text-light">
         <div class="row">
@@ -32,18 +32,27 @@
     <br>
 
     <p>
-        If a none-bootstrap container is used, then the row is dragged out of the 
-        viewport with its negative margins. This will have no real effect on the 
-        left side but will cause a scroll on the right side. You can avoid 
-        showing the scrollbar by providing the <code>overflow-hidden</code> class 
-        to the none-bootstrap container.
+        If a container has p-0 set or if a none-bootstrap container is used, 
+        then the row is dragged out of the viewport with its negative margins. 
+        This will have no real effect on the left side, but it will cause a 
+        visible overflow on the right side. You can avoid displaying the 
+        scrollbar by applying the <code>overflow-hidden</code> class to the 
+        container:
     </p>
-    <div class="border text-light" style="width: 100%;">
-    <div class="row">
-        <div class="col"><div class="bg-primary">Column 1</div></div>
-        <div class="col"><div class="bg-secondary">Column 2</div></div>
-        <div class="col"><div class="bg-success">Column 3</div></div>
+    <div class="overflow-hidden container-fluid border p-0 text-light">
+        <div class="row">
+            <div class="col"><div class="bg-primary">Column 1</div></div>
+            <div class="col"><div class="bg-secondary">Column 2</div></div>
+            <div class="col"><div class="bg-success">Column 3</div></div>
+        </div>
     </div>
+    <br>
+    <div class="overflow-hidden border text-light" style="width: 100%;">
+        <div class="row">
+            <div class="col"><div class="bg-primary">Column 1</div></div>
+            <div class="col"><div class="bg-secondary">Column 2</div></div>
+            <div class="col"><div class="bg-success">Column 3</div></div>
+        </div>
     </div>
     <br>
 
