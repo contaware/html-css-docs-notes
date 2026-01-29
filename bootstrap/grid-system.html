@@ -43,7 +43,7 @@
     </style>
 </head>
 <body>
-    <div id="container-table" class="display-1">Container</div>
+    <div id="container" class="display-1">Container</div>
     <div class="table-responsive">
         <table class="table table-light table-striped table-hover table-bordered">
             <caption>Extra small (xs) means a width &lt; 576px, no class prefix exists for it.</caption>
@@ -331,7 +331,7 @@
     </div>
     <br>
 
-    <div id="columns-row" class="display-1">Columns helper</div>
+    <div id="columns-helper" class="display-1">Columns helper</div>
     <p>Use the following classes to apply the same column style to all direct children, there are two possibilities:</p>
     <ol>
         <li>For n=1..6 the row-cols-n class applies col-(12/n) to all direct children so that it will wrap after n-columns. Note that it works also for n=5 because it sets the column width to 20%.</li>
@@ -340,6 +340,7 @@
     <p>Note: the children do not need to have a column class.</p>
 
     <h4>wrap each five columns</h4>
+    <p>The row has the classes row row-cols-5:</p>
     <div class="container text-center text-light">
         <div class="row row-cols-5">
             <div>
@@ -365,6 +366,7 @@
     <br>
 
     <h4>set all columns to auto</h4>
+    <p>The row has the classes row row-cols-auto:</p>
     <div class="container text-center text-light">
         <div class="row row-cols-auto">
             <div>
@@ -384,7 +386,7 @@
     <br>
 
     <h4>multiple breakpoints</h4>
-    <p>In this example the row has the classes row-cols-1 row-cols-sm-2 row-cols-md-4:</p>
+    <p>The row has the classes row row-cols-1 row-cols-sm-2 row-cols-md-4:</p>
     <div class="container text-center text-light">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
             <div>
@@ -403,21 +405,22 @@
     </div>
     <br>
 
-    <div id="gutter-gap" class="display-1">Gutter and Gap</div>
+    <div id="gutter" class="display-1">Gutter</div>
     <p>Gutters (values between 0-5) adjust the spacing between columns, not between the container and the columns.</p>
     <ul>
         <li>gx-* classes control the horizontal gutter widths. The default is gx-4.</li>
         <li>gy-* classes control the vertical gutter widths within a row when columns wrap to new lines. The default is gy-0.</li>
         <li>g-* classes control both.</li>
     </ul>
-    <p>
-        <h5>How it works internally</h5>
-        For the horizontal spacing bootstrap sets left and right paddings for the columns, and negative left and right margins for the rows.<br>
-        For the vertical spacing bootstrap sets positive top margins for the columns and negative top margins for the rows.
-    </p>
+    <h5>How it works internally</h5>
+    <ol>
+        <li>For the horizontal spacing bootstrap sets left and right paddings for the columns, and negative left and right margins for the rows.</li>
+        <li>For the vertical spacing bootstrap sets positive top margins for the columns and negative top margins for the rows.</li>
+        <li>The bootstrap containers have left and right paddings to compensate for the negative left and right margins. Those paddings can be seen in the examples below. Check the <a href="#container-padding">Container padding</a> section for more details.</li>
+    </ol>
 
     <h4>default</h4>
-    <p>By default we have gx-4 and gy-0, we see also the container left and right padding:</p>
+    <p>By default we have gx-4 and gy-0:</p>
     <div class="container text-center border text-light" style="background-color: beige;">
         <div class="row">
             <div class="col-sm border">
@@ -436,21 +439,6 @@
     <h4>g-0</h4>
     <p>g-0 resets the spacing:</p>
     <div class="container text-center border text-light" style="background-color: beige;">
-        <div class="row g-0">
-            <div class="col-sm border">
-                <div class="bg-primary">1</div>
-            </div>
-            <div class="col-sm border">
-                <div class="bg-secondary">2</div>
-            </div>
-            <div class="col-sm border">
-                <div class="bg-success">3</div>
-            </div>
-        </div>
-    </div>
-    <br>
-    <p>In addition to g-0 we can also reset the container padding with p-0:</p>
-    <div class="container text-center border p-0 text-light">
         <div class="row g-0">
             <div class="col-sm border">
                 <div class="bg-primary">1</div>
@@ -493,39 +481,6 @@
     </div>
     <br>
 
-    <h4>gap-* instead of gutter</h4>
-    <p>
-        As flexbox now supports css gap instead of the bootstrap gutter we can use the bootstrap
-        gap class (values between 0-5). Gap controls the space between items and it applies 
-        that spacing only between items, not on the outer edges. Use row-gap or column-gap to
-        target only one direction:
-    </p>
-    <div class="container text-center border text-light" style="background-color: beige;">
-        <div class="row g-0 gap-4">
-            <div class="col-sm border">
-                <div class="bg-primary">1</div>
-            </div>
-            <div class="col-sm border">
-                <div class="bg-secondary">2</div>
-            </div>
-            <div class="col-sm border">
-                <div class="bg-success">3</div>
-            </div>
-        </div>
-        <div class="row g-0 gap-4">
-            <div class="col-sm border">
-                <div class="bg-primary">A</div>
-            </div>
-            <div class="col-sm border">
-                <div class="bg-secondary">B</div>
-            </div>
-            <div class="col-sm border">
-                <div class="bg-success">C</div>
-            </div>
-        </div>
-    </div>
-    <br>
-
     <div id="margin-padding" class="display-1">Margin and Padding</div>
     <p>Assign a margin or a padding to an element with values between 0-5 or auto. Remember that bootstrap sets box-sizing to border-box for all elements.</p>
     <ul>
@@ -537,7 +492,7 @@
     </ul>
 
     <h4>p-3 on columns</h4>
-    <div class="container text-center border p-0 text-light">
+    <div class="container text-center border text-light">
         <div class="row g-0">
             <div class="p-3 col-sm border">
                 <div class="bg-primary">1</div>
@@ -563,9 +518,9 @@
     </div>
     <br>
 
-    <h4>m-3 on rows</h4>
-    <div class="container text-center border p-0 text-light">
-        <div class="row g-0 m-3">
+    <h4>margin between rows</h4>
+    <div class="container text-center border text-light">
+        <div class="row g-0 mb-3">
             <div class="col-sm border">
                 <div class="bg-primary">1</div>
             </div>
@@ -576,7 +531,7 @@
                 <div class="bg-success">3</div>
             </div>
         </div>
-        <div class="row g-0 m-3">
+        <div class="row g-0 mt-3">
             <div class="col-sm border">
                 <div class="bg-primary">A</div>
             </div>
@@ -586,6 +541,39 @@
             <div class="col-sm border">
                 <div class="bg-success">C</div>
             </div>
+        </div>
+    </div>
+    <br>
+
+    <div id="container-padding" class="display-1">Container padding</div>
+    <p>
+        The bootstrap containers have left and right paddings of 12px which 
+        compensate with the row's left and right margins of -12px.
+    </p>
+    <p>
+        If a container has p-0 set or if a none-bootstrap container is used, 
+        then the row is dragged out of the viewport with its negative margins. 
+        This will have no real effect on the left side, but it will cause a 
+        visible overflow on the right side. If a zero padding container is 
+        needed, there are two solutions:
+    </p>
+    <h4>1. Apply <code>overflow-hidden</code> to the container</h4>
+    <p>This prevents displaying the scrollbar.</p>
+    <div class="overflow-hidden container-fluid border p-0 text-light">
+        <div class="row">
+            <div class="col"><div class="bg-primary">1</div></div>
+            <div class="col"><div class="bg-secondary">2</div></div>
+            <div class="col"><div class="bg-success">3</div></div>
+        </div>
+    </div>
+    <br>
+    <h4>2. Use css gap instead of bootstrap gutter</h4>
+    <p>Bootstrap provides the gap-*, row-gap-* and column-gap-* classes which support values between 0-5.</p>
+    <div class="container-fluid border p-0 text-light">
+        <div class="row g-0 column-gap-4">
+            <div class="col"><div class="bg-primary">1</div></div>
+            <div class="col"><div class="bg-secondary">2</div></div>
+            <div class="col"><div class="bg-success">3</div></div>
         </div>
     </div>
     <br>
@@ -594,7 +582,7 @@
     <p>Width and height include support for 25%, 50%, 75%, 100% and auto. There is also mw-100 for max-width: 100% and mh-100 for max-height: 100%. Remember that bootstrap sets box-sizing to border-box for all elements.</p>
 
     <h4>width</h4>
-    <div class="container text-center border p-0 text-light">
+    <div class="container text-center border text-light">
         <div class="w-25 p-1 bg-primary">w-25</div>
         <div class="w-50 p-1 bg-secondary">w-50</div>
         <div class="w-75 p-1 bg-success">w-75</div>
@@ -604,7 +592,7 @@
     <br>
 
     <h4>height</h4>
-    <div class="container text-center border p-0 text-light" style="height: 150px;">
+    <div class="container text-center border text-light" style="height: 150px;">
         <div class="h-25 d-inline-block bg-primary">h-25</div>
         <div class="h-50 d-inline-block bg-secondary">h-50</div>
         <div class="h-75 d-inline-block bg-success">h-75</div>
