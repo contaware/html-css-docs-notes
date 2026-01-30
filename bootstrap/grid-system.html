@@ -570,6 +570,7 @@
     <br>
     <h4>2. Use css gap instead of bootstrap gutter</h4>
     <p>Bootstrap provides the gap-*, row-gap-* and column-gap-* classes which support values between 0-5.</p>
+    <p>Attention: this second solution does not work well with the col-1 to col-12 classes because in their width calculation they do not subtract the gaps.</p>
     <div class="container-fluid border p-0 text-light">
         <div class="row g-0 column-gap-4">
             <div class="col"><div class="bg-primary">1</div></div>
