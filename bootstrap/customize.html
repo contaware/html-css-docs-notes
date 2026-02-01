@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light"> <!-- light or dark -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Customize</title>
+    <!-- For production use the corresponding *.min.css version. -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3/dist/css/bootstrap.css" rel="stylesheet" crossorigin="anonymous">
+    <style>
+        body::before {
+            content: "xs";
+            color: red;
+            font-size: 2rem;
+            font-weight: bold;
+            position: fixed;
+            top: 14px;
+            right: 17px;
+        }
+        @media (min-width: 576px) {
+            body::before {
+                content: "sm";
+            }
+        }
+        @media (min-width: 768px) {
+            body::before {
+                content: "md";
+            }
+        }
+        @media (min-width: 992px) {
+            body::before {
+                content: "lg";
+            }
+        }
+        @media (min-width: 1200px) {
+            body::before {
+                content: "xl";
+            }
+        }
+        @media (min-width: 1400px) {
+            body::before {
+                content: "xxl";
+            }
+        }
+
+        /*
+            There are two ways to customize the appearance of Bootstrap:
+
+            A. The classic approach is from when CSS variables did not exist:
+               - Edit the *.scss files and recompile with sass.
+               - Note: the instructions for that is not covered in this file.
+
+            B. CSS variables support has been introduced with Bootstrap 5:
+               - All Bootstrap CSS variables are prefixed with --bs-
+               - There are Bootstrap CSS variables at :root level and others 
+                 at component level.
+               - Note: some :root level Bootstrap CSS variables do not apply 
+                 to all components, but with each new release Bootstrap is 
+                 making improvements.
+        */
+
+        /*  
+            .root level CSS variables
+            -------------------------
+            
+            * Main colors, replace * with: 
+              primary, secondary, success, info, 
+              warning, danger, light, dark.
+            --bs-*: #RRGGBB;
+            --bs-*-rgb: R, G, B;
+            --bs-*-bg-subtle: #RRGGBB;
+            --bs-*-border-subtle: #RRGGBB;
+            --bs-*-text-emphasis: #RRGGBB;
+
+            * For lighter text, used through text-body-secondary
+              (deprecates text-muted)
+            * Bg for dividers and disabled components,
+              used with bg-body-secondary.
+            --bs-secondary-color: rgba(R, G, B, A);
+            --bs-secondary-color-rgb: R, G, B;
+            --bs-secondary-bg: #RRGGBB;
+            --bs-secondary-bg-rgb: R, G, B;
+
+            * For even lighter text, used through text-body-tertiary.
+            * Bg for hover states, accents, and wells,
+              used with bg-body-tertiary.
+            --bs-tertiary-color: rgba(R, G, B, A);
+            --bs-tertiary-color-rgb: R, G, B;
+            --bs-tertiary-bg: #RRGGBB;
+            --bs-tertiary-bg-rgb: R, G, B;
+            
+            * For higher contrast text, used through text-body-emphasis.
+            * Not for backgrounds.
+            --bs-emphasis-color: #RRGGBB;
+            --bs-emphasis-color-rgb: R, G, B;
+
+            * Font families and sizes
+            --bs-font-sans-serif: sans-serif, ...;
+            --bs-font-monospace: monospace, ...;
+            --bs-body-font-family: var(--bs-font-sans-serif);
+            --bs-body-font-size: Xrem;
+            --bs-body-font-weight: 400;
+            --bs-body-line-height: 1.5;
+
+            * Body colors
+            --bs-body-color: #RRGGBB;
+            --bs-body-color-rgb: R, G, B;
+            --bs-body-bg: #RRGGBB;
+            --bs-body-bg-rgb: R, G, B;
+
+            * Heading color
+            --bs-heading-color: inherit;
+
+            * Link colors
+            --bs-link-color: #RRGGBB;
+            --bs-link-color-rgb: R, G, B;
+            --bs-link-hover-color: #RRGGBB;
+            --bs-link-hover-color-rgb: R, G, B;
+
+            * Colors for <code> and <mark>
+            --bs-code-color: #RRGGBB;
+            --bs-highlight-color: #RRGGBB
+            --bs-highlight-bg: #RRGGBB;
+
+            * Gradient used by bg-gradient class
+            --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+
+            * Border
+            --bs-border-style: solid;
+            --bs-border-color: #RRGGBB;
+            --bs-border-color-translucent: rgba(R, G, B, A);
+
+            * Form
+            --bs-form-valid-color: #RRGGBB;
+            --bs-form-valid-border-color: #RRGGBB;
+            --bs-form-invalid-color: #RRGGBB;
+            --bs-form-invalid-border-color: #RRGGBB;
+        */
+        :root, [data-bs-theme=light] {
+            /* place your light theme customizations here */
+        }
+        [data-bs-theme=dark] {
+            /* place your dark theme customizations here */
+        }
+
+        /*  
+            Component level CSS variables (btn example)
+            -------------------------------------------
+            
+            .btn-primary, .btn-secondary, ...
+            --bs-btn-font-weight: 600;
+            --bs-btn-color: #RRGGBB;
+            --bs-btn-bg: #RRGGBB;
+            --bs-btn-border-color: #RRGGBB;
+            --bs-btn-hover-color: #RRGGBB;
+            --bs-btn-hover-bg: #RRGGBB;
+            --bs-btn-hover-border-color: #RRGGBB;
+            --bs-btn-focus-shadow-rgb: R, G, B;
+            --bs-btn-active-color: #RRGGBB;
+            --bs-btn-active-bg: #RRGGBB;
+            --bs-btn-active-border-color: #RRGGBB;
+        */
+        .btn-primary {
+            /* place your primary button customizations here */
+        }
+    </style>
+</head>
+<body>
+    <div id="typography" class="mb-3 display-3">Typography</div>
+    <h3>Heading &lt;h3&gt;</h3>
+    <p>Normal paragraph text.</p>
+    <p class="font-monospace">Paragraph with font-monospace class.</p>
+    <em>&lt;em&gt;</em>
+    <code>&lt;code&gt;</code>
+    <kbd>&lt;kbd&gt;</kbd>
+    <samp>&lt;samp&gt;</samp>
+    <strong>&lt;strong&gt;</strong>
+    <mark>&lt;mark&gt;</mark>
+    <small>&lt;small&gt;</small>
+
+    <div id="text-link-color" class="mt-4 mb-3 display-3">Text &amp; link color</div>
+    <span class="text-primary">text-primary</span>
+    <span class="text-secondary">text-secondary</span>
+    <span class="text-success">text-success</span>
+    <span class="text-danger">text-danger</span>
+    <span class="text-warning">text-warning</span>
+    <span class="text-info">text-info</span>
+    <br>
+    <span class="text-light bg-dark">text-light</span>
+    <span class="text-dark">text-dark</span>
+    <span class="text-body-secondary">text-body-secondary</span>
+    <span class="text-body-tertiary">text-body-tertiary</span>
+    <span class="text-body-emphasis">text-body-emphasis</span>
+    <br>
+    <a href="#">link</a>
+
+    <div id="background-color" class="mt-4 mb-3 display-3">Background color</div>
+    <span class="text-white bg-primary">bg-primary</span>
+    <span class="text-light bg-secondary">bg-secondary</span>
+    <span class="text-white bg-success">bg-success</span>
+    <span class="text-white bg-danger">bg-danger</span>
+    <span class="text-white bg-warning">bg-warning</span>
+    <span class="text-white bg-info">bg-info</span>
+    <br>
+    <span class="text-dark bg-light">bg-light</span>
+    <span class="text-white bg-dark">bg-dark</span>
+    <span class="text-dark bg-body-secondary">bg-body-secondary</span>
+    <span class="text-dark bg-body-tertiary">bg-body-tertiary</span>
+    <div class="mt-2 p-3 text-white bg-primary bg-gradient">bg-primary bg-gradient</div>
+
+    <div id="border" class="mt-4 mb-3 display-3">Border</div>
+    <span class="m-3 p-3 border">border</span>
+    <span class="m-3 p-3 border border-2">border-2</span>
+    <span class="m-3 p-3 border rounded">rounded</span>
+    <span class="m-3 p-3 border rounded-4">rounded-4</span>
+    <span class="m-3 p-3 border rounded-pill">rounded-pill</span>
+    <span class="m-3 p-3 border border-primary">border-primary</span>
+
+    <div id="new-styles" class="mt-4 mb-3 display-3">New colors</div>
+    <span class="text-primary-emphasis">text-primary-emphasis</span>
+    <span class="text-white bg-primary-subtle">bg-primary-subtle</span>
+    <span class="m-3 p-3 border border-primary-subtle">border-primary-subtle</span>
+    <p class="mt-3">...same classes for secondary, success, danger, warning, info, light, dark.</p>
+
+    <div id="button" class="mt-4 mb-3 display-3">Button</div>
+    <button type="button" class="btn btn-primary">Primary</button>
+    <button type="button" class="btn btn-secondary">Secondary</button>
+    <button type="button" class="btn btn-success">Success</button>
+    <button type="button" class="btn btn-danger">Danger</button>
+    <button type="button" class="btn btn-warning">Warning</button>
+    <button type="button" class="btn btn-info">Info</button>
+    <button type="button" class="btn btn-light">Light</button>
+    <button type="button" class="btn btn-dark">Dark</button>
+    <button type="button" class="btn btn-link">Link</button>
+    
+    <div id="form" class="mt-4 mb-3 display-3">Form</div>
+    <div class="container-fluid">
+    <form action="customize.html" method="get">
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" name="name" id="name" 
+                class="form-control" 
+                placeholder="Enter your Name" 
+                aria-describedby="nameHelp"
+                title="Some great title!">
+            <div id="nameHelp" class="form-text">Better if it's the full name.</div>
+        </div>
+        <div class="mb-3 row">
+            <div class="col">
+                <label for="validate1" class="form-label">Neutral</label>
+                <input type="text" name="validate1" id="validate1" class="form-control">
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please provide a valid Name.</div>
+            </div>
+            <div class="col">
+                <label for="validate2" class="form-label">Invalid</label>
+                <input type="text" name="validate2" id="validate2" class="form-control is-invalid">
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please provide a valid Name.</div>
+            </div>
+            <div class="col">
+                <label for="validate3" class="form-label">Valid</label>
+                <input type="text" name="validate3" id="validate3" class="form-control is-valid">
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please provide a valid Name.</div>
+            </div>
+        </div>
+        <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+        <button type="reset" class="btn btn-secondary">Reset</button>
+    </form>
+    </div>
+
+    <!-- Always place this before the body closing tag.
+         For production use the corresponding *.min.js version. -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3/dist/js/bootstrap.bundle.js" crossorigin="anonymous"></script>
+</body>
+</html>
