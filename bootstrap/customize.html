@@ -45,17 +45,31 @@
         /*
             There are two ways to customize the appearance of Bootstrap:
 
-            A. The classic approach is from when CSS variables did not exist:
-               - Edit the *.scss files and recompile with sass.
-               - Note: the instructions for that is not covered in this file.
+            A. The classic approach was developed at a time when CSS 
+               variables did not exist:
+               1. Download the "Source code (zip)" and unzip it into your 
+                  project directory:
+                  https://github.com/twbs/bootstrap/releases
+               2. Create a custom.scss file with your customizations:
+                  $body-color: #111;   
+                  $body-bg: #000;
+                  $primary: #RRGGBB;
+                  //...
+                  @import "../bootstrap-X.Y.Z/scss/bootstrap";
+               3. If Sass is not yet installed, install it globally with:
+                  $ npm install -g sass
+               4. Compile your custom.scss file into bootstrap.css and link 
+                  bootstrap.css in your project:
+                  $ sass ./scss/custom.scss ./css/bootstrap.css
+                  Hint: use the --watch option to watch custom.scss for 
+                        changes and recompile.
 
-            B. CSS variables support has been introduced with Bootstrap 5:
-               - All Bootstrap CSS variables are prefixed with --bs-
-               - There are Bootstrap CSS variables at :root level and others 
-                 at component level.
-               - Note: some :root level Bootstrap CSS variables do not apply 
-                 to all components, but with each new release Bootstrap is 
-                 making improvements.
+            B. Bootstrap 5's support for CSS variables made it possible to 
+               take a more direct approach which we will demonstrate in this 
+               example file. There are Bootstrap CSS variables at :root level 
+               and others at component level. Some :root level Bootstrap CSS 
+               variables do not apply to all components, but with each new 
+               release Bootstrap is improving.
         */
 
         /*  
