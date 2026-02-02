@@ -44,7 +44,7 @@
     </style>
 </head>
 <body>
-    <div id="text-heading" class="display-1">Text heading</div>
+    <div id="text-heading" class="mb-3 display-1">Text heading</div>
     <h1>This is h1 tag (can also use class h1)</h1>
     <h2>This is h2 tag (can also use class h2)</h2>
     <h3>This is h3 tag (can also use class h3)</h3>
@@ -57,16 +57,14 @@
     <div class="display-4">display-4</div>
     <div class="display-5">display-5</div>
     <div class="display-6">display-6</div>
-    <br>
 
-    <div id="text-alignment" class="display-1">Text alignment</div>
+    <div id="text-alignment" class="mt-4 mb-3 display-1">Text alignment</div>
     <p class="text-center">text-center</p>
     <p class="text-end">text-end</p>
     <p class="text-start">text-start</p>
     <p class="text-lg-start text-md-center text-end">text-lg-start text-md-center text-end</p>
-    <br>
 
-    <div id="text-wrap-truncate-word-break-line-height" class="display-1">Text wrap/truncate, word break &amp; line height</div>
+    <div id="text-wrap-truncate-word-break-line-height" class="mt-4 mb-3 display-1">Text wrap/truncate, word break &amp; line height</div>
     <p>Note: the following classes require display: inline-block or display: block.</p>
     <h4>By default the text does not overflow its parent</h4>
     <p class="text-bg-primary" style="width: 8rem;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -84,9 +82,8 @@
     <p class="lh-base" style="width: 8rem;">lh-base (lorem ipsum dolor sit amet consectetur)</p>
     <p style="width: 8rem;">default (usually it's the same as lh-base)</p>
     <p class="lh-lg" style="width: 8rem;">lh-lg (lorem ipsum dolor sit amet consectetur)</p>
-    <br>
 
-    <div id="text-typography" class="display-1">Typography</div>
+    <div id="typography" class="mt-4 mb-3 display-1">Typography</div>
     <p class="text-decoration-underline">text-decoration-underline</p>
     <p><u>text in &lt;u&gt;</u></p>
     <p class="text-decoration-line-through">text-decoration-line-through</p>
@@ -117,75 +114,177 @@ Line2 in &lt;pre&gt;</pre>
         <p>Give me the liberty to know, to utter, and to argue freely according to conscience, above all liberties (blockquote).</p>
         <footer class="blockquote-footer">John Milton <cite title="Source Title">Areopagitica</cite> (blockquote-footer)</footer>
     </blockquote>
-    <br>
 
-    <div id="text-link-color" class="display-1">Text &amp; link color</div>
-    <p class="text-primary">text-primary</p>
-    <p class="text-secondary">text-secondary</p>
-    <p class="text-success">text-success</p>
-    <p class="text-danger">text-danger</p>
-    <p class="text-warning">text-warning</p>
-    <p class="text-info">text-info</p>
-    <p class="text-light bg-dark">text-light</p>
-    <p class="text-dark">text-dark</p>
-    <p>
-        <a href="#" class="link-danger">link-danger (with text-danger the hover color is missing)</a>
-    </p>
+    <div id="text-link-color" class="mt-4 mb-3 display-1">Text &amp; link color</div>
+    <span class="text-primary">text-primary</span>
+    <span class="text-primary-emphasis">text-primary-emphasis</span>
     <br>
-
-    <div id="background-color" class="display-1">Background color</div>
-    <p class="text-white bg-primary">bg-primary</p>
-    <p class="text-light bg-secondary">bg-secondary</p>
-    <p class="text-white bg-success">bg-success</p>
-    <p class="text-white bg-danger">bg-danger</p>
-    <p class="text-white bg-warning">bg-warning</p>
-    <p class="text-white bg-info">bg-info</p>
-    <p class="text-dark bg-light">bg-light</p>
-    <p class="text-white bg-dark">bg-dark</p>
-    <p class="text-white bg-primary bg-gradient">bg-primary<br>bg-gradient</p>
-    <p class="text-bg-dark">text-bg-dark (auto text color for given bg)</p>
-    <p><mark class="bg-transparent">&lt;mark&gt; with bg-transparent</mark></p>
-    <p class="text-white bg-primary bg-opacity-25">bg-opacity-25</p>
+    <span class="text-secondary">text-secondary</span>
+    <span class="text-secondary-emphasis">text-secondary-emphasis</span>
     <br>
-
-    <div id="border-shadow-opacity" class="display-1">Border, shadow &amp; opacity</div>
-    <div class="m-3 p-3 border">border</div>
-    <div class="m-3 p-3 border border-primary">border-primary</div>
-    <div class="m-3 p-3 border-top border-bottom border-start border-end">border-top border-bottom border-start border-end</div>
-    <div class="m-3 p-3 border-start border-3 border-primary">border-start</div>
-    <div class="m-3 p-3 border border-4">border-4</div>
-    <div class="m-3 p-3 rounded-5 border">rounded-5</div>
-    <div class="m-3 p-3 rounded-start border">rounded-start</div>
-    <div class="m-3 p-3 rounded-5 bg-primary text-light">rounded-5</div>
-    <div class="m-3 p-3 rounded-pill bg-primary text-light">rounded-pill</div>
-    <div class="m-3 p-3 rounded-circle bg-primary text-light">rounded-circle (border-radius: 50%)</div>
-    <div class="m-3 p-3 shadow-sm">shadow-sm</div>
-    <div class="m-3 p-3 shadow">shadow</div>
-    <div class="m-3 p-3 shadow-lg">shadow-lg</div>
-    <div class="m-3 p-3 opacity-25">opacity-25</div>
+    <span class="text-success">text-success</span>
+    <span class="text-success-emphasis">text-success-emphasis</span>
     <br>
+    <span class="text-danger">text-danger</span>
+    <span class="text-danger-emphasis">text-danger-emphasis</span>
+    <br>
+    <span class="text-warning">text-warning</span>
+    <span class="text-warning-emphasis">text-warning-emphasis</span>
+    <br>
+    <span class="text-info">text-info</span>
+    <span class="text-info-emphasis">text-info-emphasis</span>
+    <br>
+    <span class="text-light bg-dark">text-light</span>
+    <span class="text-light-emphasis">text-light-emphasis</span>
+    <br>
+    <span class="text-dark">text-dark</span>
+    <span class="text-dark-emphasis">text-dark-emphasis</span>
+    <br>
+    <span class="text-body-emphasis">text-body-emphasis</span>
+    <span class="text-body-secondary">text-body-secondary</span>
+    <span class="text-body-tertiary">text-body-tertiary</span>
+    <br>
+    <span class="text-white bg-black">text-white</span>
+    <span class="text-black bg-white">text-black</span>
+    <br>
+    <a href="#">link</a>
+    <a href="#" class="link-offset-1">link-offset-1</a>
+    <a href="#" class="link-offset-2">link-offset-2</a>
+    <a href="#" class="link-offset-3">link-offset-3</a>
+    <br>
+    <a href="#" class="link-primary">link-primary</a>
+    <a href="#" class="link-secondary">link-secondary</a>
+    <a href="#" class="link-success">link-success</a>
+    <a href="#" class="link-danger">link-danger</a>
+    <a href="#" class="link-warning">link-warning</a>
+    <a href="#" class="link-info">link-info</a>
+    <a href="#" class="link-light">link-light</a>
+    <a href="#" class="link-dark">link-dark</a>
+    <a href="#" class="link-body-emphasis">link-body-emphasis</a>
 
-    <div id="button" class="display-1">Button</div>
-    <button type="button" class="btn btn-primary">btn</button>
+    <div id="background-color" class="mt-4 mb-3 display-1">Background color</div>
+    <span class="text-white bg-primary">bg-primary</span>
+    <span class="text-primary-emphasis bg-primary-subtle">bg-primary-subtle</span>
+    <br>
+    <span class="text-white bg-secondary">bg-secondary</span>
+    <span class="text-secondary-emphasis bg-secondary-subtle">bg-secondary-subtle</span>
+    <br>
+    <span class="text-white bg-success">bg-success</span>
+    <span class="text-success-emphasis bg-success-subtle">bg-success-subtle</span>
+    <br>
+    <span class="text-white bg-danger">bg-danger</span>
+    <span class="text-danger-emphasis bg-danger-subtle">bg-danger-subtle</span>
+    <br>
+    <span class="text-white bg-warning">bg-warning</span>
+    <span class="text-warning-emphasis bg-warning-subtle">bg-warning-subtle</span>
+    <br>
+    <span class="text-white bg-info">bg-info</span>
+    <span class="text-info-emphasis bg-info-subtle">bg-info-subtle</span>
+    <br>
+    <span class="text-dark bg-light">bg-light</span>
+    <span class="text-light-emphasis bg-light-subtle">bg-light-subtle</span>
+    <br>
+    <span class="text-light bg-dark">bg-dark</span>
+    <span class="text-dark-emphasis bg-dark-subtle">bg-dark-subtle</span>
+    <br>
+    <span class="text-body-emphasis bg-body-secondary">bg-body-secondary</span>
+    <span class="text-body-emphasis bg-body-tertiary">bg-body-tertiary</span>
+    <br>
+    <span class="text-black bg-white">bg-white</span>
+    <span class="text-white bg-black">bg-black</span>
+    <br>
+    <span class="text-white bg-primary bg-gradient">bg-gradient</span>
+    <mark class="bg-transparent">bg-transparent on &lt;mark&gt;</mark>
+    <br>
+    <span class="text-white bg-primary bg-opacity-10">bg-opacity-10</span>
+    <span class="text-white bg-primary bg-opacity-25">bg-opacity-25</span>
+    <span class="text-white bg-primary bg-opacity-50">bg-opacity-50</span>
+    <span class="text-white bg-primary bg-opacity-75">bg-opacity-75</span>
+
+    <div id="border-shadow" class="mt-4 mb-3 display-1">Border &amp; shadow</div>
+    <div class="d-inline-block mb-2 border">border</div>
+    <div class="d-inline-block mb-2 border border-2">border-2</div>
+    <div class="d-inline-block mb-2 border border-3">border-3</div>
+    <div class="d-inline-block mb-2 border border-4">border-4</div>
+    <div class="d-inline-block mb-2 border border-5">border-5</div>
+    <br>
+    <div class="d-inline-block mb-2 border border-2 rounded-1">rounded-1</div>
+    <div class="d-inline-block mb-2 border border-2 rounded-2">rounded-2</div>
+    <div class="d-inline-block mb-2 border border-2 rounded-3">rounded-3</div>
+    <div class="d-inline-block mb-2 border border-2 rounded-4">rounded-4</div>
+    <div class="d-inline-block mb-2 border border-2 rounded-5">rounded-5</div>
+    <br>
+    <div class="d-inline-block mb-2 text-primary-emphasis bg-primary-subtle rounded-pill">rounded-pill</div>
+    <div class="d-inline-block mb-2 text-primary-emphasis bg-primary-subtle rounded-circle">rounded-circle</div>
+    <br>
+    <div class="d-inline-block mb-2 border-primary border-start border-3">border-start</div>
+    <div class="d-inline-block mb-2 border-primary border-top border-3">border-top</div>
+    <div class="d-inline-block mb-2 border-primary border-end border-3">border-end</div>
+    <div class="d-inline-block mb-2 border-primary border-bottom border-3">border-bottom</div>
+    <br>
+    <span class="border border-primary">border-primary</span>
+    <span class="border border-primary-subtle">border-primary-subtle</span>
+    <br>
+    <span class="border border-secondary">border-secondary</span>
+    <span class="border border-secondary-subtle">border-secondary-subtle</span>
+    <br>
+    <span class="border border-success">border-success</span>
+    <span class="border border-success-subtle">border-success-subtle</span>
+    <br>
+    <span class="border border-danger">border-danger</span>
+    <span class="border border-danger-subtle">border-danger-subtle</span>
+    <br>
+    <span class="border border-warning">border-warning</span>
+    <span class="border border-warning-subtle">border-warning-subtle</span>
+    <br>
+    <span class="border border-info">border-info</span>
+    <span class="border border-info-subtle">border-info-subtle</span>
+    <br>
+    <span class="border border-light">border-light</span>
+    <span class="border border-light-subtle">border-light-subtle</span>
+    <br>
+    <span class="border border-dark">border-dark</span>
+    <span class="border border-dark-subtle">border-dark-subtle</span>
+    <br>
+    <span class="border border-white">border-white</span>
+    <span class="border border-black">border-black</span>
+    <br>
+    <div class="d-inline-block m-3 p-3 shadow-sm">shadow-sm</div>
+    <div class="d-inline-block m-3 p-3 shadow">shadow</div>
+    <div class="d-inline-block m-3 p-3 shadow-lg">shadow-lg</div>
+
+    <div id="button" class="mt-4 mb-3 display-1">Button</div>
+    <button type="button" class="btn btn-primary">btn-primary</button>
+    <button type="button" class="btn btn-secondary">btn-secondary</button>
+    <button type="button" class="btn btn-success">btn-success</button>
+    <button type="button" class="btn btn-danger">btn-danger</button>
+    <button type="button" class="btn btn-warning">btn-warning</button>
+    <button type="button" class="btn btn-info">btn-info</button>
+    <button type="button" class="btn btn-light">btn-light</button>
+    <button type="button" class="btn btn-dark">btn-dark</button>
+    <br>
+    <button type="button" class="btn btn-outline-primary">btn-outline-primary</button>
+    <button type="button" class="btn btn-outline-secondary">btn-outline-secondary</button>
+    <button type="button" class="btn btn-outline-success">btn-outline-success</button>
+    <button type="button" class="btn btn-outline-danger">btn-outline-danger</button>
+    <button type="button" class="btn btn-outline-warning">btn-outline-warning</button>
+    <button type="button" class="btn btn-outline-info">btn-outline-info</button>
+    <button type="button" class="btn btn-outline-light">btn-outline-light</button>
+    <button type="button" class="btn btn-outline-dark">btn-outline-dark</button>
+    <br>
+    <button type="button" class="btn btn-link">btn-link</button>
     <a href="#" class="btn btn-primary">btn in &lt;a&gt;</a>
     <button type="button" class="btn btn-lg btn-primary">btn-lg</button>
     <button type="button" class="btn btn-sm btn-secondary">btn-sm</button>
-    <button type="button" class="btn btn-outline-dark">btn-outline-dark</button>
-    <button type="button" class="btn btn-primary" disabled>disabled</button>
-    <button type="button" class="btn btn-outline-primary" data-bs-toggle="button">data-bs-toggle</button>
-    <p></p>
-    <br>
 
-    <div id="button-group" class="display-1">Button group</div>
+    <div id="button-group" class="mt-4 mb-3 display-1">Button group</div>
     <div class="btn-group">
         <a href="#" class="btn btn-primary">Button 1</a>
         <a href="#" class="btn btn-primary">Button 2</a>
         <a href="#" class="btn btn-primary">Button 3</a>
     </div>
-    <p></p>
-    <br>
 
-    <div id="badge-position" class="display-1">Badge</div>
+    <div id="badge" class="mt-4 mb-3 display-1">Badge</div>
     <p>
         The utility classes position-relative, position-absolute, translate-middle are also shown.
         The position is set in percent (0, 50, 100) with top, start, bottom, end.
@@ -202,10 +301,8 @@ Line2 in &lt;pre&gt;</pre>
         Profile
         <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle"></span>
     </button>
-    <p></p>
-    <br>
 
-    <div id="description-list" class="display-1">Description list</div>
+    <div id="description-list" class="mt-4 mb-3 display-1">Description list</div>
     <div class="container">
         <dl class="row">
             <dt class="col-sm-3">Bootstrap</dt>
@@ -220,7 +317,6 @@ Line2 in &lt;pre&gt;</pre>
             </dd>
           </dl>
     </div>
-    <br>
 
     <!-- Always place this before the body closing tag.
          For production use the corresponding *.min.js version. -->
