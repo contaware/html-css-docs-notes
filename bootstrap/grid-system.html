@@ -44,7 +44,7 @@
     </style>
 </head>
 <body>
-    <div id="container" class="display-1">Container</div>
+    <div id="container" class="mb-3 display-1">Container</div>
     <div class="table-responsive">
         <table class="table table-light table-striped table-hover table-bordered">
             <caption>Extra small (xs) means a width &lt; 576px, no class prefix exists for it.</caption>
@@ -71,9 +71,8 @@
         the max-width is set according to the current size; note that this results in 
         jumps at each breakpoint.
     </p>
-    <br>
 
-    <div id="columns" class="display-1">Columns</div>
+    <div id="columns" class="mt-4 mb-3 display-1">Columns</div>
     <p>Starting with bootstrap 4, css flexbox is used internally to realize the layout. The grid system is based on 12 columns. Some important points to understand the layout classes are:</p>
     <ul>
         <li>A class with a breakpoint, applies for the given breakpoint and for all breakpoints larger than it. Below the breakpoint nothing is applied.</li>
@@ -330,9 +329,8 @@
             </div>
         </div>
     </div>
-    <br>
 
-    <div id="columns-helper" class="display-1">Columns helper</div>
+    <div id="columns-helper" class="mt-4 mb-3 display-1">Columns helper</div>
     <p>Use the following classes to apply the same column style to all direct children, there are two possibilities:</p>
     <ol>
         <li>For n=1..6 the row-cols-n class applies col-(12/n) to all direct children so that it will wrap after n-columns. Note that it works also for n=5 because it sets the column width to 20%.</li>
@@ -404,9 +402,8 @@
             </div>
         </div>
     </div>
-    <br>
 
-    <div id="gutter" class="display-1">Gutter</div>
+    <div id="gutter" class="mt-4 mb-3 display-1">Gutter</div>
     <p>Gutters (values between 0-5) adjust the spacing between columns, not between the container and the columns.</p>
     <ul>
         <li>gx-* classes control the horizontal gutter widths. The default is gx-4.</li>
@@ -480,9 +477,8 @@
             </div>
         </div>
     </div>
-    <br>
 
-    <div id="margin-padding" class="display-1">Margin and Padding</div>
+    <div id="margin-padding" class="mt-4 mb-3 display-1">Margin and Padding</div>
     <p>Assign a margin or a padding to an element with values between 0-5 or auto. Remember that bootstrap sets box-sizing to border-box for all elements.</p>
     <ul>
         <li>mt-* mb-* ms-* me-* classes control top, bottom, start and end margin.</li>
@@ -544,9 +540,8 @@
             </div>
         </div>
     </div>
-    <br>
 
-    <div id="container-padding" class="display-1">Container padding</div>
+    <div id="container-padding" class="mt-4 mb-3 display-1">Container padding</div>
     <p>
         The bootstrap containers have left and right paddings of 12px which 
         compensate with the row's left and right margins of -12px.
@@ -578,9 +573,8 @@
             <div class="col"><div class="bg-success">3</div></div>
         </div>
     </div>
-    <br>
 
-    <div id="width-height" class="display-1">Width and Height</div>
+    <div id="width-height" class="mt-4 mb-3 display-1">Width and Height</div>
     <p>Width and height include support for 25%, 50%, 75%, 100% and auto. There is also mw-100 for max-width: 100% and mh-100 for max-height: 100%. Remember that bootstrap sets box-sizing to border-box for all elements.</p>
 
     <h4>width</h4>
@@ -601,7 +595,6 @@
         <div class="h-100 d-inline-block bg-info">h-100</div>
         <div class="h-auto d-inline-block bg-warning">h-auto</div>
     </div>
-    <br>
 
     <!-- Always place this before the body closing tag.
          For production use the corresponding *.min.js version. -->
