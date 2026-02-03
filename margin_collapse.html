@@ -42,16 +42,26 @@
     
     <ul>
         <li>Margins are meant to increase the distance between siblings, not to increase the gap between a child and its parent's bounding box; that's what padding is for.</li>
-        <li>Horizontal margins <strong>never change</strong>.</li>
-        <li>Vertical margins change when they <strong>touch</strong>. A zero size margin can also touch another margin.</li>
+        <li>Horizontal margins <strong>never change/collapse</strong>.</li>
+        <li>Vertical margins do not change/collapse:
+            <ul>
+                <li>For elements inside a flexbox.</li>
+                <li>For elements inside a css grid layout.</li>
+                <li>For floated elements</li>
+                <li>For absolute positioned elements.</li>
+                <li>For inline-block elements.</li>
+                <li>Across containers with <code>overflow-x</code> or <code>overflow-y</code> set to anything other than <code>visible</code> (like <code>hidden</code>, <code>auto</code>, or <code>scroll</code>).</li>
+            </ul>
+        </li>
+        <li>For all the other cases, vertical margins change/collapse when they <strong>touch</strong>. A zero size margin can also touch another margin.<br>Hint: when verifying whether margins touch, treat negative margins like positive ones.</li>
     </ul>
 
     <h2>Vertical margins calculation</h2>
     
     <ol>
-        <li>If both are positive they collapse to the biggest.</li>
-        <li>Negative and positive margins sum up.</li>
-        <li>If both are negative they collapse to the most negative.</li>
+        <li>When all margins are positive, they collapse to the largest margin.</li>
+        <li>When there are negative and positive margins, the size of the collapsed margin is the sum of the largest positive margin and the smallest (most negative) negative margin.</li>
+        <li>When all margins are negative, they collapse to the smallest (most negative) margin.</li>
     </ol>
     <div class="container">
         <p class="margin-small">margin: 8px 0</p>
@@ -68,7 +78,7 @@
 
     <h2>Nested elements with touching vertical margins</h2>
 
-    <p>When vertical margins touch between nested elements, a margins calculation happens between them and the resulting margin is applied to the parent:</p>
+    <p>When vertical margins touch between nested elements, the vertical margins calculation outlined above happens between them and the resulting margin is moved up to the parent:</p>
     <div class="container">
         <div class="stripes" style="margin-top: 10px;">
             <p class="margin-big">margin: 24px 0</p>
@@ -85,10 +95,10 @@
         </div>
     </div>
 
-    <p>After the resulting margins have been applied to the parents, the margins calculation can now happen between the adjacent siblings:</p>
+    <p>Calculation happens between all involved margins:</p>
     <div class="container">
         <p class="margin-small">margin: 8px 0</p>
-        <div class="stripes">
+        <div class="stripes" style="margin-top: 10px;">
             <p class="margin-big">margin: 24px 0</p>
         </div>
     </div>
