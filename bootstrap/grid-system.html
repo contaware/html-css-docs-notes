@@ -414,12 +414,13 @@
     <ol>
         <li>For the horizontal spacing bootstrap sets left and right paddings for the columns, and negative left and right margins for the rows.</li>
         <li>For the vertical spacing bootstrap sets positive top margins for the columns and negative top margins for the rows.</li>
-        <li>The bootstrap containers have left and right paddings to compensate for the negative left and right margins. Those paddings can be seen in the examples below. Check the <a href="#container-padding">Container padding</a> section for more details.</li>
+        <li>The bootstrap containers have left and right paddings to compensate for the negative left and right margins. Those paddings can be seen in the examples below.</li>
+        <li>Check the <a href="#bootstrap-grid-gotchas">Bootstrap grid Gotchas</a> section for more details.</li>
     </ol>
 
     <h4>default</h4>
     <p>By default we have gx-4 and gy-0:</p>
-    <div class="container text-center border text-light" style="background-color: beige;">
+    <div class="container text-center border text-light bg-warning-subtle">
         <div class="row">
             <div class="col-sm border">
                 <div class="bg-primary">1</div>
@@ -436,7 +437,7 @@
 
     <h4>g-0</h4>
     <p>g-0 resets the spacing:</p>
-    <div class="container text-center border text-light" style="background-color: beige;">
+    <div class="container text-center border text-light bg-warning-subtle">
         <div class="row g-0">
             <div class="col-sm border">
                 <div class="bg-primary">1</div>
@@ -453,7 +454,7 @@
 
     <h4>gx-0 gy-4 on two rows</h4>
     <p>When stacking, there is only a vertical space between the columns of the same row:</p>
-    <div class="container text-center border text-light" style="background-color: beige;">
+    <div class="container text-center border text-light bg-warning-subtle">
         <div class="row gx-0 gy-4">
             <div class="col-sm border">
                 <div class="bg-primary">1</div>
@@ -541,32 +542,90 @@
         </div>
     </div>
 
-    <div id="container-padding" class="mt-4 mb-3 display-1">Container padding</div>
+    <div id="bootstrap-grid-gotchas" class="mt-4 mb-3 display-1">Bootstrap grid Gotchas</div>
+
+    <h4>1. Horizontal container padding</h4>
     <p>
         The bootstrap containers have left and right paddings of 12px which 
-        compensate with the row's left and right margins of -12px.
+        compensate with the row's left and right margins of -12px. Remember 
+        that this negative horizontal margin is used to cancel out the column 
+        padding added by the horizontal <a href="#gutter">gutters</a>.
     </p>
     <p>
         If a container has p-0 set or if a none-bootstrap container is used, 
-        then the row is dragged out of the viewport with its negative margins. 
-        This will have no real effect on the left side, but it will cause a 
-        visible overflow on the right side. If a zero padding container is 
-        needed, there are two solutions:
+        then the row is dragged out of the viewport because of its negative 
+        horizontal margins. This will have no real effect on the left side, 
+        but it will cause a <strong>visible overflow on the right side</strong>.
     </p>
-    <h4>1. Apply <code>overflow-hidden</code> to the container</h4>
-    <p>This prevents displaying the scrollbar.</p>
-    <div class="overflow-hidden container-fluid border p-0 text-light">
-        <div class="row">
-            <div class="col"><div class="bg-primary">1</div></div>
-            <div class="col"><div class="bg-secondary">2</div></div>
-            <div class="col"><div class="bg-success">3</div></div>
+    
+    <h4>2. Vertical row margin collapse</h4>
+    <p>
+        To implement vertical <a href="#gutter">gutters</a>, bootstrap sets 
+        positive vertical top margins for the columns and negative vertical 
+        top margins for the rows.
+    </p>
+    <p>
+        As the positive vertical top margins of the columns are inside a 
+        flexbox, they will never collapse. But the negative vertical top 
+        margins for the rows are at flexbox container level, and as such, 
+        they can collapse with sibling margins or parent margins. When 
+        they collapse, they will <strong>not cancel out the positive 
+        vertical top margin of the first column</strong>:
+    </p>
+    <br>
+    <div class="container text-light bg-warning-subtle">
+        <div class="row gy-4">
+            <div class="col-12"><div class="bg-primary">1</div></div>
+            <div class="col-12"><div class="bg-secondary">2</div></div>
+            <div class="col-12"><div class="bg-success">3</div></div>
         </div>
     </div>
     <br>
-    <h4>2. Use css gap instead of bootstrap gutter</h4>
-    <p>Bootstrap provides the gap-*, row-gap-* and column-gap-* classes which support values between 0-5.</p>
-    <p>Attention: this second solution does not work well with the col-1 to col-12 classes because in their width calculation they do not subtract the gaps.</p>
-    <div class="container-fluid border p-0 text-light">
+
+    <h4>One solution for all</h4>
+    <p>
+        By applying <code>overflow-hidden</code> to the container, we 
+        prevent displaying the scrollbar caused by the negative 
+        horizontal row margins and we avoid that the negative 
+        vertical row margins collapses across the container:
+    </p>
+    <div class="overflow-hidden container-fluid p-0 text-light bg-warning-subtle">
+        <div class="row gy-4">
+            <div class="col-6"><div class="bg-primary">1</div></div>
+            <div class="col-6"><div class="bg-secondary">2</div></div>
+            <div class="col-6"><div class="bg-success">3</div></div>
+            <div class="col-6"><div class="bg-info">4</div></div>
+            <div class="col-6"><div class="bg-warning">5</div></div>
+            <div class="col-6"><div class="bg-danger">6</div></div>
+        </div>
+    </div>
+    <p>
+        Hint: applying a border or a padding to the container will 
+        also prevent the negative vertical row margins from collapsing.
+    </p>
+
+    <h4>CSS gap instead of bootstrap gutter?</h4>
+    <p>
+        Bootstrap provides the gap-*, row-gap-* and column-gap-* 
+        classes which support values between 0-5.
+    </p>
+    <p>
+        We could be tempted to completely avoid the bootstrap gutters and 
+        only use CSS gaps, unfortunately that does not work when using 
+        the col-1 to col-11 classes because in their width calculation 
+        they do not subtract the gaps.
+    </p>
+    <h5>Setting g-0 and row-gap-4</h5>
+    <div class="container-fluid p-0 text-light bg-warning-subtle">
+        <div class="row g-0 row-gap-4">
+            <div class="col-12"><div class="bg-primary">1</div></div>
+            <div class="col-12"><div class="bg-secondary">2</div></div>
+            <div class="col-12"><div class="bg-success">3</div></div>
+        </div>
+    </div>
+    <br>
+    <h5>Setting g-0 and column-gap-4</h5>
+    <div class="container-fluid p-0 text-light bg-warning-subtle">
         <div class="row g-0 column-gap-4">
             <div class="col"><div class="bg-primary">1</div></div>
             <div class="col"><div class="bg-secondary">2</div></div>
