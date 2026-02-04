@@ -67,13 +67,17 @@
     <div class="container-xxl bg-warning">container-xxl: 100% until xxl breakpoint</div>
     <div class="container-fluid bg-info text-light">container-fluid: 100% always</div>
     <p>
-        The width of a container is 100% until it reaches its breakpoint. Above this point, 
-        the max-width is set according to the current size; note that this results in 
-        jumps at each breakpoint.
+        The width of a container-* is 100% until it reaches its breakpoint. 
+        Above this point, the max-width is set according to the current 
+        breakpoint; note that this results in jumps at each breakpoint change.
     </p>
 
     <div id="columns" class="mt-4 mb-3 display-1">Columns</div>
-    <p>Starting with bootstrap 4, css flexbox is used internally to realize the layout. The grid system is based on 12 columns. Some important points to understand the layout classes are:</p>
+    <p>
+        Starting with bootstrap 4, css flexbox is used internally to realize 
+        the layout. The grid system is based on 12 columns. Some important 
+        points to understand the layout classes are:
+    </p>
     <ul>
         <li>A class with a breakpoint, applies for the given breakpoint and for all breakpoints larger than it. Below the breakpoint nothing is applied.</li>
         <li>A class with a larger breakpoint overrides one that has a smaller breakpoint.</li>
