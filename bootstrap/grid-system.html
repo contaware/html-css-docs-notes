@@ -181,6 +181,31 @@
     </div>
     <br>
 
+    <h4>display depending from breakpoint</h4>
+    <p>
+        Use the d-*-none and the d-*-block classes on the columns to 
+        display them depending from the current breakpoint. In this 
+        example we hide the column with the bootstrap vertical rule 
+        when stacking:
+    </p>
+    <div class="container text-center text-light">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="p-2 bg-primary">col-sm-3</div>
+            </div>
+            <div class="col-sm-3">
+                <div class="p-2 bg-secondary">col-sm-3</div>
+            </div>
+            <div class="d-none d-sm-block col-sm-auto">
+                <div class="vr h-100 bg-black"></div>
+            </div>
+            <div class="col">
+                <div class="p-2 bg-success">col</div>
+            </div>
+        </div>
+    </div>
+    <br>
+
     <h4>horizontal alignment</h4>
     <p>The default horizontal alignment is start. The horizontal alignment supports an optional breakpoint placed before the wanted alignment:</p>
     <ul>
