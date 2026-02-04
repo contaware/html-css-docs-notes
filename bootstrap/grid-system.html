@@ -94,7 +94,7 @@
 
     <h4>equal size columns</h4>
     <ul>
-        <li>The col class equally grows all columns; the columns can be more than 12.</li>
+        <li>The col-* class equally grows all columns; the columns can be more than 12.</li>
         <li>Provide flex-nowrap to avoid wrapping the columns.</li>
     </ul>
     <div class="container text-center text-light">
@@ -116,14 +116,12 @@
     <br>
 
     <h4>given width</h4>
-    <ul>
-        <li>With col-1 to col-12 we specify a column width in twelfths.</li>
-        <li>
-            For the columns 1 and 3, which have the col class, bootstrap 
-            evenly fills the remaining space. Note that these columns are 
-            smaller than a col-1.
-        </li>
-    </ul>
+    <p>With col-*-1 to col-*-12 we specify a column width in twelfths.</p>
+    <p>
+        For the columns 1 and 3, which have the col class, bootstrap 
+        evenly fills the remaining space. Note that these columns are 
+        smaller than a col-1:
+    </p>
     <div class="container text-center text-light">
         <div class="row">
             <div class="col"><div class="bg-primary">1</div></div>
@@ -132,25 +130,26 @@
         </div>
     </div>
     <br>
-
-    <h4>auto width</h4>
-    <p>The col-auto class sizes the column to fit its content:</p>
-    <div class="container text-center text-light">
-        <div class="row">
-            <div class="col-2"><div class="bg-primary">col-2</div></div>
-            <div class="col-auto"><div class="bg-secondary">col-auto (longgggggggggg)</div></div>
-            <div class="col"><div class="bg-success">col</div></div>
-        </div>
-    </div>
-    <br>
-
-    <h4>breakpoint and given width</h4>
-    <p>Starting from the sm breakpoint, the columns do not take up the full width; they only occupy 9 twelfths of the available space:</p>
+    <p>
+        Starting from the sm breakpoint, the columns do not take up the 
+        full width; they only occupy 9 twelfths of the available space:
+    </p>
     <div class="container text-center text-light">
         <div class="row">
             <div class="col-sm-3"><div class="bg-primary">col-sm-3</div></div>
             <div class="col-sm-3"><div class="bg-secondary">col-sm-3</div></div>
             <div class="col-sm-3"><div class="bg-success">col-sm-3</div></div>
+        </div>
+    </div>
+    <br>
+
+    <h4>auto width</h4>
+    <p>The col-*-auto class sizes the column to fit its content:</p>
+    <div class="container text-center text-light">
+        <div class="row">
+            <div class="col-2"><div class="bg-primary">col-2</div></div>
+            <div class="col-auto"><div class="bg-secondary">col-auto (longgggggggggg)</div></div>
+            <div class="col"><div class="bg-success">col</div></div>
         </div>
     </div>
     <br>
