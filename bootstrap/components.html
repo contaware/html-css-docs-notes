@@ -289,11 +289,40 @@
 
     <div id="alert" class="mt-4 mb-3 display-1">Alert</div>
     <div class="container">
-    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <div class="alert alert-warning alert-dismissible fade show">
         <h1>Alert</h1>
         <strong>Hi user!</strong> You should check in on some of those fields below.
         <a href="#" class="alert-link">Go here to find out more</a>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    </div>
+
+    <div id="accordion" class="mt-4 mb-3 display-1">Accordion</div>
+    <div class="container">
+        <!-- Add accordion-flush class to remove borders and rounded corners -->
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <!-- Add collapsed class when not shown on load. -->
+                    <button type="button" class="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseOne">Item 1</button>
+                </h2>
+                <!-- Omit data-bs-parent attribute to stay open when another item is opened. 
+                     Add show class to display it when loading. -->
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                    <div class="accordion-body"><strong>This is the first item.</strong><br>bla bla...</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <!-- Add collapsed class when not shown on load. -->
+                    <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo">Item 2</button>
+                </h2>
+                <!-- Omit data-bs-parent attribute to stay open when another item is opened. 
+                     Add show class to display it when loading. -->
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body"><strong>This is the second item.</strong><br>bla bla...</div>
+                </div>
+            </div>
     </div>
     </div>
 
