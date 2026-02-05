@@ -8,15 +8,36 @@
 <body>
     <p>The reason <code>vertical-align</code> isn't doing what is desired is because most people do not understand what it's supposed to do. Probably you want to check flexbox to easily align elements vertically.</p>
 
-    <h2>vertical-align for inline elements</h2>
-    <p>Inline elements can be vertically aligned with respect to the text line they are in (not the whole parent container height). <code>vertical-align</code> must be set for the inline element, unlike for tables where it is specified for the parent:</p>
+    <h2>vertical-align for inline or inline-block elements</h2>
+    <ul>
+        <li>
+            <code>vertical-align</code> must be set for the inline or the 
+            inline-block element, unlike for tables where it is specified 
+            for the parent.
+        </li>
+        <li>
+            <code>top</code> and <code>bottom</code> do align with respect 
+            to the text line they are in.
+        </li>
+        <li>
+            <code>baseline</code> (default), <code>middle</code>, 
+            <code>text-top</code> and <code>text-bottom</code> do align with 
+            respect to the text line of the parent.
+        </li>
+    </ul>
+    <p>Watch the alignment when the line wraps:</p>
     <p style="min-height: 100px; border: 1px solid black;">
+        baseline
         <span style="font-size: 50px; vertical-align: middle;">BIG</span>
-        <span style="vertical-align: middle;">(watch the alignment when the line wraps) Middle</span>
+        <span style="vertical-align: middle;">middle</span>
         <img style="vertical-align: middle;" src="../assets/star.png" alt="star">
-        <span style="vertical-align: bottom;">Bottom</span>
+        <span style="vertical-align: text-bottom;">text-bottom</span>
+        <img style="vertical-align: text-bottom;" src="../assets/star.png" alt="star">
+        <span style="vertical-align: text-top;">text-top</span>
+        <img style="vertical-align: text-top;" src="../assets/star.png" alt="star">
+        <span style="vertical-align: bottom;">bottom</span>
         <img style="vertical-align: bottom;" src="../assets/star.png" alt="star">
-        <span style="vertical-align: top;">Top</span>
+        <span style="vertical-align: top;">top</span>
         <img style="vertical-align: top;" src="../assets/star.png" alt="star">
     </p>
 
