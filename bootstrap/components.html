@@ -152,12 +152,13 @@
     </div>
 
     <div id="card" class="mt-4 mb-3 display-1">Card</div>
+    <p>
+        Cards assume no specific width to start, so they'll be 100% wide 
+        unless otherwise stated. By default align-items is stretch, when 
+        the images have no width set, they fully stretch inside the card 
+        and maintain the aspect ratio.
+    </p>
     <div class="container">
-        <p>
-            Cards assume no specific width to start, so they'll be 100% wide unless otherwise stated. 
-            By default align-items is stretch, when the images have no width set, they fully stretch 
-            inside the card and maintain the aspect ratio.
-        </p>
         <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 justify-content-center">
             <div class="col">
                 <div class="card border-danger mx-auto h-100" style="width: 300px">
@@ -203,7 +204,22 @@
             </div>
         </div>
     </div>
-
+    <div class="container-fluid p-5 my-5 bg-primary-subtle">
+        <div class="card mx-auto" style="max-width: 540px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="https://picsum.photos/id/646/300/340" class="rounded-start img-fluid w-100" alt="">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <section id="pricing" class="bg-light">
         <div class="container-lg">
             <div class="text-center">
