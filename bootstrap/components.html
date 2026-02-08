@@ -358,8 +358,13 @@
     </div>
 
     <div id="navbar" class="mt-4 mb-3 display-1">Navbar</div>
-    <!-- Add the fixed-top class to fix the navbar at the top, 
-         be aware that the content which follows needs some spacing. -->
+    <!-- 
+        Add the fixed-top class to fix the navbar at the top, 
+        be aware that the content at the top needs some spacing 
+        and to prevent anchor links from scrolling behind the 
+        navbar, provide the navbar height in this css:
+        html {scroll-padding-top: 50px;}
+    -->
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div class="container">
             <a href="#" class="navbar-brand">
