@@ -72,7 +72,13 @@
 
         /* The :not() pseudo-class selector
            It represents elements that do not match the selectors 
-           in the comma-separated list. */     
+           in the comma-separated list.
+           In the example below, it does not match li elements with 
+           a class of .first, it also does not match li elements 
+           with a class of .last, and it does not match elements 
+           with both classes. That's the exact opposite of: 
+           li.first, li.last {}
+        */
         li:not(.first, .last) {}
         li:not(.first):not(.last) {} /* equivalent to the above */
 
