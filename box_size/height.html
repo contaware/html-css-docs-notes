@@ -7,20 +7,23 @@
 </head>
 <body>
     <ul>
-        <li>The default for <code>height</code> is <code>auto</code>, which means that a element sets its height so that it can contain the children.</li>
-        <li>As a parent wants to be the smallest height required to contain its children, to avoid a circular paradox, we have to give the parent a fixed height when the children use percentage heights.</li>
+        <li>The default for <code>height</code> is <code>auto</code>, which means that an element sets its height so that it can contain the children.</li>
+        <li>If a child uses a percentage height on a parent that has no explicit height set, the height value computes to <code>auto</code>.</li>
         <li>The <code>&lt;html&gt;</code> tag has no parent, and if we set <code>height: 100%</code> for it, the viewport height is used. The following works well:<br><code>html {height: 100%}</code> with <code>body {min-height: 100%}</code></li>
-        <li>The <code>height</code> property with percent is calculated in two steps:
-        <ol>
-            <li>The height is read from the element's containing block, which usually is the parent element. But what height is read? If the element has a <code>position: static</code> (the default) or a <code>position: relative</code>, then the height is read from the <strong>content-box</strong> of the containing block, but if the element has a <code>position: absolute</code>, then the height will be read from the <strong>padding-box</strong> of the containing block.</li>
-            <li>Now the above read height is applied to the element according to the element's <code>box-sizing</code> property (<code>box-sizing</code> is not inherited).</li>
-        </ol>
+        <li>
+            The <code>height</code> property with percent is calculated in two steps:
+            <ol>
+                <li>The height is read from the element's containing block, which usually is the parent element. But what height is read? If the element has a <code>position: static</code> (the default) or a <code>position: relative</code>, then the height is read from the <strong>content-box</strong> of the containing block, but if the element has a <code>position: absolute</code>, then the height will be read from the <strong>padding-box</strong> of the containing block.</li>
+                <li>Now the above read height is applied to the element according to the element's <code>box-sizing</code> property (<code>box-sizing</code> is not inherited).</li>
+            </ol>
+        </li>
+        <li>
+            When using <code>min-height</code> (or <code>max-height</code>) instead of <code>height</code> for a parent, we aren't giving the element a fixed size, this means that percentage heights do not work for the children. But flexbox items can expand inside a flexbox container that has only <code>min-height</code> set:
+            <div style="outline: 1px dashed violet; margin-top: 0.25rem; min-height: 130px; display: flex; flex-direction: column;">
+                <h2 style="background: lightblue; margin: 0; padding: 10px;">Flexbox (column direction)</h2>
+                <div style="background: peachpuff; flex-grow: 1;">The flexbox container has <code>min-height</code> set, and this flex item has <code>flex-grow: 1</code> set. This box expands to fit the minimum height of the container, and it will grow when there are many line wraps.</div>
+            </div>
         </li>
     </ul>
-
-    <div style="outline: 1px dashed violet; min-height: 120px; display: flex; flex-direction: column;">
-        <h2 style="background: lightblue; margin: 0; padding: 10px;">Full height with flexbox</h2>
-        <div style="background: peachpuff; flex-grow: 1;">When using <code>min-height</code> (or <code>max-height</code>) instead of <code>height</code> for a parent, we aren't giving the element a fixed size, this means that percentage heights do not work for the children. Fortunately we have flexbox to help us expand the children to the full height.</div>
-    </div>
 </body>
 </html>
