@@ -206,15 +206,19 @@
         </div>
     </div>
     <div class="container-fluid p-5 my-5 bg-primary-subtle">
-        <div class="card mx-auto" style="max-width: 540px;">
+        <div class="card mx-auto overflow-hidden" style="max-width: 540px;">
             <div class="row g-0">
-                <div class="col-md-4">
-                    <img src="https://picsum.photos/id/646/300/340" class="rounded-start img-fluid w-100" alt="">
+                <div class="col-sm-4">
+                    <!-- Note: when the grid stacks, the parent of <img> has 
+                               no height defined, and thus h-100 computes to 
+                               height: auto which is perfectly fine. -->
+                    <img src="https://picsum.photos/id/646/300/200" class="object-fit-cover w-100 h-100" alt="">
                 </div>
-                <div class="col-md-8">
+                <div class="col-sm-8">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <p class="card-text text-bg-warning">Add the overflow-hidden class to the card to prevent the image from hiding the rounded corners.</p>
                         <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
                     </div>
                 </div>
