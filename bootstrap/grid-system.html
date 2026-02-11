@@ -448,7 +448,7 @@
     <ol>
         <li>For the horizontal spacing bootstrap sets left and right paddings for the columns, and negative left and right margins for the rows.</li>
         <li>For the vertical spacing bootstrap sets positive top margins for the columns and negative top margins for the rows.</li>
-        <li>The bootstrap containers have left and right paddings to compensate for the negative left and right margins. Those paddings can be seen in the examples below.</li>
+        <li>The bootstrap containers have left and right paddings to compensate for the negative left and right margins. To match the padding and margin sizes, we have to assign the container the same gutter classes as the row.</li>
         <li>Check the <a href="#bootstrap-grid-gotchas">Bootstrap grid Gotchas</a> section for more details.</li>
     </ol>
 
@@ -470,7 +470,7 @@
     <br>
 
     <h4>g-0</h4>
-    <p>g-0 applied to row:</p>
+    <p>g-0 applied to the row only (there is still a container padding):</p>
     <div class="container text-center border text-light bg-warning-subtle">
         <div class="row g-0">
             <div class="col-sm border">
@@ -501,9 +501,41 @@
     </div>
     <br>
 
+    <h4>g-5</h4>
+    <p>g-5 applied to the row only (the negative margins extend beyond the container):</p>
+    <div class="container text-center border text-light bg-warning-subtle">
+        <div class="row g-5">
+            <div class="col-sm border">
+                <div class="bg-primary">1</div>
+            </div>
+            <div class="col-sm border">
+                <div class="bg-secondary">2</div>
+            </div>
+            <div class="col-sm border">
+                <div class="bg-success">3</div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <p>g-5 applied to both container and row:</p>
+    <div class="container g-5 text-center border text-light bg-warning-subtle">
+        <div class="row g-5">
+            <div class="col-sm border">
+                <div class="bg-primary">1</div>
+            </div>
+            <div class="col-sm border">
+                <div class="bg-secondary">2</div>
+            </div>
+            <div class="col-sm border">
+                <div class="bg-success">3</div>
+            </div>
+        </div>
+    </div>
+    <br>
+
     <h4>gx-0 gy-4 on two rows</h4>
     <p>When stacking, there is only a vertical space between the columns of the same row:</p>
-    <div class="container text-center border text-light bg-warning-subtle">
+    <div class="container gx-0 gy-4 text-center border text-light bg-warning-subtle">
         <div class="row gx-0 gy-4">
             <div class="col-sm border">
                 <div class="bg-primary">1</div>
