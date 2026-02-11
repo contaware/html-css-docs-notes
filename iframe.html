@@ -6,14 +6,24 @@
     <title>iframe</title>
 </head>
 <body>
+    <p>When no width is specified, an <code>&lt;iframe&gt;</code> defaults to <strong>300px</strong> and when no height is specified, it defaults to <strong>150px</strong>:</p>
     <iframe 
-        width="560" height="315" 
         src="https://www.youtube-nocookie.com/embed/C0DPdy98e4c?rel=0" 
         frameborder="0" 
         allow="autoplay; encrypted-media" 
         allowfullscreen></iframe>
     <hr>
-    <p>The sandbox attribute enables an extra set of restrictions for the content in the iframe. The value of the sandbox attribute can either be empty (then all restrictions are applied), or a space-separated list of pre-defined values that will remove the particular restrictions.</p>
+    <p>An <code>&lt;iframe&gt;</code> can be styled with CSS, also percentage width and height are supported:</p>
+    <div style="width: 300px; height: 160px; background-color: beige;">
+        <iframe 
+            src="https://www.youtube-nocookie.com/embed/C0DPdy98e4c?rel=0" 
+            style="border: 0; width: 60%; height: 75%;" 
+            allow="autoplay; encrypted-media" 
+            allowfullscreen></iframe>
+    </div>
+    <p>Note: the <code>frameborder</code> attribute is deprecated. But as it defaults to 1, when we leave it out, we get a border. We have to use the <code>border: 0</code> CSS style.</p>
+    <hr>
+    <p>The <code>sandbox</code> attribute, when specified, enables a set of extra restrictions on any content hosted by the <code>&lt;iframe&gt;</code>. The value of the <code>sandbox</code> attribute can either be empty (then all restrictions are applied), or a space-separated list of pre-defined values that will remove the particular restrictions:</p>
     <iframe 
         width="1024" height="768" 
         src="https://www.contaware.com" 
@@ -25,7 +35,7 @@
         src="https://www.contaware.com" 
         frameborder="0" 
         sandbox="allow-forms allow-modals allow-popups allow-same-origin allow-scripts allow-top-navigation"></iframe>
-    <!-- Note that there is no sandbox value to allow parent navigation, 
-         it is blocked, drop the sandbox attribute to allow that! -->
+        <!-- Note that there is no sandbox value to allow parent navigation, 
+             it is blocked, drop the sandbox attribute to allow that! -->
 </body>
 </html>
