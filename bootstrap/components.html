@@ -429,6 +429,39 @@
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate, tempora reiciendis voluptate nisi ab provident rem ea molestiae suscipit officia non consequatur.
     </div>
 
+    <div id="dropdowns" class="mt-4 mb-3 display-1">Dropdowns</div>
+    <div class="container">
+        <!-- 
+             There are different classes which determine the drop direction:
+             dropdown, dropdown-center, dropup, dropup-center, dropstart, dropend 
+        -->
+        <div class="dropdown">
+            <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown">EN</button>
+            <!-- Add the dropdown-menu-end class to align the menu to the end.
+                 Add the dropdown-menu-dark class to get a dark menu.  -->
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item active" href="/en/">English</a></li>
+                <li><a class="dropdown-item" href="/de/">Deutsch</a></li>
+                <li><a class="dropdown-item" href="/fr/">Français</a></li>
+                <li><a class="dropdown-item" href="/it/">Italiano</a></li>
+            </ul>
+        </div>
+        <br>
+
+        <!-- Add the btn-group class to get a split button. -->
+        <div class="btn-group dropdown">
+            <a class="btn btn-danger" href="#dropdowns">Split button</a>
+            <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"></button>
+            <ul class="dropdown-menu">
+                <li><h6 class="dropdown-header">Title 1</h6></li>
+                <li><a class="dropdown-item" href="#dropdowns">Action 1</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><h6 class="dropdown-header">Title 2</h6></li>
+                <li><a class="dropdown-item" href="#dropdowns">Action 2</a></li>
+            </ul>
+        </div>
+    </div>
+
     <div id="pagination" class="mt-4 mb-3 display-1">Pagination</div>
     <div class="container">
         <nav>
