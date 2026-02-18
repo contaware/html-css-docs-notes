@@ -325,12 +325,44 @@ Line2 in &lt;pre&gt;</pre>
         <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle"></span>
     </button>
 
-    <div id="description-list" class="mt-4 mb-3 display-1">Description list</div>
-    <div class="container">
+    <div id="lists" class="mt-4 mb-3 display-1">Lists</div>
+    <div class="container-fluid">
+        <h4>Unstyled</h4>
+        <ul class="list-unstyled">
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+        <h4>Inline</h4>
+        <ul class="list-inline">
+            <li class="list-inline-item">Item 1</li>
+            <li class="list-inline-item">Item 2</li>
+            <li class="list-inline-item">Item 3</li>
+        </ul>
+        <h4>Group</h4>
+        <!-- 
+            Add the list-group-flush class to remove some borders. 
+            Add the list-group-numbered class to get nums (<ol> is not enough).
+        -->
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-warning active">Item 1 (active)</li>
+            <li class="list-group-item list-group-item-warning">Item 2</li>
+            <li class="list-group-item list-group-item-warning d-flex justify-content-between align-items-center">
+                Item 3
+                <span class="badge text-bg-warning rounded-pill">12</span>
+            </li>
+        </ul>
+        <br>
+        <div class="list-group">
+            <a href="#lists" class="list-group-item list-group-item-action list-group-item-primary active">Item 1 (active)</a>
+            <a href="#lists" class="list-group-item list-group-item-action list-group-item-primary">Item 2</a>
+            <a href="#lists" class="list-group-item list-group-item-action list-group-item-primary">Item 3</a>
+        </div>
+        <br>
+        <h4>Description</h4>
         <dl class="row">
             <dt class="col-sm-3">Bootstrap</dt>
             <dd class="col-sm-9">A CSS framework you can use in Joomla.</dd>
-          
             <dt class="col-sm-3">Using paragraphs as definitions</dt>
             <dd class="col-sm-9">
                 <p>First paragraph, describing the element.</p>
