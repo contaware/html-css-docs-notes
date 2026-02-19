@@ -287,6 +287,26 @@ Line2 in &lt;pre&gt;</pre>
     <div class="d-inline-block m-3 p-3 shadow">shadow</div>
     <div class="d-inline-block m-3 p-3 shadow-lg">shadow-lg</div>
 
+    <div id="rules" class="mt-4 mb-3 display-1">Rules</div>
+    <h4>Horizontal</h4>
+    <p>By default &lt;hr&gt; has a thickness of 1px and an opacity of 25%:</p>
+    <hr>
+    <p>Adapt size, color and opacity:</p>
+    <hr class="w-75 mx-auto border border-danger border-2 opacity-50">
+    <p>Note: by providing the border class, the resulting thickness is 2x the border width.</p>
+    <h4>Vertical</h4>
+    <p>The vr class defaults to a min-height of 1em, a thickness of 1px, an opacity of 25%, and it uses currentcolor:</p>
+    <div class="px-3 border" style="height: 36px;">
+        <span class="align-middle">It displays inline: </span>
+        <div class="vr align-middle"></div>
+    </div>
+    <br>
+    <p>Adapt size, color and opacity:</p>
+    <div class="px-3 border" style="height: 36px;">
+        <div class="vr h-100 text-danger opacity-50" style="--bs-border-width: 4px;"></div>
+    </div>
+    <p>Note: the thickness comes from the --bs-border-width variable.</p>
+
     <div id="button" class="mt-4 mb-3 display-1">Button</div>
     <button type="button" class="btn btn-primary">btn-primary</button>
     <button type="button" class="btn btn-secondary">btn-secondary</button>
