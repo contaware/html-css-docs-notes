@@ -45,8 +45,59 @@
     </style>
 </head>
 <body>
-    <div id="image-display" class="mb-3 display-1">Image and display utility</div>
+    <div id="button" class="mb-3 display-1">Button</div>
+    <button type="button" class="btn btn-primary">btn-primary</button>
+    <button type="button" class="btn btn-secondary">btn-secondary</button>
+    <button type="button" class="btn btn-success">btn-success</button>
+    <button type="button" class="btn btn-danger">btn-danger</button>
+    <button type="button" class="btn btn-warning">btn-warning</button>
+    <button type="button" class="btn btn-info">btn-info</button>
+    <button type="button" class="btn btn-light">btn-light</button>
+    <button type="button" class="btn btn-dark">btn-dark</button>
+    <br>
+    <button type="button" class="btn btn-outline-primary">btn-outline-primary</button>
+    <button type="button" class="btn btn-outline-secondary">btn-outline-secondary</button>
+    <button type="button" class="btn btn-outline-success">btn-outline-success</button>
+    <button type="button" class="btn btn-outline-danger">btn-outline-danger</button>
+    <button type="button" class="btn btn-outline-warning">btn-outline-warning</button>
+    <button type="button" class="btn btn-outline-info">btn-outline-info</button>
+    <button type="button" class="btn btn-outline-light">btn-outline-light</button>
+    <button type="button" class="btn btn-outline-dark">btn-outline-dark</button>
+    <br>
+    <button type="button" class="btn btn-link">btn-link</button>
+    <a href="#" class="btn btn-primary">btn in &lt;a&gt;</a>
+    <button type="button" class="btn btn-lg btn-primary">btn-lg</button>
+    <button type="button" class="btn btn-sm btn-secondary">btn-sm</button>
 
+    <div id="button-group" class="mt-4 mb-3 display-1">Button group</div>
+    <div class="btn-group">
+        <a href="#" class="btn btn-primary">Button 1</a>
+        <a href="#" class="btn btn-primary">Button 2</a>
+        <a href="#" class="btn btn-primary">Button 3</a>
+    </div>
+
+    <div id="badge" class="mt-4 mb-3 display-1">Badge</div>
+    <p>
+        The utility classes <code>position-relative</code>, 
+        <code>position-absolute</code> and <code>translate-middle</code> 
+        are used to position the badges. The <code>top-*</code>, 
+        <code>start-*</code>, <code>bottom-*</code> and <code>end-*</code> 
+        classes set the position in percent (0, 50, 100).
+    </p>
+    <p>Text and a <span class="badge bg-primary">badge bg-primary</span></p>
+    <button type="button" class="btn btn-primary mx-3">
+        Notifications <span class="badge bg-secondary">4</span>
+    </button>
+    <button type="button" class="btn btn-primary mx-3 position-relative">
+        Inbox
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">99+</span>
+    </button>
+    <button type="button" class="btn btn-primary mx-3 position-relative">
+        Profile
+        <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle"></span>
+    </button>
+
+    <div id="image-display" class="mt-4 mb-3 display-1">Image and display utility</div>
     <h4>img-fluid and img-thumbnail</h4>
     <div class="container mt-3">
         <div class="row">
@@ -81,7 +132,6 @@
         </div>
     </div>
     <br>
-
     <h4>float-*-start, float-*-end and float-*-none</h4>
     <div class="container text-bg-primary clearfix">
         <img src="https://picsum.photos/id/13/640/200" class="img-fluid float-start" alt="">
@@ -100,7 +150,6 @@
         </p>
     </div>
     <br>
-
     <h4>object-fit</h4>
     <div class="container">
         <h5>object-fit-*-contain</h5>
@@ -111,7 +160,6 @@
         <img class="object-fit-cover" style="width: 400px; height: 180px" src="https://picsum.photos/id/20/280/280" alt="">
     </div>
     <br>
-
     <h4>background-size</h4>
     <div class="container">
         <p>There are no utility classes for background-size, we use CSS style.</p>
@@ -123,7 +171,6 @@
         <div style="width: 400px; height: 180px; background-image: url(https://picsum.photos/id/20/280/280); background-position: center; background-size: cover;"></div>
     </div>
     <br>
-
     <h4>d-*-block and d-*-none</h4>
     <section id="d-block-none">
         <div class="container-lg">
@@ -143,7 +190,6 @@
         </div>
     </section>
     <br>
-
     <h4>figure</h4>
     <div class="container">
         <figure class="figure">
@@ -447,7 +493,6 @@
             </ul>
         </div>
         <br>
-
         <!-- Add the btn-group class to get a split button. -->
         <div class="btn-group dropdown">
             <a class="btn btn-danger" href="#dropdowns">Split button</a>
