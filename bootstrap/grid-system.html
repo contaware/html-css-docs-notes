@@ -68,26 +68,45 @@
     <div class="container-xxl bg-warning">container-xxl: 100% until xxl breakpoint</div>
     <div class="container-fluid bg-info text-light">container-fluid: 100% always</div>
     <p>
-        The width of a container-* is 100% until it reaches its breakpoint. 
-        Above this point, the max-width is set according to the current 
-        breakpoint; note that this results in jumps at each breakpoint change.
+        The width of a <code>container-*</code> is 100% until it reaches its 
+        breakpoint. Above this point, the CSS <code>max-width</code> is set 
+        according to the current breakpoint; note that this results in jumps 
+        at each breakpoint change.
     </p>
 
     <div id="columns" class="mt-4 mb-3 display-1">Columns</div>
     <p>
-        Starting with bootstrap 4, css flexbox is used internally to realize 
-        the layout. The grid system is based on 12 columns. Some important 
-        points to understand the layout classes are:
+        Starting with bootstrap 4, CSS flexbox is used internally to realize 
+        the layout. The grid system is based on 12 columns. The following 
+        are some important points to understand the layout classes:
     </p>
     <ul>
-        <li>A class with a breakpoint, applies for the given breakpoint and for all breakpoints larger than it. Below the breakpoint nothing is applied.</li>
-        <li>A class with a larger breakpoint overrides one that has a smaller breakpoint.</li>
-        <li>If no breakpoint is specified, the class applies to all viewport sizes but is overridden by any class with a breakpoint specified.</li>
-        <li>The row class sets the css flex-wrap property to wrap. To avoid wrapping the columns, the flex-nowrap class must be provided with the row class.</li>
+        <li>
+            A class with a breakpoint, applies for the given breakpoint and 
+            for all breakpoints larger than it. Below the breakpoint nothing 
+            is applied.
+        </li>
+        <li>
+            A class with a larger breakpoint overrides one that has a smaller 
+            breakpoint.
+        </li>
+        <li>
+            If no breakpoint is specified, the class applies to all viewport 
+            sizes but is overridden by any class with a breakpoint specified.
+        </li>
+        <li>
+            The <code>row</code> class sets the CSS <code>flex-wrap</code> 
+            property to <code>wrap</code>. To avoid wrapping the columns, the 
+            <code>flex-nowrap</code> class must be provided with the 
+            <code>row</code> class.
+        </li>
     </ul>
 
     <h4>no column class</h4>
-    <p>The columns do stack (mobile first) because their width is set to 100%:</p>
+    <p>
+        The columns do stack (mobile first) because their width is set to 
+        100% with a <code>.row &gt; *</code> selector:
+    </p>
     <div class="container text-center text-light">
         <div class="row">
             <div><div class="bg-primary">1</div></div>
@@ -99,8 +118,14 @@
 
     <h4>equal size columns</h4>
     <ul>
-        <li>The col-* class equally grows all columns; the columns can be more than 12.</li>
-        <li>Provide flex-nowrap to avoid wrapping the columns.</li>
+        <li>
+            The <code>col-*</code> class equally grows all columns; 
+            the columns can be more than 12.
+        </li>
+        <li>
+            Provide the <code>flex-nowrap</code> class to avoid 
+            wrapping the columns.
+        </li>
     </ul>
     <div class="container text-center text-light">
         <div class="row flex-nowrap">
@@ -121,11 +146,14 @@
     <br>
 
     <h4>given width</h4>
-    <p>With col-*-1 to col-*-12 we specify a column width in twelfths.</p>
     <p>
-        For the columns 1 and 3, which have the col class, bootstrap 
-        evenly fills the remaining space. Note that these columns are 
-        smaller than a col-1:
+        With <code>col-*-1</code> to <code>col-*-12</code> we specify a 
+        column width in twelfths.
+    </p>
+    <p>
+        For the columns 1 and 3, which have the <code>col</code> class, 
+        bootstrap evenly fills the remaining space. Note that these columns 
+        are smaller than a <code>col-1</code>:
     </p>
     <div class="container text-center text-light">
         <div class="row">
@@ -149,7 +177,7 @@
     <br>
 
     <h4>auto width</h4>
-    <p>The col-*-auto class sizes the column to fit its content:</p>
+    <p>The <code>col-*-auto</code> class sizes the column to fit its content:</p>
     <div class="container text-center text-light">
         <div class="row">
             <div class="col-2"><div class="bg-primary">col-2</div></div>
@@ -160,7 +188,11 @@
     <br>
 
     <h4>multiple breakpoints with different widths</h4>
-    <p>All columns have the classes col-xl-2 col-lg-4 col-md-6 col-sm-12:</p>
+    <p>
+        All columns have the classes <code>col-xl-2</code> 
+        <code>col-lg-4</code> <code>col-md-6</code> 
+        <code>col-sm-12</code>:
+    </p>
     <div class="container text-center text-light">
         <div class="row">
             <div class="col-xl-2 col-lg-4 col-md-6 col-sm-12">
@@ -187,10 +219,10 @@
 
     <h4>display depending from breakpoint</h4>
     <p>
-        Use the d-*-none and the d-*-block classes on the columns to 
-        display them depending from the current breakpoint. In this 
-        example we hide the column with the bootstrap vertical rule 
-        when stacking:
+        Use the <code>d-*-none</code> and the <code>d-*-block</code> 
+        classes on the columns to display them depending from the current 
+        breakpoint. In this example, the bootstrap vertical rule will be 
+        hidden when stacking:
     </p>
     <div class="container text-center text-light">
         <div class="row">
@@ -211,14 +243,17 @@
     <br>
 
     <h4>horizontal alignment</h4>
-    <p>The default horizontal alignment is start. The horizontal alignment supports an optional breakpoint placed before the wanted alignment:</p>
+    <p>
+        The default horizontal alignment is start. The horizontal alignment 
+        supports an optional breakpoint placed before the wanted alignment:
+    </p>
     <ul>
-        <li>justify-content-*-start</li>
-        <li>justify-content-*-end</li>
-        <li>justify-content-*-center</li>
-        <li>justify-content-*-between</li>
-        <li>justify-content-*-around</li>
-        <li>justify-content-*-evenly</li>
+        <li><code>justify-content-*-start</code></li>
+        <li><code>justify-content-*-end</code></li>
+        <li><code>justify-content-*-center</code></li>
+        <li><code>justify-content-*-between</code></li>
+        <li><code>justify-content-*-around</code></li>
+        <li><code>justify-content-*-evenly</code></li>
     </ul>
     <div class="container g-0 border text-center text-light">
         <div class="row g-0 justify-content-start">
@@ -291,12 +326,17 @@
     <br>
 
     <h4>vertical alignment</h4>
-    <p>The vertical alignment can be specified at the row level or for each column individually. The default vertical alignment is stretch. The vertical alignment supports an optional breakpoint placed before the wanted alignment:</p>
+    <p>
+        The vertical alignment can be specified at the row level or for each 
+        column individually. The default vertical alignment is stretch. The 
+        vertical alignment supports an optional breakpoint placed before the 
+        wanted alignment:
+    </p>
     <ul>
-        <li>align-items-*-stretch or align-self-*-stretch</li>
-        <li>align-items-*-start or align-self-*-start</li>
-        <li>align-items-*-center or align-self-*-center</li>
-        <li>align-items-*-end or align-self-*-end</li>
+        <li><code>align-items-*-stretch</code> or <code>align-self-*-stretch</code></li>
+        <li><code>align-items-*-start</code> or <code>align-self-*-start</code></li>
+        <li><code>align-items-*-center</code> or <code>align-self-*-center</code></li>
+        <li><code>align-items-*-end</code> or <code>align-self-*-end</code></li>
     </ul>
     <div class="container g-0 overflow-hidden text-center text-light">
         <div class="row align-items-center bg-warning-subtle">
@@ -328,7 +368,11 @@
     <br>
 
     <h4>order</h4>
-    <p>The classes order-*-first order-*-0 .. order-*-5 order-*-last visually reorder the columns:</p>
+    <p>
+        The classes <code>order-*-first</code> <code>order-*-0</code> to 
+        <code>order-*-5</code> <code>order-*-last</code> visually reorder 
+        the columns:
+    </p>
     <div class="container text-center text-light">
         <div class="row">
             <div class="col-2 order-sm-last">
@@ -355,10 +399,10 @@
 
     <h4>offset</h4>
     <p>
-        With offset-*-1 to offset-*-11 we can shift a column to the right by 
-        the given amount of twelfths. Bootstrap accomplishes that by adding 
-        a left margin to the column. The size of the margin is derived from 
-        the chosen amount of twelfths:
+        With <code>offset-*-1</code> to <code>offset-*-11</code> we can shift 
+        a column to the right by the given amount of twelfths. Bootstrap 
+        accomplishes that by adding a left margin to the column. The size of 
+        the margin is derived from the chosen amount of twelfths:
     </p>
     <div class="container text-center text-light">
         <div class="row">
@@ -386,15 +430,26 @@
     </div>
 
     <div id="columns-helper" class="mt-4 mb-3 display-1">Columns helper</div>
-    <p>Use the following classes to apply the same column style to all direct children, there are two possibilities:</p>
+    <p>
+        Use the following classes to apply the same column style to all 
+        direct children, there are two possibilities:
+    </p>
     <ol>
-        <li>For n=1..6 the row-cols-n class applies col-(12/n) to all direct children so that it will wrap after n-columns. Note that it works also for n=5 because it sets the column width to 20%.</li>
-        <li>The row-cols-auto class applies col-auto to all direct children.</li>
+        <li>
+            For <var>n</var>=1..6 the <code>row-cols-n</code> class applies 
+            <code>col-(12/n)</code> to all direct children so that it will 
+            wrap after <var>n</var> columns. Note that it works also for 
+            <var>n</var>=5 because it sets the column width to 20%.
+        </li>
+        <li>
+            The <code>row-cols-auto</code> class applies <code>col-auto</code> 
+            to all direct children.
+        </li>
     </ol>
     <p>Note: the children do not need to have a column class.</p>
 
     <h4>wrap each five columns</h4>
-    <p>The row has the classes row row-cols-5:</p>
+    <p>The row has the classes <code>row</code> <code>row-cols-5</code>:</p>
     <div class="container text-center text-light">
         <div class="row row-cols-5">
             <div>
@@ -420,7 +475,7 @@
     <br>
 
     <h4>set all columns to auto</h4>
-    <p>The row has the classes row row-cols-auto:</p>
+    <p>The row has the classes <code>row</code> <code>row-cols-auto</code>:</p>
     <div class="container text-center text-light">
         <div class="row row-cols-auto">
             <div>
@@ -440,7 +495,10 @@
     <br>
 
     <h4>multiple breakpoints</h4>
-    <p>The row has the classes row row-cols-1 row-cols-sm-2 row-cols-md-4:</p>
+    <p>
+        The row has the classes <code>row</code> <code>row-cols-1</code> 
+        <code>row-cols-sm-2</code> <code>row-cols-md-4</code>:
+    </p>
     <div class="container text-center text-light">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
             <div>
@@ -459,22 +517,49 @@
     </div>
 
     <div id="gutter" class="mt-4 mb-3 display-1">Gutter</div>
-    <p>Gutters (values between 0-5) adjust the spacing between columns, not between the container and the columns. An optional breakpoint is supported before the width.</p>
+    <p>
+        Gutters (values between 0-5) adjust the spacing between columns, 
+        not between the container and the columns. An optional breakpoint 
+        is supported before the width.
+    </p>
     <ul>
-        <li>gx-* classes control the horizontal gutter widths. The default is gx-4.</li>
-        <li>gy-* classes control the vertical gutter widths within a row when columns wrap to new lines. The default is gy-0.</li>
-        <li>g-* classes control both.</li>
+        <li>
+            <code>gx-*</code> classes control the horizontal gutter widths. 
+            The default is <code>gx-4</code>.
+        </li>
+        <li>
+            <code>gy-*</code> classes control the vertical gutter widths 
+            within a row when columns wrap to new lines. The default is 
+            <code>gy-0</code>.
+        </li>
+        <li>
+            <code>g-*</code> classes control both.
+        </li>
     </ul>
     <h5>How it works internally</h5>
     <ol>
-        <li>For the horizontal spacing bootstrap sets left and right paddings for the columns, and negative left and right margins for the rows.</li>
-        <li>For the vertical spacing bootstrap sets positive top margins for the columns and negative top margins for the rows.</li>
-        <li>The bootstrap containers have left and right paddings to compensate for the negative left and right margins. To match the padding and margin sizes, we have to assign the container the same gutter classes as the row.</li>
-        <li>Check the <a href="#bootstrap-grid-gotchas">Bootstrap grid Gotchas</a> section for more details.</li>
+        <li>
+            For the horizontal spacing bootstrap sets left and right paddings 
+            for the columns, and negative left and right margins for the rows.
+        </li>
+        <li>
+            For the vertical spacing bootstrap sets positive top margins for 
+            the columns and negative top margins for the rows.
+        </li>
+        <li>
+            The bootstrap containers have left and right paddings to 
+            compensate for the negative left and right margins. To match the 
+            padding and margin sizes, we have to assign the container the 
+            same gutter classes as the row.
+        </li>
+        <li>
+            Check the <a href="#bootstrap-grid-gotchas">Bootstrap grid Gotchas</a> 
+            section for more details.
+        </li>
     </ol>
 
     <h4>default</h4>
-    <p>By default we have gx-4 and gy-0:</p>
+    <p>By default we have <code>gx-4</code> and <code>gy-0</code>:</p>
     <div class="container text-center border text-light bg-warning-subtle">
         <div class="row">
             <div class="col-sm border">
@@ -491,7 +576,10 @@
     <br>
 
     <h4>g-0</h4>
-    <p>g-0 applied to the row only (there is still a container padding):</p>
+    <p>
+        <code>g-0</code> applied to the row only (there is still a container 
+        padding):
+    </p>
     <div class="container text-center border text-light bg-warning-subtle">
         <div class="row g-0">
             <div class="col-sm border">
@@ -506,7 +594,7 @@
         </div>
     </div>
     <br>
-    <p>g-0 applied to both container and row:</p>
+    <p><code>g-0</code> applied to both container and row:</p>
     <div class="container g-0 text-center border text-light bg-warning-subtle">
         <div class="row g-0">
             <div class="col-sm border">
@@ -523,7 +611,10 @@
     <br>
 
     <h4>g-5</h4>
-    <p>g-5 applied to the row only (the negative margins extend beyond the container):</p>
+    <p>
+        <code>g-5</code> applied to the row only (the negative margins 
+        extend beyond the container):
+    </p>
     <div class="container text-center border text-light bg-warning-subtle">
         <div class="row g-5">
             <div class="col-sm border">
@@ -538,7 +629,7 @@
         </div>
     </div>
     <br>
-    <p>g-5 applied to both container and row:</p>
+    <p><code>g-5</code> applied to both container and row:</p>
     <div class="container g-5 text-center border text-light bg-warning-subtle">
         <div class="row g-5">
             <div class="col-sm border">
@@ -555,7 +646,10 @@
     <br>
 
     <h4>gx-0 gy-4 on two rows</h4>
-    <p>When stacking, there is only a vertical space between the columns of the same row:</p>
+    <p>
+        When stacking, there is only a vertical space between the columns 
+        of the same row:
+    </p>
     <div class="container gx-0 gy-4 text-center border text-light bg-warning-subtle">
         <div class="row gx-0 gy-4">
             <div class="col-sm border">
@@ -582,13 +676,31 @@
     </div>
 
     <div id="margin-padding" class="mt-4 mb-3 display-1">Margin and Padding</div>
-    <p>Assign a margin or a padding to an element with values between 0-5 or auto. An optional breakpoint is supported before the size. Remember that bootstrap sets box-sizing to border-box for all elements.</p>
+    <p>
+        Assign a margin or a padding to an element with values between 
+        0-5 or auto. An optional breakpoint is supported before the size. 
+        Remember that bootstrap sets box-sizing to border-box for all elements.
+    </p>
     <ul>
-        <li>mt-* mb-* ms-* me-* classes control top, bottom, start and end margin.</li>
-        <li>pt-* pb-* ps-* pe-* classes control top, bottom, start and end padding.</li>
-        <li>mx-* px-* classes control horizontally.</li>
-        <li>my-* py-* classes control vertically.</li>
-        <li>m-* p-* classes control all.</li>
+        <li>
+            <code>mt-*</code> <code>mb-*</code> <code>ms-*</code> 
+            <code>me-*</code> classes control top, bottom, start and 
+            end margin.
+        </li>
+        <li>
+            <code>pt-*</code> <code>pb-*</code> <code>ps-*</code> 
+            <code>pe-*</code> classes control top, bottom, start and 
+            end padding.
+        </li>
+        <li>
+            <code>mx-*</code> <code>px-*</code> classes control horizontally.
+        </li>
+        <li>
+            <code>my-*</code> <code>py-*</code> classes control vertically.
+        </li>
+        <li>
+            <code>m-*</code> <code>p-*</code> classes control all.
+        </li>
     </ul>
 
     <h4>p-3 on columns</h4>
@@ -702,10 +814,10 @@
 
     <h4>One solution for all</h4>
     <p>
-        By applying <code>overflow-hidden</code> to the container, we 
-        prevent displaying the scrollbar caused by the negative 
-        horizontal row margins and we avoid that the negative 
-        vertical row margins collapses across the container:
+        By applying the <code>overflow-hidden</code> class to the container, 
+        we prevent displaying the scrollbar caused by the negative 
+        horizontal row margins and we avoid that the negative vertical row 
+        margins collapses across the container:
     </p>
     <div class="overflow-hidden container-fluid p-0 text-light bg-warning-subtle">
         <div class="row gy-4">
@@ -724,21 +836,23 @@
 
     <h4>CSS gap instead of bootstrap gutter?</h4>
     <p>
-        Bootstrap provides the gap-*, row-gap-* and column-gap-* 
-        classes which support values between 0-5.
+        Bootstrap provides the <code>gap-*</code>, <code>row-gap-*</code> 
+        and <code>column-gap-*</code> classes which support values between 0-5.
     </p>
     <p>
         We could be tempted to completely avoid the bootstrap gutters and 
-        only use CSS gaps, unfortunately that does not work when using 
-        the col-1 to col-11 classes because in their width calculation 
-        they do not subtract the gaps.
+        only use CSS gaps, unfortunately that does not work when using the 
+        <code>col-1</code> to <code>col-11</code> classes because in their 
+        width calculation they do not subtract the column gaps.
     </p>
     <h5>Setting g-0 and row-gap-4</h5>
     <div class="container-fluid p-0 text-light bg-warning-subtle">
         <div class="row g-0 row-gap-4">
-            <div class="col-12"><div class="bg-primary">1</div></div>
-            <div class="col-12"><div class="bg-secondary">2</div></div>
-            <div class="col-12"><div class="bg-success">3</div></div>
+            <div class="col-3"><div class="bg-primary">1</div></div>
+            <div class="col-4"><div class="bg-secondary">2</div></div>
+            <div class="col-5"><div class="bg-success">3</div></div>
+            <div class="col-12"><div class="bg-danger">4</div></div>
+            <div class="col-12"><div class="bg-warning">5</div></div>
         </div>
     </div>
     <br>
@@ -753,11 +867,23 @@
 
     <div id="width-height" class="mt-4 mb-3 display-1">Width and Height</div>
     <ul>
-        <li>Width and height include support for 25%, 50%, 75%, 100% and auto.</li>
-        <li>There is mw-100 for max-width: 100%</li>
-        <li>There is mh-100 for max-height: 100%</li>
-        <li>There is vh-100 for height: 100vh</li>
-        <li>Remember that bootstrap sets box-sizing to border-box for all elements.</li>
+        <li>
+            The <code>w-*</code> and <code>h-*</code> classes include support 
+            for 25%, 50%, 75%, 100% and auto.
+        </li>
+        <li>
+            There is <code>mw-100</code> for max-width: 100%
+        </li>
+        <li>
+            There is <code>mh-100</code> for max-height: 100%
+        </li>
+        <li>
+            There is <code>vh-100</code> for height: 100vh
+        </li>
+        <li>
+            Remember that bootstrap sets box-sizing to border-box for all 
+            elements.
+        </li>
     </ul>
 
     <h4>width</h4>
