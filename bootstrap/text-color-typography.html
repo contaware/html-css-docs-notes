@@ -52,7 +52,10 @@
     <h4>This is h4 tag (can also use class h4)</h4>
     <h5>This is h5 tag (can also use class h5)</h5>
     <h6>This is h6 tag (can also use class h6)</h6>
-    <p>Note: there are also the fs-1 to fs-6 classes which match the font sizes of h1 to h6.</p>
+    <p>
+        Note: there are also the <code>fs-1</code> to <code>fs-6</code> 
+        classes which match the font sizes of h1 to h6.
+    </p>
     <div class="display-1">display-1</div>
     <div class="display-2">display-2</div>
     <div class="display-3">display-3</div>
@@ -91,11 +94,11 @@
     <p class="text-break text-bg-primary" style="width: 8rem;">mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm</p>
 
     <div id="line-height" class="mt-4 mb-3 display-1">Line height</div>
-    <p class="lh-1" style="width: 8rem;">lh-1 (lorem ipsum dolor sit amet consectetur)</p>
-    <p class="lh-sm" style="width: 8rem;">lh-sm (lorem ipsum dolor sit amet consectetur)</p>
-    <p class="lh-base" style="width: 8rem;">lh-base (lorem ipsum dolor sit amet consectetur)</p>
-    <p style="width: 8rem;">default (usually it's the same as lh-base)</p>
-    <p class="lh-lg" style="width: 8rem;">lh-lg (lorem ipsum dolor sit amet consectetur)</p>
+    <p class="lh-1" style="width: 8rem;"><code>lh-1</code> (lorem ipsum dolor sit amet consectetur)</p>
+    <p class="lh-sm" style="width: 8rem;"><code>lh-sm</code> (lorem ipsum dolor sit amet consectetur)</p>
+    <p class="lh-base" style="width: 8rem;"><code>lh-base</code> (lorem ipsum dolor sit amet consectetur)</p>
+    <p style="width: 8rem;">default (usually it's the same as <code>lh-base</code>)</p>
+    <p class="lh-lg" style="width: 8rem;"><code>lh-lg</code> (lorem ipsum dolor sit amet consectetur)</p>
 
     <div id="typography" class="mt-4 mb-3 display-1">Typography</div>
     <p class="fst-normal">fst-normal</p>
@@ -289,13 +292,19 @@ Line2 in &lt;pre&gt;</pre>
 
     <div id="rules" class="mt-4 mb-3 display-1">Rules</div>
     <h4>Horizontal</h4>
-    <p>By default &lt;hr&gt; has a thickness of 1px and an opacity of 25%:</p>
+    <p>
+        By default <code>&lt;hr&gt;</code> has a thickness of 1px and an 
+        opacity of 25%:
+    </p>
     <hr>
     <p>Adapt size, color and opacity:</p>
     <hr class="w-75 mx-auto border border-danger border-2 opacity-50">
-    <p>Note: by providing the border class, the resulting thickness is 2x the border width.</p>
+    <p>Note: by providing the <code>border</code> class, the resulting thickness is 2x the border width.</p>
     <h4>Vertical</h4>
-    <p>The vr class defaults to a min-height of 1em, a thickness of 1px, an opacity of 25%, and it uses currentcolor:</p>
+    <p>
+        The <code>vr</code> class defaults to a min-height of 1em, a thickness 
+        of 1px, an opacity of 25%, and it uses currentcolor:
+    </p>
     <div class="px-3 border" style="height: 36px;">
         <span class="align-middle">It displays inline: </span>
         <div class="vr align-middle"></div>
@@ -305,7 +314,7 @@ Line2 in &lt;pre&gt;</pre>
     <div class="px-3 border" style="height: 36px;">
         <div class="vr h-100 text-danger opacity-50" style="--bs-border-width: 4px;"></div>
     </div>
-    <p>Note: the thickness comes from the --bs-border-width variable.</p>
+    <p>Note: the thickness comes from the <code>--bs-border-width</code> variable.</p>
 
     <div id="button" class="mt-4 mb-3 display-1">Button</div>
     <button type="button" class="btn btn-primary">btn-primary</button>
@@ -340,8 +349,11 @@ Line2 in &lt;pre&gt;</pre>
 
     <div id="badge" class="mt-4 mb-3 display-1">Badge</div>
     <p>
-        The utility classes position-relative, position-absolute, translate-middle are also shown.
-        The position is set in percent (0, 50, 100) with top, start, bottom, end.
+        The utility classes <code>position-relative</code>, 
+        <code>position-absolute</code> and <code>translate-middle</code> 
+        are used to position the badges. The <code>top-*</code>, 
+        <code>start-*</code>, <code>bottom-*</code> and <code>end-*</code> 
+        classes set the position in percent (0, 50, 100).
     </p>
     <p>Text and a <span class="badge bg-primary">badge bg-primary</span></p>
     <button type="button" class="btn btn-primary mx-3">
