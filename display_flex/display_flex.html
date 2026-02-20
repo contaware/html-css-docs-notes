@@ -108,9 +108,18 @@
     </div>
 
     <h2>Auto margins for flex items</h2>
+    <p>Contrary to the cross axis, the main axis lacks a specific flexbox property that allows for the alignment of individual items. However, it is possible to align and separate items using auto margins. Setting a margin to <code>auto</code> consumes all the space on the given axis. If there are multiple auto margins on an axis, the space is consumed equally. Keep in mind that auto margins can also be used on the cross axis, but <code>align-self</code> is more intuitive and explicit.</p>
     <p><em>Item 4</em> has <code>margin-left: auto</code> set, that will automatically extend its specified margin to occupy the extra space in the flex container.</p>
     <div class="container-flex">
         <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item" style="margin-left: auto;">4</div>
+        <div class="item">5</div>
+    </div>
+    <p>For this next example <em>Item 1</em> has <code>margin-right: auto</code> and <em>Item 4</em> has <code>margin-left: auto</code>.</p>
+    <div class="container-flex">
+        <div class="item" style="margin-right: auto;">1</div>
         <div class="item">2</div>
         <div class="item">3</div>
         <div class="item" style="margin-left: auto;">4</div>
