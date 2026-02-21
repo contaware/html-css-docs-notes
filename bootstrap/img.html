@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Images</title>
+    <!-- For production use the corresponding *.min.css version. -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.css" rel="stylesheet" crossorigin="anonymous">
+    <style>
+        body::before {
+            content: "xs";
+            color: red;
+            font-size: 2rem;
+            font-weight: bold;
+            position: fixed;
+            top: 14px;
+            right: 17px;
+            z-index: 1100;
+        }
+        @media (min-width: 576px) {
+            body::before {
+                content: "sm";
+            }
+        }
+        @media (min-width: 768px) {
+            body::before {
+                content: "md";
+            }
+        }
+        @media (min-width: 992px) {
+            body::before {
+                content: "lg";
+            }
+        }
+        @media (min-width: 1200px) {
+            body::before {
+                content: "xl";
+            }
+        }
+        @media (min-width: 1400px) {
+            body::before {
+                content: "xxl";
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="image" class="mb-3 display-1">Responsive image</div>
+    <div class="container mt-3 overflow-hidden">
+        <div class="row">
+            <div class="col-4 border">
+                <img src="https://picsum.photos/id/13/640/200" alt="">
+            </div>
+            <div class="col-8 border">
+                <div class="bg-primary-subtle">
+                    with no class the image overflows!
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4 border">
+                <img src="https://picsum.photos/id/13/640/200" class="img-fluid" alt="">
+            </div>
+            <div class="col-8 border">
+                <div class="bg-primary-subtle">
+                    <code>img-fluid</code>: max-width: 100%; height: auto;
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4 border">
+                <img src="https://picsum.photos/id/13/640/200" class="img-thumbnail" alt="">
+            </div>
+            <div class="col-8 border">
+                <div class="bg-primary-subtle">
+                    <code>img-thumbnail</code>: behaves like img-fluid, but it also adds a rounded border.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="float" class="mt-4 mb-3 display-1">Float</div>
+    <ul>
+        <li><code>float-*-start</code></li>
+        <li><code>float-*-end</code></li>
+        <li><code>float-*-none</code></li>
+    </ul>
+    <div class="container bg-primary-subtle clearfix">
+        <img src="https://picsum.photos/id/13/640/200" class="img-fluid float-start" alt="">
+        <p>
+            The image is floated to the start with the <code>float-start</code> 
+            class. Applying the <code>clearfix</code> class to the container 
+            will size its height to the floated image height.
+        </p>
+    </div>
+    <br>
+    <div class="container bg-primary-subtle" style="display: flow-root">
+        <img src="https://picsum.photos/id/13/640/200" class="img-fluid float-start" alt="">
+        <p>
+            The image is floated to the start with the <code>float-start</code> 
+            class. Setting the container's style attribute to 
+            <code>display: flow-root</code> will also size its height to the 
+            floated image height.
+        </p>
+    </div>
+
+    <div id="object-fit" class="mt-4 mb-3 display-1">object-fit</div>
+    <div class="container">
+        <h5>object-fit-*-contain</h5>
+        <img class="object-fit-contain mw-100 bg-primary-subtle" style="width: 400px; height: 180px" src="https://picsum.photos/id/20/280/280" alt="">
+        <h5 class="mt-3">object-fit-*-fill</h5>
+        <img class="object-fit-fill mw-100" style="width: 400px; height: 180px" src="https://picsum.photos/id/20/280/280" alt="">
+        <h5 class="mt-3">object-fit-*-cover</h5>
+        <img class="object-fit-cover mw-100" style="width: 400px; height: 180px" src="https://picsum.photos/id/20/280/280" alt="">
+    </div>
+
+    <div id="background-size" class="mt-4 mb-3 display-1">background-size</div>
+    <div class="container">
+        <p>There are no utility classes for background-size, we use CSS style.</p>
+        <h5>background-size: contain</h5>
+        <div class="bg-primary-subtle" style="max-width: 100%; width: 400px; height: 180px; background-image: url(https://picsum.photos/id/20/280/280); background-position: center; background-size: contain; background-repeat: no-repeat;"></div>
+        <h5 class="mt-3">background-size: 100% 100% (like object-fit-fill)</h5>
+        <div style="max-width: 100%; width: 400px; height: 180px; background-image: url(https://picsum.photos/id/20/280/280); background-position: center; background-size: 100% 100%;"></div>
+        <h5 class="mt-3">background-size: cover</h5>
+        <div style="max-width: 100%; width: 400px; height: 180px; background-image: url(https://picsum.photos/id/20/280/280); background-position: center; background-size: cover;"></div>
+    </div>
+
+    <div id="d-none" class="mt-4 mb-3 display-1">d-*-none</div>
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-5 text-center text-md-start">
+                <h1>
+                    <div class="display-2">Title</div>
+                    <div class="display-5 text-muted">Your Coding Skills</div>
+                </h1>
+                <p class="lead my-4 text-muted">
+                    Below the md breakpoint the image is hidden!
+                </p>
+                <a href="#d-none" class="btn btn-secondary btn-lg">Great!</a>
+            </div>
+            <div class="col-md-5 text-center d-none d-md-block">
+                <img class="img-fluid" src="https://picsum.photos/300/160" alt="picsum">
+            </div>
+        </div>
+    </div>
+
+    <div id="figure" class="mt-4 mb-3 display-1">figure</div>
+    <div class="container">
+        <figure class="figure">
+            <img src="https://picsum.photos/540/200" class="figure-img img-fluid rounded" alt="...">
+            <figcaption class="figure-caption">
+                <code>&lt;figcaption&gt;</code> with <code>figure-caption</code> 
+                class (to align at the end, add the <code>text-end</code> class).
+            </figcaption>
+        </figure>
+    </div>
+
+    <!-- Always place this before the body closing tag.
+         For production use the corresponding *.min.js version. -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.js" crossorigin="anonymous"></script>
+</body>
+</html>
