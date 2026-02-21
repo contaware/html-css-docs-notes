@@ -5,56 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>z-index</title>
     <style>
-        * { box-sizing: border-box; border: 0; margin: 0; padding: 0; }
-        .pink, .orange, .blue, .green {  position: absolute; }
-        .pink { left: 10px; top: 10px; width: 60px; height: 60px; background-color: pink; }
-        .orange { z-index: 100; left: 10px; top: 10px; width: 30px; height: 30px; background-color: orange; }
-        .blue { opacity: 0.99; left: 40px; top: 40px; width: 60px; height: 60px; background-color: blue; }
-        .green { z-index: 3; left: 50px; top: 50px; width: 60px; height: 60px; background-color: green; }
+        body { margin: 0; }
     </style>
 </head>
 <body>
-<div class="pink">
-    <div class="orange">
+<div style="width: 120px; height: 95px; background-color: lightgoldenrodyellow;">
+    0
+    <div style="position: absolute; z-index: 2; width: 40px; height: 40px; top: 45px; left: 60px; background-color: lightpink">
+        2
+    </div>
+    <div style="position: absolute; z-index: 1; width: 60px; height: 60px; top: 10px; left: 25px; background-color: lightseagreen;">
+        1
+        <div style="position: absolute; z-index: 9; width: 40px; height: 40px; top: 10px; left: 25px; background-color: red;">
+            9 (1)
+        </div>
+    </div>
+    <div style="position: absolute; z-index: -1; text-align: right; width: 40px; height: 40px; top: 5px; left: 100px; background-color: lightcyan;">
+        -1
     </div>
 </div>
-<div class="blue">
-</div>
-<div class="green">
-</div>
-<pre style="position: absolute; top: 130px;">
-1. When the z-index and position properties aren't involved, the rules 
-are pretty simple: basically, the stacking order is the same as the 
-order of appearance in the HTML. 
-
-2. CSS positioned elements (and their children) are displayed in front 
-of any non-positioned elements. 
-
-3. z-index only works on positioned elements. If you try to set a 
-z-index on an element with no position specified, it will do nothing. 
-z-index values create stacking contexts with a single HTML element as 
-root element. When a new stacking context is formed on an element, that 
-stacking context confines all of its child elements to a particular 
-place in the stacking order.
-
-4. CSS opacity also create stacking contexts. In addition to opacity, 
-several newer CSS properties also create stacking contexts. These 
-include: transforms, filters, css-regions, paged media, and possibly 
-others. 
-
-Here are the basic rules to determine stacking order within a single 
-stacking context (from back to front): 
-
-- The stacking context's root element
-- Positioned elements (and their children) with negative z-index values 
-- Non-positioned elements
-- Positioned elements (and their children) with a z-index value of auto 
-  (auto sets the stacking level to 0 and does not establish a new stacking context)
-- Positioned elements (and their children) with positive z-index values 
-
-Note: it becomes possible for an element to appear behind its own parent. 
-      This will only work if the element's parent is in the same stacking 
-      context and is not the root element of that stacking context. 
-</pre>
+<ol>
+    <li>
+        By default elements are placed on the stacking context of the 
+        <code>&lt;html&gt;</code> element which renders on layer 0 
+        corresponding to <code>z-index: 0</code>.
+    </li>
+    <li>
+        If several elements are placed on the same layer, the stacking 
+        order follows the order of appearance in the HTML source code.
+    </li>
+    <li>
+        <code>z-index</code> only works on positioned elements or on 
+        flex and grid items. A <code>z-index</code> value creates a 
+        stacking context with a single element as the root element. 
+        When a new stacking context is formed, that stacking context 
+        confines all of its descendants to the <code>z-index</code> 
+        used to create the stacking context.
+    </li>
+    <li>
+        Stacking contexts can be contained in other stacking contexts, 
+        and they can together create a hierarchy of stacking contexts.
+    </li>
+    <li>
+        The CSS <code>opacity</code> property with a value less than 1 
+        also creates a stacking context. Several other CSS properties, 
+        in addition to <code>opacity</code>, create stacking contexts. 
+        The created stacking context with all of its descendants are 
+        confined to <code>z-index: 0</code>.
+    </li>
+</ol>
 </body>
 </html>
