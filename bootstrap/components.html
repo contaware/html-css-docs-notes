@@ -217,8 +217,12 @@
 
     <div id="carousel" class="mt-4 mb-3 display-1">Carousel</div>
     <!-- Add the carousel-fade class for a fade effect.
-         Add data-bs-ride="carousel" and data-bs-interval="4000" for autoplay. -->
-    <div id="carouselExample" class="carousel slide">
+         data-bs-ride="carousel" and data-bs-interval="4000" are for autoplay.
+         Warning: for no autoplay use, leave the attributes in place with a 
+                  high interval (but not more than a maximum signed 32-bit 
+                  integer) so that touch swipe works without the need to 
+                  first tap on next/prev buttons. -->
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000000000">
         <div class="carousel-indicators">
             <!-- Add the active class for the beginning image. -->
             <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active"></button>
