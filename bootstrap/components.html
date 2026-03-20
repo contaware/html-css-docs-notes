@@ -437,6 +437,18 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.js" crossorigin="anonymous"></script>
 
     <script>
+        /* When we click a navbar link in an open collapse navbar, the link 
+           is followed, but the navbar is not hidden. For single page sites, 
+           it's usually desirable to hide the navbar after a link click: */
+        const navLinks = document.querySelectorAll('a.navbar-brand, .nav-item:not(.dropdown) a.nav-link, .nav-item.dropdown a.dropdown-item');
+        const menuToggle = document.getElementById('my-nav');
+        const bsCollapse = new bootstrap.Collapse(menuToggle, {toggle: false});
+        navLinks.forEach((l) => {
+            l.addEventListener('click', () => {
+                bsCollapse.hide();
+            });
+        });
+
         /* Manually show a modal dialog: */
         const myShowBtn = document.querySelector('#my-modal-show-btn');
         myShowBtn.addEventListener('click', (e) => {
