@@ -477,7 +477,7 @@
         });
         const myShowLink = document.querySelector('#my-modal-show-link');
         myShowLink.addEventListener('click', (e) => {
-            e.preventDefault(); // prevent following href
+            e.preventDefault(); // do not follow href
             const modal = new bootstrap.Modal('#my-modal');
             modal.show();
         });
