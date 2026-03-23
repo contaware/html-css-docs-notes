@@ -76,6 +76,13 @@
         <a href="#" class="btn btn-primary">Button 3</a>
     </div>
 
+    <div id="tooltip" class="mt-4 mb-3 display-1">Tooltip</div>
+    <p>Note: tooltips must be manually enabled with javascript (see at the end of this file).</p>
+    <button id="tooltip-btn" type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip of button">
+        Button with Tooltip
+    </button>
+    <a href="#tooltip" data-bs-toggle="tooltip" title="Tooltip of link">Link with Tooltip</a>
+
     <div id="badge" class="mt-4 mb-3 display-1">Badge</div>
     <p>
         The utility classes <code>position-relative</code>, 
@@ -303,9 +310,10 @@
     <div id="modal" class="mt-4 mb-3 display-1">Modal</div>
     <div class="container">
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#my-modal">Open</button>
-        <button type="button" id="my-modal-show-btn" class="btn btn-primary">Manual Open</button>
+        <button type="button" id="my-modal-show-btn" class="btn btn-primary">Manual Open Btn</button>
+        <a href="#modal" id="my-modal-show-link" class="btn btn-primary">Manual Open Link</a>
         <!-- With data-bs-backdrop="static" the modal will not close 
-             when clicking outside of it. -->
+             when clicking outside of it or when pressing ESC. -->
         <div class="modal fade" id="my-modal" data-bs-backdrop="static">
             <!-- The modal-dialog-scrollable class allows scrolling 
                  the modal body. -->
@@ -331,7 +339,7 @@
         <a class="btn btn-primary" data-bs-toggle="collapse" href="#my-collapse">Toggle href</a>
         <div class="collapse" id="my-collapse">
             <div class="card card-body">
-                Note: add the show class to div#my-collapse to have it expanded by default.
+                <p class="card-text">Note: add the <code>show</code> class to <code>div#my-collapse</code> to have it expanded by default.</p>
             </div>
         </div>
     </div>
@@ -437,21 +445,39 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.js" crossorigin="anonymous"></script>
 
     <script>
-        /* When we click a navbar link in an open collapse navbar, the link 
-           is followed, but the navbar is not hidden. For single page sites, 
-           it's usually desirable to hide the navbar after a link click: */
-        const navLinks = document.querySelectorAll('a.navbar-brand, .nav-item:not(.dropdown) a.nav-link, .nav-item.dropdown a.dropdown-item');
-        const menuToggle = document.getElementById('my-nav');
-        const bsCollapse = new bootstrap.Collapse(menuToggle, {toggle: false});
-        navLinks.forEach((l) => {
-            l.addEventListener('click', () => {
-                bsCollapse.hide();
-            });
+        /* All plugin constructors, getInstance() and getOrCreateInstance() 
+           support either a DOM element or a CSS selector as the first 
+           argument and an optional configuration as the second argument.
+           They return null in case of no instance.
+           Most plugins have the show(), hide() and toggle() methods.
+        const configObj = {keyboard: false}; // do not close when ESC pressed
+        const modalEl = document.getElementById('my-modal');
+        const modal = new bootstrap.Modal(modalEl, configObj);
+        const modal = bootstrap.Modal.getOrCreateInstance(modalEl, configObj);
+        const modal = bootstrap.Modal.getInstance(modalEl);
+        const modal = new bootstrap.Modal('#my-modal', configObj);
+        const modal = bootstrap.Modal.getOrCreateInstance('#my-modal', configObj);
+        const modal = bootstrap.Modal.getInstance('#my-modal');
+        */
+
+        /* Enable a single tooltip */
+        const tooltip = new bootstrap.Tooltip('#tooltip-btn');
+
+        /* Enable all tooltips on links */
+        const tooltipElements = document.querySelectorAll('a[data-bs-toggle="tooltip"]');
+        tooltipElements.forEach((tooltipEl) => {
+            new bootstrap.Tooltip(tooltipEl);
         });
 
-        /* Manually show a modal dialog: */
+        /* Manually show a modal dialog */
         const myShowBtn = document.querySelector('#my-modal-show-btn');
         myShowBtn.addEventListener('click', (e) => {
+            const modal = new bootstrap.Modal('#my-modal');
+            modal.show();
+        });
+        const myShowLink = document.querySelector('#my-modal-show-link');
+        myShowLink.addEventListener('click', (e) => {
+            e.preventDefault(); // prevent following href
             const modal = new bootstrap.Modal('#my-modal');
             modal.show();
         });
@@ -462,6 +488,33 @@
         myLinkBtn.addEventListener('click', (e) => {
             const modal = bootstrap.Modal.getInstance('#my-modal');
             modal.hide();
+        });
+
+        /* Events examples with the collapse plugin */
+        const myCollapse = document.getElementById('my-collapse')
+        myCollapse.addEventListener('show.bs.collapse', event => {
+            console.log('show.bs.collapse');
+        });
+        myCollapse.addEventListener('shown.bs.collapse', event => {
+            console.log('shown.bs.collapse'); // CSS transitions completed
+        });
+        myCollapse.addEventListener('hide.bs.collapse', event => {
+            console.log('hide.bs.collapse');
+        });
+        myCollapse.addEventListener('hidden.bs.collapse', event => {
+            console.log('hidden.bs.collapse'); // CSS transitions completed
+        });
+
+        /* When we click a navbar link in an open collapse navbar, the link 
+           is followed, but the navbar is not hidden. For single page sites, 
+           it's usually desirable to hide the navbar after a link click: */
+        const navLinks = document.querySelectorAll('a.navbar-brand, .nav-item:not(.dropdown) a.nav-link, .nav-item.dropdown a.dropdown-item');
+        const menuToggle = document.getElementById('my-nav');
+        const bsCollapse = new bootstrap.Collapse(menuToggle, {toggle: false});
+        navLinks.forEach((l) => {
+            l.addEventListener('click', () => {
+                bsCollapse.hide();
+            });
         });
     </script>
 </body>
